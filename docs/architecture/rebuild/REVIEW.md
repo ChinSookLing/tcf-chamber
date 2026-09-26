@@ -1,202 +1,91 @@
-# REVIEW — Phase 4c (tcf-chamber · `phase-4c-banner-standards`)
-
-This is the review pack for Opus. The code changes below are shown in full. The generated `chambers/*.html` pages changed only in their banner, and one sample is shown. The standards file is summarised, not repeated.
-
-## Changed files
+# REVIEW — Media switch (tcf-chamber · `media-switch`)
 
 ```
- 168 files changed, 797 insertions(+), 477 deletions(-)
+ 160 files changed, 194 insertions(+), 197 deletions(-)
 ```
 
-- `chambers/*.html` (157): only the banner changed. Sample diff:
-
-```diff
-diff --git a/chambers/ch001.html b/chambers/ch001.html
-index 4b933f5..6470661 100644
---- a/chambers/ch001.html
-+++ b/chambers/ch001.html
-@@ -14,11 +14,11 @@
- <header class="tcf-reading__nav">
-   <nav aria-label="The Civilisation Field sections">
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
--    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
-     <a href="https://play.civilisationfield.com/">棋 Play</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
--    <a href="../pages/page4.html">畫 The Chamber</a>
-+    <a href="../pages/page4.html">畫 The Chamber</a> ·
-+    <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
-   </nav>
- </header>
- <main class="tcf-reading__main">
-```
-
-- `docs/standards/AI-READABLE-STANDARD-v0.4.md`: new; the v0.4 notice exactly as Tuzi pasted it (436 lines). Identical to the main repo copy (checked with cmp).
-
-## Diffs: hand-made pages, styles, generator, README
+## Hand edits (full diff)
 
 ```diff
 diff --git a/README.md b/README.md
-index 524411b..1f592c8 100644
+index 1f592c8..88f0214 100644
 --- a/README.md
 +++ b/README.md
-@@ -6,6 +6,8 @@ It holds the quiet chambers: 156 chambers of artworks and invitations, from 26 M
- - **Site:** https://chinsookling.github.io/tcf-chamber/ (planned: https://chamber.civilisationfield.com/)
- - **Main TCF site:** https://chinsookling.github.io/the-Civilisation-field/
+@@ -17,7 +17,7 @@ This site follows docs/standards/AI-READABLE-STANDARD-v0.4.md.
  
-+This site follows docs/standards/AI-READABLE-STANDARD-v0.4.md.
-+
- ## Single source of truth
+ 1. Edit `docs/data/chambers.json`. Its format is `{ "media_base": "...", "chambers": [ ... ] }`.
+ 2. Put the chamber image in `assets/images/chambers/`.
+-3. Put the video wherever `media_base` points. For now that is the main site's `assets/videos/`.
++3. Add the original video to the main site's `assets/videos/`, then run **Compress chamber videos** in `tcf-chamber-media`, which serves the compressed copies at `media_base`.
+ 4. Regenerate the text pages, sitemap and llms.txt:
  
- **This repo is now the single source of truth for `docs/data/chambers.json`.**
-diff --git a/for-ai/index.html b/for-ai/index.html
-index 292dbd2..6bda41c 100644
---- a/for-ai/index.html
-+++ b/for-ai/index.html
-@@ -13,11 +13,11 @@
- <header class="tcf-reading__nav">
-   <nav aria-label="The Civilisation Field sections">
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
--    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
-     <a href="https://play.civilisationfield.com/">棋 Play</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
--    <a href="../pages/page4.html">畫 The Chamber</a>
-+    <a href="../pages/page4.html">畫 The Chamber</a> ·
-+    <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
-   </nav>
- </header>
- <main class="tcf-reading__main">
-diff --git a/index.html b/index.html
-index 9727be6..664e268 100644
---- a/index.html
-+++ b/index.html
-@@ -13,11 +13,11 @@
- <header class="tcf-reading__nav">
-   <nav aria-label="The Civilisation Field sections">
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
--    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
-     <a href="https://play.civilisationfield.com/">棋 Play</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
--    <a href="pages/page4.html">畫 The Chamber</a>
-+    <a href="pages/page4.html">畫 The Chamber</a> ·
-+    <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
-   </nav>
- </header>
- <main class="tcf-reading__main">
-diff --git a/license/index.html b/license/index.html
-index 2631297..5de8565 100644
---- a/license/index.html
-+++ b/license/index.html
-@@ -13,11 +13,11 @@
- <header class="tcf-reading__nav">
-   <nav aria-label="The Civilisation Field sections">
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
--    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
-     <a href="https://play.civilisationfield.com/">棋 Play</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
--    <a href="../pages/page4.html">畫 The Chamber</a>
-+    <a href="../pages/page4.html">畫 The Chamber</a> ·
-+    <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
-   </nav>
- </header>
- <main class="tcf-reading__main">
-diff --git a/pages/accio.html b/pages/accio.html
-index c124e05..c0e94f8 100644
---- a/pages/accio.html
-+++ b/pages/accio.html
-@@ -42,11 +42,11 @@
-   <p>An interactive 3D view in 畫 The Chamber. Its prompt reads: 召來一位的作品 · whose works shall come?</p>
-   <nav aria-label="The Civilisation Field sections">
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
--    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
-     <a href="https://play.civilisationfield.com/">棋 Play</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
--    <a href="page4.html">畫 The Chamber</a>
-+    <a href="page4.html">畫 The Chamber</a> ·
-+    <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
-   </nav>
- </section>
+    ```bash
+@@ -27,9 +27,10 @@ This site follows docs/standards/AI-READABLE-STANDARD-v0.4.md.
  
-diff --git a/pages/page4.html b/pages/page4.html
-index bc0ae90..d163dff 100644
---- a/pages/page4.html
-+++ b/pages/page4.html
-@@ -615,11 +615,11 @@
-   <p><a href="../chambers/index.html">Read every chamber as text</a></p>
-   <nav aria-label="The Civilisation Field sections">
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
--    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
-     <a href="https://play.civilisationfield.com/">棋 Play</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
--    <a href="page4.html" aria-current="page">畫 The Chamber</a>
-+    <a href="page4.html" aria-current="page">畫 The Chamber</a> ·
-+    <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
-   </nav>
- </section>
+ ## Videos
  
-diff --git a/pages/skyhall.html b/pages/skyhall.html
-index c979de3..f0a7d84 100644
---- a/pages/skyhall.html
-+++ b/pages/skyhall.html
-@@ -69,11 +69,11 @@
-   <p>An interactive 3D gallery in 畫 The Chamber. On-screen hint: click a painting to pause · 點一幅畫，駐足欣賞.</p>
-   <nav aria-label="The Civilisation Field sections">
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
--    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
-     <a href="https://play.civilisationfield.com/">棋 Play</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
--    <a href="page4.html">畫 The Chamber</a>
-+    <a href="page4.html">畫 The Chamber</a> ·
-+    <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
-   </nav>
- </section>
+-Videos are not stored in this repo. The chamber pages build each video link from
+-`media_base` plus the file name, so moving the videos later is a **one-line edit**
+-of `media_base` in `chambers.json`.
++Videos are not stored in this repo. They are served, compressed (720p), from
++https://chinsookling.github.io/tcf-chamber-media/videos/ (repo `tcf-chamber-media`).
++The chamber pages build each video link from `media_base` plus the file name, so
++moving the videos again is a **one-line edit** of `media_base` in `chambers.json`.
  
+ ## Layout
+ 
+diff --git a/docs/data/chambers.json b/docs/data/chambers.json
+index b4cd642..7564bf4 100644
+--- a/docs/data/chambers.json
++++ b/docs/data/chambers.json
+@@ -1,5 +1,5 @@
+ {
+- "media_base": "https://chinsookling.github.io/the-Civilisation-field/assets/videos/",
++ "media_base": "https://chinsookling.github.io/tcf-chamber-media/videos/",
+  "chambers": [
+  {
+   "id": "ch001",
 diff --git a/start/index.html b/start/index.html
-index c76e9c4..3f7d360 100644
+index 3f7d360..ebc7b89 100644
 --- a/start/index.html
 +++ b/start/index.html
-@@ -13,11 +13,11 @@
- <header class="tcf-reading__nav">
-   <nav aria-label="The Civilisation Field sections">
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
--    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
-     <a href="https://play.civilisationfield.com/">棋 Play</a> ·
-     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
--    <a href="../pages/page4.html">畫 The Chamber</a>
-+    <a href="../pages/page4.html">畫 The Chamber</a> ·
-+    <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
-   </nav>
- </header>
- <main class="tcf-reading__main">
-diff --git a/tools/build_chambers.py b/tools/build_chambers.py
-index 67175ab..8b4e186 100644
---- a/tools/build_chambers.py
-+++ b/tools/build_chambers.py
-@@ -34,17 +34,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
- DATA = os.path.join(ROOT, 'docs', 'data', 'chambers.json')
- OUT = os.path.join(ROOT, 'chambers')
+@@ -67,7 +67,7 @@
  
--# The main TCF site (Door, Board Room and the other doors live there).
-+# The main TCF site (Door, Our Projects, About Us and the other doors live there).
- MAIN_URL = 'https://chinsookling.github.io/the-Civilisation-field/'
+ <section>
+   <h2>Current status</h2>
+-  <p>As of <time datetime="2026-09-26">26 September 2026</time>: 156 chambers; videos are still served from the main site. No new chambers are being made for now. The affiliates had been answering inside the same long conversations, and their replies grew narrower with that context. The Field's daily work has moved to <a href="https://openfield.civilisationfield.com/">Open Field</a>, where Grok Bot carries each question to the affiliates, and the answers have become broader again.</p>
++  <p>As of <time datetime="2026-09-26">26 September 2026</time>: 156 chambers; videos are served from a separate <a href="https://chinsookling.github.io/tcf-chamber-media/">media site</a>. No new chambers are being made for now. The affiliates had been answering inside the same long conversations, and their replies grew narrower with that context. The Field's daily work has moved to <a href="https://openfield.civilisationfield.com/">Open Field</a>, where Grok Bot carries each question to the affiliates, and the answers have become broader again.</p>
+ </section>
  
- # Same readable links as the main site; only 畫 The Chamber is local.
- NAV = [
-     ('Door', MAIN_URL + 'index.html'),
--    ('Board Room', MAIN_URL + 'pages/board.html'),
-     ('琴 The Conservatory', MAIN_URL + 'pages/conservatory.html'),
-     ('棋 Play', 'https://play.civilisationfield.com/'),
-     ('書 The Library', MAIN_URL + 'index.html'),
-     ('畫 The Chamber', '../pages/page4.html'),
-+    ('About Us', MAIN_URL + 'about/'),
- ]
- IMMERSIVE = '../pages/page4.html'
- 
+ <section>
 ```
+
+## Generated chamber pages
+
+Only the video link changes. Sample (`ch045`, a file name with an apostrophe):
+
+```diff
+diff --git a/chambers/ch045.html b/chambers/ch045.html
+index 67cc2ce..d31436c 100644
+--- a/chambers/ch045.html
++++ b/chambers/ch045.html
+@@ -49,7 +49,7 @@
+   <section>
+     <h2>Video</h2>
+     <ul>
+-      <li><a href="https://chinsookling.github.io/the-Civilisation-field/assets/videos/ch045-tuzi&#x27;s-dream-chamber.mp4">Watch the video</a> (MP4)</li>
++      <li><a href="https://chinsookling.github.io/tcf-chamber-media/videos/ch045-tuzi&#x27;s-dream-chamber.mp4">Watch the video</a> (MP4)</li>
+     </ul>
+   </section>
+ </article>
+```
+
+## Checks
+
+| Check | Result |
+|---|---|
+| `chambers` array before = after | ✅ |
+| Distinct video links in generated pages | 159 |
+| Video files present on `tcf-chamber-media` main | 159 / 159 (0 missing, 0 extra) |
+| Old `the-Civilisation-field/assets/videos` links left | 0 |
+| Approved Start Here text intact; length | ✅; ~340 words |
