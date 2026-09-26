@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sky Hall · 雲上展廊 · The Civilisation Field</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #eef2f8;
+    font-family: 'Songti TC', 'Noto Serif TC', serif; }
+  #caption {
+    position: fixed; bottom: 38px; left: 0; right: 0; text-align: center;
+    color: #8a7a55; letter-spacing: 0.25em; font-size: 15px;
+    text-shadow: 0 0 18px rgba(255,255,255,0.9);
+    opacity: 0; transition: opacity 1.2s ease; pointer-events: none;
+  }
+  #wordmark {
+    position: fixed; top: 26px; left: 0; right: 0; text-align: center;
+    color: #b3a173; letter-spacing: 0.45em; font-size: 11px;
+    text-transform: uppercase; pointer-events: none;
+  }
+  #door {
+    position: fixed; bottom: 30px; right: 34px; z-index: 5;
+    font-size: 11px; letter-spacing: 0.28em; text-decoration: none;
+    color: rgba(138, 122, 85, 0.65); padding: 9px 18px;
+    border: 1px solid rgba(179, 161, 115, 0.35); border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(4px);
+    transition: color 0.5s ease, border-color 0.5s ease;
+  }
+  #door:hover { color: rgba(110, 95, 60, 1); border-color: rgba(179, 161, 115, 0.8); }
+  #hint {
+    position: fixed; bottom: 32px; left: 34px; z-index: 5;
+    font-size: 11px; letter-spacing: 0.24em;
+    color: rgba(138, 122, 85, 0.55); pointer-events: none;
+  }
+  #flash {
+    position: fixed; inset: 0; z-index: 8; background: #ffffff;
+    opacity: 0; pointer-events: none; transition: opacity 1.6s ease;
+  }
+  /* TCF22-SKYHALL-BOTTOM: 手機底部 UI 垂直堆疊，不再互相重疊 */
+  @media (max-width: 640px) {
+    #caption {
+      bottom: 100px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      padding: 0 18px;
+      line-height: 1.8;
+    }
+    #hint {
+      left: 0; right: 0; bottom: 72px;
+      text-align: center;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+    }
+    #door {
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 18px;
+      white-space: nowrap;
+    }
+  }
+</style>
+<link rel="stylesheet" href="../docs/styles/tcf-readable.css">
+</head>
+<body>
+<!-- TCF Phase 1 · readable layer: plain-HTML title, description and section links (visually hidden; see docs/styles/tcf-readable.css) -->
+<section class="tcf-readable" aria-label="About this page">
+  <h1>Sky Hall · 雲上展廊 · The Civilisation Field</h1>
+  <p>An interactive 3D gallery in 畫 The Chamber. On-screen hint: click a painting to pause · 點一幅畫，駐足欣賞.</p>
+  <nav aria-label="The Civilisation Field sections">
+    <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
+    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
+    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
+    <a href="https://play.civilisationfield.com/">棋 Play</a> ·
+    <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
+    <a href="page4.html">畫 The Chamber</a>
+  </nav>
+</section>
+
+<div id="wordmark">The Civilisation Field · Sky Hall</div>
+<div id="hint">click a painting to pause · 點一幅畫，駐足欣賞</div>
+<div id="flash"></div>
+<a id="door" href="page4.html" aria-label="Return to the Chamber">✦ descend · 回到畫之廳</a>
+<div id="caption"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="../docs/scripts/chamber-data.js"></script><!-- Phase 4: chambers.json → media_base -->
+<script>
+(function () {
+  'use strict';
+
+  var BASE = 'https://chinsookling.github.io/tcf-chamber'; // Phase 4: own site
+  var IS_FILE = location.protocol === 'file:';
+  function resolveAsset(p) {
+    if (/^https?:\/\//.test(p)) return p; // Phase 4: videos come from media_base
+    var clean = p.replace(/^(\.\.\/)+/, '');
+    return IS_FILE ? BASE + '/' + clean : '../' + clean;
+  }
+  var DATA_URL = IS_FILE ? BASE + '/docs/data/chambers.json' : '../docs/data/chambers.json';
+  var AFF = {
+    tuzi:'#FFD700', grok:'#E0277E', gemini:'#00BFFF', deepseek:'#1ABC9C',
+    gpt:'#FF8C42', copilot:'#E8E8E8', claude:'#B14EFF'
+  };
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xe4eaf4);
+  scene.fog = new THREE.Fog(0xe4eaf4, 70, 300);
+
+  var camera = new THREE.PerspectiveCamera(58, innerWidth / innerHeight, 0.1, 600);
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  document.body.appendChild(renderer.domElement);
+
+  scene.add(new THREE.HemisphereLight(0xfff6e6, 0xc4cfe6, 0.72));
+  var sun = new THREE.DirectionalLight(0xffeccc, 0.7);
+  sun.position.set(60, 90, 40);
+  scene.add(sun);
+
+  function glowTexture(hex, inner) {
+    var c = document.createElement('canvas'); c.width = c.height = 128;
+    var x = c.getContext('2d');
+    var g = x.createRadialGradient(64, 64, 0, 64, 64, 64);
+    g.addColorStop(0, inner || 'rgba(255,255,255,1)');
+    g.addColorStop(0.35, hex);
+    g.addColorStop(1, 'rgba(255,255,255,0)');
+    x.fillStyle = g; x.fillRect(0, 0, 128, 128);
+    return new THREE.CanvasTexture(c);
+  }
+  function hexA(hex, a) {
+    var n = parseInt(hex.slice(1), 16);
+    return 'rgba(' + (n>>16&255) + ',' + (n>>8&255) + ',' + (n&255) + ',' + a + ')';
+  }
+
+  /* ── clouds below ── */
+  var cloudTex = glowTexture('rgba(255,255,255,0.85)');
+  var clouds = [];
+  for (var i = 0; i < 70; i++) {
+    var sp = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: cloudTex, transparent: true, opacity: 0.34 + Math.random() * 0.22,
+      depthWrite: false
+    }));
+    var r = 60 + Math.random() * 200;
+    var a = Math.random() * Math.PI * 2;
+    sp.position.set(Math.cos(a) * r, -6 - Math.random() * 14, Math.sin(a) * r);
+    var s = 36 + Math.random() * 60;
+    sp.scale.set(s, s * 0.45, 1);
+    scene.add(sp); clouds.push(sp);
+  }
+
+  /* ── marble floor ── */
+  var floor = new THREE.Mesh(
+    new THREE.CircleGeometry(95, 64),
+    new THREE.MeshPhongMaterial({ color: 0xf6f6fa, shininess: 90, specular: 0xddddee })
+  );
+  floor.rotation.x = -Math.PI / 2;
+  scene.add(floor);
+
+  /* ── winding golden path ── */
+  var curve = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(2, 0, 86),
+    new THREE.Vector3(-14, 0, 58),
+    new THREE.Vector3(14, 0, 30),
+    new THREE.Vector3(-12, 0, 4),
+    new THREE.Vector3(8, 0, -20),
+    new THREE.Vector3(0, 0, -42)
+  ]);
+  function ribbon(width, y, color, opacity) {
+    var N = 240, pos = [], idx = [];
+    var up = new THREE.Vector3(0, 1, 0);
+    for (var i = 0; i <= N; i++) {
+      var t = i / N;
+      var p = curve.getPoint(t);
+      var tan = curve.getTangent(t);
+      var side = new THREE.Vector3().crossVectors(tan, up).normalize().multiplyScalar(width / 2);
+      pos.push(p.x - side.x, y, p.z - side.z, p.x + side.x, y, p.z + side.z);
+      if (i < N) { var k = i * 2; idx.push(k, k+1, k+2, k+1, k+3, k+2); }
+    }
+    var g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setIndex(idx); g.computeVertexNormals();
+    return new THREE.Mesh(g, new THREE.MeshBasicMaterial({
+      color: color, transparent: opacity < 1, opacity: opacity, depthWrite: false
+    }));
+  }
+  scene.add(ribbon(7.2, 0.02, 0xd4b978, 0.9));
+  scene.add(ribbon(6.0, 0.04, 0xffffff, 1));
+
+  /* ── crystal pillars + hanging strands ── */
+  var pillarMat = new THREE.MeshPhongMaterial({
+    color: 0xffffff, transparent: true, opacity: 0.28, shininess: 100, specular: 0xffffff
+  });
+  for (var i = 0; i < 16; i++) {
+    var a = (i / 16) * Math.PI * 2;
+    var r = 80;
+    var pil = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 1.6, 70, 12), pillarMat);
+    pil.position.set(Math.cos(a) * r, 35, Math.sin(a) * r);
+    scene.add(pil);
+    var ring = new THREE.Mesh(
+      new THREE.TorusGeometry(1.8, 0.18, 8, 24),
+      new THREE.MeshBasicMaterial({ color: 0xd4b978 })
+    );
+    ring.rotation.x = Math.PI / 2;
+    ring.position.set(Math.cos(a) * r, 12 + (i % 3) * 16, Math.sin(a) * r);
+    scene.add(ring);
+  }
+  var strandMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.35 });
+  for (var i = 0; i < 30; i++) {
+    var st = new THREE.Mesh(new THREE.BoxGeometry(0.06, 24 + Math.random() * 26, 0.06), strandMat);
+    var a = Math.random() * Math.PI * 2, r = 20 + Math.random() * 55;
+    st.position.set(Math.cos(a) * r, 48, Math.sin(a) * r);
+    scene.add(st);
+  }
+
+  /* ── light shafts ── */
+  var shaftMat = new THREE.MeshBasicMaterial({
+    color: 0xfff6dc, transparent: true, opacity: 0.07,
+    blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide
+  });
+  for (var i = 0; i < 7; i++) {
+    var sh = new THREE.Mesh(new THREE.PlaneGeometry(5, 90), shaftMat);
+    var a = Math.random() * Math.PI * 2, r = 14 + Math.random() * 50;
+    sh.position.set(Math.cos(a) * r, 40, Math.sin(a) * r);
+    sh.rotation.y = Math.random() * Math.PI;
+    scene.add(sh);
+  }
+
+  /* ── floating glass orbs ── */
+  var orbColors = Object.keys(AFF).map(function (k) { return AFF[k]; });
+  var orbs = [];
+  for (var i = 0; i < 14; i++) {
+    var col = new THREE.Color(orbColors[i % orbColors.length]);
+    var orb = new THREE.Mesh(
+      new THREE.SphereGeometry(1 + Math.random() * 2.2, 24, 24),
+      new THREE.MeshPhongMaterial({
+        color: col, transparent: true, opacity: 0.3, shininess: 120, specular: 0xffffff
+      })
+    );
+    var a = Math.random() * Math.PI * 2, r = 16 + Math.random() * 56;
+    orb.position.set(Math.cos(a) * r, 5 + Math.random() * 28, Math.sin(a) * r);
+    orb.userData = { baseY: orb.position.y, ph: Math.random() * 6.28, sp: 0.3 + Math.random() * 0.5 };
+    scene.add(orb); orbs.push(orb);
+  }
+
+  /* ── golden fireflies ── */
+  var fireflyTex = glowTexture('rgba(255,215,0,0.85)');
+  var fireflies = [];
+  for (var i = 0; i < 44; i++) {
+    var ff = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: fireflyTex, transparent: true, opacity: 0.7,
+      blending: THREE.AdditiveBlending, depthWrite: false
+    }));
+    var a = Math.random() * Math.PI * 2, r = 8 + Math.random() * 64;
+    ff.position.set(Math.cos(a) * r, 2 + Math.random() * 34, Math.sin(a) * r);
+    ff.scale.set(1.1, 1.1, 1);
+    ff.userData = {
+      vx: (Math.random() - 0.5) * 0.018,
+      vy: (Math.random() - 0.5) * 0.012,
+      vz: (Math.random() - 0.5) * 0.018,
+      ph: Math.random() * 6.28
+    };
+    scene.add(ff); fireflies.push(ff);
+  }
+
+  /* ── meteors across the upper sky ── */
+  var meteorTex = glowTexture('rgba(255,255,255,0.9)');
+  var meteors = [];
+  function spawnMeteor() {
+    var m = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: meteorTex, transparent: true, opacity: 0.9,
+      blending: THREE.AdditiveBlending, depthWrite: false, rotation: 0
+    }));
+    var fromLeft = Math.random() < 0.5;
+    m.position.set(fromLeft ? -120 : 120, 60 + Math.random() * 40, -60 - Math.random() * 80);
+    var vx = (fromLeft ? 1 : -1) * (0.9 + Math.random() * 0.7);
+    var vy = -(0.25 + Math.random() * 0.2);
+    m.material.rotation = Math.atan2(vy, vx);
+    m.scale.set(16, 1.1, 1);
+    m.userData = { vx: vx, vy: vy, life: 1 };
+    scene.add(m); meteors.push(m);
+  }
+  setInterval(function () { if (Math.random() < 0.8) spawnMeteor(); }, 5200);
+
+  /* ── central pavilion + Cubie orb ── */
+  var pav = new THREE.Group();
+  pav.position.set(0, 0, -42);
+  for (var i = 0; i < 8; i++) {
+    var a = (i / 8) * Math.PI * 2;
+    var c = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.5, 13, 10),
+      new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 80 }));
+    c.position.set(Math.cos(a) * 8, 6.5, Math.sin(a) * 8);
+    pav.add(c);
+  }
+  var gt = new THREE.Mesh(new THREE.TorusGeometry(8.6, 0.35, 10, 48),
+    new THREE.MeshBasicMaterial({ color: 0xd4b978 }));
+  gt.rotation.x = Math.PI / 2; gt.position.y = 13;
+  pav.add(gt);
+  var dome = new THREE.Mesh(
+    new THREE.SphereGeometry(9, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2),
+    new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0.45, shininess: 100 })
+  );
+  dome.position.y = 13;
+  pav.add(dome);
+  var base = new THREE.Mesh(new THREE.CylinderGeometry(10.5, 11.5, 1.2, 48),
+    new THREE.MeshPhongMaterial({ color: 0xf2f2f6, shininess: 80 }));
+  base.position.y = 0.6;
+  pav.add(base);
+
+  var cubie = new THREE.Mesh(new THREE.IcosahedronGeometry(2, 1),
+    new THREE.MeshPhongMaterial({ color: 0xB14EFF, emissive: 0x8a2be2,
+      emissiveIntensity: 0.6, transparent: true, opacity: 0.92, shininess: 120 }));
+  cubie.position.y = 6.5;
+  pav.add(cubie);
+  var cubieGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: glowTexture(hexA('#B14EFF', 0.6)), transparent: true, opacity: 0.85,
+    blending: THREE.AdditiveBlending, depthWrite: false
+  }));
+  cubieGlow.scale.set(16, 16, 1);
+  cubieGlow.position.y = 6.5;
+  pav.add(cubieGlow);
+  scene.add(pav);
+
+  /* ── chamber frames · real TCF data ── */
+  var frames = [];
+  var slots = [];
+  var loader = new THREE.TextureLoader();
+  loader.crossOrigin = 'anonymous';
+
+  function placeFrame(g, slot) {
+    var p = curve.getPoint(slot.t);
+    var tan = curve.getTangent(slot.t);
+    var side = new THREE.Vector3().crossVectors(tan, new THREE.Vector3(0, 1, 0))
+      .normalize().multiplyScalar(slot.sideSign * slot.off);
+    g.position.set(p.x + side.x, slot.h, p.z + side.z);
+    g.lookAt(p.x, slot.h, p.z);
+    g.userData.baseY = slot.h;
+  }
+  function reshuffleFrames() {
+    var order = slots.slice();
+    for (var i = order.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = order[i]; order[i] = order[j]; order[j] = t;
+    }
+    frames.forEach(function (f, i) {
+      if (order[i]) placeFrame(f, order[i]);
+    });
+  }
+
+  function addFrame(imgUrl, videoUrl, nameZh, nameEn, color, t, sideSign, h) {
+    var g = new THREE.Group();
+    var slot = { t: t, sideSign: sideSign, off: 11 + Math.random() * 4, h: h };
+    slots.push(slot);
+
+    var W = 6.2;
+    loader.load(imgUrl, function (tex) {
+      var ar = tex.image.height / tex.image.width;
+      var H = W * ar;
+      var gold = new THREE.Mesh(new THREE.PlaneGeometry(W + 0.5, H + 0.5),
+        new THREE.MeshBasicMaterial({ color: 0xd4b978, side: THREE.DoubleSide }));
+      var img = new THREE.Mesh(new THREE.PlaneGeometry(W, H),
+        new THREE.MeshBasicMaterial({ map: tex, side: THREE.DoubleSide }));
+      img.position.z = 0.03;
+      var halo = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: glowTexture(hexA(color, 0.4)), transparent: true, opacity: 0.65,
+        blending: THREE.AdditiveBlending, depthWrite: false
+      }));
+      halo.scale.set(W * 2.4, H * 2.4, 1);
+      halo.position.z = -0.2;
+      g.add(halo); g.add(gold); g.add(img);
+      g.userData.imgMesh = img;
+      g.userData.staticTex = tex;
+    }, undefined, function () {
+      var ph = new THREE.Mesh(new THREE.PlaneGeometry(W, W * 1.3),
+        new THREE.MeshBasicMaterial({ color: new THREE.Color(color),
+          transparent: true, opacity: 0.5, side: THREE.DoubleSide }));
+      g.add(ph);
+    });
+
+    g.userData.baseY = h;
+    g.userData.ph = Math.random() * 6.28;
+    g.userData.nameZh = nameZh;
+    g.userData.nameEn = nameEn;
+    g.userData.videoUrl = videoUrl || null;
+    g.userData.alive = false;
+    placeFrame(g, slot);
+    scene.add(g); frames.push(g);
+  }
+
+  /* ── living paintings · the portrait melts into motion, no black ── */
+  var MAX_ALIVE = 2, WAKE_DIST = 32;
+  function wake(f) {
+    var u = f.userData;
+    if (u.alive || u.noVideo || !u.videoUrl || !u.imgMesh) return;
+    u.alive = true;
+    if (u.videoMesh) return;
+    var v = document.createElement('video');
+    v.muted = true; v.loop = true; v.playsInline = true;
+    v.setAttribute('playsinline', '');
+    v.crossOrigin = 'anonymous';
+    v.preload = 'auto';
+    v.src = u.videoUrl;
+    v.addEventListener('loadedmetadata', function () { v.playbackRate = 0.4; });
+    v.addEventListener('error', function () { u.noVideo = true; u.alive = false; });
+    v.addEventListener('loadeddata', function () {
+      if (!u.alive || u.videoMesh) { if (!u.alive) { v.pause(); } return; }
+      var vt = new THREE.VideoTexture(v);
+      vt.minFilter = THREE.LinearFilter;
+      var gp = u.imgMesh.geometry.parameters;
+      var vm = new THREE.Mesh(
+        new THREE.PlaneGeometry(gp.width, gp.height),
+        new THREE.MeshBasicMaterial({
+          map: vt, side: THREE.DoubleSide, transparent: true, opacity: 0
+        })
+      );
+      vm.position.copy(u.imgMesh.position);
+      vm.position.z += 0.02;
+      u.imgMesh.parent.add(vm);
+      u.videoMesh = vm;
+      u.videoEl = v;
+      u.videoTex = vt;
+    });
+    u.videoEl = v;
+    /* TCF22-SKYHALL-MOBILE: iOS 對不在 DOM 裡的 video 常拒絕解碼推進，
+       VideoTexture 永遠是第一格。掛進 body（隱形但不能 display:none）。 */
+    v.style.cssText = 'position:fixed;left:-9999px;top:0;width:2px;height:2px;opacity:0.01;pointer-events:none';
+    document.body.appendChild(v);
+    v.play().catch(function () {});
+  }
+  function sleep(f) {
+    var u = f.userData;
+    u.alive = false;
+  }
+  function disposeVideo(f) {
+    var u = f.userData;
+    if (u.videoMesh) {
+      u.videoMesh.parent.remove(u.videoMesh);
+      u.videoMesh.geometry.dispose();
+      u.videoMesh.material.dispose();
+      u.videoMesh = null;
+    }
+    if (u.videoTex) { u.videoTex.dispose(); u.videoTex = null; }
+    if (u.videoEl) {
+      u.videoEl.pause();
+      u.videoEl.removeAttribute('src');
+      u.videoEl.load();
+      if (u.videoEl.parentNode) u.videoEl.parentNode.removeChild(u.videoEl);
+      u.videoEl = null;
+    }
+  }
+  setInterval(function () {
+    var ranked = frames.slice().map(function (f) {
+      return { f: f, d: f.position.distanceTo(camera.position) };
+    }).sort(function (a, b) { return a.d - b.d; });
+    var woken = 0;
+    if (mode === 'admire' && admireTarget && admireTarget.userData.videoUrl &&
+        !admireTarget.userData.noVideo) {
+      wake(admireTarget); woken++;
+    }
+    ranked.forEach(function (r) {
+      if (r.f === admireTarget && mode === 'admire') return;
+      if (woken < MAX_ALIVE && r.d < WAKE_DIST && r.f.userData.videoUrl && !r.f.userData.noVideo) {
+        wake(r.f); woken++;
+      } else {
+        sleep(r.f);
+      }
+    });
+  }, 900);
+
+  fetch(DATA_URL)
+    .then(function (r) { return r.json(); })
+    .then(TCFChamberData.list) // Phase 4: media_base
+    .then(function (list) {
+      list = list.slice();
+      for (var i = list.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+      }
+      list.forEach(function (ch, i) {
+        if (!ch || !ch.image) return;
+        var iurl = resolveAsset(ch.image);
+        var vurl = ch.video ? resolveAsset(ch.video) : null;
+        var t = 0.06 + (i / list.length) * 0.88;
+        addFrame(iurl, vurl, ch.name_zh || '', ch.name_en || '',
+          AFF[ch.created_by] || '#d4b978',
+          t, (i % 2 === 0) ? 1 : -1, 6 + (i % 4) * 3.2);
+      });
+    })
+    .catch(function () {
+      for (var i = 0; i < 12; i++) {
+        addFrame('about:blank', null, '', '', orbColors[i % 7], 0.08 + i * 0.075,
+          (i % 2 === 0) ? 1 : -1, 6 + (i % 4) * 3);
+      }
+    });
+
+  /* ── camera flight ── */
+  var camCurve = new THREE.CatmullRomCurve3(curve.points.map(function (p) {
+    return new THREE.Vector3(p.x, 4.6, p.z);
+  }));
+  var mouseX = 0, mouseY = 0;
+  addEventListener('mousemove', function (e) {
+    mouseX = (e.clientX / innerWidth - 0.5);
+    mouseY = (e.clientY / innerHeight - 0.5);
+  });
+  addEventListener('resize', function () {
+    camera.aspect = innerWidth / innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  });
+
+  var caption = document.getElementById('caption');
+  var capName = '';
+  setInterval(function () {
+    var best = null, bd = 1e9;
+    frames.forEach(function (f) {
+      var d = f.position.distanceTo(camera.position);
+      if (d < bd) { bd = d; best = f; }
+    });
+    if (best && bd < 26 && best.userData.nameZh) {
+      var label = best.userData.nameZh + ' · ' + best.userData.nameEn;
+      if (label !== capName) {
+        capName = label;
+        caption.style.opacity = 0;
+        setTimeout(function () { caption.textContent = capName; caption.style.opacity = 1; }, 600);
+      }
+    } else if (capName && bd >= 30) {
+      capName = ''; caption.style.opacity = 0;
+    }
+  }, 900);
+
+  var affKeys = Object.keys(AFF);
+  var colA = new THREE.Color(AFF.claude), colB = new THREE.Color(AFF.tuzi), colT = 0;
+  setInterval(function () {
+    colA.copy(cubie.material.color);
+    colB.set(AFF[affKeys[Math.floor(Math.random() * affKeys.length)]]);
+    colT = 0;
+  }, 6000);
+
+  var start = performance.now();
+  var FLIGHT = 52000;
+  var ORBIT = 26000;
+  var CYCLE = FLIGHT + ORBIT;
+  var lastCycle = 0;
+  var flash = document.getElementById('flash');
+
+  /* ── click to admire ── */
+  var mode = 'fly';
+  var admireTarget = null;
+  var pauseT0 = 0;
+  var raycaster = new THREE.Raycaster();
+  var clickV = new THREE.Vector2();
+  /* TCF22-SKYHALL-TAP: X/Twitter 等 in-app browser (WKWebView) 對 canvas 上的
+     click 不可靠 —— 改成統一 tap 處理：click + touchend 雙綁定、
+     滑動距離判斷（>12px 視為滑動不觸發）、700ms 防重複。 */
+  var lastTouchTapT = 0;
+  function handleTap(cx, cy, target) {
+    if (target && target.closest && target.closest('#door')) return;
+    if (mode === 'admire') {
+      mode = 'fly';
+      admireTarget = null;
+      start += performance.now() - pauseT0;
+      return;
+    }
+    clickV.set((cx / innerWidth) * 2 - 1, -(cy / innerHeight) * 2 + 1);
+    raycaster.setFromCamera(clickV, camera);
+    var hits = raycaster.intersectObjects(scene.children, true);
+    for (var i = 0; i < hits.length; i++) {
+      var o = hits[i].object;
+      while (o && frames.indexOf(o) === -1) o = o.parent;
+      if (o) {
+        mode = 'admire';
+        admireTarget = o;
+        pauseT0 = performance.now();
+        wake(o);
+        if (o.userData.videoEl) o.userData.videoEl.play().catch(function () {});
+        return;
+      }
+    }
+  }
+  addEventListener('click', function (e) {
+    if (performance.now() - lastTouchTapT < 700) return; /* touchend 已處理 */
+    handleTap(e.clientX, e.clientY, e.target);
+  });
+  var tStartX = 0, tStartY = 0;
+  addEventListener('touchstart', function (e) {
+    if (e.touches.length === 1) { tStartX = e.touches[0].clientX; tStartY = e.touches[0].clientY; }
+  }, { passive: true });
+  addEventListener('touchend', function (e) {
+    var t = e.changedTouches && e.changedTouches[0]; if (!t) return;
+    if (Math.abs(t.clientX - tStartX) > 12 || Math.abs(t.clientY - tStartY) > 12) return;
+    lastTouchTapT = performance.now();
+    handleTap(t.clientX, t.clientY, e.target);
+  }, { passive: true });
+
+  var FWD = new THREE.Vector3();
+  var DESIRED = new THREE.Vector3();
+
+  function frame(now) {
+    if (mode === 'admire' && admireTarget) {
+      FWD.set(0, 0, 1).applyQuaternion(admireTarget.quaternion);
+      DESIRED.copy(admireTarget.position).addScaledVector(FWD, 9.5);
+      DESIRED.y = admireTarget.position.y + 0.3;
+      camera.position.lerp(DESIRED, 0.05);
+      camera.lookAt(admireTarget.position);
+    } else {
+      var el = Math.max(0, now - start);
+      var cyc = Math.floor(el / CYCLE);
+      if (cyc !== lastCycle) {
+        lastCycle = cyc;
+        flash.style.transition = 'none';
+        flash.style.opacity = 1;
+        reshuffleFrames();
+        requestAnimationFrame(function () {
+          flash.style.transition = 'opacity 1.6s ease';
+          flash.style.opacity = 0;
+        });
+      }
+      var tIn = el - cyc * CYCLE;
+      if (tIn < FLIGHT) {
+        var tt = tIn / FLIGHT;
+        var te = (1 - Math.pow(1 - tt, 2)) * 0.96;
+        var cp = camCurve.getPoint(te);
+        var lp = camCurve.getPoint(Math.min(te + 0.05, 1));
+        camera.position.set(cp.x + mouseX * 3, cp.y + 0.4 - mouseY * 1.5, cp.z);
+        camera.lookAt(lp.x, 6 - mouseY * 4, lp.z);
+      } else {
+        var oa = (tIn - FLIGHT) * 0.00012;
+        camera.position.set(Math.sin(oa) * 26 + mouseX * 3, 7.5 - mouseY * 2, -42 + Math.cos(oa) * 26);
+        camera.lookAt(0, 6.5, -42);
+      }
+    }
+
+    var s = now * 0.001;
+    frames.forEach(function (f) {
+      f.position.y = f.userData.baseY + Math.sin(s * 0.6 + f.userData.ph) * 0.5;
+      var u = f.userData;
+      if (u.videoMesh) {
+        var m = u.videoMesh.material;
+        m.opacity += ((u.alive ? 1 : 0) - m.opacity) * 0.045;
+        if (!u.alive && m.opacity < 0.03) disposeVideo(f);
+      }
+    });
+    orbs.forEach(function (o) {
+      o.position.y = o.userData.baseY + Math.sin(s * o.userData.sp + o.userData.ph) * 1.2;
+    });
+    fireflies.forEach(function (ff) {
+      var u = ff.userData;
+      ff.position.x += u.vx; ff.position.y += u.vy; ff.position.z += u.vz;
+      if (ff.position.y < 1) u.vy = Math.abs(u.vy);
+      if (ff.position.y > 40) u.vy = -Math.abs(u.vy);
+      if (ff.position.length() > 95) { u.vx = -u.vx; u.vz = -u.vz; }
+      var tw = 0.75 + Math.sin(s * 1.7 + u.ph) * 0.45;
+      ff.scale.set(tw, tw, 1);
+    });
+    for (var mi = meteors.length - 1; mi >= 0; mi--) {
+      var m = meteors[mi];
+      m.position.x += m.userData.vx;
+      m.position.y += m.userData.vy;
+      m.userData.life -= 0.005;
+      m.material.opacity = Math.max(0, m.userData.life * 0.9);
+      if (m.userData.life <= 0) { scene.remove(m); meteors.splice(mi, 1); }
+    }
+
+    colT = Math.min(colT + 0.004, 1);
+    cubie.material.color.copy(colA).lerp(colB, colT);
+    cubie.material.emissive.copy(cubie.material.color).multiplyScalar(0.7);
+    var pulse = 0.85 + Math.sin(s * 0.9) * 0.15;
+    cubieGlow.scale.set(16 * pulse, 16 * pulse, 1);
+    cubie.rotation.y = s * 0.3;
+    cubie.position.y = 6.5 + Math.sin(s * 0.7) * 0.4;
+    cubieGlow.position.y = cubie.position.y;
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

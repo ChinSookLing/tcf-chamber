@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>畫之廳 · Accio — 召喚</title>
+<style>
+  html,body{margin:0;padding:0;overflow:hidden;background:#000;height:100%;
+    -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;}
+  #hint{position:fixed;bottom:104px;left:50%;transform:translateX(-50%);max-width:88vw;
+    color:rgba(232,232,240,.55);font-family:monospace;font-size:13px;letter-spacing:.14em;
+    text-align:center;pointer-events:none;transition:opacity 1.4s;z-index:5;}
+  #hint.hide{opacity:0;}
+  #caption{position:fixed;bottom:72px;left:50%;transform:translateX(-50%);max-width:88vw;
+    color:rgba(216,200,255,.8);font-family:monospace;font-size:12px;letter-spacing:.1em;
+    text-align:center;pointer-events:none;transition:opacity .8s;opacity:0;z-index:5;}
+  #caption.show{opacity:1;}
+  #sigils{position:fixed;bottom:14px;left:0;right:0;display:flex;justify-content:center;touch-action:pan-x;
+    gap:8px;flex-wrap:wrap;z-index:6;padding:0 10px;}
+  .sigil{font-family:monospace;font-size:11px;letter-spacing:.1em;padding:7px 12px;
+    border-radius:16px;cursor:pointer;background:rgba(10,10,18,.72);
+    border:1px solid var(--c);color:var(--c);transition:all .3s;backdrop-filter:blur(4px);}
+  .sigil:hover,.sigil.active{background:var(--c);color:#0a0a12;}
+  #more{display:none;}
+  #exitDoor{position:fixed;right:16px;top:16px;z-index:7;color:#B89CFF;text-decoration:none;
+    font-size:16px;animation:exitBreath 4.5s ease-in-out infinite;}
+  @keyframes exitBreath{0%,100%{opacity:.3}50%{opacity:.85}}
+  @media (max-width:640px){
+    #sigils{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+      padding-bottom:calc(4px + env(safe-area-inset-bottom));}
+    #sigils::-webkit-scrollbar{display:none;}
+    .sigil{flex:0 0 auto;}
+  }
+</style>
+<link rel="stylesheet" href="../docs/styles/tcf-readable.css">
+</head>
+<body>
+<!-- TCF Phase 1 · readable layer: plain-HTML title, description and section links (visually hidden; see docs/styles/tcf-readable.css) -->
+<section class="tcf-readable" aria-label="About this page">
+  <h1>畫之廳 · Accio — 召喚</h1>
+  <p>An interactive 3D view in 畫 The Chamber. Its prompt reads: 召來一位的作品 · whose works shall come?</p>
+  <nav aria-label="The Civilisation Field sections">
+    <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
+    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/board.html">Board Room</a> ·
+    <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
+    <a href="https://play.civilisationfield.com/">棋 Play</a> ·
+    <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">書 The Library</a> ·
+    <a href="page4.html">畫 The Chamber</a>
+  </nav>
+</section>
+
+<div id="hint">召來一位的作品 · whose works shall come?</div>
+<div id="caption"></div>
+<div id="sigils"></div>
+<a id="exitDoor" href="page4.html" title="回到畫之廳 · back to the chamber">✦</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="../docs/scripts/field3d.js"></script>
+<script src="../docs/scripts/chamber-data.js"></script><!-- Phase 4: chambers.json → media_base -->
+<script>
+'use strict';
+/* ═══════════════════════════════════════════════════════════
+   Accio v2 · 畫之門第三種觀看語法
+   呼喚（它們聽見了）→ 飛來（決定論飛行）→ 落位（寬度感知陣形）→ 專注（作品來到我面前）
+   v2 修訂（GPT 審查 P0/P1/P2 全收）：
+   session 隔離 · 真分頁 · 日期排序 · fitArtwork 限制框 · 手機批次 5
+   Focus/Return · focus 時才播影片（一次一支，iOS 安全）· 錯誤提示 · 旋屏 · reduced motion
+   ═══════════════════════════════════════════════════════════ */
+const AFF = {
+  tuzi:    {name:'Tuzi',    color:0xFFD700},
+  grok:    {name:'Grok',    color:0xE0277E},
+  gemini:  {name:'Gemini',  color:0x00BFFF},
+  deepseek:{name:'DeepSeek',color:0x1ABC9C},
+  gpt:     {name:'GPT',     color:0xFF8C42},
+  copilot: {name:'Copilot', color:0xE8E8E8},
+  claude:  {name:'Fable',   color:0xB14EFF},
+};
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function rng(seed){ let a=seed>>>0; return function(){ a|=0; a=a+0x6D2B79F5|0;
+  let x=Math.imul(a^a>>>15,1|a); x=x+Math.imul(x^x>>>7,61|x)^x;
+  return ((x^x>>>14)>>>0)/4294967296; }; }
+function strHash(s){ let h=2166136261; for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619);} return h>>>0; }
+
+// ── 場景 ──
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x05060c, 0.0085);
+let isPortrait = innerHeight > innerWidth;
+const camera = new THREE.PerspectiveCamera(isPortrait?72:54, innerWidth/innerHeight, 0.1, 800);
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+document.body.appendChild(renderer.domElement);
+
+const ground = new THREE.Mesh(new THREE.CircleGeometry(240,64),
+  new THREE.MeshStandardMaterial({color:0x14161e, roughness:0.96}));
+ground.rotation.x = -Math.PI/2; ground.position.y = -0.15; scene.add(ground);
+scene.add(new THREE.AmbientLight(0x232a3c, 1.7));
+const callLight = new THREE.PointLight(0xB14EFF, 0, 260);
+callLight.position.set(0, 30, -70); scene.add(callLight);
+TCFField3D.init(scene, {span:230, fireflies:24});
+
+camera.position.set(0, 9, 34);
+camera.lookAt(0, 8.5, -4);
+
+// ── 資料 ──
+let CH = [], byAff = {};
+const hint = document.getElementById('hint');
+const caption = document.getElementById('caption');
+function say(t){ hint.textContent = t; hint.classList.remove('hide'); }
+
+fetch('../docs/data/chambers.json')
+  .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  .then(TCFChamberData.list) // Phase 4: media_base
+  .then(d => {
+    CH = d;
+    for(const c of d){ (byAff[c.created_by] = byAff[c.created_by]||[]).push(c); }
+    buildSigils();
+  })
+  .catch(err => { console.error(err); say('作品尚未抵達 · the archive could not be reached'); });
+
+function buildSigils(){
+  const box = document.getElementById('sigils');
+  for(const key in AFF){
+    if(!byAff[key] || !byAff[key].length) continue;
+    const b = document.createElement('button');
+    b.className = 'sigil';
+    b.style.setProperty('--c', '#'+AFF[key].color.toString(16).padStart(6,'0'));
+    b.textContent = '召來 '+AFF[key].name;
+    b.addEventListener('click', ()=>summon(key, 0));
+    b.dataset.aff = key;
+    box.appendChild(b);
+  }
+  const m = document.createElement('button');
+  m.className = 'sigil'; m.id = 'more';
+  m.style.setProperty('--c', '#cfc8e8');
+  m.textContent = '更多 · more';
+  m.addEventListener('click', ()=>{ if(cur) summon(cur.aff, cur.nextBatch); });
+  box.appendChild(m);
+}
+
+// ── 尺寸法則：作品住進限制框，不裁切、不爆版 ──
+function fitArtwork(aspect, s){
+  const maxW = 11.5*s, maxH = 8.5*s;
+  let w = maxW, h = w/aspect;
+  if(h > maxH){ h = maxH; w = h*aspect; }
+  return {w, h};
+}
+
+// ── 陣形 v2：寬度感知 — 每幅畫按實際寬度沿弧排開 ──
+function layoutRow(sizes, R, gap, y, baseScale){
+  const n = sizes.length; if(!n) return [];
+  const aw = sizes.map(sz => sz.w/R), gw = gap/R;
+  const total = aw.reduce((a,b)=>a+b,0) + gw*(n-1);
+  let acc = -total/2;
+  return sizes.map((sz,i)=>{
+    const th = acc + aw[i]/2; acc += aw[i] + gw;
+    return {x:Math.sin(th)*R, y, z:-(1-Math.cos(th))*R, ry:-th*0.55, s:baseScale};
+  });
+}
+// 中央英雄排位：0 在正中，1 右 2 左 3 右…
+function heroOrder(n){
+  const idx = new Array(n); const mid = Math.floor(n/2); idx[mid]=0;
+  let L=mid-1, Rr=mid+1, k=1;
+  while(k<n){ if(Rr<n) idx[Rr++]=k++; if(k<n && L>=0) idx[L--]=k++; }
+  return idx; // idx[slotPos] = workIndex
+}
+function computeLayout(works, portrait){
+  const n = works.length, slots = new Array(n);
+  const scaleOf = i => i===0 ? (portrait?1.15:1.28) : 1.0;
+  if(portrait || n<=7){
+    const order = heroOrder(n);
+    const sizes = order.map(wi => fitArtwork(works[wi].asp||1.5, scaleOf(wi)));
+    const row = layoutRow(sizes, portrait?20:26, 1.6, 8.2, 1);
+    order.forEach((wi,pos)=>{ slots[wi] = Object.assign({}, row[pos], {s:scaleOf(wi)}); });
+  } else {
+    const m1 = Math.ceil(n*0.55);
+    const frontIdx = [], backIdx = [];
+    for(let i=0;i<n;i++) (i<m1?frontIdx:backIdx).push(i);
+    const fOrder = heroOrder(frontIdx.length).map(k=>frontIdx[k]);
+    const fSizes = fOrder.map(wi => fitArtwork(works[wi].asp||1.5, scaleOf(wi)));
+    const fRow = layoutRow(fSizes, 27, 1.6, 8.0, 1);
+    fOrder.forEach((wi,pos)=>{ slots[wi] = Object.assign({}, fRow[pos], {s:scaleOf(wi)}); });
+    const bSizes = backIdx.map(wi => fitArtwork(works[wi].asp||1.5, 0.68));
+    const bRow = layoutRow(bSizes, 36, 1.3, 10.4, 0.68);
+    backIdx.forEach((wi,pos)=>{ slots[wi] = Object.assign({}, bRow[pos], {z:bRow[pos].z-3, s:0.68}); });
+  }
+  return slots;
+}
+
+// ── 狀態 ──
+let cur = null;            // session {id, aff, batch, nextBatch, works, micro, pickN, rest}
+let seq = 0;
+let phase = 'idle';        // idle / calling / flying / formed / leaving
+let phaseT = 0;
+let focusW = null;         // 專注中的 work
+const loader = new THREE.TextureLoader();
+
+// ── 召喚：三段式（session 隔離 — 遲到的貼圖回不到別人的陣形）──
+function summon(aff, batch){
+  if(phase==='calling' || phase==='flying') return;
+  unfocus(true);
+  dismiss();
+  document.querySelectorAll('.sigil').forEach(s=>s.classList.toggle('active', s.dataset.aff===aff));
+  caption.classList.remove('show');
+
+  // 最新在前：先日期、再 id
+  const all = byAff[aff].slice().sort((a,b)=>{
+    const bd = new Date(b.date||0) - new Date(a.date||0);
+    return bd || String(b.id).localeCompare(String(a.id));
+  });
+  const total = all.length;
+  const BATCH = (innerHeight>innerWidth) ? 5 : 14;
+  const start = batch*BATCH;
+  const pick = all.slice(start, start+BATCH);
+  if(!pick.length) return summon(aff, 0); // 保險絲
+  const rest = total - (start + pick.length);
+
+  const session = {id:++seq, aff, batch, nextBatch: rest>0 ? batch+1 : 0,
+                   works:[], micro:null, pickN:pick.length, rest, loaded:0};
+  cur = session;
+  phase = 'calling'; phaseT = Date.now();
+
+  callLight.color.setHex(AFF[aff].color);
+  say(AFF[aff].name+' 的作品聽見了 · they heard you');
+
+  const seedBase = strHash(aff)+batch*7919;
+  const portrait = innerHeight>innerWidth;
+
+  // 同步建 placeholder，貼圖非同步填入（GPT P0-1：數量與次序不受網速影響）
+  pick.forEach((c, i)=>{
+    const r = rng(strHash(c.id)+seedBase);
+    const mat = new THREE.MeshBasicMaterial({color:AFF[aff].color, transparent:true, opacity:0});
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1,1), mat);
+    const a = r()*Math.PI*2, d = 95+r()*60, hh = 22+r()*45;
+    mesh.position.set(Math.cos(a)*d, hh, Math.sin(a)*d - 30);
+    mesh.rotation.z = (r()-0.5)*0.7;
+    scene.add(mesh);
+    const w = {mesh, c, asp:null, delay:i*(RM?60:170), dur:RM?420:(1400+r()*800),
+               rz0:mesh.rotation.z, from:mesh.position.clone(), slot:null,
+               imgTex:null, video:null, videoTex:null};
+    session.works.push(w);
+    const img = c.image;
+    if(img) loader.load(encodeURI(img), tex=>{
+      if(cur !== session){ tex.dispose(); return; } // 幽靈隔離
+      w.imgTex = tex; w.asp = tex.image.width/tex.image.height;
+      mesh.material.map = tex; mesh.material.color.setHex(0xffffff);
+      mesh.material.needsUpdate = true;
+      if(w.slot){ const f = fitArtwork(w.asp, w.slot.s); mesh.scale.set(f.w, f.h, 1); }
+      session.loaded++;
+    }, undefined, ()=>{ if(cur===session) session.loaded++; });
+    else session.loaded++;
+  });
+
+  // 遠方微光：真正還沒被召喚的那些（分頁後的餘量）
+  if(rest > 0){
+    const g = new THREE.BufferGeometry();
+    const pos = new Float32Array(rest*3);
+    const rr = rng(seedBase+13);
+    for(let i=0;i<rest;i++){
+      const a = rr()*Math.PI*2, d = 120+rr()*80;
+      pos[i*3]=Math.cos(a)*d; pos[i*3+1]=10+rr()*40; pos[i*3+2]=Math.sin(a)*d-40;
+    }
+    g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    const m = new THREE.Points(g, new THREE.PointsMaterial({color:AFF[aff].color,
+      size:1.6, transparent:true, opacity:0.5, blending:THREE.AdditiveBlending, depthWrite:false}));
+    m.frustumCulled = false;
+    scene.add(m); session.micro = m;
+  }
+  const moreBtn = document.getElementById('more');
+  moreBtn.style.display = total > session.pickN ? 'inline-block' : 'none';
+  moreBtn.textContent = rest>0 ? ('更多 · more ('+rest+')') : '從頭再看 · replay';
+  session._portrait = portrait;
+}
+
+// 呼喚結束 → 依真實長寬比排陣、起飛
+function beginFlight(session){
+  const slots = computeLayout(session.works, session._portrait);
+  session.works.forEach((w,i)=>{
+    w.slot = slots[i];
+    const f = fitArtwork(w.asp||1.5, w.slot.s);
+    w.mesh.scale.set(f.w, f.h, 1);
+    w.mesh.rotation.y = w.slot.ry;
+  });
+  phase='flying'; phaseT=Date.now(); hint.classList.add('hide');
+}
+
+// ── 告退 ──
+let leaving = [];
+function dismiss(){
+  if(!cur) return;
+  for(const w of cur.works){
+    if(w.video){ w.video.pause(); w.video.src=''; }
+    leaving.push({mesh:w.mesh, t0:Date.now()});
+  }
+  if(cur.micro) leaving.push({mesh:cur.micro, t0:Date.now()});
+  cur = null;
+}
+
+// ── Focus：作品來到我面前（GPT P1-4）· 此刻才播影片（P1-5，一次一支）──
+function focusWork(w){
+  focusW = w;
+  const f = fitArtwork(w.asp||1.5, 1);
+  const scale = Math.min(15/f.w, 10.5/f.h);
+  w._focusScale = {w:f.w*scale, h:f.h*scale};
+  caption.textContent = (w.c.name_zh||'')+' · '+(w.c.name_en||'')+' — '+(w.c.date||'')+' · by '+(AFF[w.c.created_by]?AFF[w.c.created_by].name:w.c.created_by);
+  caption.classList.add('show');
+  if(w.c.video && !w.video){
+    const v = document.createElement('video');
+    v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline','');
+    v.crossOrigin = 'anonymous'; // Phase 4: videos come from another origin (media_base); needed for the WebGL texture
+    v.preload = 'metadata'; v.src = encodeURI(w.c.video);
+    v.addEventListener('canplay', ()=>{
+      if(focusW !== w) return;
+      if(!w.videoTex){ w.videoTex = new THREE.VideoTexture(v); }
+      w.mesh.material.map = w.videoTex; w.mesh.material.needsUpdate = true;
+      v.play().catch(()=>{});
+    }, {once:true});
+    w.video = v; v.load(); v.play().catch(()=>{});
+  } else if(w.video){ w.video.play().catch(()=>{}); }
+}
+function unfocus(hard){
+  if(!focusW) return;
+  const w = focusW;
+  if(w.video){ w.video.pause(); }
+  if(w.imgTex){ w.mesh.material.map = w.imgTex; w.mesh.material.needsUpdate = true; }
+  if(w.videoTex){ w.videoTex.dispose(); w.videoTex = null; }
+  if(w.video){ w.video.src=''; w.video = null; }
+  caption.classList.remove('show');
+  focusW = null;
+  if(hard && w.slot){ const f=fitArtwork(w.asp||1.5,w.slot.s); w.mesh.scale.set(f.w,f.h,1); }
+}
+
+// ── 點擊 ──
+const ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
+let downXY = null;
+addEventListener('pointerdown', e=>{ downXY=[e.clientX,e.clientY]; });
+addEventListener('pointerup', e=>{
+  if(!downXY || Math.hypot(e.clientX-downXY[0], e.clientY-downXY[1])>14){ downXY=null; return; }
+  downXY=null;
+  if(e.target.closest('#sigils') || e.target.closest('#exitDoor')) return;
+  if(!cur || phase!=='formed') return;
+  if(focusW){ unfocus(false); return; } // 看夠了，點一下歸位
+  ptr.x = (e.clientX/innerWidth)*2-1; ptr.y = -(e.clientY/innerHeight)*2+1;
+  ray.setFromCamera(ptr, camera);
+  const hits = ray.intersectObjects(cur.works.map(w=>w.mesh));
+  if(hits.length){
+    const w = cur.works.find(x=>x.mesh===hits[0].object);
+    focusWork(w);
+  } else if(cur.micro && cur.rest>0){
+    // micro tap: 點遠方微光 = 召喚餘下（更多的第二個入口）
+    ray.params.Points = {threshold: 4};
+    if(ray.intersectObject(cur.micro).length) summon(cur.aff, cur.nextBatch);
+  }
+});
+
+// ── 輕拖環視 ──
+let dragging=false,lx=0,userYaw=0;
+renderer.domElement.addEventListener('pointerdown', e=>{dragging=true;lx=e.clientX;});
+addEventListener('pointermove', e=>{ if(!dragging) return;
+  userYaw = Math.max(-0.5, Math.min(0.5, userYaw + (e.clientX-lx)*0.002)); lx=e.clientX; });
+addEventListener('pointerup', ()=>{dragging=false;});
+
+const ease = u => u<0.5 ? 2*u*u : 1-Math.pow(-2*u+2,2)/2;
+const lerp = (a,b,k)=>a+(b-a)*k;
+
+function animate(){
+  requestAnimationFrame(animate);
+  const t = Date.now();
+
+  if(phase==='calling' && cur){
+    const u = (t-phaseT)/1600;
+    callLight.intensity = Math.sin(Math.min(1,u)*Math.PI)*3.2;
+    if(u>=1 && (cur.loaded>=cur.works.length || t-phaseT>=3000)) beginFlight(cur);
+  }
+  if(phase==='flying' && cur){
+    let allDone = true;
+    for(const w of cur.works){
+      const u = Math.max(0, Math.min(1, (t-phaseT-w.delay)/w.dur));
+      if(u<1) allDone = false;
+      const e2 = ease(u);
+      w.mesh.position.lerpVectors(w.from, new THREE.Vector3(w.slot.x, w.slot.y, w.slot.z), e2);
+      w.mesh.rotation.z = w.rz0*(1-e2);
+      w.mesh.material.opacity = Math.min(1, u*3);
+    }
+    if(allDone && cur.works.length){
+      phase='formed';
+      say(AFF[cur.aff].name+' · '+cur.pickN+' 件抵達'+(cur.rest>0?(' · 遠方還有 '+cur.rest+' 點微光'):'')+' · tap a work');
+      setTimeout(()=>hint.classList.add('hide'), 5200);
+    }
+  }
+  if(cur && phase==='formed'){
+    for(let i=0;i<cur.works.length;i++){
+      const w = cur.works[i], m = w.mesh;
+      if(w===focusW){
+        // 專注：緩緩來到正前方
+        m.position.x = lerp(m.position.x, 0, 0.08);
+        m.position.y = lerp(m.position.y, 8.6, 0.08);
+        m.position.z = lerp(m.position.z, 16, 0.08);
+        m.rotation.y = lerp(m.rotation.y, 0, 0.08);
+        m.scale.x = lerp(m.scale.x, w._focusScale.w, 0.08);
+        m.scale.y = lerp(m.scale.y, w._focusScale.h, 0.08);
+        m.material.opacity = lerp(m.material.opacity, 1, 0.1);
+      } else {
+        const breathe = (RM||focusW) ? 0 : Math.sin(t*0.0009 + i*0.9)*0.25;
+        m.position.x = lerp(m.position.x, w.slot.x, 0.08);
+        m.position.y = lerp(m.position.y, w.slot.y + breathe, 0.08);
+        m.position.z = lerp(m.position.z, w.slot.z, 0.08);
+        m.rotation.y = lerp(m.rotation.y, w.slot.ry, 0.08);
+        const f = fitArtwork(w.asp||1.5, w.slot.s);
+        m.scale.x = lerp(m.scale.x, f.w, 0.08);
+        m.scale.y = lerp(m.scale.y, f.h, 0.08);
+        m.material.opacity = lerp(m.material.opacity, focusW ? 0.15 : 1, 0.08);
+      }
+    }
+    callLight.intensity = 1.1 + (RM?0:Math.sin(t*0.0014)*0.4);
+  }
+  for(let i=leaving.length-1;i>=0;i--){
+    const L = leaving[i], u = (t-L.t0)/750;
+    if(u>=1){ scene.remove(L.mesh);
+      if(L.mesh.geometry) L.mesh.geometry.dispose();
+      if(L.mesh.material){ if(L.mesh.material.map) L.mesh.material.map.dispose(); L.mesh.material.dispose(); }
+      leaving.splice(i,1); continue; }
+    L.mesh.position.y += 0.18; L.mesh.material.opacity = Math.max(0, (1-u)*0.9);
+  }
+
+  camera.position.x = Math.sin(userYaw)*34;
+  camera.position.z = Math.cos(userYaw)*34;
+  camera.lookAt(0, 8.5, -4);
+  TCFField3D.update(t);
+  renderer.render(scene, camera);
+}
+animate();
+addEventListener('resize', ()=>{
+  isPortrait = innerHeight > innerWidth;
+  camera.fov = isPortrait?72:54;
+  camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+</script>
+</body>
+</html>

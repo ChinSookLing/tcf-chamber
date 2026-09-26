@@ -1,0 +1,62 @@
+# ═══════════════════════════════════════════════════════════
+# tcf-chamber · Curated Pages Deploy (Phase 4)
+# Same approach as the-Civilisation-field: deploys on every push
+# to main, EXCLUDING private working material:
+#   - docs/architecture/   (handoff and review notes)
+#   - *.bak*               (all backup files)
+# ═══════════════════════════════════════════════════════════
+name: Deploy Pages (curated)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build curated site (copy everything except private material)
+        run: |
+          mkdir -p _site
+          rsync -av \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='_site/' \
+            --exclude='docs/architecture/' \
+            --exclude='*.bak*' \
+            ./ _site/
+          touch _site/.nojekyll
+          echo "── excluded check ──"
+          test ! -e _site/docs/architecture && echo "architecture: excluded OK"
+          test -z "$(find _site -name '*.bak*')" && echo "*.bak*: excluded OK"
+          echo "── included check ──"
+          test -e _site/index.html && echo "index.html: OK"
+          test -e _site/pages/page4.html && echo "page4.html: OK"
+          test -e _site/docs/data/chambers.json && echo "chambers.json: OK"
+          test -e _site/chambers/index.html && echo "chambers/index.html: OK"
+          test -e _site/llms.txt && echo "llms.txt: OK"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
