@@ -21,29 +21,21 @@
   var current = location.pathname.split('/').pop() || 'index.html';
   if (current === '') current = 'index.html';
 
+  // Phase 4d: same items as the readable banner
+  // Door · 琴 The Conservatory · 棋 Play · 書 The Library · 畫 The Chamber · About Us
   var MODEL = [
-    { kind: 'link',  label: 'Lantern', href: p('lantern.html') },
-    { kind: 'link',  zh: '琴', label: 'The Conservatory', href: p('conservatory.html'),
-      pages: ['conservatory.html'] },
-    { kind: 'link',  zh: '棋', label: 'Board Room', href: p('board.html'),
-      pages: ['board.html'] },
-    { kind: 'group', zh: '書', label: 'The Library', href: HOME,
-      pages: ['index.html', 'page2.html', 'page3.html', 'the-scroll.html'],
-      items: [
-        { label: 'The Brain',  href: HOME },
-        { label: 'Trails',     href: p('page2.html') },
-        { label: 'Resonance',  href: p('page3.html') },
-        { label: 'The Scroll', href: p('the-scroll.html') }
-      ] },
+    { kind: 'link',  label: 'Door', href: HOME },
+    { kind: 'link',  zh: '琴', label: 'The Conservatory', href: p('conservatory.html') },
+    { kind: 'link',  zh: '棋', label: 'Play', href: 'https://play.civilisationfield.com/' },
+    { kind: 'link',  zh: '書', label: 'The Library', href: HOME },
     { kind: 'group', zh: '畫', label: 'The Chamber', href: p('page4.html'),
-      pages: ['page4.html', 'skyhall.html', 'formula-room.html', 'accio.html'],
+      pages: ['page4.html', 'skyhall.html', 'accio.html'],
       items: [
         { label: 'Chambers',   href: p('page4.html') },
         { label: 'Sky Hall',   href: p('skyhall.html') },
-        { label: 'Formula Room', href: p('formula-room.html') },
         { label: 'Accio',      href: p('accio.html') }
       ] },
-    { kind: 'link',  label: 'The Field', href: p('about.html'), pages: ['about.html'] }
+    { kind: 'link',  label: 'About Us', href: MAIN + 'about/' }
   ];
 
   function isCurrent(node) {

@@ -719,8 +719,14 @@ AI 並不是秘密地在靜室裡繼續存在。
     const panel = document.getElementById('overlay-panel');
     if (ov) ov.classList.remove('is-open');
     if (cb) cb.hidden = true;
-    if (panel) panel.innerHTML = '';
+    if (panel) {
+      // Phase 4d: stop the video download before removing it
+      panel.querySelectorAll('video').forEach(v => { v.pause(); v.removeAttribute('src'); v.load(); });
+      panel.innerHTML = '';
+    }
     document.body.style.overflow = '';
+    // Phase 4d: let the gallery cards on screen load again
+    if (window.tcfResumeCardVideos) window.tcfResumeCardVideos();
   }
   document.addEventListener('DOMContentLoaded', () => {
     const cb = document.getElementById('close-btn');
@@ -755,7 +761,12 @@ AI 並不是秘密地在靜室裡繼續存在。
           if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); }
         }
       });
-    }, { rootMargin: '300px 600px', threshold: 0.01 }) : null;
+    }, { rootMargin: '0px', threshold: 0.5 }) : null; // Phase 4d: only cards on screen (was 300px 600px)
+    // Phase 4d: pause and release card videos while a Living Record video is open
+    window.tcfPauseCardVideos = () => document.querySelectorAll('video.exhibition__card-video').forEach(v => {
+      v.pause(); if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); }
+    });
+    window.tcfResumeCardVideos = () => { if (tcfVidObserver) document.querySelectorAll('video.exhibition__card-video').forEach(v => { tcfVidObserver.unobserve(v); tcfVidObserver.observe(v); }); };
 
     chambers.forEach(ch => {
       const color = AFFILIATE_HEX[ch.created_by] || '#FFD700';
@@ -852,7 +863,7 @@ AI 並不是秘密地在靜室裡繼續存在。
         <div class="chamber__living-glimpse">
           <div class="chamber__section-rule"></div>
           <div class="chamber__section-label">Living Glimpse · Silent Breathing Loop</div>
-          <button class="chamber__invite-btn" data-video="${glimpseVids.join('|')}" data-label="${ch.name_zh} · ${ch.name_en}">▶ Enter the Living Record</button>
+          <button class="chamber__invite-btn" data-video="${glimpseVids.join('|')}" data-poster="${(ch.images && ch.images.length) ? ch.images[0] : ch.image}" data-label="${ch.name_zh} · ${ch.name_en}">▶ Enter the Living Record</button>
         </div>` : '';
       const sharedText = `
         <div class="chamber__meta">${ch.date} · Created by <span style="color:${color}">${createdLabel}</span></div>
@@ -982,7 +993,8 @@ AI 並不是秘密地在靜室裡繼續存在。
           const tabsHtml = vsrcs.length > 1
             ? '<div class="chamber__video-tabs">' + vsrcs.map((s2,i) => '<button class="chamber__vtab' + (i===0?' is-active':'') + '" data-vsrc="' + s2 + '">' + String.fromCharCode(97+i) + '</button>').join('') + '</div>'
             : '';
-          ovPanel.innerHTML = '<div style="font-family:var(--font-primary);font-size:var(--fs-xs);letter-spacing:var(--tracking-wide);color:var(--gold-warm-55);text-align:center;margin-bottom:var(--space-md);line-height:1.7">' + label + '</div>' + tabsHtml + '<video controls playsinline preload="metadata" style="width:100%;display:block;max-height:76vh;object-fit:contain" src="' + vsrcs[0] + '"></video>';
+          ovPanel.innerHTML = '<div style="font-family:var(--font-primary);font-size:var(--fs-xs);letter-spacing:var(--tracking-wide);color:var(--gold-warm-55);text-align:center;margin-bottom:var(--space-md);line-height:1.7">' + label + '</div>' + tabsHtml + '<video controls playsinline preload="metadata"' + (btn.dataset.poster ? ' poster="' + btn.dataset.poster + '"' : '') + ' style="width:100%;display:block;max-height:76vh;object-fit:contain" src="' + vsrcs[0] + '"></video>';
+          if (window.tcfPauseCardVideos) window.tcfPauseCardVideos(); // Phase 4d
           ov.classList.add('is-open'); cb.hidden = false;
           document.body.style.overflow = 'hidden';
           const v = ovPanel.querySelector('video'); if (v) v.play().catch(()=>{});

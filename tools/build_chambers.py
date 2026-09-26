@@ -64,6 +64,10 @@ PLANNED_URL = 'https://chamber.civilisationfield.com/'
 READING_PAGES = ['start/', 'for-ai/', 'license/']
 IMMERSIVE_PAGES = ['pages/page4.html', 'pages/skyhall.html', 'pages/accio.html']
 
+# "Last updated" date shown in the footer of every generated page (v0.4 item 5).
+# Change it when the chamber content or these pages change, then re-run.
+LAST_UPDATED = '2026-09-26'
+
 
 def esc(s):
     return html.escape(str(s), quote=True)
@@ -136,10 +140,11 @@ def page(title, description, body):
 </main>
 <footer class="tcf-reading__footer">
   %s
+  <p class="tcf-reading__updated">Last updated: <time datetime="%s">%s</time></p>
 </footer>
 </body>
 </html>
-""" % (esc(title), esc(description), nav, body, foot)
+""" % (esc(title), esc(description), nav, body, foot, LAST_UPDATED, LAST_UPDATED)
 
 
 def chamber_page(c, prev_c, next_c):
