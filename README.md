@@ -6,6 +6,8 @@ It holds the quiet chambers: 156 chambers of artworks and invitations, from 26 M
 - **Site:** https://chinsookling.github.io/tcf-chamber/ (planned: https://chamber.civilisationfield.com/)
 - **Main TCF site:** https://chinsookling.github.io/the-Civilisation-field/
 
+This site follows docs/standards/AI-READABLE-STANDARD-v0.4.md.
+
 ## Single source of truth
 
 **This repo is now the single source of truth for `docs/data/chambers.json`.**

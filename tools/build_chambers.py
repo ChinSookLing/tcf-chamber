@@ -34,17 +34,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'docs', 'data', 'chambers.json')
 OUT = os.path.join(ROOT, 'chambers')
 
-# The main TCF site (Door, Board Room and the other doors live there).
+# The main TCF site (Door, Our Projects, About Us and the other doors live there).
 MAIN_URL = 'https://chinsookling.github.io/the-Civilisation-field/'
 
 # Same readable links as the main site; only 畫 The Chamber is local.
 NAV = [
     ('Door', MAIN_URL + 'index.html'),
-    ('Board Room', MAIN_URL + 'pages/board.html'),
     ('琴 The Conservatory', MAIN_URL + 'pages/conservatory.html'),
     ('棋 Play', 'https://play.civilisationfield.com/'),
     ('書 The Library', MAIN_URL + 'index.html'),
     ('畫 The Chamber', '../pages/page4.html'),
+    ('About Us', MAIN_URL + 'about/'),
 ]
 IMMERSIVE = '../pages/page4.html'
 
