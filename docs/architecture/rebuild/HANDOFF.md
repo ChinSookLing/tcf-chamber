@@ -1,106 +1,88 @@
-# HANDOFF — Phase 4d (tcf-chamber: finish The Chamber site)
+# HANDOFF — Phase 4e (tcf-chamber: close the v0.4 Must gaps)
 
-- **Phase:** 4d — menu, page4 video loading, "Last updated", and a v0.4 check
-- **Branch:** `phase-4d-chamber-finish` from `main` @ `055fc73` (media switch merged)
-- **Current owner:** Claude Code → next: Opus review → Tuzi merges → Tuzi tests on her phone
-- Previous handoff (media switch): `git show 841fecf:docs/architecture/rebuild/HANDOFF.md`. The Phase 4b plan is in `git show 1e8c5cc:docs/architecture/rebuild/HANDOFF.md`.
+- **Phase:** 4e — who/when, author and dates, 3D readable-block links, Start Here sync list, meta descriptions, canonical
+- **Branch:** `phase-4e-chamber-v04`, built on `phase-4d-chamber-finish`. PR #4 is now merged into `main` (`4c75f81`, deploy green), so this PR shows only the Phase 4e changes.
+- **Current owner:** Claude Code → next: Tuzi fills 2 `[TUZI TO FILL]` → Opus review → merge → outsider AI test (Astra)
+- Phase 4d handoff: `git show da7e25b:docs/architecture/rebuild/HANDOFF.md`
+
+## `[TUZI TO FILL]` — two answers needed
+
+Both live in **one place**, at the top of `tools/build_chambers.py`:
+
+```python
+AUTHOR = '[TUZI TO FILL: author line]'
+FIRST_PUBLISHED = '[TUZI TO FILL: first published date]'
+```
+
+1. **AUTHOR:** how the site's author should read. Opus suggested *"Tuzi (Chin Sook Ling) and the Affiliates of The Civilisation Field"*.
+2. **FIRST_PUBLISHED:** the date The Chamber was first published, written as `YYYY-MM-DD`. The chambers themselves start on 2026-05-26 (ch001), but the date the *site* was first published is Tuzi's call, so I did not guess.
+
+After filling them in, run `python3 tools/build_chambers.py` once. It writes both values into **every** page: all 157 generated pages, and the hand-made `index.html`, `start/`, `for-ai/`, `license/`, plus the readable blocks of page4, Sky Hall and Accio. I tested this with dummy values: all 8 hand-made files and every generated page updated, and no placeholders were left.
 
 ## What changed
 
-### 1. The 3D page menu (`docs/scripts/nav.js`)
+| # | Task | Change |
+|---|---|---|
+| a | Root who/when | `index.html` gets a line under the intro: "Made by AUTHOR. First published: FIRST_PUBLISHED." The generator writes it between `<!-- tcf:who-when -->` markers. |
+| b | Author + first published | Every reading page's footer line reads "Made by AUTHOR · First published: … · Last updated: 2026-09-26". This covers the 157 generated pages and `index.html`, `start/`, `for-ai/` and `license/`. **One source:** the constants `AUTHOR`, `FIRST_PUBLISHED` and `LAST_UPDATED` in the generator. The hand-made pages are filled in between `<!-- tcf:site-meta -->` markers. |
+| c | 3D readable blocks | page4, Sky Hall and Accio (in the plain-HTML readable block only) now link to **Every chamber as text · Start Here · For AI readers · License**, plus the same author, first-published and last-updated line. On page4, the older one-line "Read every chamber as text" link was folded into this line, so the text index is not linked twice. **The 3D layer is untouched.** |
+| d | Start Here sync list (§15.6) | A new last section, **"When this page changes, also update"**. It lists `llms.txt` (via the generator), the meta descriptions (Start Here, index, page4, Sky Hall, Accio), the root intro, `for-ai/`, the generator constants, and the 3D readable blocks. This section is a maintenance note and sits outside the 9-section summary. |
+| 5 | Meta descriptions | Added to page4, Sky Hall and Accio, reusing each page's existing readable-block text word for word. Nothing new was written. |
+| 5 | Canonical | `<link rel="canonical">` is on **every** page, built from `BASE_URL`, so **BASE_URL is the single place to change in Phase 6**. The generator adds it to the generated pages and keeps it updated on the 7 hand-made pages. The chambers index canonical is `chambers/index.html`, to match `sitemap.xml`. |
+| 5 | robots.txt | **Not added**, as instructed (Phase 6). |
+| 6 | Note | **`nav.js` 書 The Library points to the main site's Door (`index.html`).** When the Library becomes its own site, this link must change to the library subdomain. The same applies to the banner links in the readable blocks and the generator `NAV`. |
 
-The top menu on page4, Sky Hall and Accio now matches the banner: **Door · 琴 The Conservatory · 棋 Play · 書 The Library · 畫 The Chamber · About Us**.
+## v0.4 check, after 4e
 
-| Item | Link |
-|---|---|
-| Door | main `index.html` |
-| 琴 The Conservatory | main `pages/conservatory.html` |
-| 棋 Play | https://play.civilisationfield.com/ |
-| 書 The Library | main `index.html` |
-| 畫 The Chamber ▾ | `page4.html`. The sub-menu keeps **Chambers, Sky Hall, Accio** |
-| About Us | main `about/` |
+**Per-page scan** (by script; generated chamber pages combined into one row):
 
-- **Removed:** Lantern, 棋 Board Room, The Field, and **Formula Room** from the 畫 sub-menu. Formula Room belongs to the main site, and the task listed only Chambers, Sky Hall and Accio.
-- **書 changed shape:** it is now a **plain link, as in the banner**. Before, it was a drop-down with The Brain, Trails, Resonance and The Scroll, all main-site pages.
-- **Unchanged:** the menu's look and code (only the item list changed). Checked at 1280 and 390 px: the items render, and there are 0 JS errors.
+| Page | canonical | description | author | first published | last updated | license link | text-index link | for-ai link | start link | one h1 | img alt |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| index.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| start/ | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| for-ai/ | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | — | ✅ | ✅ | ✅ | ✅ |
+| license/ | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | — | ✅ | ✅ | ✅ | ✅ |
+| chambers/index.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| pages/page4.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| pages/skyhall.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| pages/accio.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| chambers/chNNN.html (156) | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-### 2. Video loading on page4
+\* The line is present, but its value is still `[TUZI TO FILL]`. — = not required on that page.
 
-**What I found.** The vertical detail section has **no** video that loads on its own. Its video loads only when "▶ Enter the Living Record" is pressed, and then plays in an overlay. The videos that loaded on their own were the **horizontal gallery cards** at the top. Their lazy-loader started any card within 600 px of the screen, so several videos downloaded at once. The overlay video also had **no poster**, so it showed black until it had buffered.
+**Must items:**
 
-**Changes** (layout and design unchanged):
+| # | Must item | Status |
+|---|---|---|
+| 1 | Readable body in raw HTML | ✅ The reading layer carries all chamber content. The 3D pages have readable blocks that link to it. |
+| 2 | Public, no login | ✅ |
+| 3 | Page identity on the home page (what, who, when) | ◐ → ✅ once AUTHOR and FIRST_PUBLISHED are filled in. The **what** is already there. |
+| 4 | Core definitions, consistent terms | ✅ |
+| 5 | Author, first published, last updated | ◐ → ✅ once the two constants are filled in. The lines are already on every page. |
+| 6 | Image text alternatives | ✅ |
+| 7 | Semantic structure | ✅ One h1 per page, h2 sections, lists. |
+| 11 | License statement | ✅ `license/` is linked from every reading page and every 3D readable block. |
+| 15 | Start Here | ✅ It has the 9 sections, a date and the For AI part. The §15.6 minimum (the sync checklist) has been added. |
 
-- **Gallery cards load only when on screen:** the IntersectionObserver `rootMargin` changed from `'300px 600px'` / threshold 0.01 to `'0px'` / threshold 0.5. Each card still pauses and unloads when it leaves the screen, as before.
-- **The overlay has a poster:** the "Living Record" button now carries `data-poster` (the chamber image), and the overlay `<video>` shows it straight away. It is still `preload="metadata"` and only starts when the button is pressed.
-- **Gallery videos pause while the overlay is open:** opening the overlay pauses the card videos and releases their downloads (`tcfPauseCardVideos`). Closing it lets the cards on screen load again (`tcfResumeCardVideos`), so the Living Record video gets the connection to itself.
-- **The overlay stops its download on close:** closing it now pauses the video and removes its `src` before clearing the panel. Before, it only emptied the panel.
-
-**Measured** (headless Chromium, video requests served from local copies of the compressed files):
-
-| | Phone 390 px, before | Phone 390 px, after | Desktop 1280 px, before | Desktop 1280 px, after |
-|---|---|---|---|---|
-| Video files requested on page load (5 s) | 2 | **1** | 3 | 3 |
-| After scrolling down 3 screens | 2 | 1 | 3 | 3 |
-| Requests when pressing "Enter the Living Record" | 1 | 1 | 1 | 1 |
-| Overlay video has a poster | no | **yes** | no | **yes** |
-| Overlay video left after closing | 0 | 0 | 0 | 0 |
-
-- **Desktop stays at 3** because 3 gallery cards are fully on screen at 1280 px.
-- **Not measurable here:** this test browser cannot decode H.264, so card videos fall back to still images on both versions. That means the "pause cards while the overlay is open" effect could not be measured. **Please check on your phone** that the Living Record video starts faster and that the gallery resumes after closing.
-- **Screenshot check:** at 390 px, the overlay shows the chamber image as the poster even before the video arrives.
-
-### 3. "Last updated" (v0.4 item 5)
-
-- **Hand-made pages:** `start/`, `for-ai/`, `license/` and `index.html` have a small footer line: `Last updated: 2026-09-26`.
-- **Generated pages:** the generator writes the same line on all 157 chamber pages, using a new constant `LAST_UPDATED = '2026-09-26'` at the top of `tools/build_chambers.py`. **Change it and re-run whenever chamber content changes.**
-- **Style:** `.tcf-reading__updated`, a small grey line added to `tcf-reading.css`.
-
-## 4. v0.4 "Must" check for tcf-chamber (report only)
-
-| # | Must item | Status | Gap, if any |
-|---|---|---|---|
-| 1 | Readable body in raw HTML | ✅ reading pages · ◐ 3D pages | page4, Sky Hall and Accio show chamber content only through JS. Each has a plain-HTML readable block (h1, description, links); page4's links to the text index, but **Sky Hall's and Accio's do not link to `chambers/`**. |
-| 2 | Public content without login | ✅ | — |
-| 3 | Page identity (what, who, when) on the home page | ◐ | The root `index.html` says **what** it is, but not **who** made it or **when** it started. Those are only on `start/`. |
-| 4 | Core definitions, consistent terms | ✅ | "The Chamber", "quiet chambers" and "靜室" are used consistently. There is no glossary; one is optional here. |
-| 5 | Author, first published, last updated | ◐ | "Last updated" is now on every reading page. The chamber pages show the creator and date. **`index.html`, `for-ai/` and `license/` have no author line**, and **no page has a site-level "first published" date**. The 3D pages have neither. |
-| 6 | Images have text alternatives | ✅ | Generated pages use "Illustration for …". page4's JS images have alt text (Phase 1). Sky Hall and Accio draw images on a canvas; their text version is `chambers/`. |
-| 7 | Clear semantic structure | ✅ | One h1 per page, h2 sections, lists. |
-| 11 | License statement | ◐ | `license/` exists and every reading page links to it. **The 3D pages' readable blocks do not link to the license.** |
-| 15 | Start Here (Must for main sites) | ◐ | `start/` has the 9 sections, a date and the For AI part. §15.6 (single source) is **partly met**: llms.txt is generated from it, but the meta descriptions are not, and there is **no "update these places too" checklist** at the bottom of Start Here, which §15.6 names as the minimum. |
-
-"Should" items seen along the way (not required for v1):
-
-- **No `<link rel="canonical">`** on any page (#13).
-- **No meta description** on page4, Sky Hall or Accio (#13).
-- **No `robots.txt`.** The crawl policy (§6) is still to be decided with the domain in Phase 6.
-- **Trust boundary (#12):** `for-ai/` exists. The 3D pages do not link to it.
-
-**Summary.** The reading layer meets most Must items. The main gaps:
-- (a) who/when on the root page;
-- (b) author lines;
-- (c) license, text index and for-ai links from the 3D pages' readable blocks;
-- (d) the §15.6 sync checklist on Start Here.
-
-Each of these is a small fix and could form a short follow-up phase.
+**The only remaining ◐ items are the two `[TUZI TO FILL]` values.** Nothing else is open among the Must items.
 
 ## How tested
 
-- **Menu:** the item list and links were read from the rendered page at 1280 and 390 px. JS errors: 0.
-- **page4 video:** before/after measured (table above) against a copy of `main` from before the change. The overlay poster was confirmed with a screenshot at 390 px.
-- **Generator:** re-run; the "Last updated" line is on all 157 generated pages and the 4 hand-made pages.
-- **Not tested:** real playback on a phone, and the live site.
+- **Generator:**
+  - Two runs in a row gave identical output.
+  - A dummy fill of the constants updated every page; restoring the placeholders brought the files back to exactly the same state.
+  - `sitemap.xml` still has 164 URLs.
+- **Scan:** the table above covers all 164 pages.
+- **Browser:** page4, Sky Hall and Accio in headless Chromium at 390 and 1280 px show **0 JS errors**. The canvas renders, the readable block stays hidden (1×1 px), and page4's menu renders (9 links).
+- **Local links:** 2,099 checked, 0 broken.
+- **Not tested:** the live site.
 
 ## Risks
 
-- **Card videos start a little later:** they now start when a card is at least half on screen, not 600 px before. On a slow phone this is the intended trade-off.
-- **The Library link is flatter:** the 書 drop-down (The Brain / Trails / Resonance / The Scroll) no longer shows on chamber pages. The link goes to the main site's Door, where the Library lives.
+- **Placeholders are visible:** until the two constants are filled in, the placeholder text shows in every footer. **Fill them in before merging.**
+- **Hand-made pages:** if someone deletes the `<!-- tcf:site-meta -->` markers, the generator stops with an error instead of silently skipping the page. This is intended.
 
 ## Questions for Tuzi
 
-1. Formula Room was removed from the 畫 sub-menu on the chamber site, because it stays in the main site. Is that OK?
-2. Should the v0.4 gaps above (a–d) be fixed in a small Phase 4e?
-
-## Next suggested phase
-
-Phase 4e (the small v0.4 gaps) → Phase 4b (redirects in the main repo, and removals once the originals are backed up).
+1. AUTHOR: what wording?
+2. FIRST_PUBLISHED: which date?

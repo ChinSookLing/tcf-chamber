@@ -1,227 +1,364 @@
-# REVIEW — Phase 4d (tcf-chamber · `phase-4d-chamber-finish`)
+# REVIEW — Phase 4e (tcf-chamber · `phase-4e-chamber-v04`)
 
 ```
- 166 files changed, 286 insertions(+), 48 deletions(-)
+ 166 files changed, 485 insertions(+), 258 deletions(-)
 ```
 
-The generated `chambers/*.html` pages changed only by the "Last updated" footer line. Sample:
+The generated `chambers/*.html` pages changed only in their `<head>` (canonical) and footer (the site-facts line). Sample:
 
 ```diff
 diff --git a/chambers/ch001.html b/chambers/ch001.html
-index 26f31d9..9bab255 100644
+index 9bab255..73a73d4 100644
 --- a/chambers/ch001.html
 +++ b/chambers/ch001.html
-@@ -61,6 +61,7 @@
+@@ -9,6 +9,7 @@
+ <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+ <link rel="stylesheet" href="../docs/styles/field-tokens.css">
+ <link rel="stylesheet" href="../docs/styles/tcf-reading.css">
++<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/chambers/ch001.html">
+ </head>
+ <body class="tcf-reading">
+ <header class="tcf-reading__nav">
+@@ -61,7 +62,7 @@
    <a href="../start/">Start Here</a> ·
    <a href="../for-ai/">For AI readers</a> ·
    <a href="../license/">License</a>
-+  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
+-  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
++  <p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
  </footer>
  </body>
  </html>
 ```
 
-## 1. `docs/scripts/nav.js` (menu items)
+## Generator (`tools/build_chambers.py`)
 
 ```diff
-diff --git a/docs/scripts/nav.js b/docs/scripts/nav.js
-index cb14d1c..2a8b955 100644
---- a/docs/scripts/nav.js
-+++ b/docs/scripts/nav.js
-@@ -21,29 +21,21 @@
-   var current = location.pathname.split('/').pop() || 'index.html';
-   if (current === '') current = 'index.html';
- 
-+  // Phase 4d: same items as the readable banner
-+  // Door · 琴 The Conservatory · 棋 Play · 書 The Library · 畫 The Chamber · About Us
-   var MODEL = [
--    { kind: 'link',  label: 'Lantern', href: p('lantern.html') },
--    { kind: 'link',  zh: '琴', label: 'The Conservatory', href: p('conservatory.html'),
--      pages: ['conservatory.html'] },
--    { kind: 'link',  zh: '棋', label: 'Board Room', href: p('board.html'),
--      pages: ['board.html'] },
--    { kind: 'group', zh: '書', label: 'The Library', href: HOME,
--      pages: ['index.html', 'page2.html', 'page3.html', 'the-scroll.html'],
--      items: [
--        { label: 'The Brain',  href: HOME },
--        { label: 'Trails',     href: p('page2.html') },
--        { label: 'Resonance',  href: p('page3.html') },
--        { label: 'The Scroll', href: p('the-scroll.html') }
--      ] },
-+    { kind: 'link',  label: 'Door', href: HOME },
-+    { kind: 'link',  zh: '琴', label: 'The Conservatory', href: p('conservatory.html') },
-+    { kind: 'link',  zh: '棋', label: 'Play', href: 'https://play.civilisationfield.com/' },
-+    { kind: 'link',  zh: '書', label: 'The Library', href: HOME },
-     { kind: 'group', zh: '畫', label: 'The Chamber', href: p('page4.html'),
--      pages: ['page4.html', 'skyhall.html', 'formula-room.html', 'accio.html'],
-+      pages: ['page4.html', 'skyhall.html', 'accio.html'],
-       items: [
-         { label: 'Chambers',   href: p('page4.html') },
-         { label: 'Sky Hall',   href: p('skyhall.html') },
--        { label: 'Formula Room', href: p('formula-room.html') },
-         { label: 'Accio',      href: p('accio.html') }
-       ] },
--    { kind: 'link',  label: 'The Field', href: p('about.html'), pages: ['about.html'] }
-+    { kind: 'link',  label: 'About Us', href: MAIN + 'about/' }
-   ];
- 
-   function isCurrent(node) {
-```
-
-## 2. `pages/page4.html` (video loading)
-
-```diff
-diff --git a/pages/page4.html b/pages/page4.html
-index d163dff..9a86ab3 100644
---- a/pages/page4.html
-+++ b/pages/page4.html
-@@ -719,8 +719,14 @@ AI 並不是秘密地在靜室裡繼續存在。
-     const panel = document.getElementById('overlay-panel');
-     if (ov) ov.classList.remove('is-open');
-     if (cb) cb.hidden = true;
--    if (panel) panel.innerHTML = '';
-+    if (panel) {
-+      // Phase 4d: stop the video download before removing it
-+      panel.querySelectorAll('video').forEach(v => { v.pause(); v.removeAttribute('src'); v.load(); });
-+      panel.innerHTML = '';
-+    }
-     document.body.style.overflow = '';
-+    // Phase 4d: let the gallery cards on screen load again
-+    if (window.tcfResumeCardVideos) window.tcfResumeCardVideos();
-   }
-   document.addEventListener('DOMContentLoaded', () => {
-     const cb = document.getElementById('close-btn');
-@@ -755,7 +761,12 @@ AI 並不是秘密地在靜室裡繼續存在。
-           if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); }
-         }
-       });
--    }, { rootMargin: '300px 600px', threshold: 0.01 }) : null;
-+    }, { rootMargin: '0px', threshold: 0.5 }) : null; // Phase 4d: only cards on screen (was 300px 600px)
-+    // Phase 4d: pause and release card videos while a Living Record video is open
-+    window.tcfPauseCardVideos = () => document.querySelectorAll('video.exhibition__card-video').forEach(v => {
-+      v.pause(); if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); }
-+    });
-+    window.tcfResumeCardVideos = () => { if (tcfVidObserver) document.querySelectorAll('video.exhibition__card-video').forEach(v => { tcfVidObserver.unobserve(v); tcfVidObserver.observe(v); }); };
- 
-     chambers.forEach(ch => {
-       const color = AFFILIATE_HEX[ch.created_by] || '#FFD700';
-@@ -852,7 +863,7 @@ AI 並不是秘密地在靜室裡繼續存在。
-         <div class="chamber__living-glimpse">
-           <div class="chamber__section-rule"></div>
-           <div class="chamber__section-label">Living Glimpse · Silent Breathing Loop</div>
--          <button class="chamber__invite-btn" data-video="${glimpseVids.join('|')}" data-label="${ch.name_zh} · ${ch.name_en}">▶ Enter the Living Record</button>
-+          <button class="chamber__invite-btn" data-video="${glimpseVids.join('|')}" data-poster="${(ch.images && ch.images.length) ? ch.images[0] : ch.image}" data-label="${ch.name_zh} · ${ch.name_en}">▶ Enter the Living Record</button>
-         </div>` : '';
-       const sharedText = `
-         <div class="chamber__meta">${ch.date} · Created by <span style="color:${color}">${createdLabel}</span></div>
-@@ -982,7 +993,8 @@ AI 並不是秘密地在靜室裡繼續存在。
-           const tabsHtml = vsrcs.length > 1
-             ? '<div class="chamber__video-tabs">' + vsrcs.map((s2,i) => '<button class="chamber__vtab' + (i===0?' is-active':'') + '" data-vsrc="' + s2 + '">' + String.fromCharCode(97+i) + '</button>').join('') + '</div>'
-             : '';
--          ovPanel.innerHTML = '<div style="font-family:var(--font-primary);font-size:var(--fs-xs);letter-spacing:var(--tracking-wide);color:var(--gold-warm-55);text-align:center;margin-bottom:var(--space-md);line-height:1.7">' + label + '</div>' + tabsHtml + '<video controls playsinline preload="metadata" style="width:100%;display:block;max-height:76vh;object-fit:contain" src="' + vsrcs[0] + '"></video>';
-+          ovPanel.innerHTML = '<div style="font-family:var(--font-primary);font-size:var(--fs-xs);letter-spacing:var(--tracking-wide);color:var(--gold-warm-55);text-align:center;margin-bottom:var(--space-md);line-height:1.7">' + label + '</div>' + tabsHtml + '<video controls playsinline preload="metadata"' + (btn.dataset.poster ? ' poster="' + btn.dataset.poster + '"' : '') + ' style="width:100%;display:block;max-height:76vh;object-fit:contain" src="' + vsrcs[0] + '"></video>';
-+          if (window.tcfPauseCardVideos) window.tcfPauseCardVideos(); // Phase 4d
-           ov.classList.add('is-open'); cb.hidden = false;
-           document.body.style.overflow = 'hidden';
-           const v = ovPanel.querySelector('video'); if (v) v.play().catch(()=>{});
-```
-
-## 3. "Last updated": generator, CSS, hand-made footers
-
-```diff
-diff --git a/docs/styles/tcf-reading.css b/docs/styles/tcf-reading.css
-index 8a6813a..bb9ec8e 100644
---- a/docs/styles/tcf-reading.css
-+++ b/docs/styles/tcf-reading.css
-@@ -160,3 +160,10 @@ body.tcf-reading {
-   color: var(--gold-pure);
-   font-weight: 600;
- }
-+
-+/* Phase 4d · "Last updated" line in the footer (v0.4 item 5) */
-+.tcf-reading__updated {
-+  margin: var(--space-2xs) 0 0;
-+  font-size: var(--fs-xs);
-+  color: var(--text-tertiary);
-+}
-diff --git a/for-ai/index.html b/for-ai/index.html
-index 6bda41c..c960a41 100644
---- a/for-ai/index.html
-+++ b/for-ai/index.html
-@@ -28,6 +28,7 @@
-   <a href="../start/">Start Here</a> ·
-   <a href="../for-ai/">For AI readers</a> ·
-   <a href="../license/">License</a>
-+  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
- </footer>
- </body>
- </html>
-diff --git a/index.html b/index.html
-index 664e268..4c7663f 100644
---- a/index.html
-+++ b/index.html
-@@ -35,6 +35,7 @@
-   <a href="start/">Start Here</a> ·
-   <a href="for-ai/">For AI readers</a> ·
-   <a href="license/">License</a>
-+  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
- </footer>
- </body>
- </html>
-diff --git a/license/index.html b/license/index.html
-index 5de8565..eb59d87 100644
---- a/license/index.html
-+++ b/license/index.html
-@@ -28,6 +28,7 @@
-   <a href="../start/">Start Here</a> ·
-   <a href="../for-ai/">For AI readers</a> ·
-   <a href="../license/">License</a>
-+  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
- </footer>
- </body>
- </html>
-diff --git a/start/index.html b/start/index.html
-index ebc7b89..36ae82b 100644
---- a/start/index.html
-+++ b/start/index.html
-@@ -79,6 +79,7 @@
-   <a href="../start/">Start Here</a> ·
-   <a href="../for-ai/">For AI readers</a> ·
-   <a href="../license/">License</a>
-+  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
- </footer>
- </body>
- </html>
 diff --git a/tools/build_chambers.py b/tools/build_chambers.py
-index 8b4e186..b4be2a5 100644
+index b4be2a5..03c4d42 100644
 --- a/tools/build_chambers.py
 +++ b/tools/build_chambers.py
-@@ -64,6 +64,10 @@ PLANNED_URL = 'https://chamber.civilisationfield.com/'
+@@ -64,10 +64,26 @@ PLANNED_URL = 'https://chamber.civilisationfield.com/'
  READING_PAGES = ['start/', 'for-ai/', 'license/']
  IMMERSIVE_PAGES = ['pages/page4.html', 'pages/skyhall.html', 'pages/accio.html']
  
-+# "Last updated" date shown in the footer of every generated page (v0.4 item 5).
-+# Change it when the chamber content or these pages change, then re-run.
-+LAST_UPDATED = '2026-09-26'
+-# "Last updated" date shown in the footer of every generated page (v0.4 item 5).
+-# Change it when the chamber content or these pages change, then re-run.
++# Site facts shown on every page (v0.4 item 5), one source for all of them.
++# The generator writes them into the generated pages AND into the hand-made pages
++# (index.html, start/, for-ai/, license/, and the readable blocks of page4,
++# skyhall, accio) between <!-- tcf:site-meta --> markers. Change here, re-run.
++# AUTHOR suggestion (Tuzi to confirm): 'Tuzi (Chin Sook Ling) and the Affiliates of The Civilisation Field'
++AUTHOR = '[TUZI TO FILL: author line]'
++FIRST_PUBLISHED = '[TUZI TO FILL: first published date]'
+ LAST_UPDATED = '2026-09-26'
+ 
++# Hand-made pages: file → its public path (for <link rel="canonical">, built from BASE_URL).
++HAND_PAGES = {
++    'index.html': '',
++    'start/index.html': 'start/',
++    'for-ai/index.html': 'for-ai/',
++    'license/index.html': 'license/',
++    'pages/page4.html': 'pages/page4.html',
++    'pages/skyhall.html': 'pages/skyhall.html',
++    'pages/accio.html': 'pages/accio.html',
++}
 +
  
  def esc(s):
      return html.escape(str(s), quote=True)
-@@ -136,10 +140,11 @@ def page(title, description, body):
+@@ -114,7 +130,27 @@ def paragraphs(text):
+         for b in blocks if b.strip())
+ 
+ 
+-def page(title, description, body):
++def when(value):
++    """A date as <time> when it is an ISO date; otherwise plain text (e.g. a placeholder)."""
++    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
++        return '<time datetime="%s">%s</time>' % (value, value)
++    return esc(value)
++
++
++def site_meta_html():
++    return ('<p class="tcf-reading__updated">Made by %s · First published: %s · Last updated: %s</p>'
++            % (esc(AUTHOR), when(FIRST_PUBLISHED), when(LAST_UPDATED)))
++
++
++def who_when_html():
++    return '<p>Made by %s. First published: %s.</p>' % (esc(AUTHOR), when(FIRST_PUBLISHED))
++
++
++def canonical(path):
++    return '<link rel="canonical" href="%s">' % esc(BASE_URL + path)
++
++
++def page(title, description, body, path):
+     nav = ' ·\n    '.join('<a href="%s">%s</a>' % (esc(h), esc(l)) for l, h in NAV)
+     foot = ' ·\n  '.join('<a href="%s">%s</a>' % (esc(h), esc(l)) for l, h in FOOTER)
+     return """<!DOCTYPE html>
+@@ -128,6 +164,7 @@ def page(title, description, body):
+ <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+ <link rel="stylesheet" href="../docs/styles/field-tokens.css">
+ <link rel="stylesheet" href="../docs/styles/tcf-reading.css">
++%s
+ </head>
+ <body class="tcf-reading">
+ <header class="tcf-reading__nav">
+@@ -140,11 +177,11 @@ def page(title, description, body):
  </main>
  <footer class="tcf-reading__footer">
    %s
-+  <p class="tcf-reading__updated">Last updated: <time datetime="%s">%s</time></p>
+-  <p class="tcf-reading__updated">Last updated: <time datetime="%s">%s</time></p>
++  %s
  </footer>
  </body>
  </html>
--""" % (esc(title), esc(description), nav, body, foot)
-+""" % (esc(title), esc(description), nav, body, foot, LAST_UPDATED, LAST_UPDATED)
+-""" % (esc(title), esc(description), nav, body, foot, LAST_UPDATED, LAST_UPDATED)
++""" % (esc(title), esc(description), canonical(path), nav, body, foot, site_meta_html())
  
  
  def chamber_page(c, prev_c, next_c):
+@@ -190,7 +227,7 @@ def chamber_page(c, prev_c, next_c):
+     title = '%s · %s · The Chamber · The Civilisation Field' % (zh, en)
+     desc = 'Quiet chamber %s (%s · %s), %s, created by %s. Text version.' % (
+         cid, zh, en, c['date'], name(c['created_by']))
+-    return page(title, desc, '\n'.join(parts))
++    return page(title, desc, '\n'.join(parts), 'chambers/%s.html' % cid)
+ 
+ 
+ def index_page(chambers):
+@@ -209,7 +246,28 @@ def index_page(chambers):
+             '<ol class="tcf-reading__list">\n%s\n</ol>' % (len(chambers), IMMERSIVE, '\n'.join(rows)))
+     return page('The Chamber · Quiet Chambers (text) · The Civilisation Field',
+                 'A plain-text list of all %d quiet chambers in The Civilisation Field.' % len(chambers),
+-                body)
++                body, 'chambers/index.html')
++
++
++def stamp_hand_pages():
++    """Write canonical links and the site facts into the hand-made pages."""
++    marks = [('site-meta', site_meta_html()), ('who-when', who_when_html())]
++    for rel, path in HAND_PAGES.items():
++        full = os.path.join(ROOT, rel)
++        with open(full, encoding='utf-8') as f:
++            s = f.read()
++        link = canonical(path)
++        if 'rel="canonical"' in s:
++            s = re.sub(r'<link rel="canonical" href="[^"]*">', link, s, count=1)
++        else:
++            s = s.replace('</head>', link + '\n</head>', 1)
++        if '<!-- tcf:site-meta -->' not in s:
++            sys.exit('%s: missing <!-- tcf:site-meta --> markers' % rel)
++        for name, content in marks:
++            s = re.sub(r'(<!-- tcf:%s -->).*?(<!-- /tcf:%s -->)' % (name, name),
++                       lambda m: m.group(1) + content + m.group(2), s, flags=re.S)
++        with open(full, 'w', encoding='utf-8', newline='\n') as f:
++            f.write(s)
+ 
+ 
+ def what_sentence():
+@@ -295,6 +353,7 @@ def main():
+         next_c = chambers[i + 1] if i + 1 < len(chambers) else None
+         write(c['id'] + '.html', chamber_page(c, prev_c, next_c))
+ 
++    stamp_hand_pages()
+     with open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n') as f:
+         f.write(sitemap(chambers))
+     with open(os.path.join(ROOT, 'llms.txt'), 'w', encoding='utf-8', newline='\n') as f:
 ```
 
-## Measurements and the v0.4 check
+## Hand-made pages: root, Start Here, for-ai, license
 
-See HANDOFF.md, §2 (before/after table) and §4 (Must-item table).
+```diff
+diff --git a/for-ai/index.html b/for-ai/index.html
+index c960a41..4e58844 100644
+--- a/for-ai/index.html
++++ b/for-ai/index.html
+@@ -8,6 +8,7 @@
+ <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+ <link rel="stylesheet" href="../docs/styles/field-tokens.css">
+ <link rel="stylesheet" href="../docs/styles/tcf-reading.css">
++<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/for-ai/">
+ </head>
+ <body class="tcf-reading">
+ <header class="tcf-reading__nav">
+@@ -28,7 +29,7 @@
+   <a href="../start/">Start Here</a> ·
+   <a href="../for-ai/">For AI readers</a> ·
+   <a href="../license/">License</a>
+-  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
++  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
+ </footer>
+ </body>
+ </html>
+diff --git a/index.html b/index.html
+index 4c7663f..368b4b7 100644
+--- a/index.html
++++ b/index.html
+@@ -8,6 +8,7 @@
+ <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+ <link rel="stylesheet" href="docs/styles/field-tokens.css">
+ <link rel="stylesheet" href="docs/styles/tcf-reading.css">
++<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/">
+ </head>
+ <body class="tcf-reading">
+ <header class="tcf-reading__nav">
+@@ -23,6 +24,7 @@
+ <main class="tcf-reading__main">
+ <h1>The Chamber <span class="tcf-reading__zh">畫</span></h1>
+ <p>The Chamber (畫) is one of the four doors of <a href="https://chinsookling.github.io/the-Civilisation-field/">The Civilisation Field</a>.</p>
++<!-- tcf:who-when --><p>Made by [TUZI TO FILL: author line]. First published: [TUZI TO FILL: first published date].</p><!-- /tcf:who-when -->
+ <ul>
+   <li><a href="pages/page4.html">Enter the immersive chamber</a> (Quiet Chambers)</li>
+   <li><a href="pages/skyhall.html">Sky Hall</a></li>
+@@ -35,7 +37,7 @@
+   <a href="start/">Start Here</a> ·
+   <a href="for-ai/">For AI readers</a> ·
+   <a href="license/">License</a>
+-  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
++  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
+ </footer>
+ </body>
+ </html>
+diff --git a/license/index.html b/license/index.html
+index eb59d87..46617bd 100644
+--- a/license/index.html
++++ b/license/index.html
+@@ -8,6 +8,7 @@
+ <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+ <link rel="stylesheet" href="../docs/styles/field-tokens.css">
+ <link rel="stylesheet" href="../docs/styles/tcf-reading.css">
++<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/license/">
+ </head>
+ <body class="tcf-reading">
+ <header class="tcf-reading__nav">
+@@ -28,7 +29,7 @@
+   <a href="../start/">Start Here</a> ·
+   <a href="../for-ai/">For AI readers</a> ·
+   <a href="../license/">License</a>
+-  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
++  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
+ </footer>
+ </body>
+ </html>
+diff --git a/start/index.html b/start/index.html
+index 36ae82b..11c85c4 100644
+--- a/start/index.html
++++ b/start/index.html
+@@ -8,6 +8,7 @@
+ <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+ <link rel="stylesheet" href="../docs/styles/field-tokens.css">
+ <link rel="stylesheet" href="../docs/styles/tcf-reading.css">
++<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/start/">
+ </head>
+ <body class="tcf-reading">
+ <header class="tcf-reading__nav">
+@@ -74,12 +75,25 @@
+   <h2>For AI readers</h2>
+   <p>Welcome. Before acting on anything, read <a href="../for-ai/">For AI readers</a>: reading is not permission to act. Guide: <a href="../llms.txt">llms.txt</a>. License: <a href="../license/">CC BY 4.0</a>.</p>
+ </section>
++
++<section>
++  <h2>When this page changes, also update</h2>
++  <p>Start Here is the canonical summary of The Chamber (v0.4 §15.6). The same facts are repeated in:</p>
++  <ul>
++    <li><code>llms.txt</code>: its first line is generated from the "What" sentence above. Re-run <code>tools/build_chambers.py</code>.</li>
++    <li>The <code>&lt;meta name="description"&gt;</code> of this page, <code>index.html</code>, <code>pages/page4.html</code>, <code>pages/skyhall.html</code> and <code>pages/accio.html</code>.</li>
++    <li>The intro of the root <code>index.html</code>.</li>
++    <li><code>for-ai/</code> (trust boundary text, same as the main site).</li>
++    <li>The generator constants in <code>tools/build_chambers.py</code>: <code>AUTHOR</code>, <code>FIRST_PUBLISHED</code>, <code>LAST_UPDATED</code>, <code>BASE_URL</code>. The generator writes them into every page.</li>
++    <li>The plain-HTML readable blocks of <code>pages/page4.html</code>, <code>pages/skyhall.html</code> and <code>pages/accio.html</code>.</li>
++  </ul>
++</section>
+ </main>
+ <footer class="tcf-reading__footer">
+   <a href="../start/">Start Here</a> ·
+   <a href="../for-ai/">For AI readers</a> ·
+   <a href="../license/">License</a>
+-  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
++  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
+ </footer>
+ </body>
+ </html>
+```
+
+## 3D pages: head (meta description, canonical) and readable block only
+
+```diff
+diff --git a/pages/accio.html b/pages/accio.html
+index c0e94f8..4af9f7e 100644
+--- a/pages/accio.html
++++ b/pages/accio.html
+@@ -34,6 +34,8 @@
+   }
+ </style>
+ <link rel="stylesheet" href="../docs/styles/tcf-readable.css">
++<meta name="description" content="An interactive 3D view in 畫 The Chamber. Its prompt reads: 召來一位的作品 · whose works shall come?">
++<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/pages/accio.html">
+ </head>
+ <body>
+ <!-- TCF Phase 1 · readable layer: plain-HTML title, description and section links (visually hidden; see docs/styles/tcf-readable.css) -->
+@@ -48,6 +50,8 @@
+     <a href="page4.html">畫 The Chamber</a> ·
+     <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
+   </nav>
++  <p><a href="../chambers/">Every chamber as text</a> · <a href="../start/">Start Here</a> · <a href="../for-ai/">For AI readers</a> · <a href="../license/">License</a></p>
++  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
+ </section>
+ 
+ <div id="hint">召來一位的作品 · whose works shall come?</div>
+diff --git a/pages/page4.html b/pages/page4.html
+index 9a86ab3..7046e51 100644
+--- a/pages/page4.html
++++ b/pages/page4.html
+@@ -606,13 +606,14 @@
+     }
+   </style>
+ <link rel="stylesheet" href="../docs/styles/tcf-readable.css">
++<meta name="description" content="Exhibition Hall · 靜室展廊. Scroll to enter each chamber · 滑動進入每個靜室.">
++<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/pages/page4.html">
+ </head>
+ <body>
+ <!-- TCF Phase 1 · readable layer: plain-HTML title, description and section links (visually hidden; see docs/styles/tcf-readable.css) -->
+ <section class="tcf-readable" aria-label="About this page">
+   <h1>Quiet Chambers · 靜室 · The Civilisation Field</h1>
+   <p>Exhibition Hall · 靜室展廊. Scroll to enter each chamber · 滑動進入每個靜室.</p>
+-  <p><a href="../chambers/index.html">Read every chamber as text</a></p>
+   <nav aria-label="The Civilisation Field sections">
+     <a href="https://chinsookling.github.io/the-Civilisation-field/index.html">Door</a> ·
+     <a href="https://chinsookling.github.io/the-Civilisation-field/pages/conservatory.html">琴 The Conservatory</a> ·
+@@ -621,6 +622,8 @@
+     <a href="page4.html" aria-current="page">畫 The Chamber</a> ·
+     <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
+   </nav>
++  <p><a href="../chambers/">Every chamber as text</a> · <a href="../start/">Start Here</a> · <a href="../for-ai/">For AI readers</a> · <a href="../license/">License</a></p>
++  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
+ </section>
+ 
+ 
+diff --git a/pages/skyhall.html b/pages/skyhall.html
+index f0a7d84..2a67cf0 100644
+--- a/pages/skyhall.html
++++ b/pages/skyhall.html
+@@ -61,6 +61,8 @@
+   }
+ </style>
+ <link rel="stylesheet" href="../docs/styles/tcf-readable.css">
++<meta name="description" content="An interactive 3D gallery in 畫 The Chamber. On-screen hint: click a painting to pause · 點一幅畫，駐足欣賞.">
++<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/pages/skyhall.html">
+ </head>
+ <body>
+ <!-- TCF Phase 1 · readable layer: plain-HTML title, description and section links (visually hidden; see docs/styles/tcf-readable.css) -->
+@@ -75,6 +77,8 @@
+     <a href="page4.html">畫 The Chamber</a> ·
+     <a href="https://chinsookling.github.io/the-Civilisation-field/about/">About Us</a>
+   </nav>
++  <p><a href="../chambers/">Every chamber as text</a> · <a href="../start/">Start Here</a> · <a href="../for-ai/">For AI readers</a> · <a href="../license/">License</a></p>
++  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
+ </section>
+ 
+ <div id="wordmark">The Civilisation Field · Sky Hall</div>
+```
+
+## Checks
+
+See HANDOFF.md: the "v0.4 check, after 4e" tables and "How tested".
