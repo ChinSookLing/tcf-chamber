@@ -2,22 +2,20 @@
 
 - **Phase:** 4e — who/when, author and dates, 3D readable-block links, Start Here sync list, meta descriptions, canonical
 - **Branch:** `phase-4e-chamber-v04`, built on `phase-4d-chamber-finish`. PR #4 is now merged into `main` (`4c75f81`, deploy green), so this PR shows only the Phase 4e changes.
-- **Current owner:** Claude Code → next: Tuzi fills 2 `[TUZI TO FILL]` → Opus review → merge → outsider AI test (Astra)
+- **Current owner:** Claude Code → **ready to merge** → outsider AI test (Astra)
 - Phase 4d handoff: `git show da7e25b:docs/architecture/rebuild/HANDOFF.md`
 
-## `[TUZI TO FILL]` — two answers needed
-
-Both live in **one place**, at the top of `tools/build_chambers.py`:
+## Filled values (rev 2, Tuzi's answers)
 
 ```python
-AUTHOR = '[TUZI TO FILL: author line]'
-FIRST_PUBLISHED = '[TUZI TO FILL: first published date]'
+AUTHOR = 'Tuzi and Affiliates'
+FIRST_PUBLISHED = '2026-05-26'
 ```
 
-1. **AUTHOR:** how the site's author should read. Opus suggested *"Tuzi (Chin Sook Ling) and the Affiliates of The Civilisation Field"*.
-2. **FIRST_PUBLISHED:** the date The Chamber was first published, written as `YYYY-MM-DD`. The chambers themselves start on 2026-05-26 (ch001), but the date the *site* was first published is Tuzi's call, so I did not guess.
-
-After filling them in, run `python3 tools/build_chambers.py` once. It writes both values into **every** page: all 157 generated pages, and the hand-made `index.html`, `start/`, `for-ai/`, `license/`, plus the readable blocks of page4, Sky Hall and Accio. I tested this with dummy values: all 8 hand-made files and every generated page updated, and no placeholders were left.
+- **Short author form on purpose:** Tuzi chose "Tuzi and Affiliates" because the same author line will be used on all her sites (THOOTB, AiLUHC, TCF and others). No "of The Civilisation Field" was added.
+- **Old comment removed:** the earlier AUTHOR suggestion comment was deleted from the generator, so there is only one wording.
+- **Regenerated:** the generator was re-run, and every page now shows "Made by Tuzi and Affiliates · First published: 2026-05-26 · Last updated: 2026-09-26".
+- **No placeholders left:** a search of the whole repo, excluding `.git` and `docs/architecture/`, finds **0 files** containing "[TUZI TO FILL". That includes the 3D readable blocks, `llms.txt` and `sitemap.xml`.
 
 ## What changed
 
@@ -38,17 +36,17 @@ After filling them in, run `python3 tools/build_chambers.py` once. It writes bot
 
 | Page | canonical | description | author | first published | last updated | license link | text-index link | for-ai link | start link | one h1 | img alt |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| index.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| start/ | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| for-ai/ | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | — | ✅ | ✅ | ✅ | ✅ |
-| license/ | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | — | ✅ | ✅ | ✅ | ✅ |
-| chambers/index.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| pages/page4.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| pages/skyhall.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| pages/accio.html | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| chambers/chNNN.html (156) | ✅ | ✅ | ✅* | ✅* | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| index.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| start/ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| for-ai/ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ | ✅ | ✅ |
+| license/ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ | ✅ | ✅ |
+| chambers/index.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| pages/page4.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| pages/skyhall.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| pages/accio.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| chambers/chNNN.html (156) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-\* The line is present, but its value is still `[TUZI TO FILL]`. — = not required on that page.
+— = not required on that page.
 
 **Must items:**
 
@@ -56,15 +54,15 @@ After filling them in, run `python3 tools/build_chambers.py` once. It writes bot
 |---|---|---|
 | 1 | Readable body in raw HTML | ✅ The reading layer carries all chamber content. The 3D pages have readable blocks that link to it. |
 | 2 | Public, no login | ✅ |
-| 3 | Page identity on the home page (what, who, when) | ◐ → ✅ once AUTHOR and FIRST_PUBLISHED are filled in. The **what** is already there. |
+| 3 | Page identity on the home page (what, who, when) | ✅ What (intro), who ("Made by Tuzi and Affiliates"), when ("First published: 2026-05-26"). |
 | 4 | Core definitions, consistent terms | ✅ |
-| 5 | Author, first published, last updated | ◐ → ✅ once the two constants are filled in. The lines are already on every page. |
+| 5 | Author, first published, last updated | ✅ On every page, from one source (the generator constants). |
 | 6 | Image text alternatives | ✅ |
 | 7 | Semantic structure | ✅ One h1 per page, h2 sections, lists. |
 | 11 | License statement | ✅ `license/` is linked from every reading page and every 3D readable block. |
 | 15 | Start Here | ✅ It has the 9 sections, a date and the For AI part. The §15.6 minimum (the sync checklist) has been added. |
 
-**The only remaining ◐ items are the two `[TUZI TO FILL]` values.** Nothing else is open among the Must items.
+**All v0.4 Must items are ✅.**
 
 ## How tested
 
@@ -79,10 +77,8 @@ After filling them in, run `python3 tools/build_chambers.py` once. It writes bot
 
 ## Risks
 
-- **Placeholders are visible:** until the two constants are filled in, the placeholder text shows in every footer. **Fill them in before merging.**
 - **Hand-made pages:** if someone deletes the `<!-- tcf:site-meta -->` markers, the generator stops with an error instead of silently skipping the page. This is intended.
 
 ## Questions for Tuzi
 
-1. AUTHOR: what wording?
-2. FIRST_PUBLISHED: which date?
+- None. Both values are filled in, and the PR is ready to merge.

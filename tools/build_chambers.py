@@ -68,9 +68,8 @@ IMMERSIVE_PAGES = ['pages/page4.html', 'pages/skyhall.html', 'pages/accio.html']
 # The generator writes them into the generated pages AND into the hand-made pages
 # (index.html, start/, for-ai/, license/, and the readable blocks of page4,
 # skyhall, accio) between <!-- tcf:site-meta --> markers. Change here, re-run.
-# AUTHOR suggestion (Tuzi to confirm): 'Tuzi (Chin Sook Ling) and the Affiliates of The Civilisation Field'
-AUTHOR = '[TUZI TO FILL: author line]'
-FIRST_PUBLISHED = '[TUZI TO FILL: first published date]'
+AUTHOR = 'Tuzi and Affiliates'
+FIRST_PUBLISHED = '2026-05-26'
 LAST_UPDATED = '2026-09-26'
 
 # Hand-made pages: file → its public path (for <link rel="canonical">, built from BASE_URL).

@@ -4,6 +4,64 @@
  166 files changed, 485 insertions(+), 258 deletions(-)
 ```
 
+## Rev 2: the two values filled in (Tuzi)
+
+`AUTHOR = 'Tuzi and Affiliates'` and `FIRST_PUBLISHED = '2026-05-26'`, and the old suggestion comment is removed. The generator was re-run, and 0 files outside `docs/architecture/` contain "[TUZI TO FILL". Diff of rev 2 (generator, root page and one sample chamber page; every other page changes the same way):
+
+```diff
+diff --git a/chambers/ch001.html b/chambers/ch001.html
+index 73a73d4..c12c6cd 100644
+--- a/chambers/ch001.html
++++ b/chambers/ch001.html
+@@ -62,7 +62,7 @@
+   <a href="../start/">Start Here</a> ·
+   <a href="../for-ai/">For AI readers</a> ·
+   <a href="../license/">License</a>
+-  <p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
++  <p class="tcf-reading__updated">Made by Tuzi and Affiliates · First published: <time datetime="2026-05-26">2026-05-26</time> · Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
+ </footer>
+ </body>
+ </html>
+diff --git a/index.html b/index.html
+index 368b4b7..e99e1bc 100644
+--- a/index.html
++++ b/index.html
+@@ -24,7 +24,7 @@
+ <main class="tcf-reading__main">
+ <h1>The Chamber <span class="tcf-reading__zh">畫</span></h1>
+ <p>The Chamber (畫) is one of the four doors of <a href="https://chinsookling.github.io/the-Civilisation-field/">The Civilisation Field</a>.</p>
+-<!-- tcf:who-when --><p>Made by [TUZI TO FILL: author line]. First published: [TUZI TO FILL: first published date].</p><!-- /tcf:who-when -->
++<!-- tcf:who-when --><p>Made by Tuzi and Affiliates. First published: <time datetime="2026-05-26">2026-05-26</time>.</p><!-- /tcf:who-when -->
+ <ul>
+   <li><a href="pages/page4.html">Enter the immersive chamber</a> (Quiet Chambers)</li>
+   <li><a href="pages/skyhall.html">Sky Hall</a></li>
+@@ -37,7 +37,7 @@
+   <a href="start/">Start Here</a> ·
+   <a href="for-ai/">For AI readers</a> ·
+   <a href="license/">License</a>
+-  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by [TUZI TO FILL: author line] · First published: [TUZI TO FILL: first published date] · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
++  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by Tuzi and Affiliates · First published: <time datetime="2026-05-26">2026-05-26</time> · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
+ </footer>
+ </body>
+ </html>
+diff --git a/tools/build_chambers.py b/tools/build_chambers.py
+index 03c4d42..9aad2be 100644
+--- a/tools/build_chambers.py
++++ b/tools/build_chambers.py
+@@ -68,9 +68,8 @@ IMMERSIVE_PAGES = ['pages/page4.html', 'pages/skyhall.html', 'pages/accio.html']
+ # The generator writes them into the generated pages AND into the hand-made pages
+ # (index.html, start/, for-ai/, license/, and the readable blocks of page4,
+ # skyhall, accio) between <!-- tcf:site-meta --> markers. Change here, re-run.
+-# AUTHOR suggestion (Tuzi to confirm): 'Tuzi (Chin Sook Ling) and the Affiliates of The Civilisation Field'
+-AUTHOR = '[TUZI TO FILL: author line]'
+-FIRST_PUBLISHED = '[TUZI TO FILL: first published date]'
++AUTHOR = 'Tuzi and Affiliates'
++FIRST_PUBLISHED = '2026-05-26'
+ LAST_UPDATED = '2026-09-26'
+ 
+ # Hand-made pages: file → its public path (for <link rel="canonical">, built from BASE_URL).
+```
+
 The generated `chambers/*.html` pages changed only in their `<head>` (canonical) and footer (the site-facts line). Sample:
 
 ```diff
