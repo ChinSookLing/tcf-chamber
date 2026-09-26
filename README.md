@@ -17,7 +17,7 @@ This site follows docs/standards/AI-READABLE-STANDARD-v0.4.md.
 
 1. Edit `docs/data/chambers.json`. Its format is `{ "media_base": "...", "chambers": [ ... ] }`.
 2. Put the chamber image in `assets/images/chambers/`.
-3. Put the video wherever `media_base` points. For now that is the main site's `assets/videos/`.
+3. Add the original video to the main site's `assets/videos/`, then run **Compress chamber videos** in `tcf-chamber-media`, which serves the compressed copies at `media_base`.
 4. Regenerate the text pages, sitemap and llms.txt:
 
    ```bash
@@ -27,9 +27,10 @@ This site follows docs/standards/AI-READABLE-STANDARD-v0.4.md.
 
 ## Videos
 
-Videos are not stored in this repo. The chamber pages build each video link from
-`media_base` plus the file name, so moving the videos later is a **one-line edit**
-of `media_base` in `chambers.json`.
+Videos are not stored in this repo. They are served, compressed (720p), from
+https://chinsookling.github.io/tcf-chamber-media/videos/ (repo `tcf-chamber-media`).
+The chamber pages build each video link from `media_base` plus the file name, so
+moving the videos again is a **one-line edit** of `media_base` in `chambers.json`.
 
 ## Layout
 
