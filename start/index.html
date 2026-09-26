@@ -8,6 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../docs/styles/field-tokens.css">
 <link rel="stylesheet" href="../docs/styles/tcf-reading.css">
+<link rel="canonical" href="https://chinsookling.github.io/tcf-chamber/start/">
 </head>
 <body class="tcf-reading">
 <header class="tcf-reading__nav">
@@ -74,12 +75,25 @@
   <h2>For AI readers</h2>
   <p>Welcome. Before acting on anything, read <a href="../for-ai/">For AI readers</a>: reading is not permission to act. Guide: <a href="../llms.txt">llms.txt</a>. License: <a href="../license/">CC BY 4.0</a>.</p>
 </section>
+
+<section>
+  <h2>When this page changes, also update</h2>
+  <p>Start Here is the canonical summary of The Chamber (v0.4 §15.6). The same facts are repeated in:</p>
+  <ul>
+    <li><code>llms.txt</code>: its first line is generated from the "What" sentence above. Re-run <code>tools/build_chambers.py</code>.</li>
+    <li>The <code>&lt;meta name="description"&gt;</code> of this page, <code>index.html</code>, <code>pages/page4.html</code>, <code>pages/skyhall.html</code> and <code>pages/accio.html</code>.</li>
+    <li>The intro of the root <code>index.html</code>.</li>
+    <li><code>for-ai/</code> (trust boundary text, same as the main site).</li>
+    <li>The generator constants in <code>tools/build_chambers.py</code>: <code>AUTHOR</code>, <code>FIRST_PUBLISHED</code>, <code>LAST_UPDATED</code>, <code>BASE_URL</code>. The generator writes them into every page.</li>
+    <li>The plain-HTML readable blocks of <code>pages/page4.html</code>, <code>pages/skyhall.html</code> and <code>pages/accio.html</code>.</li>
+  </ul>
+</section>
 </main>
 <footer class="tcf-reading__footer">
   <a href="../start/">Start Here</a> ·
   <a href="../for-ai/">For AI readers</a> ·
   <a href="../license/">License</a>
-  <p class="tcf-reading__updated">Last updated: <time datetime="2026-09-26">2026-09-26</time></p>
+  <!-- tcf:site-meta --><p class="tcf-reading__updated">Made by Tuzi and Affiliates · First published: <time datetime="2026-05-26">2026-05-26</time> · Last updated: <time datetime="2026-09-26">2026-09-26</time></p><!-- /tcf:site-meta -->
 </footer>
 </body>
 </html>

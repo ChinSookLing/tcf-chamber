@@ -64,9 +64,24 @@ PLANNED_URL = 'https://chamber.civilisationfield.com/'
 READING_PAGES = ['start/', 'for-ai/', 'license/']
 IMMERSIVE_PAGES = ['pages/page4.html', 'pages/skyhall.html', 'pages/accio.html']
 
-# "Last updated" date shown in the footer of every generated page (v0.4 item 5).
-# Change it when the chamber content or these pages change, then re-run.
+# Site facts shown on every page (v0.4 item 5), one source for all of them.
+# The generator writes them into the generated pages AND into the hand-made pages
+# (index.html, start/, for-ai/, license/, and the readable blocks of page4,
+# skyhall, accio) between <!-- tcf:site-meta --> markers. Change here, re-run.
+AUTHOR = 'Tuzi and Affiliates'
+FIRST_PUBLISHED = '2026-05-26'
 LAST_UPDATED = '2026-09-26'
+
+# Hand-made pages: file → its public path (for <link rel="canonical">, built from BASE_URL).
+HAND_PAGES = {
+    'index.html': '',
+    'start/index.html': 'start/',
+    'for-ai/index.html': 'for-ai/',
+    'license/index.html': 'license/',
+    'pages/page4.html': 'pages/page4.html',
+    'pages/skyhall.html': 'pages/skyhall.html',
+    'pages/accio.html': 'pages/accio.html',
+}
 
 
 def esc(s):
@@ -114,7 +129,27 @@ def paragraphs(text):
         for b in blocks if b.strip())
 
 
-def page(title, description, body):
+def when(value):
+    """A date as <time> when it is an ISO date; otherwise plain text (e.g. a placeholder)."""
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+        return '<time datetime="%s">%s</time>' % (value, value)
+    return esc(value)
+
+
+def site_meta_html():
+    return ('<p class="tcf-reading__updated">Made by %s · First published: %s · Last updated: %s</p>'
+            % (esc(AUTHOR), when(FIRST_PUBLISHED), when(LAST_UPDATED)))
+
+
+def who_when_html():
+    return '<p>Made by %s. First published: %s.</p>' % (esc(AUTHOR), when(FIRST_PUBLISHED))
+
+
+def canonical(path):
+    return '<link rel="canonical" href="%s">' % esc(BASE_URL + path)
+
+
+def page(title, description, body, path):
     nav = ' ·\n    '.join('<a href="%s">%s</a>' % (esc(h), esc(l)) for l, h in NAV)
     foot = ' ·\n  '.join('<a href="%s">%s</a>' % (esc(h), esc(l)) for l, h in FOOTER)
     return """<!DOCTYPE html>
@@ -128,6 +163,7 @@ def page(title, description, body):
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../docs/styles/field-tokens.css">
 <link rel="stylesheet" href="../docs/styles/tcf-reading.css">
+%s
 </head>
 <body class="tcf-reading">
 <header class="tcf-reading__nav">
@@ -140,11 +176,11 @@ def page(title, description, body):
 </main>
 <footer class="tcf-reading__footer">
   %s
-  <p class="tcf-reading__updated">Last updated: <time datetime="%s">%s</time></p>
+  %s
 </footer>
 </body>
 </html>
-""" % (esc(title), esc(description), nav, body, foot, LAST_UPDATED, LAST_UPDATED)
+""" % (esc(title), esc(description), canonical(path), nav, body, foot, site_meta_html())
 
 
 def chamber_page(c, prev_c, next_c):
@@ -190,7 +226,7 @@ def chamber_page(c, prev_c, next_c):
     title = '%s · %s · The Chamber · The Civilisation Field' % (zh, en)
     desc = 'Quiet chamber %s (%s · %s), %s, created by %s. Text version.' % (
         cid, zh, en, c['date'], name(c['created_by']))
-    return page(title, desc, '\n'.join(parts))
+    return page(title, desc, '\n'.join(parts), 'chambers/%s.html' % cid)
 
 
 def index_page(chambers):
@@ -209,7 +245,28 @@ def index_page(chambers):
             '<ol class="tcf-reading__list">\n%s\n</ol>' % (len(chambers), IMMERSIVE, '\n'.join(rows)))
     return page('The Chamber · Quiet Chambers (text) · The Civilisation Field',
                 'A plain-text list of all %d quiet chambers in The Civilisation Field.' % len(chambers),
-                body)
+                body, 'chambers/index.html')
+
+
+def stamp_hand_pages():
+    """Write canonical links and the site facts into the hand-made pages."""
+    marks = [('site-meta', site_meta_html()), ('who-when', who_when_html())]
+    for rel, path in HAND_PAGES.items():
+        full = os.path.join(ROOT, rel)
+        with open(full, encoding='utf-8') as f:
+            s = f.read()
+        link = canonical(path)
+        if 'rel="canonical"' in s:
+            s = re.sub(r'<link rel="canonical" href="[^"]*">', link, s, count=1)
+        else:
+            s = s.replace('</head>', link + '\n</head>', 1)
+        if '<!-- tcf:site-meta -->' not in s:
+            sys.exit('%s: missing <!-- tcf:site-meta --> markers' % rel)
+        for name, content in marks:
+            s = re.sub(r'(<!-- tcf:%s -->).*?(<!-- /tcf:%s -->)' % (name, name),
+                       lambda m: m.group(1) + content + m.group(2), s, flags=re.S)
+        with open(full, 'w', encoding='utf-8', newline='\n') as f:
+            f.write(s)
 
 
 def what_sentence():
@@ -295,6 +352,7 @@ def main():
         next_c = chambers[i + 1] if i + 1 < len(chambers) else None
         write(c['id'] + '.html', chamber_page(c, prev_c, next_c))
 
+    stamp_hand_pages()
     with open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n') as f:
         f.write(sitemap(chambers))
     with open(os.path.join(ROOT, 'llms.txt'), 'w', encoding='utf-8', newline='\n') as f:
