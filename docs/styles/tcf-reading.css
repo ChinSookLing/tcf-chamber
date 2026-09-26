@@ -160,3 +160,10 @@ body.tcf-reading {
   color: var(--gold-pure);
   font-weight: 600;
 }
+
+/* Phase 4d · "Last updated" line in the footer (v0.4 item 5) */
+.tcf-reading__updated {
+  margin: var(--space-2xs) 0 0;
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+}
