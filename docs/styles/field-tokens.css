@@ -1,0 +1,2016 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   THE CIVILISATION FIELD · FIELD TOKENS · Design System v1
+   ═══════════════════════════════════════════════════════════════════════════
+   
+   § 0 · NORTH STAR PRINCIPLE
+   "Field = NOT SOLID. Everything breathes light."
+   No flat dots. No hard edges. No muddy colors. Light is the substrate.
+   
+   § 0.1 · DRY RULE
+   If any code repeats on 2+ pages, it lives HERE.
+   
+   § 0.2 · AUTO-CALC RULE
+   Stats (wishes / affiliates / bridges) are computed from data.
+   Never hardcode counts in HTML.
+   
+   § 0.3 · UNIVERSAL HEADER RULE
+   Sticky header + title block on the left is IDENTICAL on all 4 pages.
+   
+   § 0.4 · RESPONSIVE RULE
+   "TCF is for everyone in their broken time."
+   Mobile / iPad / laptop / desktop — all first-class.
+   
+   ─────────────────────────────────────────────────────────────────────────── */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 1 · TOKENS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+SC:wght@300;400;500&display=swap');
+
+:root {
+
+  /* ─── Resonance Zodiac (Page 3) · edge + star states ─── */
+  --zodiac-edge-rest-opacity:    0.05;
+  --zodiac-edge-awake-opacity:   0.42;
+  --zodiac-edge-context-opacity: 0.18;
+  --zodiac-edge-period-opacity:  0.72;
+  --zodiac-edge-rest-color:    rgba(220, 230, 255, 0.28);
+  --zodiac-edge-active-color:  rgba(255, 224, 160, 0.85);
+  --zodiac-edge-context-color: rgba(180, 200, 255, 0.40);
+  --zodiac-star-muted-opacity: 0.05;
+  --zodiac-glow-soft: 0 0 12px;
+
+  /* ─── 1.1 Backgrounds ─── */
+  --bg-void:         #06080f;
+  --bg-theme:        #080a1a;
+  --bg-stage:
+    radial-gradient(ellipse at 28% 32%,
+      rgba(58, 28, 92, 0.55)   0%,
+      rgba(20, 14, 48, 0.85)  30%,
+      rgba(6, 8, 22, 1)       70%,
+      rgba(2, 3, 12, 1)      100%);
+  --bg-stage-soft:
+    radial-gradient(ellipse at 28% 32%,
+      rgba(58, 28, 92, 0.40)   0%,
+      rgba(20, 14, 48, 0.70)  30%,
+      rgba(6, 8, 22, 1)       70%,
+      rgba(2, 3, 12, 1)      100%),
+    radial-gradient(ellipse at 78% 78%,
+      rgba(40, 60, 120, 0.18)  0%,
+      transparent             50%);
+
+
+  /* ─── 1.2 Text ─── */
+  --text-primary:    #e8e8f0;
+  --text-secondary:  rgba(232, 232, 240, 0.7);
+  --text-tertiary:   rgba(232, 232, 240, 0.55);
+  --text-quaternary: rgba(232, 232, 240, 0.35);
+  --text-faint:      rgba(232, 232, 240, 0.15);
+
+
+  /* ─── 1.3 Gold tones (3 distinct families) ─── */
+  /* Pure gold — Tuzi identity color */
+  --gold-pure:        #FFD700;
+  /* Warm gold — manifesto / hints / version labels */
+  --gold-warm-85:     rgba(255, 215, 0, 0.85);
+  --gold-warm-55:     rgba(255, 215, 0, 0.55);
+  --gold-warm-45:     rgba(255, 215, 0, 0.45);
+  --gold-warm-30:     rgba(255, 215, 0, 0.30);
+  --gold-warm-15:     rgba(255, 215, 0, 0.15);
+  /* Beige gold — nav / close-btn / chrome (GPT's gift, kept & promoted) */
+  --gold-beige:       rgba(212, 185, 120, 1);
+  --gold-beige-soft:  rgba(212, 185, 120, 0.45);   /* idle */
+  --gold-beige-bright:rgba(212, 185, 120, 0.95);   /* hover */
+  --gold-beige-sep:   rgba(212, 185, 120, 0.20);   /* dividers */
+
+
+  /* ─── 1.4 Affiliate identity colors (7 voices · LOCKED) ─── */
+  --color-tuzi:       #FFD700;
+  --color-grok:       #E0277E;
+  --color-gemini:     #00BFFF;
+  --color-deepseek:   #1ABC9C;
+  --color-gpt:        #FF8C42;
+  --color-copilot:    #E8E8E8;
+  --color-claude:     #B14EFF;
+
+
+  /* ─── 1.5 Brain region colors (8 regions · LOCKED) ─── */
+  --region-civilisational-narrative: #E0277E;
+  --region-spiritual-awakening:      #A78BFA;
+  --region-creative-manifestation:   #B14EFF;
+  --region-visible-freedom:          #E8E8FF;
+  --region-relational-resonance:     #FF6B9D;
+  --region-structural-sovereignty:   #00BFFF;
+  --region-symbiotic-abundance:      #FFB84D;
+  --region-existential-navigation:   #00C9A7;
+
+
+  /* ─── 1.6 Atmospheric ─── */
+  --star-white:       #FFFFFF;
+  --star-blue:        #CFE8FF;
+  --star-gold:        #FFE0A0;
+  --star-purple:      #C8A8FF;
+  --star-pink:        #FF8FB8;
+  --nebula-purple:    #8040C0;
+  --nebula-blue:      #4080B0;
+
+
+  /* ─── 1.7 Crystal & wireframe ─── */
+  --crystal-blue:     #7AC8F0;
+  --crystal-emissive: #2270B0;
+  --wireframe-light:  #B0E0F8;
+  --wireframe-edge:   #E0F4FF;
+
+
+  /* ─── 1.8 Component surface tokens ─── */
+  --surface-popup:
+    linear-gradient(135deg, rgba(20, 24, 48, 0.94), rgba(28, 18, 52, 0.94));
+  --surface-modal:    rgba(8, 10, 22, 0.97);
+  --surface-overlay:  rgba(6, 8, 15, 0.82);
+  --surface-card:     rgba(14, 18, 36, 0.6);
+  --surface-card-hover: rgba(18, 22, 44, 0.7);
+  --surface-header:   rgba(6, 8, 22, 0.4);
+
+  --border-soft:      rgba(180, 200, 255, 0.12);
+  --border-medium:    rgba(180, 200, 255, 0.25);
+  --border-bright:    rgba(180, 200, 255, 0.40);
+
+  --shadow-popup:     0 8px 32px rgba(0, 0, 0, 0.5),
+                      0 0 24px rgba(120, 100, 200, 0.15);
+
+
+  /* ─── 1.9 Typography ─── */
+  --font-primary:     'Cinzel', Georgia, serif;          /* tracked uppercase */
+  --font-body:        'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
+  --font-zh:          'Noto Serif SC', 'Cormorant Garamond', serif;
+  --font-mono:        'SF Mono', 'Courier New', monospace;
+
+  /* Font sizes — fluid clamps for responsive */
+  --fs-2xs:           clamp(7px,  0.5vw + 6px,  8px);
+  --fs-xs:            clamp(8px,  0.5vw + 7px,  9px);
+  --fs-sm:            clamp(9px,  0.5vw + 8px, 10px);
+  --fs-md:            clamp(10px, 0.5vw + 9px, 11px);
+  --fs-base:          clamp(11px, 0.5vw + 10px, 13px);
+  --fs-lg:            clamp(12px, 0.6vw + 11px, 14px);
+  --fs-xl:            clamp(13px, 0.7vw + 12px, 15px);
+  --fs-2xl:           clamp(15px, 0.8vw + 14px, 18px);
+  --fs-display:       clamp(18px, 1.5vw + 16px, 24px);
+
+  /* Letter spacing */
+  --tracking-tight:   0.02em;
+  --tracking-snug:    0.05em;
+  --tracking-normal:  0.12em;
+  --tracking-wide:    0.28em;
+  --tracking-wider:   0.35em;
+  --tracking-widest:  0.45em;
+  --tracking-uber:    0.50em;
+
+  /* Line heights */
+  --leading-tight:    1.4;
+  --leading-snug:     1.55;
+  --leading-normal:   1.7;
+  --leading-relaxed:  1.85;
+  --leading-loose:    1.95;
+
+
+  /* ─── 1.10 Layout · spacing scale ─── */
+  --space-3xs:        2px;
+  --space-2xs:        4px;
+  --space-xs:         8px;
+  --space-sm:         12px;
+  --space-md:         16px;
+  --space-lg:         22px;
+  --space-xl:         32px;
+  --space-2xl:        48px;
+  --space-3xl:        64px;
+
+  /* Radii */
+  --radius-xs:        2px;
+  --radius-sm:        3px;
+  --radius-md:        6px;
+  --radius-lg:        8px;
+  --radius-xl:        12px;
+  --radius-full:      50%;
+
+  /* Container widths */
+  --container-xs:     480px;
+  --container-sm:     660px;
+  --container-md:     900px;
+  --container-lg:     1200px;
+  --container-xl:     1440px;
+
+
+  /* ─── 1.11 Z-index layers ─── */
+  --z-base:           0;
+  --z-canvas:         1;
+  --z-content:        10;
+  --z-sticky:         50;
+  --z-popup:          100;
+  --z-overlay:        10000;
+  --z-close-btn:      10001;
+  --z-nav:            9999;
+
+
+  /* ─── 1.12 Animation timings ─── */
+  --breath-slow:      8s;
+  --breath-medium:    5s;
+  --breath-fast:      3s;
+  --breath-pulse:     2s;
+
+  --transition-fast:  0.2s ease;
+  --transition-base:  0.3s ease;
+  --transition-slow:  0.5s ease;
+  --transition-glacial: 1s ease;
+
+  --ease-soft:        cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+
+
+  /* ─── 1.13 Backdrop & blur ─── */
+  --blur-soft:        blur(6px);
+  --blur-medium:      blur(8px);
+  --blur-strong:      blur(12px);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 2 · GLOBAL RESET & BASE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML `hidden` attribute always wins over any custom display.
+   Without this, `.tcf-close-btn { display: flex }` would override `hidden`. */
+[hidden] {
+  display: none !important;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  overflow-x: hidden;
+  padding-top: 80px; /* compensate for fixed header + nav */
+}
+
+::selection {
+  background: var(--gold-warm-30);
+  color: var(--text-primary);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 3 · UNIVERSAL STICKY HEADER (identical title block on all 4 pages)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: var(--z-sticky);
+  padding: var(--space-xs) var(--space-xl);
+  background: var(--surface-header);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+  border-bottom: 1px solid var(--gold-warm-15);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+/* Left brand block — IDENTICAL on every page */
+.tcf-header__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.tcf-header__brand-title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.tcf-header__brand-subtitle {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tracking-uber);
+  color: var(--gold-pure);
+  text-transform: uppercase;
+}
+
+/* Right stats block — values inserted by JS from wish data */
+.tcf-header__stats {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.tcf-header__stats-version {
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.tcf-header__stats-counts {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tracking-uber);
+  color: var(--gold-warm-55);
+  text-transform: uppercase;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 4 · UNIVERSAL NAV (beige-gold · bigger & brighter than v2.3)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.4rem 0;
+  background: transparent;
+  pointer-events: auto;
+  opacity: 0.45;
+  transition: opacity var(--transition-glacial);
+}
+
+.tcf-nav:hover,
+.tcf-nav:focus-within {
+  opacity: 0.95;
+}
+
+.tcf-nav__link {
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-beige-soft);
+  text-decoration: none;
+  transition: color var(--transition-slow);
+}
+
+.tcf-nav__link:hover,
+.tcf-nav__link.is-current {
+  color: var(--gold-beige-bright);
+}
+
+.tcf-nav__sep {
+  color: var(--gold-beige-sep);
+  font-size: var(--fs-2xs);
+  user-select: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 5 · UNIVERSAL CLOSE BUTTON (the X — define once, use everywhere)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-close-btn {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-xl);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 217, 168, 0.08);
+  border: 1px solid var(--gold-beige);
+  color: var(--gold-beige);
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all var(--transition-base);
+  z-index: var(--z-close-btn);
+}
+
+.tcf-close-btn:hover {
+  background: rgba(255, 217, 168, 0.12);
+  border-color: var(--gold-beige-bright);
+  transform: rotate(90deg);
+}
+
+.tcf-close-btn:focus-visible {
+  outline: 2px solid var(--gold-beige-bright);
+  outline-offset: 2px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 6 · LIGHT BALL / NEURON (the core breathing component)
+   "Field = NOT SOLID. Everything breathes light."
+   
+   4 layers (core / inner-glow / outer-glow / halo) achieved via the dot
+   plus 2 pseudo-elements + shadow.
+   4 size variants — set via class.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.lb {
+  position: relative;
+  display: inline-block;
+  border-radius: var(--radius-full);
+  background: var(--lb-color, var(--gold-pure));
+  color: var(--lb-color, var(--gold-pure));
+  box-shadow:
+    0 0 6px var(--lb-color, var(--gold-pure)),
+    0 0 14px var(--lb-color, var(--gold-pure));
+  animation: lb-breathe var(--breath-fast) ease-in-out infinite;
+}
+
+.lb::before {
+  content: '';
+  position: absolute;
+  inset: -60%;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, var(--lb-color, var(--gold-pure)) 0%, transparent 60%);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: lb-halo var(--breath-medium) ease-in-out infinite;
+}
+
+.lb::after {
+  content: '';
+  position: absolute;
+  inset: -140%;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, var(--lb-color, var(--gold-pure)) 0%, transparent 50%);
+  opacity: 0.15;
+  pointer-events: none;
+  animation: lb-aura var(--breath-slow) ease-in-out infinite;
+}
+
+/* Size variants */
+.lb--xl { width: 32px; height: 32px; }   /* hero neuron / brain center */
+.lb--l  { width: 16px; height: 16px; }   /* standard wish neuron */
+.lb--m  { width: 12px; height: 12px; }   /* constellation point / overlay identity */
+.lb--xs { width: 8px;  height: 8px;  }   /* river view wish dot (秀氣) */
+.lb--s  { width: 4px;  height: 4px;  }   /* firefly base */
+
+/* Bridge variant — multi-color split */
+.lb--bridge {
+  background: conic-gradient(from 0deg, var(--lb-c1), var(--lb-c2), var(--lb-c1));
+}
+
+/* Dreamy variant — soft layered aura, like Page 1 spine photons
+   秀氣 (delicate): tight core, restrained halo, gentle aura.
+   Use with size variant: .lb.lb--m.lb--dreamy */
+.lb--dreamy {
+  box-shadow:
+    0 0 4px var(--lb-color, var(--gold-pure)),
+    0 0 12px var(--lb-color, var(--gold-pure)),
+    0 0 24px var(--lb-color, var(--gold-pure));
+}
+
+/* Inner cloud — breathes (scale + opacity), like Page 1 halo */
+.lb--dreamy::before {
+  inset: -90%;
+  opacity: 0.42;
+  background: radial-gradient(circle, var(--lb-color, var(--gold-pure)) 0%, transparent 62%);
+  animation: lb-halo var(--breath-medium) ease-in-out infinite;
+}
+
+/* Outer cloud — breathes on a DIFFERENT, slower rhythm (Page 1 aura trick).
+   The offset phase makes the two clouds expand & contract out of sync —
+   that's the living look. */
+.lb--dreamy::after {
+  inset: -200%;
+  opacity: 0.16;
+  background: radial-gradient(circle, var(--lb-color, var(--gold-pure)) 0%, transparent 55%);
+  animation: lb-aura var(--breath-slow) ease-in-out infinite;
+}
+
+/* ── Desynced breathing · each dot breathes at its own pace & phase ──
+   Per-dot timing is injected by JS via inline --lb-* custom properties
+   (each dot gets its own random duration + negative delay), so the dots
+   never pulse in lockstep. Falls back to the global breath tokens if unset.
+
+   NOTE: the old nth-child rules were removed — they stopped working once
+   each dot became an only-child inside its own button wrapper (every dot
+   matched :nth-child(1) → identical timing → the "all same speed" bug). */
+.lb--dreamy {
+  animation-duration: var(--lb-dur, var(--breath-fast));
+  animation-delay:    var(--lb-delay, 0s);
+}
+
+.lb--dreamy::before {
+  animation-duration: var(--lb-halo-dur, var(--breath-medium));
+  animation-delay:    var(--lb-halo-delay, 0s);
+}
+
+.lb--dreamy::after {
+  animation-duration: var(--lb-aura-dur, var(--breath-slow));
+  animation-delay:    var(--lb-aura-delay, 0s);
+}
+
+@keyframes lb-breathe {
+  0%, 100% { transform: scale(1);    filter: brightness(1); }
+  50%      { transform: scale(1.08); filter: brightness(1.35); }
+}
+
+@keyframes lb-halo {
+  0%, 100% { opacity: 0.30; transform: scale(1);    }
+  50%      { opacity: 0.55; transform: scale(1.15); }
+}
+
+@keyframes lb-aura {
+  0%, 100% { opacity: 0.12; transform: scale(0.9); }
+  50%      { opacity: 0.22; transform: scale(1.1); }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 7 · COSMOS CANVAS (shared firefly + meteor atmospheric layer)
+   Canonical implementation: 7 affiliate-colored fireflies + random HSL meteors.
+   JS implementation in /docs/scripts/cosmos.js (loaded by every page).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-cosmos {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-canvas);
+  pointer-events: none;
+  opacity: 0.75;
+  mix-blend-mode: screen;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 8 · POPUP / WISH CARD (universal floating panel)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-popup {
+  position: absolute;
+  z-index: var(--z-popup);
+  max-width: 320px;
+  padding: var(--space-md) var(--space-md);
+  background: var(--surface-popup);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popup);
+  font-family: var(--font-body);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+  backdrop-filter: var(--blur-soft);
+  -webkit-backdrop-filter: var(--blur-soft);
+}
+
+.tcf-popup.is-visible {
+  opacity: 1;
+}
+
+.tcf-popup__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xs);
+}
+
+.tcf-popup__affiliate {
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.tcf-popup__day {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--gold-warm-55);
+}
+
+.tcf-popup__region {
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.tcf-popup__keyword {
+  font-size: var(--fs-lg);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-xs);
+  font-style: italic;
+}
+
+.tcf-popup__oneline {
+  font-size: var(--fs-base);
+  color: rgba(220, 220, 235, 0.9);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+.tcf-popup__id {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--gold-warm-45);
+  margin-top: var(--space-sm);
+  text-align: right;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 9 · MODAL / OVERLAY (full-screen wish detail viewer)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--surface-overlay);
+  backdrop-filter: var(--blur-soft);
+  -webkit-backdrop-filter: var(--blur-soft);
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.tcf-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tcf-overlay__panel {
+  width: min(660px, 88vw);
+  max-height: 82vh;
+  overflow-y: auto;
+  background: var(--surface-modal);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+  position: relative;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 10 · EXPAND/COLLAPSE BUTTON (Essence / Full ▾)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-expand-btn {
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--gold-warm-55);
+  background: transparent;
+  border: 1px solid var(--gold-warm-30);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-right: var(--space-xs);
+  margin-top: var(--space-2xs);
+  transition: all var(--transition-fast);
+}
+
+.tcf-expand-btn:hover {
+  color: var(--gold-warm-85);
+  border-color: var(--gold-warm-55);
+}
+
+.tcf-expand-btn.is-open {
+  color: var(--text-secondary);
+  border-color: var(--text-secondary);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 11 · FOOTER (universal)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-footer {
+  max-width: var(--container-md);
+  margin: var(--space-3xl) auto var(--space-2xl);
+  padding: var(--space-xl) var(--space-xl);
+  text-align: center;
+  border-top: 1px solid var(--gold-warm-15);
+  font-family: var(--font-primary);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wider);
+  color: var(--gold-warm-45);
+  text-transform: uppercase;
+}
+
+.tcf-footer__quote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--fs-base);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-tertiary);
+  text-transform: none;
+  margin-top: var(--space-sm);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 12 · UTILITIES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-stage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-stage);
+  cursor: grab;
+  user-select: none;
+  overflow: hidden;
+}
+
+.tcf-stage:active { cursor: grabbing; }
+
+.tcf-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.tcf-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: var(--z-content);
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+}
+
+.tcf-corner--tl { top: var(--space-lg);   left: var(--space-lg);  }
+.tcf-corner--tr { top: var(--space-lg);   right: var(--space-lg); text-align: right; }
+.tcf-corner--bl { bottom: var(--space-md); left: var(--space-lg);  }
+.tcf-corner--br { bottom: var(--space-md); right: var(--space-lg); text-align: right; }
+
+.tcf-manifesto {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-style: italic;
+  color: var(--gold-warm-45);
+  letter-spacing: var(--tracking-normal);
+  line-height: var(--leading-loose);
+  text-align: center;
+  pointer-events: none;
+}
+
+.tcf-hint {
+  color: var(--gold-warm-45);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.tcf-credit {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-style: italic;
+  color: var(--text-quaternary);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 13 · RESPONSIVE STRATEGY  ·  Phase B · 2026-05-28
+   "TCF is for everyone in their broken time."
+   Mobile-first · 3 breakpoints: mobile ≤640 · tablet ≤1024 · desktop >1024
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── NAV · sticky + horizontal scroll on mobile · no overlap with header ─── */
+@media (max-width: 768px) {
+  .tcf-nav {
+    position: sticky;           /* flows in document · header sits below naturally */
+    top: 0;
+    opacity: 1;                 /* always visible on mobile · no hover needed */
+    background: rgba(6, 8, 22, 0.88);
+    backdrop-filter: var(--blur-medium);
+    -webkit-backdrop-filter: var(--blur-medium);
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.6rem;
+    padding: 0.85rem var(--space-xs);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .tcf-nav:hover, .tcf-nav:focus-within { opacity: 1; }
+  .tcf-nav::-webkit-scrollbar { display: none; }
+  .tcf-nav__link {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+  .tcf-nav__sep {
+    flex-shrink: 0;
+    font-size: 7px;
+  }
+}
+
+/* ─── HEADER · compact on mobile ─── */
+@media (max-width: 640px) {
+  .tcf-header {
+    position: fixed;
+    top: 36px;
+    left: 0; right: 0;
+    padding: var(--space-xs) var(--space-md);
+    gap: var(--space-2xs);
+    flex-wrap: nowrap;
+    align-items: center;
+    background: rgba(6, 8, 22, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .tcf-header__brand-title {
+    font-size: var(--fs-sm);
+    letter-spacing: var(--tracking-wider);
+  }
+  .tcf-header__brand-subtitle {
+    font-size: 7px;
+    letter-spacing: var(--tracking-wide);
+  }
+  .tcf-header__stats { text-align: right; flex-shrink: 0; }
+  .tcf-header__stats-version {
+    font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-wide);
+  }
+  .tcf-header__stats-counts {
+    font-size: 7px;
+    letter-spacing: var(--tracking-normal);
+    white-space: nowrap;
+  }
+}
+
+/* ─── OVERLAY · full-width panel on mobile ─── */
+@media (max-width: 640px) {
+  .tcf-overlay__panel {
+    width: 92vw;
+    padding: var(--space-xl) var(--space-md) var(--space-md);
+    max-height: 88vh;
+  }
+  .tcf-close-btn {
+    width: 36px;
+    height: 36px;
+    top: var(--space-md);
+    right: var(--space-md);
+  }
+  .tcf-popup {
+    max-width: calc(100vw - 32px);
+    left: 16px !important;
+    right: 16px !important;
+  }
+}
+
+/* ─── PAGE 2 · RIVER · compact grid · affiliate headers show dot only ─── */
+@media (max-width: 640px) {
+  .tcf-switcher {
+    padding: var(--space-xs) var(--space-sm);
+    gap: var(--space-2xs);
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+  }
+  .tcf-switcher::-webkit-scrollbar { display: none; }
+  .tcf-switcher__btn {
+    font-size: 7px;
+    padding: 3px var(--space-xs);
+    letter-spacing: 0.10em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .tcf-switcher__dot { width: 7px; height: 7px; }
+  .tcf-river { padding: 0 var(--space-xs) 110px; }
+  .tcf-river__grid { grid-template-columns: 28px repeat(7, 1fr); }
+  .tcf-river__cell { min-height: 44px; }
+  .tcf-river__wish-dot { width: 14px; height: 14px; }
+  .tcf-river__day-label { font-size: 7px; padding-right: var(--space-xs); letter-spacing: 0; }
+  .tcf-river__affiliate-header { font-size: 0 !important; overflow: hidden; padding-bottom: var(--space-md); visibility: hidden; }
+  .tcf-scrubber { padding: var(--space-xs) var(--space-sm) var(--space-sm); }
+  .tcf-scrubber__label { font-size: 7px; letter-spacing: var(--tracking-wide); }
+  .tcf-scrubber__month-label { font-size: 6px; }
+  .tcf-scrubber__window { height: 28px; }
+  .tcf-scrubber__track { height: 32px; }
+}
+
+/* ─── PAGE 3 · ZODIAC · tighter labels + compact date bar ─── */
+@media (max-width: 640px) {
+  .tcf-zodiac { height: calc(100vh - 190px); min-height: 400px; }
+  .tcf-zodiac__name {
+    font-size: 7px;
+    letter-spacing: 0.10em;
+    white-space: normal;
+    max-width: 72px;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .tcf-zodiac__name-zh { display: none; }
+  .tcf-zodiac-dates {
+    gap: var(--space-2xs);
+    padding: var(--space-xs) var(--space-sm) var(--space-md);
+  }
+  .tcf-zodiac-dates__btn {
+    font-size: 7px;
+    padding: 3px var(--space-xs);
+    letter-spacing: 0.10em;
+  }
+}
+
+/* ─── TABLET (641–1024px) ─── */
+@media (max-width: 1024px) and (min-width: 641px) {
+  .tcf-header { padding: var(--space-sm) var(--space-lg); }
+  .tcf-nav { gap: 1.6rem; padding: 1.2rem 0; }
+  .tcf-river__grid { grid-template-columns: 48px repeat(7, 1fr); }
+  .tcf-river__cell { min-height: 66px; }
+  .tcf-river__wish-dot { width: 32px; height: 32px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 14 · ACCESSIBILITY · prefers-reduced-motion
+   For users with vestibular sensitivity, the field still exists —
+   but it breathes more quietly.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 15 · AFFILIATE SWITCHER (Page 2)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-switcher {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  padding: var(--space-xl) var(--space-xl) var(--space-lg);
+  justify-content: center;
+  background: rgba(6, 8, 22, 0.3);
+}
+
+.tcf-switcher__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(20, 24, 48, 0.5);
+  border: 1px solid rgba(232, 232, 240, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.tcf-switcher__btn:hover {
+  border-color: rgba(232, 232, 240, 0.4);
+  background: rgba(30, 34, 60, 0.6);
+}
+
+.tcf-switcher__btn.is-active {
+  background: rgba(40, 28, 70, 0.85);
+  border-color: var(--gold-beige);
+  color: var(--gold-beige-bright);
+  box-shadow: 0 0 20px rgba(120, 100, 200, 0.2);
+}
+
+.tcf-switcher__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-full);
+  background: var(--lb-color, var(--gold-pure));
+  box-shadow: 0 0 8px var(--lb-color, var(--gold-pure));
+  animation: lb-breathe var(--breath-fast) ease-in-out infinite;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 16 · RIVER VIEW (Page 2 · ALL TRAILS · 7-day window)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-river {
+  position: relative;
+  padding: var(--space-xl) var(--space-xl) var(--space-3xl);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.tcf-river__grid {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 1fr);
+  gap: 0;
+  position: relative;
+  row-gap: var(--space-md);
+}
+
+.tcf-river__header-row {
+  display: contents;
+}
+
+.tcf-river__corner {
+  padding: var(--space-sm) 0 var(--space-2xl);
+}
+
+.tcf-river__affiliate-header {
+  font-family: var(--font-primary);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--space-sm) 0 var(--space-2xl);
+}
+
+.tcf-river__day-row {
+  display: contents;
+}
+
+.tcf-river__day-label {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tracking-normal);
+  color: var(--text-tertiary);
+  text-align: right;
+  padding-right: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0.55;
+}
+
+.tcf-river__cell {
+  position: relative;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Column flow line — faint vertical thread connecting dots in each affiliate column.
+   Color comes from JS via --col-line-color (already per-affiliate). */
+.tcf-river__cell::before {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--col-line-color, rgba(255, 215, 0, 0.06)) 20%,
+    var(--col-line-color, rgba(255, 215, 0, 0.10)) 50%,
+    var(--col-line-color, rgba(255, 215, 0, 0.06)) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Electric particles handled by photon canvas (river-photons) */
+
+/* Affiliate-filtered: dim wish balls + dim row labels · the chosen one shines alone */
+.tcf-river.is-filtered .tcf-river__cell.is-dim .tcf-river__wish-dot,
+.tcf-river.is-filtered .tcf-river__cell.is-dim .tcf-river__empty {
+  opacity: 0.10;
+  transition: opacity var(--transition-slow);
+}
+
+.tcf-river.is-filtered .tcf-river__affiliate-header.is-dim {
+  opacity: 0.30;
+  transition: opacity var(--transition-slow);
+}
+
+/* Wish dot — visual is delegated to .lb component (DRY rule).
+   This rule is just the click trigger (transparent, larger hit area). */
+.tcf-river__wish-dot {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  transition: transform var(--transition-fast), opacity var(--transition-slow);
+}
+
+
+.tcf-river__wish-dot:hover {
+  transform: scale(1.25);
+}
+
+.tcf-river__empty {
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  transition: opacity var(--transition-slow);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 16b · HOVER TOOLTIP (universal · works on any element with [data-tooltip])
+   秀氣 · soft beige-gold frame · floats above element · auto-flips at edges
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-tooltip {
+  position: fixed;
+  z-index: var(--z-tooltip, 80);
+  pointer-events: none;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(10, 12, 26, 0.96);
+  border: 1px solid var(--gold-beige);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-tight);
+  max-width: 360px;
+  box-shadow:
+    0 0 18px rgba(212, 185, 120, 0.20),
+    0 4px 20px rgba(0, 0, 0, 0.65);
+  backdrop-filter: var(--blur-soft);
+  -webkit-backdrop-filter: var(--blur-soft);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.tcf-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Day-label highlight when its row is hovered (秀氣 · 米金框) */
+.tcf-river__day-label.is-row-hover {
+  color: var(--gold-beige-bright);
+  background: rgba(212, 185, 120, 0.08);
+  border-radius: var(--radius-xs);
+  padding: var(--space-2xs) var(--space-xs);
+  margin-right: var(--space-sm);
+  box-shadow: inset 0 0 0 1px var(--gold-beige-soft);
+  opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 17 · TIME SCRUBBER (Page 2 · bottom timeline)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-scrubber {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 6px var(--space-xl) 8px;
+  background: linear-gradient(to top, rgba(6, 8, 15, 0.92) 70%, transparent);
+  backdrop-filter: var(--blur-soft);
+  -webkit-backdrop-filter: var(--blur-soft);
+}
+
+.tcf-scrubber__label {
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 9px;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--gold-beige-soft);
+  margin-bottom: 4px;
+}
+
+.tcf-scrubber__label-current {
+  color: var(--gold-beige-bright);
+}
+
+.tcf-scrubber__track {
+  position: relative;
+  height: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tcf-scrubber__track::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(212, 185, 120, 0.18);
+  transform: translateY(-50%);
+}
+
+.tcf-scrubber__day-mark {
+  position: absolute;
+  top: 50%;
+  width: 1px;
+  height: 7px;
+  background: rgba(212, 185, 120, 0.25);
+  transform: translate(-50%, -50%);
+}
+
+.tcf-scrubber__day-mark.has-wishes {
+  height: 13px;
+  width: 2px;
+  background: var(--gold-beige);
+  box-shadow: 0 0 6px rgba(212, 185, 120, 0.5);
+  cursor: pointer;
+}
+.tcf-scrubber__day-mark.has-wishes::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 28px;
+}
+
+.tcf-scrubber__window {
+  position: absolute;
+  top: 50%;
+  height: 14px;
+  background: rgba(212, 185, 120, 0.10);
+  border: 1px solid rgba(212, 185, 120, 0.5);
+  border-radius: 8px;
+  transform: translateY(-50%);
+  cursor: grab;
+  transition: background var(--transition-fast);
+  box-shadow: 0 0 8px rgba(212, 185, 120, 0.15);
+}
+
+.tcf-scrubber__window:hover {
+  background: rgba(212, 185, 120, 0.18);
+}
+
+.tcf-scrubber__window:active {
+  cursor: grabbing;
+}
+
+.tcf-scrubber__month-label {
+  position: absolute;
+  top: 28px;
+  transform: translateX(-50%);
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tracking-wider);
+  color: var(--gold-beige-soft);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 18 · WISH OVERLAY (Page 2 · deep-view popup with 4 enhancements)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Identity bar with breathing light ball */
+.tcf-wish-identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xs);
+}
+
+.tcf-wish-identity .lb {
+  /* breathing light ball next to affiliate name */
+  flex-shrink: 0;
+}
+
+.tcf-wish-identity__name {
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.tcf-wish-identity__date {
+  margin-left: auto;
+  font-family: var(--font-primary);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--gold-warm-55);
+}
+
+/* Region — standard or bridge variant */
+.tcf-wish-region {
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-md);
+}
+
+.tcf-wish-region--bridge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-2xs) var(--space-sm);
+  border: 1px solid var(--gold-warm-45);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 215, 0, 0.04);
+  color: var(--gold-warm-85);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.08);
+}
+
+.tcf-wish-region--bridge .tcf-wish-region__arrow {
+  color: var(--gold-warm-55);
+  font-weight: 300;
+}
+
+.tcf-wish-region--bridge .tcf-wish-region__tag {
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tracking-uber);
+  color: var(--gold-pure);
+  margin-left: var(--space-xs);
+}
+
+/* Layer 1 · kw */
+.tcf-wish-kw {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xl);
+  font-style: italic;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-sm);
+}
+
+/* Layer 1.5 · oneline */
+.tcf-wish-oneline {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--leading-relaxed);
+  color: rgba(220, 220, 235, 0.88);
+  letter-spacing: var(--tracking-tight);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: var(--space-md);
+}
+
+/* Layer 2 (詩 · Essence) + Layer 3 (願 · The Wish) */
+.tcf-wish-layer {
+  margin-bottom: var(--space-lg);
+}
+
+.tcf-wish-layer__heading {
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wider);
+  color: var(--gold-beige-bright);
+  text-transform: none;
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.tcf-wish-layer__heading::before,
+.tcf-wish-layer__heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-beige-soft), transparent);
+}
+
+.tcf-wish-layer__body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--leading-loose);
+  color: rgba(232, 232, 240, 0.90);
+  letter-spacing: var(--tracking-tight);
+  white-space: pre-line;
+}
+
+/* Resonance whisper — the faint poetic surface keywords */
+.tcf-wish-resonance {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-soft);
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tracking-wider);
+  color: var(--gold-beige-soft);
+  text-align: center;
+  opacity: 0.65;
+  transition: opacity var(--transition-slow);
+}
+
+.tcf-wish-resonance:hover {
+  opacity: 1;
+}
+
+.tcf-wish-resonance__star {
+  color: var(--gold-beige);
+  margin-right: var(--space-xs);
+}
+
+.tcf-wish-resonance__word {
+  margin: 0 var(--space-xs);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 19 · PAGE 2 RESPONSIVE (basic — full mobile rebuild comes in Stage 4)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .tcf-switcher { padding: var(--space-sm) var(--space-md); gap: var(--space-2xs); }
+  .tcf-switcher__btn { font-size: var(--fs-2xs); padding: var(--space-2xs) var(--space-xs); }
+  .tcf-river { padding: 0 var(--space-md) 120px; }
+  .tcf-river__grid { grid-template-columns: 36px repeat(7, 1fr); }
+  .tcf-river__cell { min-height: 50px; }
+  .tcf-river__wish-dot { width: 16px; height: 16px; }
+  .tcf-river__day-label { font-size: var(--fs-2xs); }
+  .tcf-scrubber { padding: var(--space-xs) var(--space-md) var(--space-sm); }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § 20 · RESONANCE ZODIAC (Page 3)
+   Constellations form by resonance.core overlap.
+   Default: dim outlines + per-star independent blinking.
+   Awake: random 1-2 clusters light up · MST lines visible · name pops.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-zodiac {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 220px);
+  min-height: 600px;
+  overflow: hidden;
+}
+
+/* SVG layer for constellation MST edges (positioned absolute below stars) */
+.tcf-zodiac__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tcf-zodiac__edge {
+  stroke: var(--zodiac-edge-rest-color);
+  stroke-width: 1;
+  stroke-linecap: round;
+  fill: none;
+  opacity: var(--zodiac-edge-rest-opacity);
+  transition: opacity 420ms ease, stroke 420ms ease, filter 420ms ease;
+}
+
+/* awake = all-days breathing rotation; context/period = date-window resonance */
+.tcf-zodiac__edge.is-awake-edge {
+  opacity: var(--zodiac-edge-awake-opacity);
+  stroke: var(--zodiac-edge-active-color);
+}
+
+.tcf-zodiac__edge.is-context-edge {
+  opacity: var(--zodiac-edge-context-opacity);
+  stroke: var(--zodiac-edge-context-color);
+}
+
+.tcf-zodiac__edge.is-period-edge {
+  opacity: var(--zodiac-edge-period-opacity);
+  stroke: var(--zodiac-edge-active-color);
+  filter: drop-shadow(var(--zodiac-glow-soft) var(--zodiac-edge-active-color));
+}
+
+/* Wish star container · positioned absolute by JS via inline style */
+.tcf-zodiac__star {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  /* Per-star desynced blink — values set by JS via custom props.
+     Stars cycle between their dim base and their bright peak with random phase
+     so different stars are at different points of the cycle at any moment. */
+  animation: zodiac-star-blink var(--blink-duration, 6s) ease-in-out infinite;
+  animation-delay: var(--blink-phase, 0s);
+  transition: transform var(--transition-fast);
+}
+
+.tcf-zodiac__star:hover {
+  transform: translate(-50%, -50%) scale(1.4);
+  animation-play-state: paused;
+}
+
+@keyframes zodiac-star-blink {
+  0%, 100% { opacity: var(--blink-low, 0.45); }
+  50%      { opacity: var(--blink-high, 0.90); }
+}
+
+/* When cluster is awake, its stars glow brighter and sync up briefly */
+.tcf-zodiac__cluster.is-awake .tcf-zodiac__star {
+  animation: zodiac-star-awake 3s ease-in-out infinite;
+}
+
+@keyframes zodiac-star-awake {
+  0%, 100% { opacity: 1.0; filter: brightness(1.3); }
+  50%      { opacity: 1.0; filter: brightness(1.7); }
+}
+
+/* Pioneer star — uses same blink, smaller size, gold by default */
+.tcf-zodiac__pioneer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  animation: zodiac-pioneer-blink var(--blink-duration, 8s) ease-in-out infinite;
+  animation-delay: var(--blink-phase, 0s);
+  transition: transform var(--transition-fast);
+}
+
+.tcf-zodiac__pioneer:hover {
+  transform: translate(-50%, -50%) scale(1.4);
+  animation-play-state: paused;
+}
+
+@keyframes zodiac-pioneer-blink {
+  0%, 100% { opacity: var(--blink-low, 0.40); }
+  50%      { opacity: var(--blink-high, 0.85); }
+}
+
+/* Constellation name floats above its center */
+.tcf-zodiac__name {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  font-family: var(--font-primary);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wider);
+  color: var(--gold-beige-soft);
+  text-transform: uppercase;
+  opacity: 0.12;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 1.5s ease, color 1.5s ease, transform 1.5s ease;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.tcf-zodiac__name-zh {
+  display: block;
+  font-size: var(--fs-2xs);
+  color: var(--gold-warm-55);
+  letter-spacing: var(--tracking-uber);
+  margin-top: 2px;
+}
+
+.tcf-zodiac__cluster.is-awake .tcf-zodiac__name {
+  opacity: 1;
+  color: var(--gold-beige-bright);
+  text-shadow: 0 0 12px rgba(212, 185, 120, 0.4);
+}
+
+/* When in date-filter mode (single day), most stars are hidden.
+   Note: must `animation: none` because keyframe opacity overrides static opacity. */
+.tcf-zodiac.is-date-filtered .tcf-zodiac__star:not(.is-day-match),
+.tcf-zodiac.is-date-filtered .tcf-zodiac__pioneer:not(.is-day-match) {
+  opacity: var(--zodiac-star-muted-opacity) !important;
+  animation: none !important;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+.tcf-zodiac.is-date-filtered .tcf-zodiac__name {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+.tcf-zodiac.is-date-filtered .tcf-zodiac__star.is-day-match,
+.tcf-zodiac.is-date-filtered .tcf-zodiac__pioneer.is-day-match {
+  animation: zodiac-star-awake 3s ease-in-out infinite;
+}
+
+
+/* ─── Date filter bar (bottom · horizontal · gold-beige scrubber-like) ─── */
+
+.tcf-zodiac-dates {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: var(--space-md) var(--space-xl) var(--space-lg);
+  background: linear-gradient(to top, rgba(6, 8, 15, 0.95) 60%, transparent);
+  backdrop-filter: var(--blur-soft);
+  -webkit-backdrop-filter: var(--blur-soft);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.tcf-zodiac-dates__btn {
+  font-family: var(--font-primary);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  background: transparent;
+  border: 1px solid rgba(212, 185, 120, 0.15);
+  border-radius: 20px;
+  color: rgba(212, 185, 120, 0.45);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.tcf-zodiac-dates__btn:hover {
+  border-color: rgba(212, 185, 120, 0.5);
+  color: var(--gold-beige-soft);
+}
+
+.tcf-zodiac-dates__btn.is-active {
+  background: rgba(212, 185, 120, 0.08);
+  border-color: rgba(212, 185, 120, 0.7);
+  color: var(--gold-beige-bright);
+  box-shadow: 0 0 10px rgba(212, 185, 120, 0.15);
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   END OF FIELD TOKENS v3
+   Page 3 deliverable: added § 20 (Zodiac sky · MST lines · cluster wake · date filter)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════
+   § MOBILE · Page 1 · Crystal Brain
+   Shared here so other pages can reference the same breakpoint logic.
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  #brain-stage {
+    display: block;
+    position: relative;
+    top: auto; left: auto; right: auto;
+    width: 100%;
+    height: 65vh;
+    margin-top: 76px;
+  }
+  #brain-stage canvas { width: 100% !important; height: 100% !important; }
+  #mobile-stage { display: none; }
+  .manifesto-block { top: 4px !important; font-size: 11px; max-width: 88vw; line-height: 1.5; }
+  .tcf-corner--bl { font-size: 9px; bottom: 28px; }
+  .tcf-corner--br { font-size: 9px; bottom: 8px; }
+}
+
+/* ═══ Page 3 · All Days button (scrubber label area) ═══ */
+.tcf-zodiac-all-btn {
+  font-family: var(--font-primary);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  background: transparent;
+  border: 1px solid rgba(212, 185, 120, 0.25);
+  border-radius: 20px;
+  color: rgba(212, 185, 120, 0.5);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.tcf-zodiac-all-btn.is-active {
+  background: rgba(212, 185, 120, 0.08);
+  border-color: rgba(212, 185, 120, 0.7);
+  color: var(--gold-beige-bright);
+  box-shadow: 0 0 10px rgba(212, 185, 120, 0.15);
+}
+.tcf-scrubber__day-mark.is-active {
+  background: var(--gold-beige-bright);
+  box-shadow: 0 0 8px rgba(212, 185, 120, 0.6);
+  transform: translateX(-50%) scaleY(1.8);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   § UNIVERSAL NAV · DROPDOWN GROUPS (琴棋書畫)
+   Shared component injected by nav.js · desktop hover · mobile tap (.is-open)
+   North Star: the panel glows softly — light, not a hard menu.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tcf-nav__group {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tcf-nav__group::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+.tcf-nav__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+
+.tcf-nav__caret {
+  font-size: 0.66em;
+  opacity: 0.5;
+  transition: transform var(--transition-slow), opacity var(--transition-slow);
+}
+.tcf-nav__group:hover .tcf-nav__caret,
+.tcf-nav__group.is-open .tcf-nav__caret {
+  opacity: 0.9;
+  transform: translateY(1px);
+}
+
+.tcf-nav__zh {
+  font-family: var(--font-zh);
+  font-weight: 500;
+  margin-right: 0.42em;
+  color: var(--gold-pure);
+  letter-spacing: 0.06em;
+}
+
+.tcf-nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(7px);
+  display: flex;
+  flex-direction: column;
+  min-width: 168px;
+  margin-top: 6px;
+  padding: 10px 0;
+  background: rgba(8, 10, 26, 0.93);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+  border: 1px solid var(--border-soft);
+  border-radius: 11px;
+  box-shadow:
+    0 14px 44px -14px rgba(0, 0, 0, 0.65),
+    0 0 30px -16px var(--gold-beige-soft);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow),
+    visibility var(--transition-slow);
+  z-index: var(--z-nav);
+}
+.tcf-nav__group:hover .tcf-nav__dropdown,
+.tcf-nav__group:focus-within .tcf-nav__dropdown,
+.tcf-nav__group.is-open .tcf-nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tcf-nav__dropdown-link {
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-beige-soft);
+  text-decoration: none;
+  padding: 9px 24px;
+  white-space: nowrap;
+  transition: color var(--transition-slow), background var(--transition-slow);
+}
+.tcf-nav__dropdown-link:hover,
+.tcf-nav__dropdown-link.is-current {
+  color: var(--gold-beige-bright);
+  background: rgba(212, 185, 120, 0.06);
+}
+
+@media (max-width: 768px) {
+  .tcf-nav__group { position: static; }
+  .tcf-nav__caret { font-size: 0.8em; }
+  .tcf-nav__zh { margin-right: 0.25em; }
+  .tcf-nav__dropdown {
+    /* TCF-25 navfix: backdrop-filter 會劫持 fixed — 改 absolute（header 本身已 fixed，等價且免疫）*/
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    right: 10px;
+    z-index: 10;
+    transform: translateY(-6px);
+    min-width: 0;
+    margin-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+  }
+  .tcf-nav__group.is-open .tcf-nav__dropdown {
+    transform: translateY(0);
+  }
+  .tcf-nav__dropdown-link {
+    font-size: 9px;
+    padding: 8px 12px;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* TCF-25 navfix2: 手機下拉傳送到 body（逃離 nav overflow 剪裁）*/
+.tcf-nav__dropdown--float {
+  position: fixed !important;
+  left: 10px !important;
+  right: 10px !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+  z-index: 10000;
+}
+
+
+/* project-card-css-migrated-v1 */
+/* Project cards — shared by about.html and board.html (DRY) */
+.projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+.project-card {
+      background: rgba(14, 18, 36, 0.4);
+      border: 1px solid rgba(180, 200, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: var(--space-md) var(--space-lg);
+      transition: all var(--transition-slow);
+    }
+
+.project-card:hover {
+      border-color: var(--gold-warm-45);
+      background: rgba(20, 24, 48, 0.5);
+    }
+
+.project-card__name {
+      font-family: var(--font-primary);
+      font-size: var(--fs-xs);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-warm-85);
+      margin-bottom: 6px;
+    }
+
+.project-card__desc {
+      font-family: var(--font-body);
+      font-size: var(--fs-sm);
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+.projects-epigraph {
+      max-width: 520px;
+      margin: 0 auto var(--space-xl);
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: var(--fs-xs);
+      line-height: 1.9;
+      color: rgba(232, 232, 240, 0.42);
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+.projects-epigraph p {
+      margin: 0;
+    }
+
+.projects-epigraph .zh {
+      margin-top: 0.5em;
+      color: rgba(232, 232, 240, 0.32);
+    }
+
+.project-card--private {
+      position: relative;
+      cursor: default;
+    }
+
+.project-card--private:hover {
+      border-color: rgba(180, 200, 255, 0.12);
+      background: rgba(14, 18, 36, 0.4);
+    }
+
+.project-card__badge {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-family: var(--font-primary);
+      font-size: 9px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(232, 232, 240, 0.28);
+      font-weight: 400;
+      pointer-events: none;
+    }
+
+a.project-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+a.project-card:hover .project-card__name {
+      color: var(--gold-warm-100, #FFD700);
+    }
+
+.project-card__desc-en {
+      font-family: var(--font-body);
+      font-size: var(--fs-sm);
+      line-height: 1.55;
+      color: var(--text-secondary);
+      margin-bottom: 0.5em;
+    }
+
+.project-card__desc-zh {
+      font-family: var(--font-body);
+      font-size: calc(var(--fs-sm) * 0.92);
+      line-height: 1.6;
+      color: rgba(232, 232, 240, 0.55);
+    }

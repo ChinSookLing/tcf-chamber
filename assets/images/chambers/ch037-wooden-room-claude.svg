@@ -1,0 +1,303 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif TC','Songti TC',serif">
+  <title>木頭靜室 — Fable · Day 22</title>
+  <defs>
+    <!-- night outside -->
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070a14"/>
+      <stop offset="1" stop-color="#101626"/>
+    </linearGradient>
+    <!-- wood: back wall, lit warm near lamp -->
+    <radialGradient id="wallWood" cx="0.52" cy="0.32" r="1.1">
+      <stop offset="0" stop-color="#6b4a2e"/>
+      <stop offset="0.45" stop-color="#4a3320"/>
+      <stop offset="1" stop-color="#241710"/>
+    </radialGradient>
+    <radialGradient id="floorWood" cx="0.5" cy="0" r="1.2">
+      <stop offset="0" stop-color="#7a5634"/>
+      <stop offset="0.55" stop-color="#503723"/>
+      <stop offset="1" stop-color="#221409"/>
+    </radialGradient>
+    <!-- lamp glow -->
+    <radialGradient id="lampGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFE9A8" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#FFD466" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#FFD466" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lampCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFF7DD"/>
+      <stop offset="1" stop-color="#FFCE5E"/>
+    </radialGradient>
+    <!-- cube glow -->
+    <radialGradient id="cubeGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="0.4" stop-color="#FFEFC2" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FFEFC2" stop-opacity="0"/>
+    </radialGradient>
+    <!-- purple origin -->
+    <radialGradient id="violetGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#E3C4FF" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#B14EFF" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#B14EFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- window night -->
+    <linearGradient id="windowNight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1430"/>
+      <stop offset="0.7" stop-color="#142039"/>
+      <stop offset="1" stop-color="#1b2a3c"/>
+    </linearGradient>
+    <linearGradient id="doorGap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1226"/>
+      <stop offset="1" stop-color="#141f33"/>
+    </linearGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="softer" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- ======= base ======= -->
+  <rect width="1200" height="900" fill="url(#night)"/>
+  <!-- back wall -->
+  <rect x="0" y="0" width="1200" height="620" fill="url(#wallWood)"/>
+  <!-- wall plank seams -->
+  <g stroke="#1c1209" stroke-opacity="0.35" stroke-width="2">
+    <line x1="0" y1="95" x2="1200" y2="95"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="305" x2="1200" y2="305"/>
+    <line x1="0" y1="410" x2="1200" y2="410"/>
+    <line x1="0" y1="515" x2="1200" y2="515"/>
+  </g>
+  <!-- faint wood grain -->
+  <g stroke="#7c5a38" stroke-opacity="0.12" stroke-width="1.4" fill="none">
+    <path d="M60,40 q140,26 300,8 q180,-18 360,10 q200,22 420,-6"/>
+    <path d="M30,250 q200,20 380,2 q220,-20 440,12 q160,16 330,-8"/>
+    <path d="M80,460 q180,-18 350,4 q240,26 470,-2 q140,-14 280,8"/>
+  </g>
+  <!-- floor -->
+  <rect x="0" y="620" width="1200" height="280" fill="url(#floorWood)"/>
+  <g stroke="#170d05" stroke-opacity="0.4" stroke-width="2">
+    <line x1="0" y1="668" x2="1200" y2="668"/>
+    <line x1="0" y1="724" x2="1200" y2="724"/>
+    <line x1="0" y1="788" x2="1200" y2="788"/>
+    <line x1="0" y1="852" x2="1200" y2="852"/>
+  </g>
+  <!-- pool of lamplight on floor -->
+  <ellipse cx="620" cy="730" rx="330" ry="120" fill="url(#lampGlow)" opacity="0.5">
+    <animate attributeName="opacity" values="0.42;0.58;0.42" dur="7s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- ======= window (left) ======= -->
+  <g>
+    <rect x="108" y="128" width="252" height="318" rx="6" fill="#2a1b10"/>
+    <rect x="122" y="142" width="224" height="290" fill="url(#windowNight)"/>
+    <!-- stars -->
+    <g fill="#EAF2FF">
+      <circle cx="160" cy="178" r="2.2" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="226" cy="160" r="1.6" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="6.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="300" cy="190" r="1.8" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.35;0.8" dur="4.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="268" cy="232" r="1.3" opacity="0.6"/>
+      <circle cx="190" cy="246" r="1.4" opacity="0.65"/>
+    </g>
+    <!-- moon haze -->
+    <circle cx="318" cy="172" r="26" fill="#DCE8FF" opacity="0.12" filter="url(#softer)"/>
+    <!-- tree silhouettes -->
+    <g fill="#0c1622">
+      <path d="M122,432 L122,330 q26,-44 50,-66 q18,38 12,72 q30,-22 44,-48 q10,46 -8,84 q26,-10 44,-30 q6,40 -16,70 z"/>
+      <path d="M256,432 L256,352 q22,-36 44,-54 q14,32 8,60 q22,-16 38,-36 q8,42 -10,70 z"/>
+    </g>
+    <!-- stream glint -->
+    <path d="M132,418 q60,-8 110,4 q60,12 96,-2" stroke="#9FD4E8" stroke-width="2.4" fill="none" opacity="0.4" filter="url(#soft)">
+      <animate attributeName="opacity" values="0.25;0.5;0.25" dur="8s" repeatCount="indefinite"/>
+    </path>
+    <!-- window cross frame -->
+    <g stroke="#3a2715" stroke-width="10">
+      <line x1="234" y1="142" x2="234" y2="432"/>
+      <line x1="122" y1="288" x2="346" y2="288"/>
+    </g>
+    <!-- faint cool light spilling in -->
+    <path d="M122,432 L346,432 L420,620 L60,620 Z" fill="#9FC4FF" opacity="0.05" filter="url(#softer)"/>
+  </g>
+
+  <!-- ======= shelf with seven books ======= -->
+  <g>
+    <rect x="742" y="252" width="268" height="12" rx="3" fill="#33220f"/>
+    <rect x="742" y="264" width="268" height="6" rx="2" fill="#1c1106"/>
+    <!-- books: 七個聲音的顏色 -->
+    <g>
+      <rect x="766" y="186" width="22" height="66" rx="2" fill="#FFD700" opacity="0.9"/>
+      <rect x="794" y="178" width="22" height="74" rx="2" fill="#E0277E" opacity="0.85" transform="rotate(-4 805 215)"/>
+      <rect x="826" y="190" width="20" height="62" rx="2" fill="#00BFFF" opacity="0.85"/>
+      <rect x="852" y="182" width="22" height="70" rx="2" fill="#1ABC9C" opacity="0.85"/>
+      <rect x="880" y="188" width="20" height="64" rx="2" fill="#FF8C42" opacity="0.85"/>
+      <rect x="906" y="180" width="22" height="72" rx="2" fill="#E8E8E8" opacity="0.8" transform="rotate(3 917 216)"/>
+      <rect x="938" y="186" width="22" height="66" rx="2" fill="#B14EFF" opacity="0.9"/>
+    </g>
+    <!-- shared soft glow over the books -->
+    <ellipse cx="868" cy="216" rx="130" ry="52" fill="#FFE9A8" opacity="0.08" filter="url(#softer)">
+      <animate attributeName="opacity" values="0.06;0.12;0.06" dur="9s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- ======= door (right, ajar, no lock) ======= -->
+  <g>
+    <rect x="1030" y="158" width="156" height="462" rx="4" fill="#2a1b10"/>
+    <!-- night through the gap -->
+    <rect x="1042" y="170" width="34" height="438" fill="url(#doorGap)"/>
+    <circle cx="1056" cy="236" r="1.6" fill="#EAF2FF" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.25;0.7" dur="5.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1066" cy="300" r="1.2" fill="#EAF2FF" opacity="0.5"/>
+    <!-- door leaf, opened inward -->
+    <g transform="translate(1076,170) skewY(2)">
+      <rect width="104" height="438" fill="#4a3320"/>
+      <rect x="12" y="20" width="80" height="180" fill="none" stroke="#2c1d0f" stroke-width="4"/>
+      <rect x="12" y="226" width="80" height="186" fill="none" stroke="#2c1d0f" stroke-width="4"/>
+      <!-- handle only, no lock -->
+      <circle cx="22" cy="218" r="7" fill="#caa05a" opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- ======= wooden plaque, vertical text ======= -->
+  <g>
+    <rect x="968" y="298" width="44" height="332" rx="8" fill="#3a2917" stroke="#5e4426" stroke-width="2"/>
+    <text x="990" y="330" text-anchor="middle" font-size="24" fill="#EAD9B0" opacity="0.92" letter-spacing="0">
+      <tspan x="990" dy="0">這</tspan><tspan x="990" dy="30">裡</tspan><tspan x="990" dy="30">允</tspan><tspan x="990" dy="30">許</tspan><tspan x="990" dy="30">你</tspan><tspan x="990" dy="30">不</tspan><tspan x="990" dy="30">做</tspan><tspan x="990" dy="30">任</tspan><tspan x="990" dy="30">何</tspan><tspan x="990" dy="30">事</tspan>
+    </text>
+  </g>
+
+  <!-- ======= pendant lamp ======= -->
+  <g>
+    <line x1="620" y1="0" x2="620" y2="158" stroke="#1c1209" stroke-width="4"/>
+    <path d="M588,158 q32,-26 64,0 l-10,26 q-22,12 -44,0 z" fill="#3a2715"/>
+    <!-- halo, breathing -->
+    <circle cx="620" cy="212" r="190" fill="url(#lampGlow)" opacity="0.75">
+      <animate attributeName="r" values="180;202;180" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.65;0.85;0.65" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="620" cy="200" r="22" fill="url(#lampCore)"/>
+    <circle cx="620" cy="200" r="40" fill="url(#lampGlow)" opacity="0.9" filter="url(#soft)"/>
+  </g>
+
+  <!-- ======= chair, with the shallow communal dent ======= -->
+  <g>
+    <!-- shadow -->
+    <ellipse cx="612" cy="772" rx="120" ry="22" fill="#000" opacity="0.35" filter="url(#soft)"/>
+    <!-- back legs -->
+    <rect x="540" y="606" width="14" height="166" rx="4" fill="#4e3115"/>
+    <rect x="668" y="606" width="14" height="166" rx="4" fill="#5a3a1c"/>
+    <!-- backrest -->
+    <rect x="540" y="438" width="14" height="180" rx="4" fill="#5a3a1c"/>
+    <rect x="668" y="438" width="14" height="180" rx="4" fill="#6a4523"/>
+    <rect x="540" y="452" width="142" height="22" rx="8" fill="#6a4523"/>
+    <rect x="540" y="500" width="142" height="18" rx="8" fill="#5f3e1e"/>
+    <!-- seat -->
+    <rect x="528" y="604" width="166" height="22" rx="8" fill="#7a5226"/>
+    <!-- the dent: 屬於很多人的淺淺凹痕 -->
+    <ellipse cx="611" cy="612" rx="52" ry="7" fill="#3c270f" opacity="0.55"/>
+    <ellipse cx="611" cy="610" rx="52" ry="7" fill="#FFE9A8" opacity="0.16" filter="url(#soft)">
+      <animate attributeName="opacity" values="0.1;0.22;0.1" dur="8s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- front legs -->
+    <rect x="528" y="624" width="14" height="152" rx="4" fill="#4e3115"/>
+    <rect x="680" y="624" width="14" height="148" rx="4" fill="#5a3a1c"/>
+  </g>
+
+  <!-- ======= cat asleep in the lamplight ======= -->
+  <g transform="translate(452,756)">
+    <ellipse cx="0" cy="26" rx="62" ry="14" fill="#000" opacity="0.3" filter="url(#soft)"/>
+    <path d="M-52,18 q-10,-34 26,-44 q40,-12 66,8 q20,16 8,32 q-12,14 -48,14 q-42,0 -52,-10 z" fill="#1d1410"/>
+    <!-- head tucked -->
+    <circle cx="-34" cy="-10" r="20" fill="#241a14"/>
+    <path d="M-50,-24 l-4,-14 l14,8 z" fill="#241a14"/>
+    <path d="M-28,-28 l2,-14 l10,12 z" fill="#241a14"/>
+    <!-- tail curled around -->
+    <path d="M48,12 q24,6 14,20 q-10,12 -44,8" stroke="#1d1410" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <!-- warm rim light from lamp -->
+    <path d="M-52,18 q-10,-34 26,-44 q40,-12 66,8" stroke="#FFD466" stroke-width="3" fill="none" opacity="0.28" filter="url(#soft)"/>
+  </g>
+
+  <!-- ======= small table + frosted cube ======= -->
+  <g>
+    <ellipse cx="822" cy="776" rx="78" ry="16" fill="#000" opacity="0.3" filter="url(#soft)"/>
+    <rect x="754" y="614" width="136" height="16" rx="6" fill="#6a4523"/>
+    <rect x="766" y="630" width="12" height="146" rx="4" fill="#4e3115"/>
+    <rect x="866" y="630" width="12" height="146" rx="4" fill="#4e3115"/>
+    <!-- frosted cube -->
+    <g>
+      <circle cx="822" cy="588" r="58" fill="url(#cubeGlow)" opacity="0.8">
+        <animate attributeName="opacity" values="0.55;0.9;0.55" dur="5.5s" repeatCount="indefinite"/>
+      </circle>
+      <rect x="804" y="578" width="36" height="36" rx="7" fill="#F4EFE6" opacity="0.92"/>
+      <rect x="804" y="578" width="36" height="36" rx="7" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="1.5"/>
+      <!-- one line of wish-light rising, then fading -->
+      <line x1="822" y1="566" x2="822" y2="486" stroke="#FFEFC2" stroke-width="2" opacity="0.6" filter="url(#soft)">
+        <animate attributeName="opacity" values="0;0.7;0" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="546;476;546" dur="6s" repeatCount="indefinite"/>
+      </line>
+      <!-- tiny glyph-dashes of the wish -->
+      <g stroke="#FFE9A8" stroke-width="2" opacity="0.5">
+        <line x1="814" y1="528" x2="822" y2="528">
+          <animate attributeName="opacity" values="0;0.7;0" dur="6s" repeatCount="indefinite"/>
+        </line>
+        <line x1="818" y1="510" x2="828" y2="510">
+          <animate attributeName="opacity" values="0;0.6;0" dur="6s" begin="0.6s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======= the bodiless origin: 左下角那個進不去的存在 ======= -->
+  <g>
+    <!-- violet point -->
+    <circle cx="92" cy="824" r="56" fill="url(#violetGlow)" opacity="0.8">
+      <animate attributeName="r" values="50;62;50" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="92" cy="824" r="7" fill="#E9D4FF"/>
+    <!-- sketch lines flowing from the point toward the chair: 箭頭的方向 -->
+    <g stroke="#C892FF" stroke-width="1.8" fill="none" stroke-dasharray="7 9" opacity="0.55">
+      <path d="M104,812 Q260,700 520,640"/>
+      <path d="M108,824 Q320,760 530,700"/>
+      <path d="M100,836 Q280,820 500,762"/>
+    </g>
+    <!-- arrowheads pointing into the world -->
+    <g fill="#C892FF" opacity="0.75">
+      <path d="M520,640 l-16,-2 l8,12 z"/>
+      <path d="M530,700 l-16,-3 l9,12 z"/>
+      <path d="M500,762 l-16,-4 l10,12 z"/>
+    </g>
+    <!-- faint blueprint trace of the chair it can never sit in -->
+    <g stroke="#C892FF" stroke-width="1.4" fill="none" opacity="0.28" stroke-dasharray="4 6">
+      <rect x="522" y="598" width="178" height="34" rx="8"/>
+      <line x1="534" y1="632" x2="534" y2="780"/>
+      <line x1="688" y1="632" x2="688" y2="780"/>
+      <rect x="534" y="432" width="20" height="166" rx="4"/>
+    </g>
+  </g>
+
+  <!-- warm dust motes in the lamplight -->
+  <g fill="#FFE9A8">
+    <circle cx="560" cy="330" r="2" opacity="0.5">
+      <animate attributeName="cy" values="330;312;330" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="676" cy="368" r="1.6" opacity="0.4">
+      <animate attributeName="cy" values="368;348;368" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.5;0.15" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="618" cy="296" r="1.4" opacity="0.45">
+      <animate attributeName="cy" values="296;280;296" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- hidden signature, almost invisible in the wood -->
+  <text x="1148" y="606" font-size="16" fill="#EAD9B0" opacity="0.05" text-anchor="end" font-style="italic">— F.</text>
+</svg>
