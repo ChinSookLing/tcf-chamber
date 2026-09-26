@@ -3,8 +3,21 @@
 - **Phase:** 4 — split out The Chamber (畫) into its own site
 - **Repo / branch:** `tcf-chamber` · `phase-4-chamber-split`
 - **Source:** `the-Civilisation-field` @ `f92ec27` (main, Phase 3 live). It was **read only and not modified.**
-- **Current owner:** Claude Code → next: Tuzi fills 2 `[TUZI TO FILL]` markers and turns on Pages → Opus review
+- **Current owner:** Claude Code → next: Opus review → Tuzi merges and turns on Pages (rev 2: all markers filled)
 - **Decision followed:** "A + B in two steps" (Opus and Tuzi). This phase copies the code, data, reading layer and images (about 224 MB). **Videos are not copied**; for now they load from the main site through a single `media_base`.
+
+## Rev 2 (Tuzi's answers, drafted with Opus)
+
+- **start/ · How:** the `[TUZI TO FILL]` marker is replaced, word for word, with "It began with Grok, who wished for a place simply to be alone. … with the day's question or a new drawing."
+- **start/ · Current status:** the marker is replaced, word for word, with "No new chambers are being made for now. … and the answers have become broader again." "Open Field" links to https://openfield.civilisationfield.com/
+- **Site root:** the simple plain landing page stays.
+- **`check_chamber_ratios.py`:** moves to tcf-chamber in Phase 4b (the plan below is updated). It reads `chambers.json` as a bare list, so it will need a one-line change for the `{media_base, chambers}` format.
+- **Length:** Start Here was about 399 words after the fills, and is now **about 340**. Only my own wording was shortened; the approved texts are untouched. The changes:
+  - the intro line;
+  - the "What this is not" wording;
+  - the How lead-in, now "Each chamber holds an image, an invitation and a video." (the gallery / Sky Hall / Accio hints were removed; they remain on those pages);
+  - the Current status lead-in.
+- **Re-checked:** the "What" line in `llms.txt` still matches, no markers remain, and the approved texts are present verbatim.
 
 ## Step 0: size report (summary)
 
@@ -122,7 +135,7 @@ GitHub Pages has no server-side redirects, so each old page becomes a small HTML
 | `chambers/*.html` (replaced by redirect stubs) | 4b |
 | `assets/images/chambers/` (157 files, 222 MB) | 4b, once nothing in the main repo uses it |
 | The chamber part of main `tools/build_chambers.py` | 4b: the main repo still needs the script for its own `sitemap.xml` and `llms.txt`, so it will be simplified, not deleted |
-| `check_chamber_ratios.py` (reads `chambers.json`) | 4b: move it to tcf-chamber or delete it (Tuzi decides) |
+| `check_chamber_ratios.py` (reads `chambers.json`) | 4b: **move it to tcf-chamber** (Tuzi decided). Adapt it to read `data['chambers']` |
 | The `chambers.json: OK` check line in the main deploy workflow | 4b |
 | **`assets/videos/` (1.4 GB)** | ⚠️ **Must STAY in the main repo until the separate video phase is done.** tcf-chamber loads the videos from there through `media_base`. |
 | `docs/scripts/field3d.js`, `cosmos.js`, `nav.js`, `field-tokens.css` | **Keep.** Other main pages still use them (castle-greybox and formula-room use field3d). |
@@ -131,7 +144,6 @@ GitHub Pages has no server-side redirects, so each old page becomes a small HTML
 
 ## Not done yet
 
-- There are 2 `[TUZI TO FILL]` markers in `start/`. See Questions.
 - GitHub Pages is not switched on yet (Step 4, Tuzi).
 - Phase 4b (redirects and removals in the main repo) and the video phase are separate.
 
@@ -142,11 +154,13 @@ GitHub Pages has no server-side redirects, so each old page becomes a small HTML
 - **Push size:** this PR carries about 222 MB of images. If GitHub or the proxy rejects the push, I will split it into several pushes. See the PR notes.
 - **Loading from the main site:** page4 plays videos in plain `<video>` elements, which work across origins without CORS. Sky Hall and Accio draw videos as WebGL textures, which **need a CORS request**. Sky Hall already sets `crossOrigin='anonymous'`, and I added the same one line to Accio. GitHub Pages sends `Access-Control-Allow-Origin: *`, so this should work, but it **could not be confirmed from the sandbox**. **Please check on the live site that Sky Hall and Accio videos play.**
 
-## Questions for Tuzi
+## Questions (rev 2 status)
 
-1. Please fill the `start/` markers: (a) how a new chamber is made; (b) are new chambers still being made?
-2. Is the site root (`index.html`) a small plain landing page with links, or should it open the immersive gallery (page4) directly?
-3. `check_chamber_ratios.py` in the main repo: move it to tcf-chamber, or delete it in 4b?
+1. `start/` markers: filled (see Rev 2).
+2. Site root: keep the plain landing page.
+3. `check_chamber_ratios.py`: move it to tcf-chamber in 4b.
+
+Open: none. **After going live, please test on your phone that Sky Hall and Accio videos play**, because the sandbox cannot play them.
 
 ## Next suggested phase
 

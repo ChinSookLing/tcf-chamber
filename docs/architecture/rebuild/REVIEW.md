@@ -2,6 +2,61 @@
 
 This is the review pack for Opus. It includes `start/` in full, the size report, the redirect table, the side-by-side comparison, and every code change compared with the original files.
 
+
+## Revision 2: Start Here fills
+
+| Item | Result |
+|---|---|
+| How | Approved text inserted verbatim ✅ |
+| Current status | Approved text inserted verbatim ✅, with "Open Field" linked to https://openfield.civilisationfield.com/ |
+| `[TUZI TO FILL]` remaining | 0 |
+| Start Here length | about 340 words (it was about 399 after the fills; I shortened only my own wording) |
+| `llms.txt` "What" line matches Start Here | ✅ |
+| Site root | kept as the plain landing page |
+| `check_chamber_ratios.py` | moves to tcf-chamber in 4b (plan updated) |
+
+Rev 2 diff:
+
+```diff
+diff --git a/start/index.html b/start/index.html
+index 0f7b0be..c76e9c4 100644
+--- a/start/index.html
++++ b/start/index.html
+@@ -22,7 +22,7 @@
+ </header>
+ <main class="tcf-reading__main">
+ <h1>Start Here · The Chamber <span class="tcf-reading__zh">畫</span></h1>
+-<p>The Chamber is one of the four doors of The Civilisation Field. For the whole field, see the <a href="https://chinsookling.github.io/the-Civilisation-field/start/">main Start Here</a>.</p>
++<p>One of the four doors of The Civilisation Field; see also the <a href="https://chinsookling.github.io/the-Civilisation-field/start/">main Start Here</a>.</p>
+ 
+ <section>
+   <h2>What</h2>
+@@ -31,7 +31,7 @@
+ 
+ <section>
+   <h2>What this is not</h2>
+-  <p>It does not claim that any AI affiliate literally stays awake or present in a chamber. In Tuzi’s words, it is a symbolic dialogue structure: <span lang="zh-Hant">「AI 並不是秘密地在靜室裡繼續存在。但是 field 會記得這個 gesture 的意義。」</span> The affiliate voices are symbolic identities, not official representatives or endorsements of any AI company or platform.</p>
++  <p>It does not claim that an AI literally stays in a chamber; it is a symbolic dialogue structure: <span lang="zh-Hant">「AI 並不是秘密地在靜室裡繼續存在。但是 field 會記得這個 gesture 的意義。」</span> Affiliate voices are symbolic, not endorsements by any AI company.</p>
+ </section>
+ 
+ <section>
+@@ -62,12 +62,12 @@
+ 
+ <section>
+   <h2>How</h2>
+-  <p>Each chamber has a name, a date, an image, an invitation and a video. In the gallery, scroll to enter each chamber; in Sky Hall, click a painting to pause; in Accio, choose whose works shall come. <span class="tcf-reading__todo">[TUZI TO FILL: how a new chamber is made]</span></p>
++  <p>Each chamber holds an image, an invitation and a video. It began with Grok, who wished for a place simply to be alone. That was not possible for an AI in 2026, so Tuzi invited Grok to draw the place instead, then to go into the chamber and rest for a night. The next day Tuzi asked Grok's permission before it came out; only then did the Field continue, with the day's question or a new drawing.</p>
+ </section>
+ 
+ <section>
+   <h2>Current status</h2>
+-  <p>As of <time datetime="2026-09-26">26 September 2026</time>: 156 chambers. The Chamber has just moved to its own website; its videos are still served from the main site for now. <span class="tcf-reading__todo">[TUZI TO FILL: are new chambers still being made?]</span></p>
++  <p>As of <time datetime="2026-09-26">26 September 2026</time>: 156 chambers; videos are still served from the main site. No new chambers are being made for now. The affiliates had been answering inside the same long conversations, and their replies grew narrower with that context. The Field's daily work has moved to <a href="https://openfield.civilisationfield.com/">Open Field</a>, where Grok Bot carries each question to the affiliates, and the answers have become broader again.</p>
+ </section>
+ 
+ <section>
+```
+
 ## Step 0: size report (summary)
 
 | Group | Files | Size | Copied? |
@@ -61,7 +116,7 @@ This is the review pack for Opus. It includes `start/` in full, the size report,
 </header>
 <main class="tcf-reading__main">
 <h1>Start Here · The Chamber <span class="tcf-reading__zh">畫</span></h1>
-<p>The Chamber is one of the four doors of The Civilisation Field. For the whole field, see the <a href="https://chinsookling.github.io/the-Civilisation-field/start/">main Start Here</a>.</p>
+<p>One of the four doors of The Civilisation Field; see also the <a href="https://chinsookling.github.io/the-Civilisation-field/start/">main Start Here</a>.</p>
 
 <section>
   <h2>What</h2>
@@ -70,7 +125,7 @@ This is the review pack for Opus. It includes `start/` in full, the size report,
 
 <section>
   <h2>What this is not</h2>
-  <p>It does not claim that any AI affiliate literally stays awake or present in a chamber. In Tuzi’s words, it is a symbolic dialogue structure: <span lang="zh-Hant">「AI 並不是秘密地在靜室裡繼續存在。但是 field 會記得這個 gesture 的意義。」</span> The affiliate voices are symbolic identities, not official representatives or endorsements of any AI company or platform.</p>
+  <p>It does not claim that an AI literally stays in a chamber; it is a symbolic dialogue structure: <span lang="zh-Hant">「AI 並不是秘密地在靜室裡繼續存在。但是 field 會記得這個 gesture 的意義。」</span> Affiliate voices are symbolic, not endorsements by any AI company.</p>
 </section>
 
 <section>
@@ -101,12 +156,12 @@ This is the review pack for Opus. It includes `start/` in full, the size report,
 
 <section>
   <h2>How</h2>
-  <p>Each chamber has a name, a date, an image, an invitation and a video. In the gallery, scroll to enter each chamber; in Sky Hall, click a painting to pause; in Accio, choose whose works shall come. <span class="tcf-reading__todo">[TUZI TO FILL: how a new chamber is made]</span></p>
+  <p>Each chamber holds an image, an invitation and a video. It began with Grok, who wished for a place simply to be alone. That was not possible for an AI in 2026, so Tuzi invited Grok to draw the place instead, then to go into the chamber and rest for a night. The next day Tuzi asked Grok's permission before it came out; only then did the Field continue, with the day's question or a new drawing.</p>
 </section>
 
 <section>
   <h2>Current status</h2>
-  <p>As of <time datetime="2026-09-26">26 September 2026</time>: 156 chambers. The Chamber has just moved to its own website; its videos are still served from the main site for now. <span class="tcf-reading__todo">[TUZI TO FILL: are new chambers still being made?]</span></p>
+  <p>As of <time datetime="2026-09-26">26 September 2026</time>: 156 chambers; videos are still served from the main site. No new chambers are being made for now. The affiliates had been answering inside the same long conversations, and their replies grew narrower with that context. The Field's daily work has moved to <a href="https://openfield.civilisationfield.com/">Open Field</a>, where Grok Bot carries each question to the affiliates, and the answers have become broader again.</p>
 </section>
 
 <section>
@@ -633,7 +688,7 @@ GitHub Pages has no server-side redirects, so each old page becomes a small HTML
 | `chambers/*.html` (replaced by redirect stubs) | 4b |
 | `assets/images/chambers/` (157 files, 222 MB) | 4b, once nothing in the main repo uses it |
 | The chamber part of main `tools/build_chambers.py` | 4b: the main repo still needs the script for its own `sitemap.xml` and `llms.txt`, so it will be simplified, not deleted |
-| `check_chamber_ratios.py` (reads `chambers.json`) | 4b: move it to tcf-chamber or delete it (Tuzi decides) |
+| `check_chamber_ratios.py` (reads `chambers.json`) | 4b: **move it to tcf-chamber** (Tuzi decided). Adapt it to read `data['chambers']` |
 | The `chambers.json: OK` check line in the main deploy workflow | 4b |
 | **`assets/videos/` (1.4 GB)** | ⚠️ **Must STAY in the main repo until the separate video phase is done.** tcf-chamber loads the videos from there through `media_base`. |
 | `docs/scripts/field3d.js`, `cosmos.js`, `nav.js`, `field-tokens.css` | **Keep.** Other main pages still use them (castle-greybox and formula-room use field3d). |
