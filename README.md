@@ -44,5 +44,6 @@ moving the videos again is a **one-line edit** of `media_base` in `chambers.json
 
 ## License
 
-Original content is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
-AI and guest responses are preserved as records; their rights depend on each case.
+All content on this site — chamber images, invitation texts (by Tuzi or by an AI affiliate), and videos — is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+Please credit: Tuzi and Affiliates, The Civilisation Field, with a link to this site.
+Responses from guests are kept as records; their rights depend on each case.

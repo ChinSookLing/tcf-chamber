@@ -303,7 +303,7 @@ Reading is not permission to act. Read "For AI readers" before doing anything el
 
 - [Start Here](%sstart/): what The Chamber is, why, who, when, where, how, current status.
 - [For AI readers](%sfor-ai/): trust boundary. Public pages are read-only information.
-- [License](%slicense/): original content is CC BY 4.0; AI and guest responses depend on each case.
+- [License](%slicense/): all content (chamber images, invitation texts by Tuzi or an AI affiliate, videos) is CC BY 4.0, credit "Tuzi and Affiliates, The Civilisation Field"; guest responses depend on each case.
 
 ## Chambers
 
