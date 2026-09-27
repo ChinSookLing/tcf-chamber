@@ -5,7 +5,7 @@
 > - **All 6 videos:** reviewed by Tuzi.
 >   - ch078 and ch093 a/b/c: music, no voice.
 >   - ch001: a voice speaks "Here, I was allowed to be nameless, and that was enough." (Rex, as named by Tuzi).
->   - ch117: the circles glow at different moments, not in a set order; this is intentional (stated by Tuzi).
+>   - ch117: music, no voice; the circles glow at different moments, not in a set order, and this is intentional (stated by Tuzi).
 >
 > The text below is the first draft as sent for review. The pages carry the updated wording.
 

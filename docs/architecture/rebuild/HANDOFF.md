@@ -30,7 +30,8 @@ This is the Opus message that rev 2 was missing. Its item 4 ("ch078 and ch093: k
   - shown on the page as "**Intent (not part of the description):** The non-sequential glow is intentional (stated by Tuzi)."
   - The schema adds `intent_note` (a fact, so `stated_by` and `source` are required when it is human-stated).
 - **`review_status`:** "reviewed by Tuzi 2026-09-27".
-- **Wording, for Opus to check:** Tuzi watched ch117 but said nothing about its audio. Its audio line said "Not listened to", which now sits next to "reviewed by Tuzi", so I changed it to "**Not listened to by the drafting AI**". The audio stays "not known".
+- **Audio (Tuzi, after rev 3):** "music, no voice". The ch117 audio line now ends "Music, no voice (listened to by Tuzi).", with "Measured:" before the loudness figures, as for the others. The note below is superseded.
+- **(Superseded) Wording, for Opus to check:** Tuzi watched ch117 but said nothing about its audio. Its audio line said "Not listened to", which now sits next to "reviewed by Tuzi", so I changed it to "**Not listened to by the drafting AI**". The audio stays "not known".
 
 ### 3. Images
 All 4 stay "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27". None says "reviewed by Tuzi".
@@ -60,7 +61,7 @@ All 4 stay "checked by a second AI (Opus) against the image file; accepted by Tu
 | ch001 | checked by Opus; accepted by Tuzi 2026-09-27 | reviewed by Tuzi 2026-09-27 · spoken line transcribed by Tuzi (voice: Rex, as named by Tuzi) |
 | ch078 | checked by Opus; accepted by Tuzi 2026-09-27 | reviewed by Tuzi 2026-09-27 · music, no voice |
 | ch093 | checked by Opus; accepted by Tuzi 2026-09-27 | a, b, c: reviewed by Tuzi 2026-09-27 · music, no voice |
-| ch117 | checked by Opus; accepted by Tuzi 2026-09-27 | reviewed by Tuzi 2026-09-27 · non-sequential glow intentional (stated by Tuzi) · audio not known |
+| ch117 | checked by Opus; accepted by Tuzi 2026-09-27 | reviewed by Tuzi 2026-09-27 · music, no voice · non-sequential glow intentional (stated by Tuzi) |
 
 ### Rev 3 checks
 

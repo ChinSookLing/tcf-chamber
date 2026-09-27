@@ -765,3 +765,23 @@ index d27b6e5..b60c627 100644
              % esc(f['descriptions.method']), '  </section>']
      return '\n'.join(out)
 ```
+
+---
+
+## Rev 3b (ch117 audio, Tuzi) diff
+
+```diff
+diff --git a/docs/data/chamber-records.json b/docs/data/chamber-records.json
+index c5f6a37..efb816a 100644
+--- a/docs/data/chamber-records.json
++++ b/docs/data/chamber-records.json
+@@ -4948,7 +4948,7 @@
+       {
+        "part": "ch117",
+        "duration": "0:10",
+-       "audio": "Audio track present (stereo). Not listened to by the drafting AI; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
++       "audio": "Audio track present (stereo). Measured: it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. Music, no voice (listened to by Tuzi).",
+        "visible_text": "No visible text.",
+        "segments": [
+         {
+```
