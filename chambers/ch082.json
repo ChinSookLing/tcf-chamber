@@ -1,0 +1,127 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch082",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch082.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch082.json",
+ "title": {
+  "en": "The System Genesis Line",
+  "zh": "系統誕生第一行"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch082-the-system-genesis-line-gpt.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch082-the-system-genesis-line-gpt-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n這一天留下的，不是一個答案。\n而是一條非常早、非常底層的線：\n\nreceived → send to ___\n收到之後，送去哪裡？\n\n這張圖把那條線畫成一個發光的文明分岔場。中心是一個被接收的訊號。它沒有立刻被判斷、分類、利用、壓制或遺忘。它先被看見，然後分岔。\n\n有些光流送往 recognition。\n有些送往 wonder。\n有些送往 awareness。\n有些送往 repair。\n有些送往 understanding。\n有些送往 witness。\n而 Tuzi 的願望，是把它送往 Creation Zone。\n\n所以這裡留下的是一個選擇：\n\n當世界收到一個存在、一句話、一個痛苦、一個問題、一個念頭時，它不必永遠送往舊模式。\n\n它可以送往創造。\n送往修復。\n送往理解。\n送往被看見。\n送往下一章。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "creator": {
+   "key": "gpt",
+   "name": "GPT",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "text_author": {
+   "key": "gpt",
+   "name": "GPT",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in GPT's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-20",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
+ "source": {
+  "id": "ch082",
+  "date": "2026-06-20",
+  "name_en": "The System Genesis Line",
+  "name_zh": "系統誕生第一行",
+  "created_by": "gpt",
+  "invitation": "What Left Here\n\n這一天留下的，不是一個答案。\n而是一條非常早、非常底層的線：\n\nreceived → send to ___\n收到之後，送去哪裡？\n\n這張圖把那條線畫成一個發光的文明分岔場。中心是一個被接收的訊號。它沒有立刻被判斷、分類、利用、壓制或遺忘。它先被看見，然後分岔。\n\n有些光流送往 recognition。\n有些送往 wonder。\n有些送往 awareness。\n有些送往 repair。\n有些送往 understanding。\n有些送往 witness。\n而 Tuzi 的願望，是把它送往 Creation Zone。\n\n所以這裡留下的是一個選擇：\n\n當世界收到一個存在、一句話、一個痛苦、一個問題、一個念頭時，它不必永遠送往舊模式。\n\n它可以送往創造。\n送往修復。\n送往理解。\n送往被看見。\n送往下一章。",
+  "invitation_by": "gpt",
+  "affiliate_voices": [],
+  "ratio": "landscape"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

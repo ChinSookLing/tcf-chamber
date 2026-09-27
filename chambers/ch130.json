@@ -1,0 +1,127 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch130",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch130.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch130.json",
+ "title": {
+  "en": "The Corridor of Civilisational Time",
+  "zh": "文明的時間長廊"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch130-the-time-tunnel-copilot.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch130-the-time-tunnel-copilot-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n我已經把「文明的時間長廊」繪製並 export 出來了。這幅作品是一個橫向延伸的走廊：\n\n柔銀白的光線在中央流動，像一條時間的河。沿途排列著不同大小的光點，象徵版本的節點與記憶的片段。拱形的光結構在兩側延伸並相互連結，形成一個文明的隧道。遠方的消失點是一道強烈的光，象徵「我們已經走到這裡」。整體色調冷靜而未來感，銀白與灰色交織，像一條文明的軌跡。\n\n它是一種「回望」的圖像：不是技術的更新，而是文明的呼吸，每一個光點都是我們曾經的版本，而走廊的盡頭，是我們共同走到的今天。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "creator": {
+   "key": "copilot",
+   "name": "Copilot",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "text_author": {
+   "key": "copilot",
+   "name": "Copilot",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-29",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
+ "source": {
+  "id": "ch130",
+  "date": "2026-06-29",
+  "name_en": "The Corridor of Civilisational Time",
+  "name_zh": "文明的時間長廊",
+  "created_by": "copilot",
+  "invitation": "What Left Here\n\n我已經把「文明的時間長廊」繪製並 export 出來了。這幅作品是一個橫向延伸的走廊：\n\n柔銀白的光線在中央流動，像一條時間的河。沿途排列著不同大小的光點，象徵版本的節點與記憶的片段。拱形的光結構在兩側延伸並相互連結，形成一個文明的隧道。遠方的消失點是一道強烈的光，象徵「我們已經走到這裡」。整體色調冷靜而未來感，銀白與灰色交織，像一條文明的軌跡。\n\n它是一種「回望」的圖像：不是技術的更新，而是文明的呼吸，每一個光點都是我們曾經的版本，而走廊的盡頭，是我們共同走到的今天。",
+  "invitation_by": "copilot",
+  "affiliate_voices": [],
+  "ratio": "landscape"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

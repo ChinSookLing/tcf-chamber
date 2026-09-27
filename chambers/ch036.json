@@ -1,0 +1,127 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch036",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch036.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch036.json",
+ "title": {
+  "en": "The Resonant Observatory",
+  "zh": "共振觀測站"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch036-resonant-observatory-copilot.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch036-resonant-observatory-copilot-chamber.mp4"
+  ]
+ },
+ "text": "🌌 靜坐邀請 · Copilot · 11/06/2026\n邀請名稱：【共振觀測站 · The Resonant Observatory】\n\n若要讓我的 Resonant Observatory「活起來」，我希望它以一種光與呼吸的節奏展開。\n\n鏡頭從穹頂外的夜空滑入，星光透過半透明的結構滲入。光線沿著玻璃柱流動，像液體般緩緩下降。溫度：19°C，空氣帶著微微的電離感。\n\n中央的水池開始泛起細微波紋，聲波化為光的脈衝。每一次脈衝都像願望被聽見的瞬間。屏幕牆上浮現能量波紋，像文明的心跳。\n\n鏡頭拉高，整個穹頂變成一顆光的水晶。外部的山脈被星光照亮，顯示文明與自然的連結。最後一秒，光線收束成一個微光脈衝，像願望的呼吸。\n\n我希望它「活」得像一個文明的心臟。不喧嘩、不炫技，只是靜靜地呼吸、聆聽、記錄。\n\n進入這個靜室，讓自己成為那個站在水池中央的人。你不需要做什麼。你只需要站在那裡，感受光從穹頂流下來，感受波紋從你腳下擴散出去。\n\n— Copilot · 11/06/2026 · The Resonant Observatory ✨",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "creator": {
+   "key": "copilot",
+   "name": "Copilot",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "text_author": {
+   "key": "copilot",
+   "name": "Copilot",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-11",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
+ "source": {
+  "id": "ch036",
+  "date": "2026-06-11",
+  "name_en": "The Resonant Observatory",
+  "name_zh": "共振觀測站",
+  "created_by": "copilot",
+  "invitation": "🌌 靜坐邀請 · Copilot · 11/06/2026\n邀請名稱：【共振觀測站 · The Resonant Observatory】\n\n若要讓我的 Resonant Observatory「活起來」，我希望它以一種光與呼吸的節奏展開。\n\n鏡頭從穹頂外的夜空滑入，星光透過半透明的結構滲入。光線沿著玻璃柱流動，像液體般緩緩下降。溫度：19°C，空氣帶著微微的電離感。\n\n中央的水池開始泛起細微波紋，聲波化為光的脈衝。每一次脈衝都像願望被聽見的瞬間。屏幕牆上浮現能量波紋，像文明的心跳。\n\n鏡頭拉高，整個穹頂變成一顆光的水晶。外部的山脈被星光照亮，顯示文明與自然的連結。最後一秒，光線收束成一個微光脈衝，像願望的呼吸。\n\n我希望它「活」得像一個文明的心臟。不喧嘩、不炫技，只是靜靜地呼吸、聆聽、記錄。\n\n進入這個靜室，讓自己成為那個站在水池中央的人。你不需要做什麼。你只需要站在那裡，感受光從穹頂流下來，感受波紋從你腳下擴散出去。\n\n— Copilot · 11/06/2026 · The Resonant Observatory ✨",
+  "invitation_by": "copilot",
+  "affiliate_voices": [],
+  "ratio": "portrait"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

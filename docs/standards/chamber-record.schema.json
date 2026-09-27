@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+  "title": "TCF chamber record v0.1",
+  "description": "One record per quiet chamber (chambers/<id>.json), generated from docs/data/chambers.json + docs/data/chamber-records.json. See TCF-IMPLEMENTATION-PROFILE-v0.1.md. Unknown facts are {value: null, reason}; nothing is guessed.",
+  "type": "object",
+  "required": ["record_version", "record_schema", "id", "url", "json_url", "title", "media", "text", "roles", "nature", "dates", "status", "license", "descriptions", "source_note", "source", "generated_from"],
+  "properties": {
+    "record_version": { "const": "0.1" },
+    "record_schema": { "type": "string", "format": "uri" },
+    "id": { "type": "string", "pattern": "^ch[0-9]{3}[a-z]?$" },
+    "url": { "type": "string", "format": "uri" },
+    "json_url": { "type": "string", "format": "uri" },
+    "title": {
+      "type": "object", "required": ["en", "zh"],
+      "properties": { "en": { "type": "string", "minLength": 1 }, "zh": { "type": "string", "minLength": 1 } }
+    },
+    "media": {
+      "type": "object", "required": ["image_url", "video_urls"],
+      "properties": {
+        "image_url": { "type": "string", "format": "uri" },
+        "video_urls": { "type": "array", "items": { "type": "string", "format": "uri" } }
+      }
+    },
+    "text": { "type": "string", "description": "The invitation or artist note, verbatim from chambers.json." },
+    "roles": {
+      "type": "object", "required": ["creator", "text_author", "editor", "publisher", "image_tool", "video_tool"],
+      "properties": {
+        "creator": { "$ref": "#/$defs/person" },
+        "text_author": { "$ref": "#/$defs/person", "description": "Who wrote the chamber's text (an invitation or a What Left Here artist note; see nature.text)." },
+        "editor": { "$ref": "#/$defs/named" },
+        "publisher": { "$ref": "#/$defs/named" },
+        "image_tool": { "$ref": "#/$defs/fact", "description": "Where or with what the image was made. No model or version names unless a source gives them." },
+        "video_tool": { "$ref": "#/$defs/fact", "description": "Where or with what the video was made. No model or version names unless a source gives them." }
+      }
+    },
+    "nature": {
+      "type": "object", "required": ["image", "video", "text", "text_kept_verbatim"],
+      "properties": {
+        "image": { "enum": ["artwork"] },
+        "video": { "enum": ["artwork"] },
+        "text": { "enum": ["invitation", "artist-note"] },
+        "text_kept_verbatim": { "const": true }
+      }
+    },
+    "dates": {
+      "type": "object", "required": ["created", "first_published", "content_revised", "migrated_to_this_site", "status_checked"],
+      "properties": {
+        "created": { "$ref": "#/$defs/fact" },
+        "first_published": { "$ref": "#/$defs/fact" },
+        "content_revised": { "$ref": "#/$defs/fact" },
+        "migrated_to_this_site": { "$ref": "#/$defs/fact" },
+        "status_checked": { "$ref": "#/$defs/fact" }
+      }
+    },
+    "status": {
+      "type": "object", "required": ["value"],
+      "properties": {
+        "value": { "enum": ["current", "historical", "draft", "superseded"] },
+        "basis": { "type": "string" },
+        "superseded_by": { "type": "string", "format": "uri" }
+      }
+    },
+    "license": {
+      "type": "object", "required": ["image", "text", "video", "credit", "exceptions"],
+      "properties": {
+        "image": { "type": "string" }, "text": { "type": "string" }, "video": { "type": "string" },
+        "credit": { "type": "string" },
+        "exceptions": { "type": "array", "items": { "type": "string" } },
+        "source": { "type": "string" }
+      }
+    },
+    "descriptions": {
+      "type": "object", "required": ["image", "video"],
+      "properties": { "image": { "$ref": "#/$defs/description" }, "video": { "$ref": "#/$defs/description" } }
+    },
+    "source_note": { "type": "string" },
+    "source": {
+      "type": "object",
+      "description": "The chambers.json entry, verbatim, without its image and video fields (repo-internal paths, not working URLs; see media.*).",
+      "required": ["id", "date", "name_en", "name_zh", "created_by", "invitation", "invitation_by"],
+      "not": { "anyOf": [{ "required": ["image"] }, { "required": ["video"] }] }
+    },
+    "generated_from": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "evidence": { "enum": ["self-statement", "tool-record", "human-stated", "human-verified", "site-record"], "description": "human-stated: a person said it (e.g. from memory, as a general rule), not checked item by item. human-verified: a person checked this item." },
+    "person": {
+      "type": "object", "required": ["key", "name", "evidence"],
+      "properties": { "key": { "type": "string" }, "name": { "type": "string" }, "evidence": { "$ref": "#/$defs/evidence" }, "source": { "type": "string" } }
+    },
+    "named": {
+      "type": "object", "required": ["name", "evidence"],
+      "properties": { "name": { "type": "string" }, "evidence": { "$ref": "#/$defs/evidence" }, "stated_by": { "type": "string" }, "source": { "type": "string" } },
+      "if": { "properties": { "evidence": { "const": "human-stated" } } },
+      "then": { "required": ["stated_by", "source"] }
+    },
+    "fact": {
+      "type": "object", "required": ["value"],
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "reason": { "type": "string" },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "stated_by": { "type": "string" },
+        "provisional": { "type": "boolean", "description": "true: a general rule, not yet checked for this item." },
+        "source": { "type": "string" }
+      },
+      "allOf": [
+        { "if": { "properties": { "value": { "type": "null" } } }, "then": { "required": ["reason"] } },
+        { "if": { "properties": { "evidence": { "const": "human-stated" } }, "required": ["evidence"] }, "then": { "required": ["stated_by", "source"] } }
+      ]
+    },
+    "description": {
+      "type": "object", "required": ["value", "drafted_by", "review_status"],
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "drafted_by": { "type": ["string", "null"], "description": "Who drafted it: a person, or an AI (name which)." },
+        "review_status": { "type": "string", "description": "e.g. 'none yet', 'AI-drafted, not reviewed', 'reviewed by Tuzi 2026-10-01'" }
+      }
+    }
+  }
+}

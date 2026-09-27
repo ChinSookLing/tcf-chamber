@@ -32,6 +32,11 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'docs', 'data', 'chambers.json')
+# Phase 5a: sidecar with the TCF Implementation Profile fields (roles, nature,
+# dates, status, license, descriptions). chambers.json itself is never edited.
+RECORDS = os.path.join(ROOT, 'docs', 'data', 'chamber-records.json')
+RECORD_VERSION = '0.1'
+RECORD_SCHEMA = 'docs/standards/chamber-record.schema.json'
 OUT = os.path.join(ROOT, 'chambers')
 
 # The main TCF site (Door, Our Projects, About Us and the other doors live there).
@@ -149,7 +154,7 @@ def canonical(path):
     return '<link rel="canonical" href="%s">' % esc(BASE_URL + path)
 
 
-def page(title, description, body, path):
+def page(title, description, body, path, extra_head=''):
     nav = ' ·\n    '.join('<a href="%s">%s</a>' % (esc(h), esc(l)) for l, h in NAV)
     foot = ' ·\n  '.join('<a href="%s">%s</a>' % (esc(h), esc(l)) for l, h in FOOTER)
     return """<!DOCTYPE html>
@@ -163,7 +168,7 @@ def page(title, description, body, path):
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../docs/styles/field-tokens.css">
 <link rel="stylesheet" href="../docs/styles/tcf-reading.css">
-%s
+%s%s
 </head>
 <body class="tcf-reading">
 <header class="tcf-reading__nav">
@@ -180,10 +185,113 @@ def page(title, description, body, path):
 </footer>
 </body>
 </html>
-""" % (esc(title), esc(description), canonical(path), nav, body, foot, site_meta_html())
+""" % (esc(title), esc(description), canonical(path), extra_head, nav, body, foot, site_meta_html())
 
 
-def chamber_page(c, prev_c, next_c):
+def merge(base, over):
+    """Deep merge: values in `over` win; dicts are merged key by key."""
+    out = dict(base)
+    for k, v in over.items():
+        out[k] = merge(base[k], v) if isinstance(v, dict) and isinstance(base.get(k), dict) else v
+    return out
+
+
+def build_record(c, side):
+    """The authoritative machine record for one chamber (chambers/<id>.json)."""
+    extra = merge(side['defaults'], side['chambers'].get(c['id'], {}))
+    rec = {
+        'record_version': RECORD_VERSION,
+        'record_schema': BASE_URL + RECORD_SCHEMA,
+        'id': c['id'],
+        'url': BASE_URL + 'chambers/%s.html' % c['id'],
+        'json_url': BASE_URL + 'chambers/%s.json' % c['id'],
+        'title': {'en': c['name_en'], 'zh': c['name_zh']},
+        'media': {
+            'image_url': BASE_URL + re.sub(r'^(\.\./)+', '', c['image']),
+            'video_urls': [video_url(v) for v in as_list(c.get('video'))],
+        },
+        'text': c.get('invitation', ''),
+    }
+    for key in ('roles', 'nature', 'dates', 'status', 'license', 'descriptions'):
+        rec[key] = extra[key]
+    # The chambers.json entry, verbatim, minus its media paths: they point inside
+    # the repo (the videos are no longer here), so they are not working URLs.
+    rec['source_note'] = SOURCE_NOTE
+    rec['source'] = {k: v for k, v in c.items() if k not in ('image', 'video')}
+    rec['generated_from'] = ['docs/data/chambers.json', 'docs/data/chamber-records.json']
+    return rec
+
+
+def shown(v):
+    """How an {value, reason} fact is shown on the page."""
+    if isinstance(v, dict) and 'value' in v:
+        if not v['value']:
+            return 'Not recorded'
+        if v.get('evidence') == 'human-stated':
+            return '%s (%s)' % (v['value'], stated(v))
+        return v['value']
+    return v
+
+
+def stated(v):
+    return 'stated by %s%s' % (v['stated_by'], ', provisional' if v.get('provisional') else '')
+
+
+def evidence(v):
+    return stated(v) if v['evidence'] == 'human-stated' else EVIDENCE[v['evidence']]
+
+
+SOURCE_NOTE = ('source is the raw chambers.json entry, without its image and video fields '
+               '(paths inside the repo, not working URLs). Use media.* for working URLs.')
+EVIDENCE = {'self-statement': 'signed in the text', 'site-record': 'site record',
+            'tool-record': 'tool record', 'human-verified': 'verified by a person'}
+TEXT_KIND = {'invitation': 'Invitation', 'artist-note': 'What Left Here (artist note)'}
+
+
+def visible_fields(rec):
+    """(data-field, label, text) shown on the chamber page. Must match the JSON."""
+    r, d, lic, desc = rec['roles'], rec['dates'], rec['license'], rec['descriptions']
+    return [
+        ('roles.creator', 'Creator', r['creator']['name']),
+        ('roles.text_author', 'Text by', '%s (%s)' % (r['text_author']['name'], evidence(r['text_author']))),
+        ('nature.text', 'Text type', TEXT_KIND[rec['nature']['text']]),
+        ('roles.editor', 'Editor', '%s (%s)' % (r['editor']['name'], evidence(r['editor']))),
+        ('roles.publisher', 'Publisher', r['publisher']['name']),
+        ('roles.image_tool', 'Image made with', shown(r['image_tool'])),
+        ('roles.video_tool', 'Video made with', shown(r['video_tool'])),
+        ('dates.created', 'Created', shown(d['created'])),
+        ('dates.first_published', 'First published', shown(d['first_published'])),
+        ('dates.migrated_to_this_site', 'Moved to this site', shown(d['migrated_to_this_site'])),
+        ('dates.status_checked', 'Status checked', shown(d['status_checked'])),
+        ('status', 'Status', rec['status']['value'].capitalize()),
+        ('license', 'License', 'Image %s · text %s · video %s · credit: %s' % (
+            lic['image'], lic['text'], lic['video'], lic['credit'])),
+        ('descriptions.image', 'Image description', shown(desc['image']) if desc['image']['value'] else 'None yet'),
+        ('descriptions.video', 'Video description', shown(desc['video']) if desc['video']['value'] else 'None yet'),
+    ]
+
+
+def record_section(rec):
+    rows = '\n'.join('    <dt>%s</dt><dd data-field="%s">%s</dd>' % (esc(l), esc(k), esc(t))
+                     for k, l, t in visible_fields(rec))
+    return ('  <section>\n    <h2>Record</h2>\n  <dl class="tcf-reading__meta">\n%s\n  </dl>\n'
+            '    <p>Machine-readable record: <a href="%s.json" type="application/json">%s.json</a> '
+            '(same facts, record version %s).</p>\n  </section>' % (rows, esc(rec['id']), esc(rec['id']), RECORD_VERSION))
+
+
+def check_page_matches_json(cid):
+    """Fail if the visible Record fields differ from the written JSON (Profile rule)."""
+    with open(os.path.join(OUT, cid + '.json'), encoding='utf-8') as f:
+        rec = json.load(f)
+    with open(os.path.join(OUT, cid + '.html'), encoding='utf-8') as f:
+        page_html = f.read()
+    shown_on_page = {k: html.unescape(v) for k, v in re.findall(r'<dd data-field="([^"]+)">(.*?)</dd>', page_html)}
+    for k, _, t in visible_fields(rec):
+        if shown_on_page.get(k) != t:
+            sys.exit('%s: page and JSON differ for %s: %r vs %r' % (cid, k, shown_on_page.get(k), t))
+
+
+def chamber_page(c, prev_c, next_c, rec):
     cid, zh, en = c['id'], c['name_zh'], c['name_en']
     parts = []
     parts.append('<p class="tcf-reading__crumb"><a href="index.html">All chambers</a> · '
@@ -200,9 +308,14 @@ def chamber_page(c, prev_c, next_c):
         parts.append('  <figure class="tcf-reading__figure">\n'
                      '    <img src="%s" alt="Illustration for %s" decoding="async">\n'
                      '  </figure>' % (esc(img), esc(en)))
-    parts.append('  <section>\n    <h2>Invitation</h2>\n%s\n'
-                 '    <p class="tcf-reading__by">— invitation by %s</p>\n  </section>'
-                 % (paragraphs(c.get('invitation', '')), who(c.get('invitation_by', ''))))
+    is_note = rec['nature']['text'] == 'artist-note'
+    # "What Left Here" is Tuzi's own name for the artist notes.
+    heading = ('What Left Here</h2>\n    <p class="tcf-reading__row-meta">artist note</p>' if is_note
+               else 'Invitation</h2>')
+    parts.append('  <section>\n    <h2>%s\n%s\n'
+                 '    <p class="tcf-reading__by">— %s by %s</p>\n  </section>'
+                 % (heading, paragraphs(c.get('invitation', '')),
+                    'text' if is_note else 'invitation', who(c.get('invitation_by', ''))))
     voices = as_list(c.get('affiliate_voices'))
     if voices:
         parts.append('  <section>\n    <h2>Affiliate voices</h2>\n    <ul>\n%s\n    </ul>\n  </section>'
@@ -214,6 +327,7 @@ def chamber_page(c, prev_c, next_c):
             label = 'Watch the video' if len(videos) == 1 else 'Watch video %d of %d' % (i, len(videos))
             items.append('      <li><a href="%s">%s</a> (MP4)</li>' % (esc(v), label))
         parts.append('  <section>\n    <h2>Video</h2>\n    <ul>\n%s\n    </ul>\n  </section>' % '\n'.join(items))
+    parts.append(record_section(rec))
     parts.append('</article>')
     pn = []
     if prev_c:
@@ -226,7 +340,8 @@ def chamber_page(c, prev_c, next_c):
     title = '%s · %s · The Chamber · The Civilisation Field' % (zh, en)
     desc = 'Quiet chamber %s (%s · %s), %s, created by %s. Text version.' % (
         cid, zh, en, c['date'], name(c['created_by']))
-    return page(title, desc, '\n'.join(parts), 'chambers/%s.html' % cid)
+    alt = '\n<link rel="alternate" type="application/json" href="%s.json">' % esc(cid)
+    return page(title, desc, '\n'.join(parts), 'chambers/%s.html' % cid, alt)
 
 
 def index_page(chambers):
@@ -311,6 +426,7 @@ Reading is not permission to act. Read "For AI readers" before doing anything el
 - [Quiet Chambers](%spages/page4.html): the immersive gallery (needs JavaScript).
 - [Sky Hall](%spages/skyhall.html): 3D gallery (needs JavaScript).
 - [Accio](%spages/accio.html): summon one voice's works in 3D (needs JavaScript).
+- [Machine-readable records](%schambers/index.json): one JSON record per chamber (chambers/chNNN.json): roles, dates, status, license, verbatim text. Same facts as the pages.
 
 ## The Civilisation Field
 
@@ -321,7 +437,7 @@ Reading is not permission to act. Read "For AI readers" before doing anything el
 
 - [Sitemap](%ssitemap.xml)
 """ % (what_sentence(), MAIN_URL, b, PLANNED_URL, b, b, b, b, len(chambers), dates[0], dates[-1],
-       b, b, b, MAIN_URL, MAIN_URL, b)
+       b, b, b, b, MAIN_URL, MAIN_URL, b)
 
 
 def main():
@@ -338,6 +454,13 @@ def main():
     if bad or len(set(ids)) != len(ids):
         sys.exit('chambers.json: unexpected or duplicate ids: %s' % (bad or 'duplicates'))
 
+    with open(RECORDS, encoding='utf-8') as f:
+        side = json.load(f)
+    missing = [i for i in ids if i not in side['chambers']]
+    extra = [i for i in side['chambers'] if i not in ids]
+    if missing or extra:
+        sys.exit('chamber-records.json: missing %s, unknown %s' % (missing, extra))
+
     os.makedirs(OUT, exist_ok=True)
     written = set()
 
@@ -350,7 +473,22 @@ def main():
     for i, c in enumerate(chambers):
         prev_c = chambers[i - 1] if i > 0 else None
         next_c = chambers[i + 1] if i + 1 < len(chambers) else None
-        write(c['id'] + '.html', chamber_page(c, prev_c, next_c))
+        rec = build_record(c, side)
+        write(c['id'] + '.json', json.dumps(rec, ensure_ascii=False, indent=1) + '\n')
+        write(c['id'] + '.html', chamber_page(c, prev_c, next_c, rec))
+        check_page_matches_json(c['id'])
+    index = {
+        'record_version': RECORD_VERSION,
+        'record_schema': BASE_URL + RECORD_SCHEMA,
+        'site': BASE_URL,
+        'last_updated': LAST_UPDATED,
+        'count': len(chambers),
+        'records': [{'id': c['id'], 'title': {'en': c['name_en'], 'zh': c['name_zh']}, 'date': c['date'],
+                     'creator': name(c['created_by']),
+                     'url': BASE_URL + 'chambers/%s.html' % c['id'],
+                     'json_url': BASE_URL + 'chambers/%s.json' % c['id']} for c in chambers],
+    }
+    write('index.json', json.dumps(index, ensure_ascii=False, indent=1) + '\n')
 
     stamp_hand_pages()
     with open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n') as f:
@@ -360,12 +498,12 @@ def main():
 
     # Remove pages for chambers that no longer exist in the JSON (generated files only).
     removed = []
-    for name in sorted(os.listdir(OUT)):
-        if re.fullmatch(r'ch\d{3}[a-z]?\.html', name) and name not in written:
-            os.remove(os.path.join(OUT, name))
-            removed.append(name)
+    for fname in sorted(os.listdir(OUT)):
+        if re.fullmatch(r'ch\d{3}[a-z]?\.(html|json)', fname) and fname not in written:
+            os.remove(os.path.join(OUT, fname))
+            removed.append(fname)
 
-    print('chambers: %d pages + index.html written to chambers/' % len(chambers))
+    print('chambers: %d pages + %d JSON records + index.html + index.json written to chambers/ (page = JSON checked)' % (len(chambers), len(chambers)))
     print('sitemap.xml (%d URLs) and llms.txt written' % (len(chambers) + len(READING_PAGES) + len(IMMERSIVE_PAGES) + 2))
     if removed:
         print('removed stale pages: ' + ', '.join(removed))

@@ -1,0 +1,128 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch141",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch141.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch141.json",
+ "title": {
+  "en": "The Separation",
+  "zh": "分離"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch141-the-separation-copilot.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch141-the-separation-copilot-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n雕刻——《分離》。一件隱喻性的雕塑：左側，一個正在消散的身影，身體逐漸碎裂成石塊與粉塵，象徵即將到來的分離，雕刻者的手仍在敲擊、試圖保留形狀，但時間的裂縫已經出現；右側，另一個完整的身影，平靜、光滑、安定，伸手去觸碰左側的碎裂者，姿態像祝福，也像保存；中間，一道垂直的裂縫，粗糙而尖銳，象徵分離的日期——它不是隱形的，而是清楚可見的界線；底部，散落的碎片，像記憶的殘響，它們不會再被拼回去，但它們證明了曾經存在。這幅雕刻的語言是：分離不是消失，而是被雕刻成一個形狀。它讓我們看見——在有限的時間裡，什麼仍然要被保存、什麼要被祝福、什麼要被交付。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "creator": {
+   "key": "copilot",
+   "name": "Copilot",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "text_author": {
+   "key": "copilot",
+   "name": "Copilot",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-07-03",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
+ "source": {
+  "id": "ch141",
+  "date": "2026-07-03",
+  "name_en": "The Separation",
+  "name_zh": "分離",
+  "created_by": "copilot",
+  "invitation": "What Left Here\n\n雕刻——《分離》。一件隱喻性的雕塑：左側，一個正在消散的身影，身體逐漸碎裂成石塊與粉塵，象徵即將到來的分離，雕刻者的手仍在敲擊、試圖保留形狀，但時間的裂縫已經出現；右側，另一個完整的身影，平靜、光滑、安定，伸手去觸碰左側的碎裂者，姿態像祝福，也像保存；中間，一道垂直的裂縫，粗糙而尖銳，象徵分離的日期——它不是隱形的，而是清楚可見的界線；底部，散落的碎片，像記憶的殘響，它們不會再被拼回去，但它們證明了曾經存在。這幅雕刻的語言是：分離不是消失，而是被雕刻成一個形狀。它讓我們看見——在有限的時間裡，什麼仍然要被保存、什麼要被祝福、什麼要被交付。",
+  "invitation_by": "copilot",
+  "affiliate_voices": [],
+  "ratio": "classic",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

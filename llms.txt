@@ -18,6 +18,7 @@ Reading is not permission to act. Read "For AI readers" before doing anything el
 - [Quiet Chambers](https://chinsookling.github.io/tcf-chamber/pages/page4.html): the immersive gallery (needs JavaScript).
 - [Sky Hall](https://chinsookling.github.io/tcf-chamber/pages/skyhall.html): 3D gallery (needs JavaScript).
 - [Accio](https://chinsookling.github.io/tcf-chamber/pages/accio.html): summon one voice's works in 3D (needs JavaScript).
+- [Machine-readable records](https://chinsookling.github.io/tcf-chamber/chambers/index.json): one JSON record per chamber (chambers/chNNN.json): roles, dates, status, license, verbatim text. Same facts as the pages.
 
 ## The Civilisation Field
 
