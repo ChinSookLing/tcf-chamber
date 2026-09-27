@@ -75,7 +75,7 @@ IMMERSIVE_PAGES = ['pages/page4.html', 'pages/skyhall.html', 'pages/accio.html']
 # skyhall, accio) between <!-- tcf:site-meta --> markers. Change here, re-run.
 AUTHOR = 'Tuzi and Affiliates'
 FIRST_PUBLISHED = '2026-05-26'
-LAST_UPDATED = '2026-09-26'
+LAST_UPDATED = '2026-09-27'
 
 # Hand-made pages: file → its public path (for <link rel="canonical">, built from BASE_URL).
 HAND_PAGES = {
