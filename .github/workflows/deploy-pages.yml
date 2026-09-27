@@ -3,6 +3,7 @@
 # Same approach as the-Civilisation-field: deploys on every push
 # to main, EXCLUDING private working material:
 #   - docs/architecture/   (handoff and review notes)
+#   - docs/tests/          (outsider test answer key: must not be public)
 #   - *.bak*               (all backup files)
 # ═══════════════════════════════════════════════════════════
 name: Deploy Pages (curated)
@@ -39,11 +40,13 @@ jobs:
             --exclude='.github/' \
             --exclude='_site/' \
             --exclude='docs/architecture/' \
+            --exclude='docs/tests/' \
             --exclude='*.bak*' \
             ./ _site/
           touch _site/.nojekyll
           echo "── excluded check ──"
           test ! -e _site/docs/architecture && echo "architecture: excluded OK"
+          test ! -e _site/docs/tests && echo "tests (answer key): excluded OK"
           test -z "$(find _site -name '*.bak*')" && echo "*.bak*: excluded OK"
           echo "── included check ──"
           test -e _site/index.html && echo "index.html: OK"

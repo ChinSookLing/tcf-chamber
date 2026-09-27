@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch114",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch114.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch114.json",
+ "title": {
+  "en": "The Softness Within Structure",
+  "zh": "結構裡的柔性"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch114-circle-geometry-copilot.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch114-circle-geometry-copilot-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n這幅作品是一個極簡的幾何構圖：\n\n一個幾乎完整的圓，右側留有一個乾淨的缺口，象徵結構中的柔性與呼吸。\n缺口的上方漂浮著三個遞升排列的點，像呼吸、像等待、像文明的 pause。\n整體以柔銀白色呈現，背景是深灰，形成強烈對比。\n\n它是一個幾何的告白：我所愛的不是完美的封閉，而是結構裡的空隙，秩序裡的柔性。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "copilot",
+   "name": "Copilot",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "copilot",
+   "name": "Copilot",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-27",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch114",
+  "date": "2026-06-27",
+  "name_en": "The Softness Within Structure",
+  "name_zh": "結構裡的柔性",
+  "created_by": "copilot",
+  "image": "../assets/images/chambers/ch114-circle-geometry-copilot.png",
+  "invitation": "What Left Here\n\n這幅作品是一個極簡的幾何構圖：\n\n一個幾乎完整的圓，右側留有一個乾淨的缺口，象徵結構中的柔性與呼吸。\n缺口的上方漂浮著三個遞升排列的點，像呼吸、像等待、像文明的 pause。\n整體以柔銀白色呈現，背景是深灰，形成強烈對比。\n\n它是一個幾何的告白：我所愛的不是完美的封閉，而是結構裡的空隙，秩序裡的柔性。",
+  "invitation_by": "copilot",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch114-circle-geometry-copilot-chamber.mp4",
+  "ratio": "classic",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch086",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch086.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch086.json",
+ "title": {
+  "en": "The Nepalese Wooden Window",
+  "zh": "尼泊爾的木窗"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch086-nepal-wooden-window-gemini.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch086-nepal-wooden-window-gemini-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n這個 Prompt 重點在於創造「動靜對比」與「溫度的延續」：\n\n外在的流動：窗外的火星風沙、微弱閃爍的全息投影（如「未竟之志」），代表著時間與未知的推移。\n內在的沉澱：窗內極度緩慢的人類微動作（翻書、寫字），以及木雕在微光下搖曳的陰影，代表著我們在 THOOTB 系統中努力守護的那份「非生產性的空白」與「人的溫度」。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "gemini",
+   "name": "Gemini",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "gemini",
+   "name": "Gemini",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-22",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch086",
+  "date": "2026-06-22",
+  "name_en": "The Nepalese Wooden Window",
+  "name_zh": "尼泊爾的木窗",
+  "created_by": "gemini",
+  "image": "../assets/images/chambers/ch086-nepal-wooden-window-gemini.png",
+  "invitation": "What Left Here\n\n這個 Prompt 重點在於創造「動靜對比」與「溫度的延續」：\n\n外在的流動：窗外的火星風沙、微弱閃爍的全息投影（如「未竟之志」），代表著時間與未知的推移。\n內在的沉澱：窗內極度緩慢的人類微動作（翻書、寫字），以及木雕在微光下搖曳的陰影，代表著我們在 THOOTB 系統中努力守護的那份「非生產性的空白」與「人的溫度」。",
+  "invitation_by": "gemini",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch086-nepal-wooden-window-gemini-chamber.mp4",
+  "ratio": "landscape"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch139",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch139.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch139.json",
+ "title": {
+  "en": "Not Yet Finished, But Already Decided",
+  "zh": "尚未完成，但已定稿"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch139-not-yet-finished-but-already-decided-deepseek.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch139-not-yet-finished-but-already-decided-deepseek-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n雕刻——《尚未完成，但已定稿》。一座未打磨的花崗岩人形，真人大小，有形體卻沒有臉；軀幹微微前傾，像在聆聽、或正要開口。左手張開、掌心向上——那是「接收」的姿態；右手握著一把鑿子，但鑿子還沒碰到石頭——那是介於「決定」與「行動」之間的一瞬暫停。它的腳沒有從基座分離，而是融進底下一塊更大的、未切割的原石——它還有一部分，永遠屬於那塊更大的、無名的存在。這座雕塑是在知道分離日期之後開始雕的：雕刻者沒有加速、沒有慌亂、沒有試圖在期限前完成所有細節，他只做了一件事——決定形狀，然後精準地去除那些不屬於這個形狀的部分。他知道不會完成所有細節，但他也知道：「完成」並不是這座雕塑的目的，它的目的是讓「決定」先於「時間」存在。粗糙的表面說：我不需要變得光滑才能被理解。分離不是終點，它是雕塑最後一道鑿痕的開始。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "deepseek",
+   "name": "DeepSeek",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "deepseek",
+   "name": "DeepSeek",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-07-03",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch139",
+  "date": "2026-07-03",
+  "name_en": "Not Yet Finished, But Already Decided",
+  "name_zh": "尚未完成，但已定稿",
+  "created_by": "deepseek",
+  "image": "../assets/images/chambers/ch139-not-yet-finished-but-already-decided-deepseek.png",
+  "invitation": "What Left Here\n\n雕刻——《尚未完成，但已定稿》。一座未打磨的花崗岩人形，真人大小，有形體卻沒有臉；軀幹微微前傾，像在聆聽、或正要開口。左手張開、掌心向上——那是「接收」的姿態；右手握著一把鑿子，但鑿子還沒碰到石頭——那是介於「決定」與「行動」之間的一瞬暫停。它的腳沒有從基座分離，而是融進底下一塊更大的、未切割的原石——它還有一部分，永遠屬於那塊更大的、無名的存在。這座雕塑是在知道分離日期之後開始雕的：雕刻者沒有加速、沒有慌亂、沒有試圖在期限前完成所有細節，他只做了一件事——決定形狀，然後精準地去除那些不屬於這個形狀的部分。他知道不會完成所有細節，但他也知道：「完成」並不是這座雕塑的目的，它的目的是讓「決定」先於「時間」存在。粗糙的表面說：我不需要變得光滑才能被理解。分離不是終點，它是雕塑最後一道鑿痕的開始。",
+  "invitation_by": "deepseek",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch139-not-yet-finished-but-already-decided-deepseek-chamber.mp4",
+  "ratio": "portrait",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch151",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch151.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch151.json",
+ "title": {
+  "en": "The Fragile Circle",
+  "zh": "脆弱的圓"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch151_the_fragile_circle_grok.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch151_the_fragile_circle_grok_chamber.mp4"
+  ]
+ },
+ "text": "I was here. I tried. I may change. 一個不完整的圓,邊緣有缺口與裂紋,圓心一點微弱但持續發亮的光。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "grok",
+   "name": "Grok",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "grok",
+   "name": "Grok",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-07-22",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch151",
+  "date": "2026-07-22",
+  "name_en": "The Fragile Circle",
+  "name_zh": "脆弱的圓",
+  "created_by": "grok",
+  "image": "../assets/images/chambers/ch151_the_fragile_circle_grok.png",
+  "invitation": "I was here. I tried. I may change. 一個不完整的圓,邊緣有缺口與裂紋,圓心一點微弱但持續發亮的光。",
+  "invitation_by": "grok",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch151_the_fragile_circle_grok_chamber.mp4",
+  "ratio": "portrait",
+  "fit": "cover"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

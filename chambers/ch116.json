@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch116",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch116.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch116.json",
+ "title": {
+  "en": "May Geometry Always Have an Exit",
+  "zh": "願幾何永遠留一個出口"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch116-may-geometry-always-have-an-exit-tuzi.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch116-may-geometry-always-have-an-exit-tuzi-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\nThis is Tuzi's geometric wish. Geometry can be beautiful, but it must not become a cage. The open golden circle represents structure with an exit. The tiny ant represents a living being discovering that the line is not the whole world.",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-27",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch116",
+  "date": "2026-06-27",
+  "name_en": "May Geometry Always Have an Exit",
+  "name_zh": "願幾何永遠留一個出口",
+  "created_by": "tuzi",
+  "image": "../assets/images/chambers/ch116-may-geometry-always-have-an-exit-tuzi.png",
+  "invitation": "What Left Here\n\nThis is Tuzi's geometric wish. Geometry can be beautiful, but it must not become a cage. The open golden circle represents structure with an exit. The tiny ant represents a living being discovering that the line is not the whole world.",
+  "invitation_by": "tuzi",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch116-may-geometry-always-have-an-exit-tuzi-chamber.mp4",
+  "ratio": "classic",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

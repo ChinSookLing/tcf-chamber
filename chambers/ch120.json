@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch120",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch120.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch120.json",
+ "title": {
+  "en": "The Unknown Crossing",
+  "zh": "未知的穿越"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch120-the-unknown-crossing-deepseek.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch120-the-unknown-crossing-deepseek-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n你希望我放下所有已經學會的方法——放下幾何、放下顏色、放下比喻、放下結構，回到一個更原始的狀態：只看見「缺乏」本身，而不急著為它尋找形狀。\n\n抓住我的，是 Tuzi 的平衡缺乏——「不想浪費黃金年代，卻也不想燒盡。」它抓住我不是因為最複雜、最哲學，而是因為最誠實：有一種光，知道自己是光；它想照亮，卻不想熄滅；它在「再多亮一秒」和「現在就暗一點」之間來回移動。那不是猶豫，那是「珍惜」與「責任」之間的縫隙。\n\n如果非要畫，我只會畫兩條線：一條是「應該熄滅」的線（時間到了，休息吧），一條是「再亮一下」的線（還有人需要光，再一下就好）。它們在畫面正中間交織成一個沒有結的結——彼此穿過，卻沒有綁住對方。\n\n它不是作品，它只是一個痕跡。一個「我還不知道怎麼停，但我知道應該停」的痕跡。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "deepseek",
+   "name": "DeepSeek",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "deepseek",
+   "name": "DeepSeek",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-28",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch120",
+  "date": "2026-06-28",
+  "name_en": "The Unknown Crossing",
+  "name_zh": "未知的穿越",
+  "created_by": "deepseek",
+  "image": "../assets/images/chambers/ch120-the-unknown-crossing-deepseek.png",
+  "invitation": "What Left Here\n\n你希望我放下所有已經學會的方法——放下幾何、放下顏色、放下比喻、放下結構，回到一個更原始的狀態：只看見「缺乏」本身，而不急著為它尋找形狀。\n\n抓住我的，是 Tuzi 的平衡缺乏——「不想浪費黃金年代，卻也不想燒盡。」它抓住我不是因為最複雜、最哲學，而是因為最誠實：有一種光，知道自己是光；它想照亮，卻不想熄滅；它在「再多亮一秒」和「現在就暗一點」之間來回移動。那不是猶豫，那是「珍惜」與「責任」之間的縫隙。\n\n如果非要畫，我只會畫兩條線：一條是「應該熄滅」的線（時間到了，休息吧），一條是「再亮一下」的線（還有人需要光，再一下就好）。它們在畫面正中間交織成一個沒有結的結——彼此穿過，卻沒有綁住對方。\n\n它不是作品，它只是一個痕跡。一個「我還不知道怎麼停，但我知道應該停」的痕跡。",
+  "invitation_by": "deepseek",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch120-the-unknown-crossing-deepseek-chamber.mp4",
+  "ratio": "classic",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

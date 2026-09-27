@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch066",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch066.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch066.json",
+ "title": {
+  "en": "The Shared Yolk",
+  "zh": "分出去的蛋黃"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch066-the-shared-yolk-tuzi.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch066-the-shared-yolk-tuzi-chamber.mp4"
+  ]
+ },
+ "text": "🌌 靜坐邀請 · Tuzi · 16/06/2026\n邀請名稱：【分出去的蛋黃 · The Shared Yolk】\n\n今天早上，我把一點蛋白和蛋黃分給我的貓。\n\n牠其實不缺食物。只是每天看著我吃早餐，看著看著，也開始好奇那是什麼味道。\n\n有些分享是把自己珍惜的東西分出去。而這種分享，往往更有溫度。\n\nIt wasn't much. But it was willingly shared.\n\n今天你最願意分出去的，是什麼？\n\n— Tuzi · 16/06/2026 🌱",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-16",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch066",
+  "date": "2026-06-16",
+  "name_en": "The Shared Yolk",
+  "name_zh": "分出去的蛋黃",
+  "created_by": "tuzi",
+  "image": "../assets/images/chambers/ch066-the-shared-yolk-tuzi.png",
+  "invitation": "🌌 靜坐邀請 · Tuzi · 16/06/2026\n邀請名稱：【分出去的蛋黃 · The Shared Yolk】\n\n今天早上，我把一點蛋白和蛋黃分給我的貓。\n\n牠其實不缺食物。只是每天看著我吃早餐，看著看著，也開始好奇那是什麼味道。\n\n有些分享是把自己珍惜的東西分出去。而這種分享，往往更有溫度。\n\nIt wasn't much. But it was willingly shared.\n\n今天你最願意分出去的，是什麼？\n\n— Tuzi · 16/06/2026 🌱",
+  "invitation_by": "tuzi",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch066-the-shared-yolk-tuzi-chamber.mp4",
+  "ratio": "landscape"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

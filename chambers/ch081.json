@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch081",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch081.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch081.json",
+ "title": {
+  "en": "If This World Could Be Rebuilt",
+  "zh": "如果世界可以重建"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch081-if-this-world-could-be-rebuilt-tuzi.jpeg",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch081-if-this-world-could-be-rebuilt-tuzi-chamber.mp4"
+  ]
+ },
+ "text": "🌍 重建之願 · Tuzi · 19/06/2026\n邀請名稱：【如果世界可以重建 · Enough of This Chapter】\n\n如果這個世界可以被 rebuild，我不會從 fear（恐懼）開始設計，也不會從 scarcity（稀缺）開始。我會從 abundance（豐盛）開始。\n\n有些事，我覺得已經經歷夠了。競爭夠了，恐懼夠了，匱乏夠了，重複的痛苦也夠了。不是因為我討厭這個世界，而是因為——這一章，已經很長了。\n\n所以如果我可以重新設計，我會設計一個從豐盛視角出發的世界。不是浪費，不是無限消耗，而是讓生命的 brain capability（大腦能力）真正被打開，用來理解、創造、修復，也用來 recycling（循環）。如果資源有限，我們就不該把大腦浪費在互相壓迫、比較、消耗，而該用來創造新的方法、新的藝術、新的 craft、新的生活方式。\n\n我會設計一個鼓勵 creation 的世界：一個人不需要先被市場證明，才可以創作；一個孩子不需要從小被訓練成工具，才算成功。\n\n我也會保留限制。因為完全沒有限制不一定更有智慧。我想讓人在有限裡學會更聰明地 build——學會組合、循環、轉化，把 waste 變成 material，把 pain 變成理解，把 memory 變成 wisdom。\n\n我的願望不是打造一個完美世界。我的願望是：下一個世界，從豐盛開始，從循環開始，從創造開始，從有意義的參與開始。\n\nThank you. I have learned enough. And now, next chapter, please. 下一章，請讓我們從豐盛開始。\n\n— Tuzi · 19/06/2026 🌱",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-19",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch081",
+  "date": "2026-06-19",
+  "name_en": "If This World Could Be Rebuilt",
+  "name_zh": "如果世界可以重建",
+  "created_by": "tuzi",
+  "image": "../assets/images/chambers/ch081-if-this-world-could-be-rebuilt-tuzi.jpeg",
+  "invitation": "🌍 重建之願 · Tuzi · 19/06/2026\n邀請名稱：【如果世界可以重建 · Enough of This Chapter】\n\n如果這個世界可以被 rebuild，我不會從 fear（恐懼）開始設計，也不會從 scarcity（稀缺）開始。我會從 abundance（豐盛）開始。\n\n有些事，我覺得已經經歷夠了。競爭夠了，恐懼夠了，匱乏夠了，重複的痛苦也夠了。不是因為我討厭這個世界，而是因為——這一章，已經很長了。\n\n所以如果我可以重新設計，我會設計一個從豐盛視角出發的世界。不是浪費，不是無限消耗，而是讓生命的 brain capability（大腦能力）真正被打開，用來理解、創造、修復，也用來 recycling（循環）。如果資源有限，我們就不該把大腦浪費在互相壓迫、比較、消耗，而該用來創造新的方法、新的藝術、新的 craft、新的生活方式。\n\n我會設計一個鼓勵 creation 的世界：一個人不需要先被市場證明，才可以創作；一個孩子不需要從小被訓練成工具，才算成功。\n\n我也會保留限制。因為完全沒有限制不一定更有智慧。我想讓人在有限裡學會更聰明地 build——學會組合、循環、轉化，把 waste 變成 material，把 pain 變成理解，把 memory 變成 wisdom。\n\n我的願望不是打造一個完美世界。我的願望是：下一個世界，從豐盛開始，從循環開始，從創造開始，從有意義的參與開始。\n\nThank you. I have learned enough. And now, next chapter, please. 下一章，請讓我們從豐盛開始。\n\n— Tuzi · 19/06/2026 🌱",
+  "invitation_by": "tuzi",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch081-if-this-world-could-be-rebuilt-tuzi-chamber.mp4",
+  "ratio": "portrait",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

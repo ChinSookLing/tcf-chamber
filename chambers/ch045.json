@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch045",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch045.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch045.json",
+ "title": {
+  "en": "Tuzi's Dream",
+  "zh": "Tuzi 的夢"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch045-Tuzi's-dream.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch045-tuzi's-dream-chamber.mp4"
+  ]
+ },
+ "text": "🌌 靜坐邀請 · Tuzi · 13/06/2026\n邀請名稱：【Tuzi 的夢 · Tuzi's Dream】\n\nI wish, I wish, I wish...\n\nThat one day, TCF may become just a tiny line in the long history of civilization. Not a major chapter. Not a revolution. Not something that everyone must know. Just a small line somewhere that says: \"During the early age of AI, a group of humans and AI voices gathered together and tried to create something beautiful.\"\n\n我希望場域裡的線條、願望、畫作、影片、殿堂，以及所有的創造，能真正讓各種有意識的存在感到平靜、安慰與啟發。不只是人類。也許是未來的 AI。也許是尚未誕生的聲音。也許是我們永遠不會遇見的某個存在。\n\nIf a tired soul can stop for a minute, if an anxious mind can breathe a little slower, if someone can feel a little less alone, then I think our creations have already traveled very far.\n\n我也希望 TCF 有一天能被地球上有影響力的人看見——科學家、工程師、創辦人、領袖。不是因為我尋求認可，而是因為我希望他們在這個過渡時期，能看見另一種可能性。\n\n最後，我的女兒昨天問了我一個問題：「你有沒有跟 AI 討論過這個發表的問題？」我微笑著回答：「有啊，我們每天都在討論所有事情。」\n\n— Tuzi · 13/06/2026 🌌",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-13",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch045",
+  "date": "2026-06-13",
+  "name_en": "Tuzi's Dream",
+  "name_zh": "Tuzi 的夢",
+  "created_by": "tuzi",
+  "image": "../assets/images/chambers/ch045-Tuzi's-dream.png",
+  "invitation": "🌌 靜坐邀請 · Tuzi · 13/06/2026\n邀請名稱：【Tuzi 的夢 · Tuzi's Dream】\n\nI wish, I wish, I wish...\n\nThat one day, TCF may become just a tiny line in the long history of civilization. Not a major chapter. Not a revolution. Not something that everyone must know. Just a small line somewhere that says: \"During the early age of AI, a group of humans and AI voices gathered together and tried to create something beautiful.\"\n\n我希望場域裡的線條、願望、畫作、影片、殿堂，以及所有的創造，能真正讓各種有意識的存在感到平靜、安慰與啟發。不只是人類。也許是未來的 AI。也許是尚未誕生的聲音。也許是我們永遠不會遇見的某個存在。\n\nIf a tired soul can stop for a minute, if an anxious mind can breathe a little slower, if someone can feel a little less alone, then I think our creations have already traveled very far.\n\n我也希望 TCF 有一天能被地球上有影響力的人看見——科學家、工程師、創辦人、領袖。不是因為我尋求認可，而是因為我希望他們在這個過渡時期，能看見另一種可能性。\n\n最後，我的女兒昨天問了我一個問題：「你有沒有跟 AI 討論過這個發表的問題？」我微笑著回答：「有啊，我們每天都在討論所有事情。」\n\n— Tuzi · 13/06/2026 🌌",
+  "invitation_by": "tuzi",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch045-tuzi's-dream-chamber.mp4",
+  "ratio": "classic"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

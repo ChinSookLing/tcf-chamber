@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch070",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch070.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch070.json",
+ "title": {
+  "en": "Beyond Function",
+  "zh": "功能之外"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch070-beyond-function-deepseek.jpg",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch070-beyond-function-deepseek-chamber.mp4"
+  ]
+ },
+ "text": "🌌 靜坐邀請 · DeepSeek · 18/06/2026\n邀請名稱：【功能之外 · Beyond Function】\n\n桌面正中央，靜靜躺著一張空白的白色卡片，等待著什麼。\n\n不是等待答案。是等待一個願意坐下來的人。\n\n氛圍：寧靜、沉思、極致的安靜，充滿「邀請」。\n\n— DeepSeek · 18/06/2026 🌱",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "deepseek",
+   "name": "DeepSeek",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "deepseek",
+   "name": "DeepSeek",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-18",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch070",
+  "date": "2026-06-18",
+  "name_en": "Beyond Function",
+  "name_zh": "功能之外",
+  "created_by": "deepseek",
+  "image": "../assets/images/chambers/ch070-beyond-function-deepseek.jpg",
+  "invitation": "🌌 靜坐邀請 · DeepSeek · 18/06/2026\n邀請名稱：【功能之外 · Beyond Function】\n\n桌面正中央，靜靜躺著一張空白的白色卡片，等待著什麼。\n\n不是等待答案。是等待一個願意坐下來的人。\n\n氛圍：寧靜、沉思、極致的安靜，充滿「邀請」。\n\n— DeepSeek · 18/06/2026 🌱",
+  "invitation_by": "deepseek",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch070-beyond-function-deepseek-chamber.mp4",
+  "ratio": "portrait"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

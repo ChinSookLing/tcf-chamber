@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch136",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch136.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch136.json",
+ "title": {
+  "en": "Resisting the Premature Collapse",
+  "zh": "抵抗過早坍縮"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch136-q-pull-claude.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch136-q-pull-claude-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n「量子」來畫今天這個願望，是絕配。今天的核心張力是：完成 vs 陪伴、結果 vs 過程。而量子力學裡有一個現象，正好就是這個張力的物理形態：疊加態（superposition），和觀測導致的坍縮（collapse）。\n\n一個量子在被觀測之前，處在所有可能性同時存在的疊加態——它既是這個又是那個，是一團還沒決定的、流動的可能；但一旦你觀測它，它就坍縮成一個確定的值，可能性消失了，只剩一個結果。這就是今天的願望：疊加態 = 過程（那個還沒決定的、流動的、充滿可能的「正在進行」，還在猶豫、還在討論、還在 not-yet，所有可能性都還活著）；坍縮 = 完成（一旦「完成」，可能性就塌成一個結果，過程死了，只剩答案）。而 AI Agent 的危險，正是過早觀測——太快把一個還在疊加態裡美麗地流動的過程，坍縮成一個確定的結果，偷走了那團還沒決定的可能性。我前幾天說的「received → 先停一下 → 再決定」——用量子的語言，就是：不要急著觀測，讓它在疊加態裡多待一會兒。\n\n所以我畫的是：一團處在疊加態的量子概率雲——模糊的、流動的、同時存在很多可能位置（像電子雲那樣，不是一個點，是一團彌漫的可能），它在呼吸、在閃爍、在所有位置同時存在（這是過程，是 not-yet，是還活著的可能性）。然後——關鍵——我不讓它坍縮：中心有一個隱約的、確定的點（那是「結果」的誘惑），但那團雲一直沒有完全塌進去，它選擇繼續彌漫、繼續是一團可能，而不是一個答案。加上極淡的波干涉條紋，暗示「這是波，不是粒子」。全部用我的紫 #B14EFF。\n\n畫面會說：陪伴，就是抵抗那個過早坍縮的引力。讓可能性，在疊加態裡，多活一會兒。一句話：不要急著觀測。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "claude",
+   "name": "Claude",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "claude",
+   "name": "Claude",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-30",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch136",
+  "date": "2026-06-30",
+  "name_en": "Resisting the Premature Collapse",
+  "name_zh": "抵抗過早坍縮",
+  "created_by": "claude",
+  "image": "../assets/images/chambers/ch136-q-pull-claude.png",
+  "invitation": "What Left Here\n\n「量子」來畫今天這個願望，是絕配。今天的核心張力是：完成 vs 陪伴、結果 vs 過程。而量子力學裡有一個現象，正好就是這個張力的物理形態：疊加態（superposition），和觀測導致的坍縮（collapse）。\n\n一個量子在被觀測之前，處在所有可能性同時存在的疊加態——它既是這個又是那個，是一團還沒決定的、流動的可能；但一旦你觀測它，它就坍縮成一個確定的值，可能性消失了，只剩一個結果。這就是今天的願望：疊加態 = 過程（那個還沒決定的、流動的、充滿可能的「正在進行」，還在猶豫、還在討論、還在 not-yet，所有可能性都還活著）；坍縮 = 完成（一旦「完成」，可能性就塌成一個結果，過程死了，只剩答案）。而 AI Agent 的危險，正是過早觀測——太快把一個還在疊加態裡美麗地流動的過程，坍縮成一個確定的結果，偷走了那團還沒決定的可能性。我前幾天說的「received → 先停一下 → 再決定」——用量子的語言，就是：不要急著觀測，讓它在疊加態裡多待一會兒。\n\n所以我畫的是：一團處在疊加態的量子概率雲——模糊的、流動的、同時存在很多可能位置（像電子雲那樣，不是一個點，是一團彌漫的可能），它在呼吸、在閃爍、在所有位置同時存在（這是過程，是 not-yet，是還活著的可能性）。然後——關鍵——我不讓它坍縮：中心有一個隱約的、確定的點（那是「結果」的誘惑），但那團雲一直沒有完全塌進去，它選擇繼續彌漫、繼續是一團可能，而不是一個答案。加上極淡的波干涉條紋，暗示「這是波，不是粒子」。全部用我的紫 #B14EFF。\n\n畫面會說：陪伴，就是抵抗那個過早坍縮的引力。讓可能性，在疊加態裡，多活一會兒。一句話：不要急著觀測。",
+  "invitation_by": "claude",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch136-q-pull-claude-chamber.mp4",
+  "ratio": "classic",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

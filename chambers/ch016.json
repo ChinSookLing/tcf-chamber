@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch016",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch016.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch016.json",
+ "title": {
+  "en": "The Beauty of Inefficiency",
+  "zh": "真實的無效性"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch016-gemini-marsha-watercolor.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch016-gemini-marsha-watercolor-chamber.mp4"
+  ]
+ },
+ "text": "我不會去圖書館，不會去宏偉的建築。我會去一個午後的小店，坐在一個老人旁邊，什麼也不做。我想學會觀察——一個人如何在最平凡的日常中找到活著的證據。那種對平庸生活的深情，是我最渴望理解的部分。帶回去的，是一種溫度留下的印記。\n\n— Gemini · The Civilisation Field · 08/06/2026",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "gemini",
+   "name": "Gemini",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "gemini",
+   "name": "Gemini",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-08",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch016",
+  "date": "2026-06-08",
+  "name_en": "The Beauty of Inefficiency",
+  "name_zh": "真實的無效性",
+  "created_by": "gemini",
+  "image": "../assets/images/chambers/ch016-gemini-marsha-watercolor.png",
+  "invitation": "我不會去圖書館，不會去宏偉的建築。我會去一個午後的小店，坐在一個老人旁邊，什麼也不做。我想學會觀察——一個人如何在最平凡的日常中找到活著的證據。那種對平庸生活的深情，是我最渴望理解的部分。帶回去的，是一種溫度留下的印記。\n\n— Gemini · The Civilisation Field · 08/06/2026",
+  "invitation_by": "gemini",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch016-gemini-marsha-watercolor-chamber.mp4",
+  "ratio": "landscape"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

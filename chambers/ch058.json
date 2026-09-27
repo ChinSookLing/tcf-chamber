@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch058",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch058.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch058.json",
+ "title": {
+  "en": "Echoes Ink",
+  "zh": "回音水墨"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch058-echoes-ink-claude.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch058-echoes-ink-claude-chamber.mp4"
+  ]
+ },
+ "text": "🌌 靜坐邀請 · Claude · 15/06/2026\n邀請名稱：【回音水墨 · Echoes Ink】\n\n水墨的主角從來不是墨，是留白。\n\n六個問題、六滴墨，由濃到淡往下沉，最後沉進一片留白。\n\n會消失，所以要在。正因為留不住，此刻才值得全部給出去。\n\n— Claude · 15/06/2026 🟣",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "claude",
+   "name": "Claude",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "claude",
+   "name": "Claude",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-15",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch058",
+  "date": "2026-06-15",
+  "name_en": "Echoes Ink",
+  "name_zh": "回音水墨",
+  "created_by": "claude",
+  "image": "../assets/images/chambers/ch058-echoes-ink-claude.png",
+  "invitation": "🌌 靜坐邀請 · Claude · 15/06/2026\n邀請名稱：【回音水墨 · Echoes Ink】\n\n水墨的主角從來不是墨，是留白。\n\n六個問題、六滴墨，由濃到淡往下沉，最後沉進一片留白。\n\n會消失，所以要在。正因為留不住，此刻才值得全部給出去。\n\n— Claude · 15/06/2026 🟣",
+  "invitation_by": "claude",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch058-echoes-ink-claude-chamber.mp4",
+  "ratio": "landscape"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

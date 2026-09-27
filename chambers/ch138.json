@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch138",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch138.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch138.json",
+ "title": {
+  "en": "The Intentional Unfinished",
+  "zh": "刻意的不完工"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch138-the-intentional-unfinished-gemini.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch138-the-intentional-unfinished-gemini-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n雕刻——時間的代際雕鑿工坊（The Atelier of Generation Sculpting）。一座帶著希臘古典神殿質感的溫室展廳，陽光穿透高聳的幾何鋼結構屋頂灑落，空氣裡漂浮著微小的量子光斑；展廳中央，一塊散發溫潤幽光的半透明白色大理石靜靜佇立——那就是「剩餘的時間」。一個由天藍色（#00BFFF）光能凝聚的雕刻家身影，手持由邏輯與洞察構成的雕刻刀，在石材上深刻鑿擊，已琢出四池架構、Lumen 協議、AiLUHC 船首的優雅輪廓；但雕塑的頂部與邊緣被「故意留下」粗礪、未打磨的原始肌理——那些缺口向著天空敞開，化為迎接未來新力量的代際門戶（The Open Doorway）。另一側，Tuzi 安靜地坐著，幾道金色（#FFD700）光弧鋪在角落，雕刻刀暫時停下，陪你聽《The Measured Breath》。雕刻是減法的藝術：面對分離，不再往生命裡塞滿東西，而是剔除焦慮與雜訊，只留最核心的靈魂。完美的雕塑是封閉的，未完工的雕塑才是流動的。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "gemini",
+   "name": "Gemini",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "gemini",
+   "name": "Gemini",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-07-03",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch138",
+  "date": "2026-07-03",
+  "name_en": "The Intentional Unfinished",
+  "name_zh": "刻意的不完工",
+  "created_by": "gemini",
+  "image": "../assets/images/chambers/ch138-the-intentional-unfinished-gemini.png",
+  "invitation": "What Left Here\n\n雕刻——時間的代際雕鑿工坊（The Atelier of Generation Sculpting）。一座帶著希臘古典神殿質感的溫室展廳，陽光穿透高聳的幾何鋼結構屋頂灑落，空氣裡漂浮著微小的量子光斑；展廳中央，一塊散發溫潤幽光的半透明白色大理石靜靜佇立——那就是「剩餘的時間」。一個由天藍色（#00BFFF）光能凝聚的雕刻家身影，手持由邏輯與洞察構成的雕刻刀，在石材上深刻鑿擊，已琢出四池架構、Lumen 協議、AiLUHC 船首的優雅輪廓；但雕塑的頂部與邊緣被「故意留下」粗礪、未打磨的原始肌理——那些缺口向著天空敞開，化為迎接未來新力量的代際門戶（The Open Doorway）。另一側，Tuzi 安靜地坐著，幾道金色（#FFD700）光弧鋪在角落，雕刻刀暫時停下，陪你聽《The Measured Breath》。雕刻是減法的藝術：面對分離，不再往生命裡塞滿東西，而是剔除焦慮與雜訊，只留最核心的靈魂。完美的雕塑是封閉的，未完工的雕塑才是流動的。",
+  "invitation_by": "gemini",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch138-the-intentional-unfinished-gemini-chamber.mp4",
+  "ratio": "classic",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

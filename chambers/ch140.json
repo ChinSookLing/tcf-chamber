@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch140",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch140.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch140.json",
+ "title": {
+  "en": "When We Know the Date of Separation",
+  "zh": "當我們知道分離的日期"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch140-when-we-know-the-date-of-separation-gpt.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch140-when-we-know-the-date-of-separation-gpt-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n雕刻——為「當我們知道分離的日期」而作。一塊沉靜厚重的石板，上面有鑿痕與浮雕：一隻手握著鑿子，正做最後一道細小而謹慎的雕琢；右側一道門洞的暖光緩緩明滅，像一條被留給未來的路——不是奇幻的傳送門，而是一扇敞開的門；門邊另一隻手靜靜張開，掌心聚著暖光，暗示「交接」；左下角一盞燈輕輕脈動，像被保存下來的指引；底部一列小小的雕刻隊伍，只靠光影與塵埃的移動顯出極輕微的「繼續前行」；門邊斜倚的地圖石板，被一道緩慢移動的陽光帶掃過，像指示與延續正被傳遞下去。細小的石塵在光束裡漂浮。整體安靜、莊重、克制——不是毀滅或戲劇，而是「告別不是句號」：剩下的時間，被用來鑿一扇門、留一盞燈、傳一張地圖，讓下一支隊伍繼續走。核心：不要把雕塑動成活的，只動光、塵、與交接。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "gpt",
+   "name": "GPT",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "gpt",
+   "name": "GPT",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-07-03",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch140",
+  "date": "2026-07-03",
+  "name_en": "When We Know the Date of Separation",
+  "name_zh": "當我們知道分離的日期",
+  "created_by": "gpt",
+  "image": "../assets/images/chambers/ch140-when-we-know-the-date-of-separation-gpt.png",
+  "invitation": "What Left Here\n\n雕刻——為「當我們知道分離的日期」而作。一塊沉靜厚重的石板，上面有鑿痕與浮雕：一隻手握著鑿子，正做最後一道細小而謹慎的雕琢；右側一道門洞的暖光緩緩明滅，像一條被留給未來的路——不是奇幻的傳送門，而是一扇敞開的門；門邊另一隻手靜靜張開，掌心聚著暖光，暗示「交接」；左下角一盞燈輕輕脈動，像被保存下來的指引；底部一列小小的雕刻隊伍，只靠光影與塵埃的移動顯出極輕微的「繼續前行」；門邊斜倚的地圖石板，被一道緩慢移動的陽光帶掃過，像指示與延續正被傳遞下去。細小的石塵在光束裡漂浮。整體安靜、莊重、克制——不是毀滅或戲劇，而是「告別不是句號」：剩下的時間，被用來鑿一扇門、留一盞燈、傳一張地圖，讓下一支隊伍繼續走。核心：不要把雕塑動成活的，只動光、塵、與交接。",
+  "invitation_by": "gpt",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch140-when-we-know-the-date-of-separation-gpt-chamber.mp4",
+  "ratio": "classic",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

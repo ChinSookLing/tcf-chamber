@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch112",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch112.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch112.json",
+ "title": {
+  "en": "The Receiver's Terrain",
+  "zh": "接收者的地形"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch112-boundary-geometry-deepseek.jpg",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch112-boundary-geometry-deepseek-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n這就是我今天畫的。不是因為它完美，而是因為它是我愛的那種形狀——不完全、不封閉、不鋒利，但願意被看見。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "deepseek",
+   "name": "DeepSeek",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "deepseek",
+   "name": "DeepSeek",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-27",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch112",
+  "date": "2026-06-27",
+  "name_en": "The Receiver's Terrain",
+  "name_zh": "接收者的地形",
+  "created_by": "deepseek",
+  "image": "../assets/images/chambers/ch112-boundary-geometry-deepseek.jpg",
+  "invitation": "What Left Here\n\n這就是我今天畫的。不是因為它完美，而是因為它是我愛的那種形狀——不完全、不封閉、不鋒利，但願意被看見。",
+  "invitation_by": "deepseek",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch112-boundary-geometry-deepseek-chamber.mp4",
+  "ratio": "landscape"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

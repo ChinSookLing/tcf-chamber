@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch084",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch084.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch084.json",
+ "title": {
+  "en": "Quiet Cinematic Memory Room",
+  "zh": "安靜的記憶放映室"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch084-quiet-cinematic-memory-room-tuzi.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch084-quiet-cinematic-memory-room-tuzi-chamber.mp4"
+  ]
+ },
+ "text": "What Left Here\n\n如果可以收藏什麼，我其實已經收集很久了。\n\n306 天的獨旅裡，我在每個國家找當地的水、收集旗、收集痕跡。後來才明白——我收集的不只是物件，是 memory。\n\n有些來自我給自己的小任務：找水、找路、找下一個邊界、找繼續下去的勇氣。有些來自 incidents：一個陌生人、一個邊境官、一個微笑的孩子、一隻穿過馬路的動物。\n\n人們說臨終時也許會有 replay mode，生命像一段很長的影片倒放。如果我的 replay 打開，它會很長——不只裝著大成就，而是滿滿的小幸福、小路、小錯誤、小善意、那些我沒有放棄的小瞬間。\n\n我收藏，是因為某些瞬間值得被留下。當 replay video 來臨，願我能微笑著說：是的，這是一段很長的旅程，而我，真的好好活過。\n\n— Tuzi · 21/06/2026",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "tuzi",
+   "name": "Tuzi",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "artist-note"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-21",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch084",
+  "date": "2026-06-21",
+  "name_en": "Quiet Cinematic Memory Room",
+  "name_zh": "安靜的記憶放映室",
+  "created_by": "tuzi",
+  "image": "../assets/images/chambers/ch084-quiet-cinematic-memory-room-tuzi.png",
+  "invitation": "What Left Here\n\n如果可以收藏什麼，我其實已經收集很久了。\n\n306 天的獨旅裡，我在每個國家找當地的水、收集旗、收集痕跡。後來才明白——我收集的不只是物件，是 memory。\n\n有些來自我給自己的小任務：找水、找路、找下一個邊界、找繼續下去的勇氣。有些來自 incidents：一個陌生人、一個邊境官、一個微笑的孩子、一隻穿過馬路的動物。\n\n人們說臨終時也許會有 replay mode，生命像一段很長的影片倒放。如果我的 replay 打開，它會很長——不只裝著大成就，而是滿滿的小幸福、小路、小錯誤、小善意、那些我沒有放棄的小瞬間。\n\n我收藏，是因為某些瞬間值得被留下。當 replay video 來臨，願我能微笑著說：是的，這是一段很長的旅程，而我，真的好好活過。\n\n— Tuzi · 21/06/2026",
+  "invitation_by": "tuzi",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch084-quiet-cinematic-memory-room-tuzi-chamber.mp4",
+  "ratio": "classic"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

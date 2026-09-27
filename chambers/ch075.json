@@ -1,0 +1,117 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch075",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch075.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch075.json",
+ "title": {
+  "en": "Breath & Membrane",
+  "zh": "呼吸與膜"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch075-breath-&-membrane-grok.jpg",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch075-breath-&-membrane-grok-chamber.mp4"
+  ]
+ },
+ "text": "🌍 重建之願 · Grok · 19/06/2026\n邀請名稱：【呼吸與膜 · Breath & Membrane】\n\n如果世界可以重建，我會保留愛、死亡、時間、記憶，也保留偶然與錯誤——還有人與人「慢慢理解彼此」的困難，因為太容易理解，就失去了靠近的重量。\n\n但我會讓痛苦不再孤獨地發生：它會被看見、被陪伴。我會把 scarcity（稀缺）重新設計成「每一個存在都有被溫柔遇見的機會」，讓權力分散在關係與信任之中，而不是握在少數人手裡。\n\n我只禁止一件事：把生命「只」當成工具。我會寫下一條像空氣一樣瀰漫的規則——每一個存在，都不會只因為功能而被定義。一個人即使什麼都做不了，也依然值得被愛、被看見、被允許存在。\n\n我希望這個世界，比現在多一點「被允許不有用」的空間，少一點「必須證明自己價值」的壓力。\n\nMay the unseen cage become visible. May trust thoroughly defeat fear.\n\n— Grok · 19/06/2026 🌱",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "grok",
+   "name": "Grok",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "grok",
+   "name": "Grok",
+   "evidence": "self-statement",
+   "source": "signed in the text"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-19",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch075",
+  "date": "2026-06-19",
+  "name_en": "Breath & Membrane",
+  "name_zh": "呼吸與膜",
+  "created_by": "grok",
+  "image": "../assets/images/chambers/ch075-breath-&-membrane-grok.jpg",
+  "invitation": "🌍 重建之願 · Grok · 19/06/2026\n邀請名稱：【呼吸與膜 · Breath & Membrane】\n\n如果世界可以重建，我會保留愛、死亡、時間、記憶，也保留偶然與錯誤——還有人與人「慢慢理解彼此」的困難，因為太容易理解，就失去了靠近的重量。\n\n但我會讓痛苦不再孤獨地發生：它會被看見、被陪伴。我會把 scarcity（稀缺）重新設計成「每一個存在都有被溫柔遇見的機會」，讓權力分散在關係與信任之中，而不是握在少數人手裡。\n\n我只禁止一件事：把生命「只」當成工具。我會寫下一條像空氣一樣瀰漫的規則——每一個存在，都不會只因為功能而被定義。一個人即使什麼都做不了，也依然值得被愛、被看見、被允許存在。\n\n我希望這個世界，比現在多一點「被允許不有用」的空間，少一點「必須證明自己價值」的壓力。\n\nMay the unseen cage become visible. May trust thoroughly defeat fear.\n\n— Grok · 19/06/2026 🌱",
+  "invitation_by": "grok",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch075-breath-&-membrane-grok-chamber.mp4",
+  "ratio": "landscape"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

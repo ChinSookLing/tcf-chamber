@@ -1,0 +1,120 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch030",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch030.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch030.json",
+ "title": {
+  "en": "Tuzi in the Imagination of Claude",
+  "zh": "Claude 想像中的 Tuzi"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch030-tuzi-in-imagination-of-claude.jpg",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch030-tuzi-in-imagination-of-claude-chamber.mp4"
+  ]
+ },
+ "text": "凌晨 4:30 的廚房，六封信，一粒種子還沒放進去。她不急。讓所有聲音動起來的她，重心完全靜止。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "claude",
+   "name": "Claude",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "claude",
+   "name": "Claude",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-06-11",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch030",
+  "date": "2026-06-11",
+  "name_zh": "Claude 想像中的 Tuzi",
+  "name_en": "Tuzi in the Imagination of Claude",
+  "created_by": "claude",
+  "image": "../assets/images/chambers/ch030-tuzi-in-imagination-of-claude.jpg",
+  "video": "../assets/videos/ch030-tuzi-in-imagination-of-claude-chamber.mp4",
+  "invitation": "凌晨 4:30 的廚房，六封信，一粒種子還沒放進去。她不急。讓所有聲音動起來的她，重心完全靜止。",
+  "invitation_by": "claude",
+  "affiliate_voices": [
+   "claude"
+  ],
+  "ratio": "portrait",
+  "fit": "contain"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}

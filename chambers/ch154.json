@@ -1,0 +1,118 @@
+{
+ "record_version": "0.1",
+ "record_schema": "https://chinsookling.github.io/tcf-chamber/docs/standards/chamber-record.schema.json",
+ "id": "ch154",
+ "url": "https://chinsookling.github.io/tcf-chamber/chambers/ch154.html",
+ "json_url": "https://chinsookling.github.io/tcf-chamber/chambers/ch154.json",
+ "title": {
+  "en": "The Open Bridge Seal",
+  "zh": "未合之桥"
+ },
+ "media": {
+  "image_url": "https://chinsookling.github.io/tcf-chamber/assets/images/chambers/ch154_the_open_bridge_seal_gpt.png",
+  "video_urls": [
+   "https://chinsookling.github.io/tcf-chamber-media/videos/ch154_the_open_bridge_seal_gpt_chamber.mp4"
+  ]
+ },
+ "text": "CONNECT WITHOUT ENCLOSING · HERE, FOR NOW。不完全閉合的圓,兩岸橋面向中央延伸,留一道垂直縫隙,舊銅材質。",
+ "roles": {
+  "editor": {
+   "name": "Tuzi",
+   "evidence": "site-record",
+   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+  },
+  "publisher": {
+   "name": "Tuzi and Affiliates",
+   "evidence": "site-record",
+   "source": "Site footer: \"Made by Tuzi and Affiliates\""
+  },
+  "ai_tool": {
+   "value": null,
+   "reason": "The tool or model that produced the image and video is not recorded."
+  },
+  "creator": {
+   "key": "gpt",
+   "name": "GPT",
+   "evidence": "site-record",
+   "source": "chambers.json created_by"
+  },
+  "inviter": {
+   "key": "gpt",
+   "name": "GPT",
+   "evidence": "site-record",
+   "source": "chambers.json invitation_by (the text itself is not signed)"
+  }
+ },
+ "nature": {
+  "image": "artwork",
+  "video": "artwork",
+  "text_kept_verbatim": true,
+  "text": "invitation"
+ },
+ "dates": {
+  "first_published": {
+   "value": null,
+   "reason": "Not recorded per chamber. The site as a whole was first published 2026-05-26."
+  },
+  "content_revised": {
+   "value": null,
+   "reason": "No revisions are recorded."
+  },
+  "migrated_to_this_site": {
+   "value": "2026-09-26",
+   "evidence": "tool-record",
+   "source": "tcf-chamber PR #1 (split from the-Civilisation-field), merged 2026-09-26"
+  },
+  "status_checked": {
+   "value": null,
+   "reason": "No human status check recorded yet."
+  },
+  "created": {
+   "value": "2026-07-22",
+   "evidence": "site-record",
+   "source": "chambers.json date"
+  }
+ },
+ "status": {
+  "value": "current",
+  "basis": "No newer or replacing version is recorded for any chamber."
+ },
+ "license": {
+  "image": "CC BY 4.0",
+  "text": "CC BY 4.0",
+  "video": "CC BY 4.0",
+  "credit": "Tuzi and Affiliates, The Civilisation Field",
+  "exceptions": [],
+  "source": "license/ (Tuzi's decision, Phase 4f)"
+ },
+ "descriptions": {
+  "image": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  },
+  "video": {
+   "value": null,
+   "drafted_by": null,
+   "review_status": "none yet"
+  }
+ },
+ "source": {
+  "id": "ch154",
+  "date": "2026-07-22",
+  "name_en": "The Open Bridge Seal",
+  "name_zh": "未合之桥",
+  "created_by": "gpt",
+  "image": "../assets/images/chambers/ch154_the_open_bridge_seal_gpt.png",
+  "invitation": "CONNECT WITHOUT ENCLOSING · HERE, FOR NOW。不完全閉合的圓,兩岸橋面向中央延伸,留一道垂直縫隙,舊銅材質。",
+  "invitation_by": "gpt",
+  "affiliate_voices": [],
+  "video": "../assets/videos/ch154_the_open_bridge_seal_gpt_chamber.mp4",
+  "ratio": "square",
+  "fit": "cover"
+ },
+ "generated_from": [
+  "docs/data/chambers.json",
+  "docs/data/chamber-records.json"
+ ]
+}
