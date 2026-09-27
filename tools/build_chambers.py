@@ -75,7 +75,7 @@ IMMERSIVE_PAGES = ['pages/page4.html', 'pages/skyhall.html', 'pages/accio.html']
 # skyhall, accio) between <!-- tcf:site-meta --> markers. Change here, re-run.
 AUTHOR = 'Tuzi and Affiliates'
 FIRST_PUBLISHED = '2026-05-26'
-LAST_UPDATED = '2026-09-26'
+LAST_UPDATED = '2026-09-27'
 
 # Hand-made pages: file → its public path (for <link rel="canonical">, built from BASE_URL).
 HAND_PAGES = {
@@ -371,7 +371,7 @@ def description_section(rec):
 
 
 def record_section(rec):
-    rows = '\n'.join('    <dt>%s</dt><dd data-field="%s">%s</dd>' % (esc(l), esc(k), esc(t))
+    rows = '\n'.join('    <dt>%s:</dt>\n    <dd data-field="%s">%s</dd>' % (esc(l), esc(k), esc(t))
                      for k, l, t in visible_fields(rec))
     return ('  <section>\n    <h2>Record</h2>\n  <dl class="tcf-reading__meta">\n%s\n  </dl>\n'
             '    <p>Machine-readable record: <a href="%s.json" type="application/json">%s.json</a> '
@@ -407,9 +407,9 @@ def chamber_page(c, prev_c, next_c, rec):
     parts.append('  <h1><span class="tcf-reading__zh">%s</span> '
                  '<span class="tcf-reading__en" lang="en">%s</span></h1>' % (esc(zh), esc(en)))
     parts.append('  <dl class="tcf-reading__meta">\n'
-                 '    <dt>Chamber</dt><dd>%s</dd>\n'
-                 '    <dt>Date</dt><dd><time datetime="%s">%s</time></dd>\n'
-                 '    <dt>Created by</dt><dd>%s</dd>\n'
+                 '    <dt>Chamber:</dt>\n    <dd>%s</dd>\n'
+                 '    <dt>Date:</dt>\n    <dd><time datetime="%s">%s</time></dd>\n'
+                 '    <dt>Created by:</dt>\n    <dd>%s</dd>\n'
                  '  </dl>' % (esc(cid), esc(c['date']), esc(c['date']), who(c['created_by'])))
     alt = rec['descriptions']['image']['value'] or 'Illustration for %s' % en
     for img in as_list(c.get('image')):
@@ -460,15 +460,18 @@ def index_page(chambers):
     newest_first = sorted(chambers, key=lambda c: (c['date'], c['id']), reverse=True)
     rows = []
     for c in newest_first:
-        rows.append('  <li><a href="%s.html"><span class="tcf-reading__zh">%s</span> '
-                    '<span class="tcf-reading__en" lang="en">%s</span></a>\n'
-                    '    <span class="tcf-reading__row-meta"><time datetime="%s">%s</time> · %s</span></li>'
-                    % (esc(c['id']), esc(c['name_zh']), esc(c['name_en']),
+        # The chamber id leads each row: it is the permanent address, and an
+        # <ol>'s automatic numbers (1 = newest) would not match it.
+        rows.append('  <li><a href="%s.html">%s · <span class="tcf-reading__zh">%s</span> '
+                    '<span class="tcf-reading__en" lang="en">%s</span></a> · '
+                    '<time datetime="%s">%s</time> · %s</li>'
+                    % (esc(c['id']), esc(c['id']), esc(c['name_zh']), esc(c['name_en']),
                        esc(c['date']), esc(c['date']), who(c['created_by'])))
     body = ('<h1>The Chamber · Quiet Chambers <span class="tcf-reading__zh">靜室</span></h1>\n'
-            '<p>%d chambers, as plain text, newest first. Each links to its own page. '
+            '<p>%d chambers, as plain text. Each links to its own page. '
             '<a href="%s">Enter the immersive chamber</a>.</p>\n'
-            '<ol class="tcf-reading__list">\n%s\n</ol>' % (len(chambers), IMMERSIVE, '\n'.join(rows)))
+            '<p>Newest first. Each chamber\u2019s id (chNNN) is its permanent address: chambers/chNNN.html.</p>\n'
+            '<ul class="tcf-reading__list">\n%s\n</ul>' % (len(chambers), IMMERSIVE, '\n'.join(rows)))
     return page('The Chamber · Quiet Chambers (text) · The Civilisation Field',
                 'A plain-text list of all %d quiet chambers in The Civilisation Field.' % len(chambers),
                 body, 'chambers/index.html')
