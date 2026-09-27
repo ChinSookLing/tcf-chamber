@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gpt",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gpt",
    "name": "GPT",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in GPT's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch106",
   "date": "2026-06-26",
   "name_en": "The Art of Arrangement",
   "name_zh": "安放之藝",
   "created_by": "gpt",
-  "image": "../assets/images/chambers/ch106-the-art-of-arrangement-gpt.png",
   "invitation": "What Left Here\n\n安放之藝 = arrangement／placement／meaning／memory／object／space／light／why it belongs there。它不是一個單一物件，而是「物件之間的關係」。\n\n畫面核心：一間木質記憶室，面向森林的大玻璃窗。窗光落在一張長木桌上，桌上只有少數被安放好的物件——茶杯、舊照片、戒指、摺好的布、一本書、一個小石頭。每樣東西都不貴重，但都被放在「剛剛好」的位置。\n\n重點不是物件本身。重點是觀眾一看就感覺：這些東西不是亂放的，它們被某個人溫柔地安放在這裡，每一件都記得一點什麼。",
   "invitation_by": "gpt",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch106-the-art-of-arrangement-gpt-chamber.mp4",
   "ratio": "classic"
  },
  "generated_from": [

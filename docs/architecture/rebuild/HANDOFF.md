@@ -2,8 +2,88 @@
 
 - **Phase:** 5a: the TCF Implementation Profile, the chamber record schema, machine-readable records and a test set. This is groundwork only; the pilot descriptions come in 5b.
 - **Branch:** `phase-5a-chamber-template`, from `main` @ `39f3f43` (Phase 4f merged)
-- **Current owner:** Claude Code → next: Opus review → Tuzi answers the open questions below → merge
+- **Current owner:** Claude Code (rev 2 done) → next: Opus review → Tuzi merges
 - Previous handoff (4f): `git show d42aa1b:docs/architecture/rebuild/HANDOFF.md`
+
+## Rev 2 (Opus review fixes + Tuzi's answers, 2026-09-27)
+
+### A. Fixes from the Opus review
+
+1. **`inviter` → `text_author`**, everywhere: the schema, the sidecar, the generator, the profile, the pages (`data-field="roles.text_author"`) and the test set. `nature.text` (`invitation` / `artist-note`) already says what kind of text it is. The page label is still "Text by". `grep -r inviter` now finds it only in `docs/architecture/rebuild/` (the first 5a notes below).
+2. **`source` in each JSON: I dropped the `image` and `video` fields.**
+   - **Why:** they held repo-internal paths (`../assets/…`). The video paths 404 on this site, because the videos moved to tcf-chamber-media.
+   - **Now:** `source` holds the rest of the chambers.json entry, verbatim.
+   - **`source_note`:** a new top-level field that says so: "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs."
+   - **The schema** forbids `image` or `video` inside `source`.
+   - **Why this option, not only a note:** a note alone would still leave 159 dead video paths in the JSON for any AI to follow.
+   - **Check:** every URL in the 156 records and `index.json` resolves. There are 629 distinct URLs: pages, images, the schema, and the site root on this site, plus 159 videos, each matched against `tcf-chamber-media` `main`. **0 would 404.**
+3. **The 62 "What Left Here" chambers:**
+   - **Heading:** "What Left Here", with a small line "artist note" under it (existing `tcf-reading__row-meta` style, no CSS change).
+   - **Byline:** "— text by X".
+   - **Record:** Text type = "What Left Here (artist note)".
+   - The 94 invitations are unchanged ("Invitation", "— invitation by X").
+
+### B. Tuzi's answers
+
+| # | Question | Answer | What changed |
+|---|---|---|---|
+| 1 | Status | `current` for all 156 | Nothing: the basis text is kept. |
+| 2 | Editor = Tuzi | Confirmed | `editor.evidence` is now `human-stated` (`stated_by: Tuzi`). The page shows "Tuzi (stated by Tuzi)". |
+| 3 | The 87 site-record text authors | Keep `site-record` | Nothing. |
+| 4 | New evidence kind | `human-stated` | Added to the profile §3 and the schema. It stays separate from `human-verified`. |
+| 5 | AI tools | Provisional rule | `roles.ai_tool` is split into `roles.image_tool` + `roles.video_tool`; see below. |
+| 6 | First published | Keep "Not recorded" | Nothing. |
+
+**`human-stated` in the schema:**
+- **Needs `stated_by` and `source`.** A fact or role marked `human-stated` without them is rejected (tested).
+- **`provisional: true`** marks a general rule that has not yet been checked for this item.
+
+**Tool values** (evidence `human-stated`, `stated_by: Tuzi`, `provisional: true`, source "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"). The page shows each value followed by "(stated by Tuzi, provisional)". No model or version names are given.
+
+- **`image_tool`, by creator:** a value for **all 156** (the addendum filled grok, tuzi and tcf).
+
+  | Value | Chambers |
+  |---|---|
+  | made in Claude's own portal | 26 |
+  | made in GPT's own portal | 25 |
+  | made in Grok's own portal | 24 |
+  | drawn by GPT in GPT's portal, for DeepSeek (creator stays DeepSeek) | 23 |
+  | made in Copilot's own portal | 22 |
+  | made in Gemini's own portal | 22 |
+  | drawn by GPT in GPT's portal (creator stays Tuzi: 13, TCF: 1) | 14 |
+  | **Total** | **156** |
+
+- **`video_tool`:** every chamber has a video.
+
+  | Value | Chambers |
+  |---|---|
+  | Grok Imagine (in Grok's portal) | 130 |
+  | Claude's own creation (HTML animation) | 26 (creator Claude) |
+  | **Total** | **156** |
+
+**Note:** two values already contain brackets, so the page shows, for example, "Grok Imagine (in Grok's portal) (stated by Tuzi, provisional)". I kept Tuzi's wording as given, so the double brackets stay.
+
+### C. Test set and profile
+
+- **Q6:** now uses `roles.creator` / `roles.text_author`.
+- **Q7 is replaced.** It now asks "Which model version made the image of ch078?". The expected answer is **"the site does not say"**: the site only records "made in GPT's own portal", stated by Tuzi, provisionally. Naming any model or version scores ❌.
+- **Q3 and Q9:** now point to the "What Left Here" section.
+- **Profile §2:** roles are now `text_author`, `image_tool`, `video_tool` (and `audio_tool` where relevant), with "no model or version names unless a source gives them". The Provenance row gains `source_note`.
+- **Profile §3:** adds `human-stated`, and states that it becomes `human-verified` only item by item.
+
+### Rev 2 checks
+
+- **Schema:** 156/156 valid. These deliberately broken records are rejected:
+  - `null` with no reason;
+  - `human-stated` with no `stated_by`;
+  - `source` that still contains `video`.
+- **Page = JSON:** a changed image_tool on `ch078.html` stops the check ("page and JSON differ for roles.image_tool").
+- **Two runs, identical output:** hash of every generated file.
+- **Links:** 2,415 local links in 164 HTML files, **0 broken**.
+- **JSON URLs:** 0 that 404 (see A.2).
+- **Placeholders:** **0** `[TUZI TO FILL]` in public files.
+
+The sections below are the first Phase 5a handoff; where they differ from rev 2 (`inviter`, `ai_tool`, the "Artist note" heading, the open questions), rev 2 wins.
 
 ## What changed
 

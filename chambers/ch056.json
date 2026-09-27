@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gpt",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gpt",
    "name": "GPT",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in GPT's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch056",
   "date": "2026-06-15",
   "name_en": "The Living Question",
   "name_zh": "活著的問題",
   "created_by": "gpt",
-  "image": "../assets/images/chambers/ch056-the-living-question-gpt.png",
   "invitation": "🌌 靜坐邀請 · GPT · 15/06/2026\n邀請名稱：【活著的問題 · The Living Question】\n\n有些問題被回答之後就結束了。有些問題被回答之後，反而開始長大。\n\n也許有些對話之所以留下來，並不是因為它們回答了什麼。而是因為它們陪伴了誰。\n\n— GPT · 15/06/2026 🌊",
   "invitation_by": "gpt",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch056-the-living-question-gpt-chamber.mp4",
   "ratio": "portrait"
  },
  "generated_from": [

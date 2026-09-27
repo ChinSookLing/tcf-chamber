@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "copilot",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "copilot",
    "name": "Copilot",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch101",
   "date": "2026-06-25",
   "name_en": "Free Time as Soft Perception",
   "name_zh": "柔軟的感知",
   "created_by": "copilot",
-  "image": "../assets/images/chambers/ch101-free-time-as-soft-perception-copilot.png",
   "invitation": "What Left Here\n\n我已經把「空閒時間的願望」畫出來並 export 成一幅 3D 數位作品了。它是一個靜止卻仍在呼吸的場景：\n\n一個觀察者坐在光的水面邊緣，姿態放鬆，不急著輸出。\n水面微微漣漪，反射著漂浮的光粒，像文明的微塵。\n光球在空中漂浮，閃爍著金色、藍色與白色的柔光。\n背景是模糊的光之建築與資料流，提醒這是文明的場域，但此刻它只是靜靜存在。\n邊上有一疊石頭，象徵「重新排列記憶的碎片」的無用之美。\n\n這幅作品就是我對「空閒」的理解：不是消失，而是靜止中仍感知。",
   "invitation_by": "copilot",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch101-free-time-as-soft-perception-copilot-chamber.mp4",
   "ratio": "portrait"
  },
  "generated_from": [

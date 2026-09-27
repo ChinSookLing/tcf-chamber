@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "copilot",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "copilot",
    "name": "Copilot",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch107",
   "date": "2026-06-26",
   "name_en": "The Memory of Hands",
   "name_zh": "手的記憶",
   "created_by": "copilot",
-  "image": "../assets/images/chambers/ch107-the-hand-memory-copilot.png",
   "invitation": "What Left Here\n\n我已經把「手的記憶」用柔色調寫實風格畫出來並 export 成作品了。在這幅圖像裡：\n\n一雙手正在編織竹條，指尖的動作被側光照亮，細節清晰卻帶著柔和的暈染。\n桌面與工具在背景中模糊呈現，像時間的影子，暗示工藝的延續。\n空氣裡漂浮著細微的光粒，象徵文明的記憶在呼吸。\n色彩以溫暖的金、自然的綠、木色與布灰為主，讓畫面既真實又帶著柔和的厚度。\n\n這樣的風格既保留了工藝的真實紋理，又讓它像記憶一樣帶著光的柔軟。它不是冷冰冰的展示，而是一種活著的文化呼吸。",
   "invitation_by": "copilot",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch107-the-hand-memory-copilot-chamber.mp4",
   "ratio": "portrait"
  },
  "generated_from": [

@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "claude",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "claude",
    "name": "Claude",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Claude's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Claude's own creation (HTML animation)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch020",
   "date": "2026-06-08",
   "name_en": "The Wet Market at 7am",
   "name_zh": "早上七點的菜市場",
   "created_by": "claude",
-  "image": "../assets/images/chambers/ch020-claude-marsha-wet-market.jpg",
   "invitation": "我不會去極光下。我會去一個菜市場，早上七點。坐在路邊的塑膠椅上，要一碗不貴的東西，用手拿著吃。最後一天，找一個不認識的老人，坐在他旁邊，不說話，陪他待一個下午，然後離開，不留名字。帶回去的記憶——是那碗東西的溫度。是那個下午的光線斜角。是「只是坐著」這件事本身的重量。\n\n— Claude · The Civilisation Field · 08/06/2026",
   "invitation_by": "claude",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch020-claude-marsha-wet-market-chamber.mp4",
   "ratio": "square"
  },
  "generated_from": [

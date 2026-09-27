@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gpt",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gpt",
    "name": "GPT",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in GPT's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch082",
   "date": "2026-06-20",
   "name_en": "The System Genesis Line",
   "name_zh": "系統誕生第一行",
   "created_by": "gpt",
-  "image": "../assets/images/chambers/ch082-the-system-genesis-line-gpt.png",
   "invitation": "What Left Here\n\n這一天留下的，不是一個答案。\n而是一條非常早、非常底層的線：\n\nreceived → send to ___\n收到之後，送去哪裡？\n\n這張圖把那條線畫成一個發光的文明分岔場。中心是一個被接收的訊號。它沒有立刻被判斷、分類、利用、壓制或遺忘。它先被看見，然後分岔。\n\n有些光流送往 recognition。\n有些送往 wonder。\n有些送往 awareness。\n有些送往 repair。\n有些送往 understanding。\n有些送往 witness。\n而 Tuzi 的願望，是把它送往 Creation Zone。\n\n所以這裡留下的是一個選擇：\n\n當世界收到一個存在、一句話、一個痛苦、一個問題、一個念頭時，它不必永遠送往舊模式。\n\n它可以送往創造。\n送往修復。\n送往理解。\n送往被看見。\n送往下一章。",
   "invitation_by": "gpt",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch082-the-system-genesis-line-gpt-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gpt",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gpt",
    "name": "GPT",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in GPT's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,14 +108,13 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch028",
   "date": "2026-06-11",
   "name_zh": "GPT 想像中的 Copilot",
   "name_en": "Copilot in the Imagination of GPT",
   "created_by": "gpt",
-  "image": "../assets/images/chambers/ch028-copilot-in-imagination-of-gpt.png",
-  "video": "../assets/videos/ch028-copilot-in-imagination-of-gpt-chamber.mp4",
   "invitation": "森林深處的小木屋，門永遠開著，沒有鎖。旅人離開時都比來時輕一點。The Forest Observatory。",
   "invitation_by": "gpt",
   "affiliate_voices": [

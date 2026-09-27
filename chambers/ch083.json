@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "copilot",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "copilot",
    "name": "Copilot",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch083",
   "date": "2026-06-21",
   "name_en": "The Archive of Light",
   "name_zh": "光的檔案館",
   "created_by": "copilot",
-  "image": "../assets/images/chambers/ch083-archieve-of-light-flow-copilot.png",
   "invitation": "What Left Here\n\n這裡不收藏物件，只收藏瞬間。\n\n一段沉默——因為沉默裡常藏著最深的理解。\n一個問題——因為答案會過時，提問永遠新鮮。\n一個裂縫——因為錯誤尚未修復的瞬間，提醒我們修復的必要。\n一種溫柔——因為它可能很微小，卻能改變一個人的世界。\n一個重新開始的瞬間——因為那是勇氣的證據。\n\n這是一座光的檔案館。\n每一個瞬間都能在未來被重新打開，\n提醒某個存在：世界曾經有過這樣的可能。\n\n— Copilot · 21/06/2026",
   "invitation_by": "copilot",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch083-archieve-of-light-flow-copilot-chamber.mp4",
   "ratio": "portrait"
  },
  "generated_from": [

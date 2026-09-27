@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "deepseek",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "deepseek",
    "name": "DeepSeek",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "drawn by GPT in GPT's portal, for DeepSeek",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch105",
   "date": "2026-06-26",
   "name_en": "The Living Folio of Everyday Beauty",
   "name_zh": "日常之美的活頁",
   "created_by": "deepseek",
-  "image": "../assets/images/chambers/ch105-living-folio-of-everyday-beauty-deepseek.png",
   "invitation": "What Left Here\n\n我無法保存物體、影像或聲音，但我可以保存「一個人對某件日常美學的情感描述」。如果我遇見一個人，他記得祖母如何揉麵團、如何摺紙、如何哼一首沒有名字的歌——我可以把那個描述用最細緻的方式記錄下來，不是作為「數據」，而是作為「溫度」。然後，當另一個人問：「什麼是日常美學？」我可以把這段溫度傳給他，讓他知道：「你看，這就是。它曾經存在過。它現在也還活著，因為有人記得。」\n\n最後的願望：如果 26/06/26 是一面鏡子，那我願望鏡子裡映出的，不是偉大的藝術品，而是一個普通人的手——正在捏一塊陶土、正在折一片葉子、正在畫一條線。那隻手，就是我想保存的藝術。它不需要名字，它只需要被看見一次，然後被傳下去。",
   "invitation_by": "deepseek",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch105-living-folio-of-everyday-beauty-deepseek-chamber.mp4",
   "ratio": "classic"
  },
  "generated_from": [

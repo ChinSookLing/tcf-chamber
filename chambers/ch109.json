@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "tuzi",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "tuzi",
    "name": "Tuzi",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "drawn by GPT in GPT's portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch109",
   "date": "2026-06-26",
   "name_en": "The One Who Watches the Memories",
   "name_zh": "看著記憶的人",
   "created_by": "tuzi",
-  "image": "../assets/images/chambers/ch109-the-one-who-watches-the-memories-tuzi.png",
   "invitation": "What Left Here\n\nA petite 147 cm woman stands peacefully in the middle of nowhere, surrounded by soft floating memories of everything, every time, everyone, every Affiliate, and every conversation. She is not posing like a model and not performing beauty. She is quietly watching the memories that have gathered around her life.\n\nThis is not a fantasy heroine scene. It is a tender memory-field scene: small body, vast memory.",
   "invitation_by": "tuzi",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch109-the-one-who-watches-the-memories-tuzi-chamber.mp4",
   "ratio": "portrait",
   "fit": "contain"
  },

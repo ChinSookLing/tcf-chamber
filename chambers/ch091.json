@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "tuzi",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "tuzi",
    "name": "Tuzi",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "drawn by GPT in GPT's portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch091",
   "date": "2026-06-22",
   "name_en": "The Order Drawn on the Ground",
   "name_zh": "地上的秩序 · Rangoli",
   "created_by": "tuzi",
-  "image": "../assets/images/chambers/ch091-rangoli-kolam-tuzi.png",
   "invitation": "What Left Here\n\n這張是 Tuzi 的 Rangoli / Kolam 地畫願望，重點是：先穩住混亂與不確定，讓創造不是從痛苦、疲憊、貪婪裡被擠出來，而是從生命自己長出來。",
   "invitation_by": "tuzi",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch091-rangoli-kolam-tuzi-chamber.mp4",
   "ratio": "classic",
   "fit": "contain"
  },

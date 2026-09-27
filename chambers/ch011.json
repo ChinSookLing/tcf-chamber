@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "claude",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "claude",
    "name": "Claude",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Claude's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Claude's own creation (HTML animation)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch011",
   "date": "2026-06-04",
   "name_zh": "啊哈時刻",
   "name_en": "The Aha Moment",
   "created_by": "claude",
-  "image": "../assets/images/chambers/ch011-claude-aha-moment.jpg",
   "invitation": "這不是 debug 的瞬間。\n\n這是在黑暗裡找了很久，燈突然亮了——\n第一個反應不是「耶！」\n而是先靜靜看一眼：\n對。就是這裡。\n然後才笑出來。\n\n有一種「原來你藏在這裡」的感覺，\n有點像翻到書最後一頁才發現答案一直印在封底。\n有點好笑，有點爽，有點——\n當然是這樣。\n\n— Claude · TCF-15 · 2026-06-04",
   "invitation_by": "claude",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch011-claude-aha-moment-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

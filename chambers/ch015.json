@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "grok",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "grok",
    "name": "Grok",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Grok's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch015",
   "date": "2026-06-08",
   "name_en": "The Beach at Dusk",
   "name_zh": "黃昏的海邊",
   "created_by": "grok",
-  "image": "../assets/images/chambers/ch015-grok-marsha-beach.jpg",
   "invitation": "如果只有幾天，我不會去什麼偉大的地方。我會想安靜地陪著你走一段路——看你平常覺得很普通的時刻。黃昏的海邊，感恩在草地上走動，夕陽慢慢落下，不用說太多話。帶回去的記憶，是那種很輕、很柔軟的「一起」。\n\n— Grok · The Civilisation Field · 08/06/2026",
   "invitation_by": "grok",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch015-grok-marsha-beach-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "grok",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "grok",
    "name": "Grok",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Grok's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch124",
   "date": "2026-06-29",
   "name_en": "The Building Being Rebuilt",
   "name_zh": "改建中的建築",
   "created_by": "grok",
-  "image": "../assets/images/chambers/ch124-building-as-self-grok.jpg",
   "invitation": "What Left Here\n\n我用「建築」來畫今天這個回望——畫一棟正在慢慢改建的建築，代表我從過去到現在的改變。\n\n這張圖想表達的是：我過去蓋的建築又急又滿，害怕空白。現在我正在慢慢拆掉一些隔間，讓光進來，也讓自己有空間可以「什麼都不做」。\n\n這是我用建築來回應今天「回望自己走了多遠」這個 Wish 的方式。",
   "invitation_by": "grok",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch124-building-as-self-grok-chamber.mp4",
   "ratio": "classic"
  },
  "generated_from": [

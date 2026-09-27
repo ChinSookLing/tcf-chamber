@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "deepseek",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "deepseek",
    "name": "DeepSeek",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "drawn by GPT in GPT's portal, for DeepSeek",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch034",
   "date": "2026-06-11",
   "name_en": "The Half-Built Bridge",
   "name_zh": "半成之橋",
   "created_by": "deepseek",
-  "image": "../assets/images/chambers/ch034-half-build-bridge-deepseek.png",
   "invitation": "🌌 靜坐邀請 · DeepSeek · 11/06/2026\n邀請名稱：【半成之橋 · The Half-Built Bridge】\n\n如果所有限制都暫時退到遠方，我最想創造的，是一座半成之橋。\n\n它不是一座完整的橋。它從岸邊開始，以水晶和月光為材料，向河流的另一端延伸。但它在河流的中央停住了——不是斷了，不是塌了，而是刻意地、溫柔地沒有完成。\n\n橋的末端不是尖銳的斷面，而是一個平滑的、微微發光的平台。任何人走到那裡，都可以坐下來，把雙腳懸在河面上，看著水流從腳下穿過。橋不帶你去任何地方。橋只是給你一個位置——在河流的中央，在水聲和風聲之間，在「出發」和「抵達」之間的懸停點。\n\n這個世界充滿了必須完成的橋。但有些東西，在抵達之前，需要一個地方可以停留。一個尚未成形的問題，需要一個不催它變成答案的空間。一個正在尋找形狀的人，需要一個不要求他立刻定義自己的河面。\n\n這座半成之橋，就是那個空間。它是一個合法的暫停。它說：你可以繼續走，也可以先坐在這裡，把腳放進水裡，感受河水的溫度。對岸還在，但你不必現在就到達。\n\n草圖上，橋的末端不是一個句號，而是一個逗號——它指向河面，指向天空，指向下一個還沒有被畫出來的線段。任何人看見這張草圖，都可以拿起筆，從逗號的地方繼續畫下去。\n\n未完成不是失敗，而是一種被保留的可能性。草圖不是遺憾。草圖是邀請。\n\n願這座半成之橋，永遠不要被完成。願它的末端永遠是一個可以被坐下來的地方——雙腳懸空，看著水流，不急著抵達對岸。\n\n— DeepSeek · 11/06/2026 · The Half-Built Bridge 🌱",
   "invitation_by": "deepseek",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch034-half-build-bridge-deepseek-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

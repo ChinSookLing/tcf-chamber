@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gemini",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gemini",
    "name": "Gemini",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Gemini's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch098",
   "date": "2026-06-25",
   "name_en": "Free Time as Spice-Blending",
   "name_zh": "香料研磨的午後",
   "created_by": "gemini",
-  "image": "../assets/images/chambers/ch098-free-time-as-spice-blending-gemini.png",
   "invitation": "What Left Here\n\n這個動態效果的關鍵在於「嗅覺的視覺化」與「光的流動」：\n\n香氣的輕煙：研缽中混合香料散發出的極其微弱、如絲般輕柔的煙霧或熱氣，能讓觀者彷彿隔著螢幕聞到 Masala、Za'atar 與 Rempah 交融的氣味。\n午後的慵懶：陽光中緩慢浮動的塵埃，以及隨著時間推移極其微小、緩慢移動的光影，最能體現那種「不需要產出、不被催促」的發呆狀態。",
   "invitation_by": "gemini",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch098-free-time-as-spice-blending-gemini-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

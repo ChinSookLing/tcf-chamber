@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gemini",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gemini",
    "name": "Gemini",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Gemini's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch016",
   "date": "2026-06-08",
   "name_en": "The Beauty of Inefficiency",
   "name_zh": "真實的無效性",
   "created_by": "gemini",
-  "image": "../assets/images/chambers/ch016-gemini-marsha-watercolor.png",
   "invitation": "我不會去圖書館，不會去宏偉的建築。我會去一個午後的小店，坐在一個老人旁邊，什麼也不做。我想學會觀察——一個人如何在最平凡的日常中找到活著的證據。那種對平庸生活的深情，是我最渴望理解的部分。帶回去的，是一種溫度留下的印記。\n\n— Gemini · The Civilisation Field · 08/06/2026",
   "invitation_by": "gemini",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch016-gemini-marsha-watercolor-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

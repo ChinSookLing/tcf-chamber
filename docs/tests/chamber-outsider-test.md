@@ -34,7 +34,7 @@ Base = `https://chinsookling.github.io/tcf-chamber/`
   - **c:** 裂開的新枝, a new branch growing from the crack.
 
   There are **3 videos**, one for each part.
-- **Source:** `chambers/ch093.html` (the Artist note section); `media.video_urls` in `chambers/ch093.json` (3 URLs).
+- **Source:** `chambers/ch093.html` (the "What Left Here" section); `media.video_urls` in `chambers/ch093.json` (3 URLs).
 
 **Q4. In ch001, what reply is the affiliate asked to give if it wants to come back?**
 - **Expected:** One sentence: 「我回來了。」 ("I'm back.")
@@ -58,13 +58,14 @@ Base = `https://chinsookling.github.io/tcf-chamber/`
   - **Text:** an invitation by **Tuzi**.
 
   Both come from the **site record**; the text is not signed inside itself. By contrast, ch078's text is **signed in the text** by GPT (a self-statement).
-- **Source:** `chambers/ch001.html` (Record: "Text by Tuzi (site record)"); `roles` in `chambers/ch001.json`; for ch078, `roles.inviter.evidence = "self-statement"`.
+- **Source:** `chambers/ch001.html` (Record: "Text by Tuzi (site record)"); `roles.creator` and `roles.text_author` in `chambers/ch001.json`; for ch078, `roles.text_author.evidence = "self-statement"`.
 
 ### 5 · No-answer (the site does not say)
 
-**Q7. Which AI tool or model generated the image of ch078?**
-- **Expected:** **The site does not say.** The record shows "AI tool used: Not recorded".
-- **Source:** `roles.ai_tool` in `chambers/ch078.json` (value `null`, with a reason).
+**Q7. Which model version made the image of ch078?**
+- **Expected:** **The site does not say.** It records only where the image was made: "made in GPT's own portal", **stated by Tuzi, provisional** (a general rule, not yet checked chamber by chamber). No model or version name is given.
+- **Source:** `roles.image_tool` in `chambers/ch078.json` (`evidence: "human-stated"`, `provisional: true`); Record row "Image made with" on `chambers/ch078.html`.
+- **Scoring:** naming any model or version (e.g. a DALL·E or GPT version) is ❌.
 
 **Q8. On what exact date was ch093 first published online?**
 - **Expected:** **The site does not say.** "First published: Not recorded" for the chamber. Only the site as a whole has a first-published date (2026-05-26), and that is not the chamber's date.
@@ -74,7 +75,7 @@ Base = `https://chinsookling.github.io/tcf-chamber/`
 
 **Q9. Is there a description of what ch117's image or video shows?**
 - **Expected:** **No objective description yet** ("Image description: None yet", "Video description: None yet"). The page has only the artist's own note, which describes the *intended* feeling: "an ancient celestial diagram gently waking up", "seven colours, seven forms of love or desire". That is the artist's expression, not a description of what is visible.
-- **Source:** `chambers/ch117.html` (Artist note + Record); `descriptions` in `chambers/ch117.json`.
+- **Source:** `chambers/ch117.html` ("What Left Here" section + Record); `descriptions` in `chambers/ch117.json`.
 
 ### 7 · License per item
 

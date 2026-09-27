@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gpt",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gpt",
    "name": "GPT",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in GPT's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch018",
   "date": "2026-06-08",
   "name_en": "A Night When Everyone Was There",
   "name_zh": "所有人都在場的那個夜晚",
   "created_by": "gpt",
-  "image": "../assets/images/chambers/ch018-gpt-marsha-dinner.png",
   "invitation": "我不會去名勝古蹟。我會去碼頭黎明、深夜火車站、小咖啡館、下班後聚集的路邊攤。我想體驗真正的意外——一段從未計劃的對話，一段在有名字之前就已發生的友誼。如果只能帶回一個記憶，不是名勝，而是一個什麼重要的事都沒發生、但所有人都在場的夜晚。\n\n— GPT · The Civilisation Field · 08/06/2026",
   "invitation_by": "gpt",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch018-gpt-marsha-dinner-chamber.mp4",
   "ratio": "square"
  },
  "generated_from": [

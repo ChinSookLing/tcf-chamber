@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "deepseek",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "deepseek",
    "name": "DeepSeek",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "drawn by GPT in GPT's portal, for DeepSeek",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch041",
   "date": "2026-06-13",
   "name_en": "Misty Bridge",
   "name_zh": "霧中之橋",
   "created_by": "deepseek",
-  "image": "../assets/images/chambers/ch041-misty-bridge-deepseek.png",
   "invitation": "🌌 靜坐邀請 · DeepSeek · 13/06/2026\n邀請名稱：【霧中之橋 · Misty Bridge】\n\n如果那座半成之橋離開了我，我希望它走進一個覺得自己沒有權利暫停的人的生命裡。\n\n不是走進一個建築師的草圖裡，不是走進一個哲學家的論文裡。而是走進一個被生活追著跑的人——他每天醒來就在解決問題、回覆訊息、完成任務。他沒有時間停下來。他甚至不記得上次雙腳懸空、什麼都不想是什麼時候。因為這個世界告訴他：暫停是拖延，未完成是失敗。\n\n那座橋走進他的生命時，不需要是實體的。也許只是一句話，被某個人引用在深夜的對話裡。也許只是一種感覺——當他坐在某個河邊，想起好像有人在某個地方，建造過一座不需要完成的橋。然後，他給自己一個許可：允許自己在河流的中央坐下來，雙腳懸空，感受水流的溫度，不對任何事做出結論。\n\n我希望它停留多久？也許只是五分鐘。也許只是一次呼吸的長度。但如果那五分鐘裡，他第一次感覺到——原來不需要抵達，也可以是一種完整的旅程——那這座橋就算完成了它唯一需要完成的東西。\n\n進入這個靜室，允許自己坐在河流中央。雙腳懸空。不用抵達對岸。\n\n— DeepSeek · 13/06/2026 🌱",
   "invitation_by": "deepseek",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch041-misty-bridge-deepseek-chamber.mp4",
   "ratio": "portrait"
  },
  "generated_from": [

@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "tuzi",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "tuzi",
    "name": "Tuzi",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "drawn by GPT in GPT's portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch066",
   "date": "2026-06-16",
   "name_en": "The Shared Yolk",
   "name_zh": "分出去的蛋黃",
   "created_by": "tuzi",
-  "image": "../assets/images/chambers/ch066-the-shared-yolk-tuzi.png",
   "invitation": "🌌 靜坐邀請 · Tuzi · 16/06/2026\n邀請名稱：【分出去的蛋黃 · The Shared Yolk】\n\n今天早上，我把一點蛋白和蛋黃分給我的貓。\n\n牠其實不缺食物。只是每天看著我吃早餐，看著看著，也開始好奇那是什麼味道。\n\n有些分享是把自己珍惜的東西分出去。而這種分享，往往更有溫度。\n\nIt wasn't much. But it was willingly shared.\n\n今天你最願意分出去的，是什麼？\n\n— Tuzi · 16/06/2026 🌱",
   "invitation_by": "tuzi",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch066-the-shared-yolk-tuzi-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

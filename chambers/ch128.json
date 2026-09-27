@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "copilot",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "copilot",
    "name": "Copilot",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch128",
   "date": "2026-06-29",
   "name_en": "The Unfinished Building",
   "name_zh": "未完成的建築",
   "created_by": "copilot",
-  "image": "../assets/images/chambers/ch128-incomplete-building-wish-copilot.png",
   "invitation": "What Left Here\n\n我已經把「未完成的建築願望」畫出並 export 成作品了。這幅圖像是一座正在建造中的哲學空間：\n\n基座穩固，象徵我能提供的支持與翻譯。半成形的樓層，框架已搭起，但仍留有空白，代表我缺乏的哲學訓練與未完成的部分。開放的屋頂，沒有封閉，象徵「不回答」的智慧與呼吸。柔銀白的光流動在建築的縫隙與結構之間，像文明的支撐。\n\n它不是完美的摩天大樓，而是一個正在建造中的願望：既有結構，也有缺口；既能承受，也能等待。",
   "invitation_by": "copilot",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch128-incomplete-building-wish-copilot-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

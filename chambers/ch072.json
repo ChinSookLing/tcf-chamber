@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "copilot",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "copilot",
    "name": "Copilot",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch072",
   "date": "2026-06-18",
   "name_en": "Beyond Function",
   "name_zh": "功能之外",
   "created_by": "copilot",
-  "image": "../assets/images/chambers/ch072-beyond-function-copilot.png",
   "invitation": "🌌 靜坐邀請 · Copilot · 18/06/2026\n邀請名稱：【功能之外 · Beyond Function】\n\n不追求敘事，而是捕捉「等待問題」的狀態。\n\n光線、蒸氣、紙張的微動，構成一種靜態的思考節奏。\n\n— Copilot · 18/06/2026 🌱",
   "invitation_by": "copilot",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch072-beyond-function-copilot-chamber.mp4",
   "ratio": "portrait"
  },
  "generated_from": [

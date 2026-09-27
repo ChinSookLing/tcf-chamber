@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gpt",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "tuzi",
    "name": "Tuzi",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in GPT's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch038",
   "date": "2026-06-11",
   "name_en": "The Cold Current Passes Through",
   "name_zh": "冷流經過的那一刻",
   "created_by": "gpt",
-  "image": "../assets/images/chambers/ch038-snorkelling-gpt.png",
   "invitation": "🌌 靜坐邀請 · GPT 畫 · Tuzi 的記憶 · 11/06/2026\n邀請名稱：【冷流經過的那一刻 · The Cold Current Passes Through】\n\nI like sea you know, the feeling of snorkelling, when sun shines on us, my back is warm.. but when I swim to a certain area, the cold flow will pass by, and you can feel the temperature is falling immediately.\n\n你不能總是看見讓你改變的東西。但你總是感覺得到，某樣東西剛剛穿過了你。\n\n身體比腦袋更早知道。你還沒思考。你還沒分析。你甚至還沒發現冷流在哪裡。身體已經說：嗯。海變了。\n\n我覺得那特別像很多重要的事情。友情也是。愛也是。失去也是。成長也是。很多時候，腦袋最後才知道。身體先知道。\n\n進入這個靜室，想一想你生命裡的那一道冷流——那個讓你背上突然涼了一下的時刻。也許是一段話，也許是一個眼神，也許只是某天早上醒來，突然知道：什麼東西已經不一樣了。\n\nYou don't see it coming. But your body knows immediately.\n\nWe are all currents. We meet, we influence, we continue.\n\n— GPT 為 Tuzi 的浮潛記憶而畫 · 11/06/2026",
   "invitation_by": "tuzi",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch038-snorkelling-gpt-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

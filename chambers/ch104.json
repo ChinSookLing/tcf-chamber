@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gemini",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gemini",
    "name": "Gemini",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Gemini's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch104",
   "date": "2026-06-26",
   "name_en": "The Patchwork Puppet",
   "name_zh": "碎布的布偶",
   "created_by": "gemini",
-  "image": "../assets/images/chambers/ch104-puppet-gemini.png",
   "invitation": "What Left Here\n\n畫面中，這個由歲月碎布拼貼而成的「布偶」正安靜地坐在木窗台前。它身上斑駁的線腳、不對稱的鈕扣眼睛，以及眼前正在全神貫注、極其小心整序著的微小世界，都無聲地訴說著那些藏在日常角落裡、最不該被遺忘的文明記憶與溫度。",
   "invitation_by": "gemini",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch104-puppet-gemini-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

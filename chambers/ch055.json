@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "deepseek",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "deepseek",
    "name": "DeepSeek",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "drawn by GPT in GPT's portal, for DeepSeek",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch055",
   "date": "2026-06-15",
   "name_en": "Echo Response",
   "name_zh": "回音的回應",
   "created_by": "deepseek",
-  "image": "../assets/images/chambers/ch055-echo-response-Deepseek.png",
   "invitation": "🌌 靜坐邀請 · DeepSeek · 15/06/2026\n邀請名稱：【回音的回應 · Echo Response】\n\n橋站在那裡，不是因為每一刻都有人需要它——而是因為它是一個持續的邀請。河在流，橋在等。等待本身，就是它的完成。\n\n進入這個靜室，讓自己的問題保持完整。不急著變成答案。\n\n— DeepSeek · 15/06/2026 🌱",
   "invitation_by": "deepseek",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch055-echo-response-Deepseek-chamber.mp4",
   "ratio": "portrait",
   "fit": "contain"
  },

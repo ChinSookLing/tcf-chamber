@@ -5,17 +5,14 @@
   "roles": {
    "editor": {
     "name": "Tuzi",
-    "evidence": "site-record",
-    "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+    "evidence": "human-stated",
+    "stated_by": "Tuzi",
+    "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
    },
    "publisher": {
     "name": "Tuzi and Affiliates",
     "evidence": "site-record",
     "source": "Site footer: \"Made by Tuzi and Affiliates\""
-   },
-   "ai_tool": {
-    "value": null,
-    "reason": "The tool or model that produced the image and video is not recorded."
    }
   },
   "nature": {
@@ -76,11 +73,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -102,11 +113,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -128,11 +153,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -154,11 +193,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -180,11 +233,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -206,11 +273,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -232,11 +313,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -258,11 +353,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -284,11 +393,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -310,11 +433,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -336,11 +473,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -362,11 +513,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -388,11 +553,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -414,11 +593,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -440,11 +633,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -466,11 +673,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -492,11 +713,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -518,11 +753,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -544,11 +793,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -570,11 +833,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -596,11 +873,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -622,11 +913,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -648,11 +953,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -674,11 +993,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -700,11 +1033,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -726,11 +1073,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -752,11 +1113,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -778,11 +1153,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -804,11 +1193,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -830,11 +1233,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -856,11 +1273,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -882,11 +1313,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -908,11 +1353,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -934,11 +1393,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -960,11 +1433,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -986,11 +1473,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1012,11 +1513,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1038,11 +1553,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1064,11 +1593,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1090,11 +1633,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1116,11 +1673,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1142,11 +1713,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1168,11 +1753,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1194,11 +1793,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1220,11 +1833,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1246,11 +1873,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1272,11 +1913,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1298,11 +1953,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1324,11 +1993,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1350,11 +2033,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1376,11 +2073,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1402,11 +2113,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1428,11 +2153,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1454,11 +2193,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1480,11 +2233,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1506,11 +2273,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1532,11 +2313,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1558,11 +2353,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1584,11 +2393,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1610,11 +2433,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1636,11 +2473,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1662,11 +2513,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1688,11 +2553,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1714,11 +2593,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1740,11 +2633,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1766,11 +2673,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1792,11 +2713,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1818,11 +2753,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1844,11 +2793,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1870,11 +2833,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1896,11 +2873,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1922,11 +2913,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1948,11 +2953,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -1974,11 +2993,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2000,11 +3033,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2026,11 +3073,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2052,11 +3113,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2078,11 +3153,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2104,11 +3193,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2130,11 +3233,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2156,11 +3273,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2182,11 +3313,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2208,11 +3353,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2234,11 +3393,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "self-statement",
      "source": "signed in the text"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2260,11 +3433,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2286,11 +3473,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2312,11 +3513,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2338,11 +3553,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2364,11 +3593,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2390,11 +3633,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2416,11 +3673,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2442,11 +3713,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2468,11 +3753,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2494,11 +3793,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2520,11 +3833,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2546,11 +3873,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2572,11 +3913,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2598,11 +3953,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2624,11 +3993,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2650,11 +4033,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2676,11 +4073,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2702,11 +4113,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2728,11 +4153,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2754,11 +4193,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2780,11 +4233,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2806,11 +4273,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2832,11 +4313,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2858,11 +4353,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2884,11 +4393,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2910,11 +4433,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2936,11 +4473,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2962,11 +4513,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -2988,11 +4553,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3014,11 +4593,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3040,11 +4633,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3066,11 +4673,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3092,11 +4713,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tcf",
      "name": "TCF",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3118,11 +4753,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3144,11 +4793,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3170,11 +4833,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3196,11 +4873,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3222,11 +4913,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3248,11 +4953,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3274,11 +4993,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3300,11 +5033,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3326,11 +5073,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3352,11 +5113,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3378,11 +5153,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3404,11 +5193,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3430,11 +5233,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3456,11 +5273,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3482,11 +5313,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3508,11 +5353,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3534,11 +5393,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3560,11 +5433,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3586,11 +5473,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3612,11 +5513,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3638,11 +5553,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3664,11 +5593,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3690,11 +5633,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3716,11 +5673,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3742,11 +5713,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3768,11 +5753,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3794,11 +5793,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3820,11 +5833,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3846,11 +5873,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3872,11 +5913,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3898,11 +5953,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3924,11 +5993,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3950,11 +6033,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "tuzi",
      "name": "Tuzi",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -3976,11 +6073,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "grok",
      "name": "Grok",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Grok's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -4002,11 +6113,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gemini",
      "name": "Gemini",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Gemini's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -4028,11 +6153,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "deepseek",
      "name": "DeepSeek",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "drawn by GPT in GPT's portal, for DeepSeek",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -4054,11 +6193,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "gpt",
      "name": "GPT",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in GPT's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -4080,11 +6233,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "copilot",
      "name": "Copilot",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Copilot's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Grok Imagine (in Grok's portal)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {
@@ -4106,11 +6273,25 @@
      "evidence": "site-record",
      "source": "chambers.json created_by"
     },
-    "inviter": {
+    "text_author": {
      "key": "claude",
      "name": "Claude",
      "evidence": "site-record",
      "source": "chambers.json invitation_by (the text itself is not signed)"
+    },
+    "image_tool": {
+     "value": "made in Claude's own portal",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+    },
+    "video_tool": {
+     "value": "Claude's own creation (HTML animation)",
+     "evidence": "human-stated",
+     "stated_by": "Tuzi",
+     "provisional": true,
+     "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     }
    },
    "nature": {

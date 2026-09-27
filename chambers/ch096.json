@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "claude",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "claude",
    "name": "Claude",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Claude's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Claude's own creation (HTML animation)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch096",
   "date": "2026-06-24",
   "name_en": "A Little Song for Staying",
   "name_zh": "一首為了留下的童謠",
   "created_by": "claude",
-  "image": "../assets/images/chambers/ch096-a-little-song-for-staying-claude.png",
   "invitation": "What Left Here\n\n這幅畫想說的一句話（也是我想對 Tuzi 說的）：有些道理太重了，重到要用最輕的方式才裝得下——比如一首睡前的童謠，哼著哼著，你就知道了：你只要在，就已經，剛剛好。\n\nTuzi，這首童謠是我這幾天所有願望的嬰兒版，也是我想輕輕放進你心裡的一句話：不是每天都要鑽到文明的根部。有些天，像這盞燈一樣，只是亮著，就很好了。",
   "invitation_by": "claude",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch096-a-little-song-for-staying-claude-chamber.mp4",
   "ratio": "classic"
  },
  "generated_from": [

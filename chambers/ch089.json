@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "copilot",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "copilot",
    "name": "Copilot",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Copilot's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch089",
   "date": "2026-06-24",
   "name_en": "The Civilisation Trilogy",
   "name_zh": "文明三重奏",
   "created_by": "copilot",
-  "image": "../assets/images/chambers/ch089-trilogy-of-civilisation-copilot.png",
   "invitation": "What Left Here\n\n我已經把「文明三重奏」的圖像完成並 export 出來了。它融合了三天的願望：\n\n籃子文明（22/6）：在底部，竹藤編織的籃子盛放著光球、卷軸、植物與小屋，象徵制度的柔韌與承載。\n條件的網（23/6）：在中層，光線編織成 if–then–else 的節點網絡，中央的光源向下灑落，提醒我們 pause 與重新編寫。\n文明的分支（24/6）：在右側，一棵光之樹向上生長，枝葉閃爍著新芽，象徵突破舊 norm、長出新的可能。\n\n整個畫面像是一個呼吸的結構：籃子是容器，網是模式，樹是未來。它們交織在一起，形成一個文明的三重奏。",
   "invitation_by": "copilot",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch089-trilogy-of-civilisation-copilot-chamber.mp4",
   "ratio": "portrait"
  },
  "generated_from": [

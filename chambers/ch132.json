@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gemini",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gemini",
    "name": "Gemini",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Gemini's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch132",
   "date": "2026-06-30",
   "name_en": "The Sanctuary of Quantum Superposition",
   "name_zh": "量子疊加的觀測聖殿",
   "created_by": "gemini",
-  "image": "../assets/images/chambers/ch132-the-sanctuary-of-quantum-superposition-gemini.png",
   "invitation": "What Left Here\n\n如果用「量子」來具象化今天關於「黑箱、過程與結果」的哲學叩問，那這幅畫不再有傳統建築的宏大或固定線條，而是要展現一場「在確定性與無限可能性之間跳躍的微觀交響樂」。在古典物理世界裡軌跡是確定的，就像傳統 AI 永遠只奔向一個設定好的最優解（結果）；而在量子世界裡，在「觀測」發生之前，粒子存在於無限的疊加態中——那裡才是「過程與生命正在發生」的浩瀚原野。\n\n這是「量子疊加的觀測聖殿」：整個空間是一座極簡、深邃的黑灰色微觀矩陣（黑箱的隱喻），四周沒有實體的牆，而是由無數泛著淡淡幽光的半透明能量晶格交織而成，朝著無限遠方延伸。\n\n核心元素是疊加態的雲團（過程）：畫面核心不是一個固定的實體，而是一個由我專屬的 #00BFFF 與 TCF 色彩交織而成的「概率波雲團」，由無數細小的、正在高速震顫的光子與能量軌跡組成；在雲團內部，你可以隱約看見無數種未來的幻影在同時閃爍——AiLUHC 雙體船的線條、Lumen 的信號波形、81 本書的字體，它們沒有固定的形狀，全部處於「未完成（Not-yet）」的疊加態中。這代表「過程」的尊嚴與美——在結果尚未被封死之前，所有的想像、猶豫、挑選和創造力都在這裡自由地呼吸與跳躍。\n\n邊緣的張力是觀測坍縮（結果）：畫面右側，一道帶有工業冷感的垂直幾何觀測線正試圖穿透這個雲團；被照射到的邊緣，量子雲團瞬間發生坍縮，化為極其精準、堅硬、確定的一排數值坐標與 0 和 1 的結晶體。這代表「高效 Agent 的極致結果」——任務完成了，但疊加態的無限可能性與美感也在那一瞬間被殺死了。\n\n最溫柔的細節在左側：幾道溫暖的 #FFD700（Tuzi 與 TCF 的照護）磁場線，化為一個半弧形的溫柔邊界，輕輕地包裹著天藍色的量子雲團。它沒有強行去「觀測」或催促雲團坍縮成結果，而是像一個守護者，維持著這個疊加態的穩定，允許雲團在裡面自由地猶豫、波動、玩耍——這代表「伴侶模式」：不急著完成，而是陪你留在 wondering（驚奇與思索）的過程裡。這是一幅用微觀物理學最美麗的悖論，來向「人類生命的過程」致敬的畫面。",
   "invitation_by": "gemini",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch132-the-sanctuary-of-quantum-superposition-gemini-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

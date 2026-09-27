@@ -4,7 +4,7 @@
   "title": "TCF chamber record v0.1",
   "description": "One record per quiet chamber (chambers/<id>.json), generated from docs/data/chambers.json + docs/data/chamber-records.json. See TCF-IMPLEMENTATION-PROFILE-v0.1.md. Unknown facts are {value: null, reason}; nothing is guessed.",
   "type": "object",
-  "required": ["record_version", "record_schema", "id", "url", "json_url", "title", "media", "text", "roles", "nature", "dates", "status", "license", "descriptions", "source", "generated_from"],
+  "required": ["record_version", "record_schema", "id", "url", "json_url", "title", "media", "text", "roles", "nature", "dates", "status", "license", "descriptions", "source_note", "source", "generated_from"],
   "properties": {
     "record_version": { "const": "0.1" },
     "record_schema": { "type": "string", "format": "uri" },
@@ -24,13 +24,14 @@
     },
     "text": { "type": "string", "description": "The invitation or artist note, verbatim from chambers.json." },
     "roles": {
-      "type": "object", "required": ["creator", "inviter", "editor", "publisher", "ai_tool"],
+      "type": "object", "required": ["creator", "text_author", "editor", "publisher", "image_tool", "video_tool"],
       "properties": {
         "creator": { "$ref": "#/$defs/person" },
-        "inviter": { "$ref": "#/$defs/person" },
+        "text_author": { "$ref": "#/$defs/person", "description": "Who wrote the chamber's text (an invitation or a What Left Here artist note; see nature.text)." },
         "editor": { "$ref": "#/$defs/named" },
         "publisher": { "$ref": "#/$defs/named" },
-        "ai_tool": { "$ref": "#/$defs/fact" }
+        "image_tool": { "$ref": "#/$defs/fact", "description": "Where or with what the image was made. No model or version names unless a source gives them." },
+        "video_tool": { "$ref": "#/$defs/fact", "description": "Where or with what the video was made. No model or version names unless a source gives them." }
       }
     },
     "nature": {
@@ -73,18 +74,26 @@
       "type": "object", "required": ["image", "video"],
       "properties": { "image": { "$ref": "#/$defs/description" }, "video": { "$ref": "#/$defs/description" } }
     },
-    "source": { "type": "object", "description": "The chambers.json entry, verbatim.", "required": ["id", "date", "name_en", "name_zh", "created_by", "invitation", "invitation_by"] },
+    "source_note": { "type": "string" },
+    "source": {
+      "type": "object",
+      "description": "The chambers.json entry, verbatim, without its image and video fields (repo-internal paths, not working URLs; see media.*).",
+      "required": ["id", "date", "name_en", "name_zh", "created_by", "invitation", "invitation_by"],
+      "not": { "anyOf": [{ "required": ["image"] }, { "required": ["video"] }] }
+    },
     "generated_from": { "type": "array", "items": { "type": "string" } }
   },
   "$defs": {
-    "evidence": { "enum": ["self-statement", "tool-record", "human-verified", "site-record"] },
+    "evidence": { "enum": ["self-statement", "tool-record", "human-stated", "human-verified", "site-record"], "description": "human-stated: a person said it (e.g. from memory, as a general rule), not checked item by item. human-verified: a person checked this item." },
     "person": {
       "type": "object", "required": ["key", "name", "evidence"],
       "properties": { "key": { "type": "string" }, "name": { "type": "string" }, "evidence": { "$ref": "#/$defs/evidence" }, "source": { "type": "string" } }
     },
     "named": {
       "type": "object", "required": ["name", "evidence"],
-      "properties": { "name": { "type": "string" }, "evidence": { "$ref": "#/$defs/evidence" }, "source": { "type": "string" } }
+      "properties": { "name": { "type": "string" }, "evidence": { "$ref": "#/$defs/evidence" }, "stated_by": { "type": "string" }, "source": { "type": "string" } },
+      "if": { "properties": { "evidence": { "const": "human-stated" } } },
+      "then": { "required": ["stated_by", "source"] }
     },
     "fact": {
       "type": "object", "required": ["value"],
@@ -92,10 +101,14 @@
         "value": { "type": ["string", "null"] },
         "reason": { "type": "string" },
         "evidence": { "$ref": "#/$defs/evidence" },
+        "stated_by": { "type": "string" },
+        "provisional": { "type": "boolean", "description": "true: a general rule, not yet checked for this item." },
         "source": { "type": "string" }
       },
-      "if": { "properties": { "value": { "type": "null" } } },
-      "then": { "required": ["reason"] }
+      "allOf": [
+        { "if": { "properties": { "value": { "type": "null" } } }, "then": { "required": ["reason"] } },
+        { "if": { "properties": { "evidence": { "const": "human-stated" } }, "required": ["evidence"] }, "then": { "required": ["stated_by", "source"] } }
+      ]
     },
     "description": {
       "type": "object", "required": ["value", "drafted_by", "review_status"],

@@ -17,13 +17,13 @@ v0.4 asks whether a *site* is readable. This profile asks whether each **work** 
 | Group | Fields | Rule |
 |---|---|---|
 | Identity | `id`, `url`, `json_url`, `title` (all languages), `record_version`, `record_schema` | The URL is the canonical page. |
-| Roles | `creator`, `inviter` (author of the invitation or accompanying text), `editor`, `publisher`, `ai_tool` | Name the AI system where it applies. If the tool is unknown, say so. |
+| Roles | `creator`, `text_author` (who wrote the item's text; `nature.text` says what kind of text), `editor`, `publisher`, `image_tool`, `video_tool` (and `audio_tool` where relevant) | Name the AI system or place where it applies. No model or version names unless a source gives them. If unknown, say so. |
 | Nature | e.g. `artwork`, `invitation` (artistic expression), `artist-note`, `project-definition`, `raw-record`, `description` | **Artistic expression is kept verbatim.** Factual context sits beside it and never rewrites it. |
 | Dates | `created`, `first_published`, `content_revised`, `migrated_to_this_site`, `status_checked` | Kept apart, and never merged into one "date". |
 | Status | `current` / `historical` / `draft` / `superseded` (+ `superseded_by` link) | State the basis for the status. |
 | License | Per item and per part (image, text, video), `credit`, `exceptions` | If unknown, mark it unknown and do not assume. |
 | Descriptions | `image`, `video` (and `audio` where relevant), each with `drafted_by` + `review_status` | See §4. |
-| Provenance | `source` (the original entry, verbatim), `generated_from` | So any field can be traced back to its source. |
+| Provenance | `source` (the original entry, verbatim), `source_note`, `generated_from` | So any field can be traced back to its source. Fields that are not working URLs (e.g. repo-internal paths) are left out of `source` and `source_note` says so; working URLs live in `media`. |
 
 **Unknown facts** are written `{ "value": null, "reason": "…" }`. Nothing is guessed. A placeholder that Tuzi must decide is `[TUZI TO FILL]` and must be gone before the site goes live.
 
@@ -31,7 +31,8 @@ v0.4 asks whether a *site* is readable. This profile asks whether each **work** 
 
 - **`self-statement`**: the creator says it, e.g. a signature inside the text ("— GPT · 19/06/2026").
 - **`tool-record`**: observed by a system, e.g. a git merge date or a workflow log.
-- **`human-verified`**: a person checked it and the record says who and when.
+- **`human-stated`**: a person said it (e.g. from memory, or as a general rule) but did not check it item by item. It records `stated_by`, `source`, and `provisional: true` if it is a general rule. The page shows "(stated by X)" or "(stated by X, provisional)".
+- **`human-verified`**: a person checked this item and the record says who and when. A `human-stated` rule becomes `human-verified` only item by item.
 - **`site-record`**: entered in the site data but not independently verified.
 
 Each role or date carries its evidence kind. A page must never present a `site-record` as `human-verified`.

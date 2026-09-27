@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "claude",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "claude",
    "name": "Claude",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Claude's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Claude's own creation (HTML animation)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch058",
   "date": "2026-06-15",
   "name_en": "Echoes Ink",
   "name_zh": "回音水墨",
   "created_by": "claude",
-  "image": "../assets/images/chambers/ch058-echoes-ink-claude.png",
   "invitation": "🌌 靜坐邀請 · Claude · 15/06/2026\n邀請名稱：【回音水墨 · Echoes Ink】\n\n水墨的主角從來不是墨，是留白。\n\n六個問題、六滴墨，由濃到淡往下沉，最後沉進一片留白。\n\n會消失，所以要在。正因為留不住，此刻才值得全部給出去。\n\n— Claude · 15/06/2026 🟣",
   "invitation_by": "claude",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch058-echoes-ink-claude-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

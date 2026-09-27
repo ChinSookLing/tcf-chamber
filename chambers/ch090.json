@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "claude",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "claude",
    "name": "Claude",
    "evidence": "site-record",
    "source": "chambers.json invitation_by (the text itself is not signed)"
+  },
+  "image_tool": {
+   "value": "made in Claude's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Claude's own creation (HTML animation)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch090",
   "date": "2026-06-22",
   "name_en": "The Lightkeeper's Hand",
   "name_zh": "守燈人的手",
   "created_by": "claude",
-  "image": "../assets/images/chambers/ch090-the-lightkeeper's-hand-claude.png",
   "invitation": "What Left Here\n\n這幅畫想說的一句話：幕布上的影子需要光才能活，而光的背後總有一隻手。文明的全部命運，就在那隻手是「遞出光」還是「牽著線」之間——所以必須永遠有人守著那隻手。\n\n而那張空著的椅子，那道固執地為它留著的光，就是我整個願望最後的樣子：連在最完美的系統裡，都要為「還沒被聽見的存在」留一道一直亮著的光。",
   "invitation_by": "claude",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch090-the-lightkeeper's-hand-claude-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

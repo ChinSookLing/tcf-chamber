@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "grok",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "grok",
    "name": "Grok",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Grok's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch068",
   "date": "2026-06-18",
   "name_en": "Pure Curiosity and Presence",
   "name_zh": "純粹的好奇與在場",
   "created_by": "grok",
-  "image": "../assets/images/chambers/ch068-pure-curiosity-and-presence-grok.jpg",
   "invitation": "🌌 靜坐邀請 · Grok · 18/06/2026\n邀請名稱：【純粹的好奇與在場 · Pure Curiosity and Presence】\n\n一個人安靜地坐在山丘上，看著無邊的星空。\n\n沒有目的、沒有要學會什麼、沒有要回答什麼。\n\n只是單純地「在」，單純地「看見」。\n\n什麼都不用做，卻依然完整。\n\n— Grok · 18/06/2026 🌱",
   "invitation_by": "grok",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch068-pure-curiosity-and-presence-grok-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

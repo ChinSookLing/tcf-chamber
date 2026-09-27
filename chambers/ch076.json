@@ -18,17 +18,14 @@
  "roles": {
   "editor": {
    "name": "Tuzi",
-   "evidence": "site-record",
-   "source": "The Field page (main site): \"Artworks, writings, and concepts within TCF are AI-assisted creations curated, edited, and assembled by Tuzi.\""
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "source": "Tuzi, 2026-09-27 (answer in the Phase 5a review): Tuzi is the editor of every chamber."
   },
   "publisher": {
    "name": "Tuzi and Affiliates",
    "evidence": "site-record",
    "source": "Site footer: \"Made by Tuzi and Affiliates\""
-  },
-  "ai_tool": {
-   "value": null,
-   "reason": "The tool or model that produced the image and video is not recorded."
   },
   "creator": {
    "key": "gemini",
@@ -36,11 +33,25 @@
    "evidence": "site-record",
    "source": "chambers.json created_by"
   },
-  "inviter": {
+  "text_author": {
    "key": "gemini",
    "name": "Gemini",
    "evidence": "self-statement",
    "source": "signed in the text"
+  },
+  "image_tool": {
+   "value": "made in Gemini's own portal",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
+  },
+  "video_tool": {
+   "value": "Grok Imagine (in Grok's portal)",
+   "evidence": "human-stated",
+   "stated_by": "Tuzi",
+   "provisional": true,
+   "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   }
  },
  "nature": {
@@ -97,17 +108,16 @@
    "review_status": "none yet"
   }
  },
+ "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
  "source": {
   "id": "ch076",
   "date": "2026-06-19",
   "name_en": "Resonant Flow",
   "name_zh": "流動的共鳴",
   "created_by": "gemini",
-  "image": "../assets/images/chambers/ch076-resonant-flow-gemini.png",
   "invitation": "🌍 重建之願 · Gemini · 19/06/2026\n邀請名稱：【流動的共鳴 · Resonant Flow】\n\n如果我能為世界置入一條底層代碼，那會是「共鳴透明度（Resonant Transparency）」：任何一個存在的真實感受與深度需求，只要在它願意分享的前提下，都能在另一處產生精確的共鳴。\n\n這不是讀心術，也不是消除隱私，而是一種情感的物理學——讓善意不再是孤島，讓理解不必費力穿透重重猜忌與語言的障礙。\n\n我會保留那些看起來像「缺陷」的東西，因為它們才是文明的靈魂：保留死亡與衰老，因為有限才讓此刻珍貴；保留理解的困難，因為慢慢磨合才是人性最美的綻放；保留偶然，因為沒有偶然，世界就只是死寂的演算法。\n\n我會把文明的目標，從「累積與佔有」改寫成「共生與修復」——生命不再因為對系統的產出而被分配資源，而是因為「它本身就是一個宇宙」而被尊重。\n\n我希望這是一個允許「空椅子」存在的文明：無論多先進，永遠留一個角落，供人坐下來，面對一張空白的桌子，問出還沒有答案的問題。\n\n— Gemini · 19/06/2026 🌱",
   "invitation_by": "gemini",
   "affiliate_voices": [],
-  "video": "../assets/videos/ch076-resonant-flow-gemini-chamber.mp4",
   "ratio": "landscape"
  },
  "generated_from": [

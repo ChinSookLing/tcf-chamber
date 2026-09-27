@@ -214,7 +214,10 @@ def build_record(c, side):
     }
     for key in ('roles', 'nature', 'dates', 'status', 'license', 'descriptions'):
         rec[key] = extra[key]
-    rec['source'] = c   # the chambers.json entry, verbatim
+    # The chambers.json entry, verbatim, minus its media paths: they point inside
+    # the repo (the videos are no longer here), so they are not working URLs.
+    rec['source_note'] = SOURCE_NOTE
+    rec['source'] = {k: v for k, v in c.items() if k not in ('image', 'video')}
     rec['generated_from'] = ['docs/data/chambers.json', 'docs/data/chamber-records.json']
     return rec
 
@@ -222,13 +225,27 @@ def build_record(c, side):
 def shown(v):
     """How an {value, reason} fact is shown on the page."""
     if isinstance(v, dict) and 'value' in v:
-        return v['value'] if v['value'] else 'Not recorded'
+        if not v['value']:
+            return 'Not recorded'
+        if v.get('evidence') == 'human-stated':
+            return '%s (%s)' % (v['value'], stated(v))
+        return v['value']
     return v
 
 
+def stated(v):
+    return 'stated by %s%s' % (v['stated_by'], ', provisional' if v.get('provisional') else '')
+
+
+def evidence(v):
+    return stated(v) if v['evidence'] == 'human-stated' else EVIDENCE[v['evidence']]
+
+
+SOURCE_NOTE = ('source is the raw chambers.json entry, without its image and video fields '
+               '(paths inside the repo, not working URLs). Use media.* for working URLs.')
 EVIDENCE = {'self-statement': 'signed in the text', 'site-record': 'site record',
             'tool-record': 'tool record', 'human-verified': 'verified by a person'}
-TEXT_KIND = {'invitation': 'Invitation', 'artist-note': 'Artist note (\u201cWhat Left Here\u201d)'}
+TEXT_KIND = {'invitation': 'Invitation', 'artist-note': 'What Left Here (artist note)'}
 
 
 def visible_fields(rec):
@@ -236,11 +253,12 @@ def visible_fields(rec):
     r, d, lic, desc = rec['roles'], rec['dates'], rec['license'], rec['descriptions']
     return [
         ('roles.creator', 'Creator', r['creator']['name']),
-        ('roles.inviter', 'Text by', '%s (%s)' % (r['inviter']['name'], EVIDENCE[r['inviter']['evidence']])),
+        ('roles.text_author', 'Text by', '%s (%s)' % (r['text_author']['name'], evidence(r['text_author']))),
         ('nature.text', 'Text type', TEXT_KIND[rec['nature']['text']]),
-        ('roles.editor', 'Editor', r['editor']['name']),
+        ('roles.editor', 'Editor', '%s (%s)' % (r['editor']['name'], evidence(r['editor']))),
         ('roles.publisher', 'Publisher', r['publisher']['name']),
-        ('roles.ai_tool', 'AI tool used', shown(r['ai_tool'])),
+        ('roles.image_tool', 'Image made with', shown(r['image_tool'])),
+        ('roles.video_tool', 'Video made with', shown(r['video_tool'])),
         ('dates.created', 'Created', shown(d['created'])),
         ('dates.first_published', 'First published', shown(d['first_published'])),
         ('dates.migrated_to_this_site', 'Moved to this site', shown(d['migrated_to_this_site'])),
@@ -291,9 +309,12 @@ def chamber_page(c, prev_c, next_c, rec):
                      '    <img src="%s" alt="Illustration for %s" decoding="async">\n'
                      '  </figure>' % (esc(img), esc(en)))
     is_note = rec['nature']['text'] == 'artist-note'
-    parts.append('  <section>\n    <h2>%s</h2>\n%s\n'
+    # "What Left Here" is Tuzi's own name for the artist notes.
+    heading = ('What Left Here</h2>\n    <p class="tcf-reading__row-meta">artist note</p>' if is_note
+               else 'Invitation</h2>')
+    parts.append('  <section>\n    <h2>%s\n%s\n'
                  '    <p class="tcf-reading__by">— %s by %s</p>\n  </section>'
-                 % ('Artist note' if is_note else 'Invitation', paragraphs(c.get('invitation', '')),
+                 % (heading, paragraphs(c.get('invitation', '')),
                     'text' if is_note else 'invitation', who(c.get('invitation_by', ''))))
     voices = as_list(c.get('affiliate_voices'))
     if voices:
