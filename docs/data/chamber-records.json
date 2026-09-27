@@ -110,7 +110,7 @@
      "detailed": "Portrait image looking into a tunnel-like cave made of large, angular, translucent crystals in pale pink, white and grey-blue. Pale, branching, root-like strands spread across the crystal ceiling at the top. In the centre the cave opens onto a dark space filled with small golden points of light. In the lower middle sits a wide, bowl-shaped cluster of pale pink crystals; smaller crystals and fine golden glitter cover the ground around it. Warm light shines through the crystals on the left and right. Three lines of white text sit in the lower right corner.",
      "visible_text": "Lower right, three lines: \"26.05.2026 ©\" / \"Here, I was allowed to be nameless.\" / \"And it was enough. — Grok\"",
      "drafted_by": "Claude Code (Claude, AI)",
-     "review_status": "AI-drafted, not reviewed",
+     "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
     },
     "video": {
@@ -3231,7 +3231,7 @@
      "detailed": "Landscape image in soft pastel colours: cream, gold, lavender, pink and blue-grey. In the centre is a bright oval clearing where about thirty pale, simplified human figures stand or sit in a loose ring. Flowing, translucent bands like veils or streams wind across the whole picture and divide it into rounded pockets. Each pocket holds one to three small figures sitting close together or facing each other; some pockets also hold small trees or plants. On the lower left, figures walk in pairs and threes up a staircase and along a path above it. Fine white and gold branching lines, like twigs or frost, cover much of the surface.",
      "visible_text": "No visible text.",
      "drafted_by": "Claude Code (Claude, AI)",
-     "review_status": "AI-drafted, not reviewed",
+     "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
     },
     "video": {
@@ -3240,7 +3240,7 @@
       {
        "part": "ch078",
        "duration": "0:10",
-       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous, mostly low-pitched, with no separate loud passages. What makes the sound is not known.",
+       "audio": "Audio track present (stereo). Measured: it is quiet (mean level about −38 dB) and continuous, mostly low-pitched, with no separate loud passages. Music, no voice (listened to by Tuzi).",
        "visible_text": "No visible text.",
        "segments": [
         {
@@ -3262,7 +3262,7 @@
       }
      ],
      "drafted_by": "Claude Code (Claude, AI)",
-     "review_status": "AI-drafted, not reviewed",
+     "review_status": "reviewed by Tuzi 2026-09-27",
      "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
     }
    }
@@ -3872,7 +3872,7 @@
      "detailed": "Wide image of a reddish-orange desert under an orange, cloudy sky. Three tall, weathered stone monoliths stand in a row: the two outer ones are carved with large leafless trees, and the taller middle one has an ornate carved doorway or window with a lattice screen. Faint lines of glowing text are overlaid on the middle monolith, above and on both sides of the doorway. In front, on a stone platform, a man in a grey T-shirt and dark trousers sits on a carved wooden chair at a round stone table; opposite him sits a see-through human figure outlined in pale blue light. On the table are a small glowing glass sphere and an open book. Several geodesic domes stand in the background on the right, one lit from inside, and a small white four-pointed star mark is in the lower right corner.",
      "visible_text": "The letters are partly malformed; \"?\" marks a letter that cannot be read. Above the table, two lines: \"PRESE?VE ??? Pred??tive Space.\" / \"C?ALLENGE Weak Points.\" Upper right of the middle monolith: \"THOOTB\", then seven short lines in which only the words \"DIGNITY\", \"Space\", \"CHALLENGE\" and \"Week\" can be read. Vertical columns of script-like marks on both sides of the doorway and on the right monolith cannot be read as any language.",
      "drafted_by": "Claude Code (Claude, AI)",
-     "review_status": "AI-drafted, not reviewed",
+     "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
     },
     "video": {
@@ -3881,7 +3881,7 @@
       {
        "part": "ch093a",
        "duration": "0:10",
-       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −36 dB), continuous and mostly low-pitched. What makes the sound is not known.",
+       "audio": "Audio track present (stereo). Measured: it is quiet (mean level about −36 dB), continuous and mostly low-pitched. Music, no voice (listened to by Tuzi).",
        "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
        "segments": [
         {
@@ -3909,7 +3909,7 @@
       {
        "part": "ch093b",
        "duration": "0:10",
-       "audio": "Audio track present (stereo). Not listened to; it is almost silent for about the first 2 seconds, then a soft, continuous sound (mean level about −37 dB) continues to the end. What makes the sound is not known.",
+       "audio": "Audio track present (stereo). Measured: it is almost silent for about the first 2 seconds, then a soft, continuous sound (mean level about −37 dB) continues to the end. Music, no voice (listened to by Tuzi).",
        "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
        "segments": [
         {
@@ -3937,7 +3937,7 @@
       {
        "part": "ch093c",
        "duration": "0:10",
-       "audio": "Audio track present (stereo). Not listened to; it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. What makes the sound is not known.",
+       "audio": "Audio track present (stereo). Measured: it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. Music, no voice (listened to by Tuzi).",
        "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
        "segments": [
         {
@@ -3969,7 +3969,7 @@
       }
      ],
      "drafted_by": "Claude Code (Claude, AI)",
-     "review_status": "AI-drafted, not reviewed",
+     "review_status": "reviewed by Tuzi 2026-09-27",
      "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
     }
    }
@@ -4939,7 +4939,7 @@
      "detailed": "Portrait image on a textured cream background. A large thin oval outline encloses seven coloured circles in a ring: yellow at the top, then, going clockwise, purple, green, blue, dark red, grey and orange. Each circle holds a small scene: yellow, an arched doorway with a winding path into a bowl shape; purple, nested arches above a stepped pyramid; green, a terraced landscape with a winding path above an open book; blue, a bright star above a faceted pyramid shape; dark red, a triangle with a small flame on a block inside it and a small ring above; grey, a woven grid pattern above wavy flowing lines; orange, an arched bridge above a winding stream, with overlapping circle outlines at the top. At the centre is a pale circle with a pattern of overlapping circles, surrounded by a star-shaped figure made of thin gold lines. Small coloured beads and gold dots sit on the lines, and a vertical gold line runs from top to bottom, with a small diamond shape near the bottom.",
      "visible_text": "No visible text.",
      "drafted_by": "Claude Code (Claude, AI)",
-     "review_status": "AI-drafted, not reviewed",
+     "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
     },
     "video": {

@@ -100,7 +100,7 @@
   "image": {
    "value": "A pastel landscape seen from above: a glowing central clearing where many pale figures stand and sit in a ring, surrounded by rounded pockets that each hold a few small figures.",
    "drafted_by": "Claude Code (Claude, AI)",
-   "review_status": "AI-drafted, not reviewed",
+   "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
    "detailed": "Landscape image in soft pastel colours: cream, gold, lavender, pink and blue-grey. In the centre is a bright oval clearing where about thirty pale, simplified human figures stand or sit in a loose ring. Flowing, translucent bands like veils or streams wind across the whole picture and divide it into rounded pockets. Each pocket holds one to three small figures sitting close together or facing each other; some pockets also hold small trees or plants. On the lower left, figures walk in pairs and threes up a staircase and along a path above it. Fine white and gold branching lines, like twigs or frost, cover much of the surface.",
    "visible_text": "No visible text.",
    "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
@@ -108,13 +108,13 @@
   "video": {
    "value": "A 10-second video of the same landscape: the centre grows brighter and fine golden lines spread outward from it across the scene.",
    "drafted_by": "Claude Code (Claude, AI)",
-   "review_status": "AI-drafted, not reviewed",
+   "review_status": "reviewed by Tuzi 2026-09-27",
    "transcripts": [
     {
      "part": "ch078",
      "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch078-gpt's-rebuilt-world-gpt-chamber.mp4",
      "duration": "0:10",
-     "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous, mostly low-pitched, with no separate loud passages. What makes the sound is not known.",
+     "audio": "Audio track present (stereo). Measured: it is quiet (mean level about −38 dB) and continuous, mostly low-pitched, with no separate loud passages. Music, no voice (listened to by Tuzi).",
      "visible_text": "No visible text.",
      "segments": [
       {

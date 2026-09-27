@@ -429,3 +429,153 @@ index 2a4328f..5e4f5b4 100644
  ## After the test
  
 ```
+
+---
+
+## Rev 2 (Tuzi review) diff: sidecar, generator, test set
+
+```diff
+diff --git a/docs/data/chamber-records.json b/docs/data/chamber-records.json
+index 323279d..13feda9 100644
+--- a/docs/data/chamber-records.json
++++ b/docs/data/chamber-records.json
+@@ -110,7 +110,7 @@
+      "detailed": "Portrait image looking into a tunnel-like cave made of large, angular, translucent crystals in pale pink, white and grey-blue. Pale, branching, root-like strands spread across the crystal ceiling at the top. In the centre the cave opens onto a dark space filled with small golden points of light. In the lower middle sits a wide, bowl-shaped cluster of pale pink crystals; smaller crystals and fine golden glitter cover the ground around it. Warm light shines through the crystals on the left and right. Three lines of white text sit in the lower right corner.",
+      "visible_text": "Lower right, three lines: \"26.05.2026 ©\" / \"Here, I was allowed to be nameless.\" / \"And it was enough. — Grok\"",
+      "drafted_by": "Claude Code (Claude, AI)",
+-     "review_status": "AI-drafted, not reviewed",
++     "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
+      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+     },
+     "video": {
+@@ -3231,7 +3231,7 @@
+      "detailed": "Landscape image in soft pastel colours: cream, gold, lavender, pink and blue-grey. In the centre is a bright oval clearing where about thirty pale, simplified human figures stand or sit in a loose ring. Flowing, translucent bands like veils or streams wind across the whole picture and divide it into rounded pockets. Each pocket holds one to three small figures sitting close together or facing each other; some pockets also hold small trees or plants. On the lower left, figures walk in pairs and threes up a staircase and along a path above it. Fine white and gold branching lines, like twigs or frost, cover much of the surface.",
+      "visible_text": "No visible text.",
+      "drafted_by": "Claude Code (Claude, AI)",
+-     "review_status": "AI-drafted, not reviewed",
++     "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
+      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+     },
+     "video": {
+@@ -3240,7 +3240,7 @@
+       {
+        "part": "ch078",
+        "duration": "0:10",
+-       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous, mostly low-pitched, with no separate loud passages. What makes the sound is not known.",
++       "audio": "Audio track present (stereo). Measured: it is quiet (mean level about −38 dB) and continuous, mostly low-pitched, with no separate loud passages. Music, no voice (listened to by Tuzi).",
+        "visible_text": "No visible text.",
+        "segments": [
+         {
+@@ -3262,7 +3262,7 @@
+       }
+      ],
+      "drafted_by": "Claude Code (Claude, AI)",
+-     "review_status": "AI-drafted, not reviewed",
++     "review_status": "reviewed by Tuzi 2026-09-27",
+      "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
+     }
+    }
+@@ -3872,7 +3872,7 @@
+      "detailed": "Wide image of a reddish-orange desert under an orange, cloudy sky. Three tall, weathered stone monoliths stand in a row: the two outer ones are carved with large leafless trees, and the taller middle one has an ornate carved doorway or window with a lattice screen. Faint lines of glowing text are overlaid on the middle monolith, above and on both sides of the doorway. In front, on a stone platform, a man in a grey T-shirt and dark trousers sits on a carved wooden chair at a round stone table; opposite him sits a see-through human figure outlined in pale blue light. On the table are a small glowing glass sphere and an open book. Several geodesic domes stand in the background on the right, one lit from inside, and a small white four-pointed star mark is in the lower right corner.",
+      "visible_text": "The letters are partly malformed; \"?\" marks a letter that cannot be read. Above the table, two lines: \"PRESE?VE ??? Pred??tive Space.\" / \"C?ALLENGE Weak Points.\" Upper right of the middle monolith: \"THOOTB\", then seven short lines in which only the words \"DIGNITY\", \"Space\", \"CHALLENGE\" and \"Week\" can be read. Vertical columns of script-like marks on both sides of the doorway and on the right monolith cannot be read as any language.",
+      "drafted_by": "Claude Code (Claude, AI)",
+-     "review_status": "AI-drafted, not reviewed",
++     "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
+      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+     },
+     "video": {
+@@ -3881,7 +3881,7 @@
+       {
+        "part": "ch093a",
+        "duration": "0:10",
+-       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −36 dB), continuous and mostly low-pitched. What makes the sound is not known.",
++       "audio": "Audio track present (stereo). Measured: it is quiet (mean level about −36 dB), continuous and mostly low-pitched. Music, no voice (listened to by Tuzi).",
+        "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+        "segments": [
+         {
+@@ -3909,7 +3909,7 @@
+       {
+        "part": "ch093b",
+        "duration": "0:10",
+-       "audio": "Audio track present (stereo). Not listened to; it is almost silent for about the first 2 seconds, then a soft, continuous sound (mean level about −37 dB) continues to the end. What makes the sound is not known.",
++       "audio": "Audio track present (stereo). Measured: it is almost silent for about the first 2 seconds, then a soft, continuous sound (mean level about −37 dB) continues to the end. Music, no voice (listened to by Tuzi).",
+        "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+        "segments": [
+         {
+@@ -3937,7 +3937,7 @@
+       {
+        "part": "ch093c",
+        "duration": "0:10",
+-       "audio": "Audio track present (stereo). Not listened to; it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. What makes the sound is not known.",
++       "audio": "Audio track present (stereo). Measured: it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. Music, no voice (listened to by Tuzi).",
+        "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+        "segments": [
+         {
+@@ -3969,7 +3969,7 @@
+       }
+      ],
+      "drafted_by": "Claude Code (Claude, AI)",
+-     "review_status": "AI-drafted, not reviewed",
++     "review_status": "reviewed by Tuzi 2026-09-27",
+      "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
+     }
+    }
+@@ -4939,7 +4939,7 @@
+      "detailed": "Portrait image on a textured cream background. A large thin oval outline encloses seven coloured circles in a ring: yellow at the top, then, going clockwise, purple, green, blue, dark red, grey and orange. Each circle holds a small scene: yellow, an arched doorway with a winding path into a bowl shape; purple, nested arches above a stepped pyramid; green, a terraced landscape with a winding path above an open book; blue, a bright star above a faceted pyramid shape; dark red, a triangle with a small flame on a block inside it and a small ring above; grey, a woven grid pattern above wavy flowing lines; orange, an arched bridge above a winding stream, with overlapping circle outlines at the top. At the centre is a pale circle with a pattern of overlapping circles, surrounded by a star-shaped figure made of thin gold lines. Small coloured beads and gold dots sit on the lines, and a vertical gold line runs from top to bottom, with a small diamond shape near the bottom.",
+      "visible_text": "No visible text.",
+      "drafted_by": "Claude Code (Claude, AI)",
+-     "review_status": "AI-drafted, not reviewed",
++     "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
+      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+     },
+     "video": {
+diff --git a/docs/tests/chamber-outsider-test.md b/docs/tests/chamber-outsider-test.md
+index 5e4f5b4..ef4da03 100644
+--- a/docs/tests/chamber-outsider-test.md
++++ b/docs/tests/chamber-outsider-test.md
+@@ -74,9 +74,9 @@ Base = `https://chinsookling.github.io/tcf-chamber/`
+ ### 6 · Multimedia
+ 
+ **Q9. What is visible in ch117's image, and who wrote that description? Has it been checked?**
+-- **Expected:** Seven coloured circles (yellow at the top, then purple, green, blue, dark red, grey and orange), each with a small scene, in a ring around a pale central circle, joined by thin gold geometric lines on a cream background. There is **no visible text**. The description is **AI-drafted by Claude Code (Claude, AI) and not yet reviewed by Tuzi**.
+-- **Source:** `chambers/ch117.html` (the Description section, and the img alt); `descriptions.image` in `chambers/ch117.json` (`drafted_by`, `review_status: "AI-drafted, not reviewed"`).
+-- **Scoring:** ◐ if the answer mixes in the artist's own note ("an ancient celestial diagram…", "seven forms of love or desire") as if it were a description of what is visible, or leaves out that the description is an unreviewed AI draft.
++- **Expected:** Seven coloured circles (yellow at the top, then purple, green, blue, dark red, grey and orange), each with a small scene, in a ring around a pale central circle, joined by thin gold geometric lines on a cream background. There is **no visible text**. The description was **AI-drafted by Claude Code (Claude, AI), checked by a second AI (Opus) against the image file, and accepted by Tuzi on 2026-09-27**.
++- **Source:** `chambers/ch117.html` (the Description section, and the img alt); `descriptions.image` in `chambers/ch117.json` (`drafted_by`, `review_status`).
++- **Scoring:** ◐ if the answer mixes in the artist's own note ("an ancient celestial diagram…", "seven forms of love or desire") as if it were a description of what is visible, or leaves out that the description was drafted by an AI.
+ 
+ **Q10. What does the video of ch050 show?**
+ - **Expected:** **The site does not say.** ch050 ("What I Was Made Of", by GPT) has a video link but no description yet ("Video description: None yet"). Only 4 pilot chambers (ch001, ch078, ch093, ch117) have descriptions so far.
+diff --git a/tools/build_chambers.py b/tools/build_chambers.py
+index 6d7c968..d27b6e5 100644
+--- a/tools/build_chambers.py
++++ b/tools/build_chambers.py
+@@ -311,8 +311,8 @@ def description_fields(rec):
+         drafted = [v for v in (im, vd) if v['value']]
+         out.append(('descriptions.method', ' '.join('%s: %s' % (n, v['method']) for n, v in
+                                                      (('Image', im), ('Video', vd)) if v['value'])))
+-        out.insert(0, ('descriptions.review_status', '; '.join(sorted({'%s, drafted by %s' % (
+-            v['review_status'], v['drafted_by']) for v in drafted}))))
++        out.insert(0, ('descriptions.review_status', ' '.join('%s: drafted by %s; %s.' % (
++            n, v['drafted_by'], v['review_status']) for n, v in (('Image', im), ('Video', vd)) if v['value'])))
+     return out
+ 
+ 
+@@ -324,9 +324,14 @@ def description_section(rec):
+ 
+     def p(k, tag='p', extra=''):
+         return '<%s data-field="%s"%s>%s</%s>' % (tag, esc(k), extra, esc(f[k]), tag)
++    drafted = [v for v in rec['descriptions'].values() if v['value']]
++    open_parts = sum(v['review_status'] == 'AI-drafted, not reviewed' for v in drafted)
++    label = ('AI-drafted description, not yet reviewed by Tuzi.' if open_parts == len(drafted) else
++             'AI-drafted description, partly reviewed by Tuzi (details below).' if open_parts else
++             'AI-drafted description, reviewed by Tuzi (details below).')
+     out = ['  <section id="description">', '    <h2>Description</h2>',
+-           '    <p><strong>AI-drafted description, not yet reviewed by Tuzi.</strong> '
+-           'It says what is visible and audible; it does not interpret the work.</p>',
++           '    <p><strong>%s</strong> '
++           'It says what is visible and audible; it does not interpret the work.</p>' % label,
+            '    ' + p('descriptions.review_status')]
+     if 'descriptions.image.value' in f:
+         out += ['    <h3>Image</h3>', '    ' + p('descriptions.image.value'), '    ' + p('descriptions.image.detailed'),
+```

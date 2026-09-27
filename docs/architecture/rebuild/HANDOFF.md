@@ -2,8 +2,40 @@
 
 - **Phase:** 5b. Image descriptions and video transcripts for 4 pilot chambers (6 videos), as AI drafts until Tuzi reviews them.
 - **Branch:** `phase-5b-pilot-descriptions`, from `main` @ `82f5cd5` (PR #7 merged)
-- **Current owner:** Claude Code → next: Opus review → Tuzi reviews `REVIEW-DESCRIPTIONS.md` → merge
+- **Current owner:** Claude Code (rev 2 done) → next: the missing ch001/ch117 video review → Opus review → Tuzi merges
 - Previous handoff (5a rev 2): `git show 0099a97:docs/architecture/rebuild/HANDOFF.md`
+
+## Rev 2: Tuzi's review (2026-09-27)
+
+**Applied from the Opus addendum:**
+- **ch078 and ch093 a/b/c, visuals:** the transcripts are OK as drafted. No text change.
+- **ch078 and ch093 a/b/c, audio (Tuzi listened):** "What makes the sound is not known." → **"Music, no voice (listened to by Tuzi)."** The measured loudness figures are kept.
+  - I also changed "Not listened to;" to **"Measured:"** in these 4 audio lines. Otherwise the line would say "not listened to" and "listened to by Tuzi" at once.
+  - Example (ch093c): "Audio track present (stereo). Measured: it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. Music, no voice (listened to by Tuzi)."
+- **`review_status`, ch078 video and ch093 video (all 3 parts):** "reviewed by Tuzi 2026-09-27".
+- **`review_status`, all 4 images:** "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27".
+
+**Page:**
+- **Label:** the top line of the Description section now follows the status. It reads "reviewed by Tuzi" when every part is reviewed, "partly reviewed by Tuzi" when some are, and "not yet reviewed by Tuzi" when none are.
+- **Status line:** gives each part's status, e.g. "Image: drafted by Claude Code (Claude, AI); checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27. Video: drafted by Claude Code (Claude, AI); reviewed by Tuzi 2026-09-27."
+- **Record rows:** they show the same status.
+
+**Test set:** Q9 now expects the ch117 image description's real status: AI-drafted by Claude Code, checked by Opus, accepted by Tuzi 2026-09-27.
+
+### Status table (after rev 2)
+
+| Chamber | Image | Video |
+|---|---|---|
+| ch001 | checked by Opus; accepted by Tuzi 2026-09-27 | **AI-drafted, not reviewed** (see below) |
+| ch078 | checked by Opus; accepted by Tuzi 2026-09-27 | reviewed by Tuzi 2026-09-27 · audio: music, no voice |
+| ch093 | checked by Opus; accepted by Tuzi 2026-09-27 | a, b, c: reviewed by Tuzi 2026-09-27 · audio: music, no voice |
+| ch117 | checked by Opus; accepted by Tuzi 2026-09-27 | **AI-drafted, not reviewed** (see below) |
+
+**Not applied: ch001 and ch117 videos.**
+- **Why:** the addendum says it "replaces item 4 of the previous message", and that it leaves "every video in the 4 pilot chambers … reviewed by Tuzi". But that earlier message (items 1–3, presumably ch001 and ch117) did not reach me.
+- **What is missing:** I do not have Tuzi's answers for those two videos, including what ch001's audio is (its three louder passages).
+- **So:** I left them as "AI-drafted, not reviewed" rather than guess. Their pages say "partly reviewed by Tuzi".
+- **Next:** once the missing items arrive, it is a one-line change per chamber.
 
 ## 0. Small fix from 5a
 

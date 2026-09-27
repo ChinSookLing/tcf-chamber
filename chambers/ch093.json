@@ -102,7 +102,7 @@
   "image": {
    "value": "In an orange desert at sunset, a man and a transparent figure outlined in blue light sit facing each other at a small stone table, in front of three carved stone monoliths.",
    "drafted_by": "Claude Code (Claude, AI)",
-   "review_status": "AI-drafted, not reviewed",
+   "review_status": "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27",
    "detailed": "Wide image of a reddish-orange desert under an orange, cloudy sky. Three tall, weathered stone monoliths stand in a row: the two outer ones are carved with large leafless trees, and the taller middle one has an ornate carved doorway or window with a lattice screen. Faint lines of glowing text are overlaid on the middle monolith, above and on both sides of the doorway. In front, on a stone platform, a man in a grey T-shirt and dark trousers sits on a carved wooden chair at a round stone table; opposite him sits a see-through human figure outlined in pale blue light. On the table are a small glowing glass sphere and an open book. Several geodesic domes stand in the background on the right, one lit from inside, and a small white four-pointed star mark is in the lower right corner.",
    "visible_text": "The letters are partly malformed; \"?\" marks a letter that cannot be read. Above the table, two lines: \"PRESE?VE ??? Pred??tive Space.\" / \"C?ALLENGE Weak Points.\" Upper right of the middle monolith: \"THOOTB\", then seven short lines in which only the words \"DIGNITY\", \"Space\", \"CHALLENGE\" and \"Week\" can be read. Vertical columns of script-like marks on both sides of the doorway and on the right monolith cannot be read as any language.",
    "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
@@ -110,13 +110,13 @@
   "video": {
    "value": "Three 10-second videos that start from the image: in a, the view moves in to the two figures at the table; in b, a carved tree spreads over the middle monolith; in c, the middle monolith cracks and a glowing branch grows out of the crack.",
    "drafted_by": "Claude Code (Claude, AI)",
-   "review_status": "AI-drafted, not reviewed",
+   "review_status": "reviewed by Tuzi 2026-09-27",
    "transcripts": [
     {
      "part": "ch093a",
      "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch093a-the-weathered-monoliths-cage-gemini-chamber.mp4",
      "duration": "0:10",
-     "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −36 dB), continuous and mostly low-pitched. What makes the sound is not known.",
+     "audio": "Audio track present (stereo). Measured: it is quiet (mean level about −36 dB), continuous and mostly low-pitched. Music, no voice (listened to by Tuzi).",
      "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
      "segments": [
       {
@@ -145,7 +145,7 @@
      "part": "ch093b",
      "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch093b-the-weathered-monoliths-code-gemini-chamber.mp4",
      "duration": "0:10",
-     "audio": "Audio track present (stereo). Not listened to; it is almost silent for about the first 2 seconds, then a soft, continuous sound (mean level about −37 dB) continues to the end. What makes the sound is not known.",
+     "audio": "Audio track present (stereo). Measured: it is almost silent for about the first 2 seconds, then a soft, continuous sound (mean level about −37 dB) continues to the end. Music, no voice (listened to by Tuzi).",
      "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
      "segments": [
       {
@@ -174,7 +174,7 @@
      "part": "ch093c",
      "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch093c-the-weathered-monoliths-breakthrough-gemini-chamber.mp4",
      "duration": "0:10",
-     "audio": "Audio track present (stereo). Not listened to; it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. What makes the sound is not known.",
+     "audio": "Audio track present (stereo). Measured: it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. Music, no voice (listened to by Tuzi).",
      "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
      "segments": [
       {

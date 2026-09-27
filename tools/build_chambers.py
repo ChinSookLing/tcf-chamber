@@ -311,8 +311,8 @@ def description_fields(rec):
         drafted = [v for v in (im, vd) if v['value']]
         out.append(('descriptions.method', ' '.join('%s: %s' % (n, v['method']) for n, v in
                                                      (('Image', im), ('Video', vd)) if v['value'])))
-        out.insert(0, ('descriptions.review_status', '; '.join(sorted({'%s, drafted by %s' % (
-            v['review_status'], v['drafted_by']) for v in drafted}))))
+        out.insert(0, ('descriptions.review_status', ' '.join('%s: drafted by %s; %s.' % (
+            n, v['drafted_by'], v['review_status']) for n, v in (('Image', im), ('Video', vd)) if v['value'])))
     return out
 
 
@@ -324,9 +324,14 @@ def description_section(rec):
 
     def p(k, tag='p', extra=''):
         return '<%s data-field="%s"%s>%s</%s>' % (tag, esc(k), extra, esc(f[k]), tag)
+    drafted = [v for v in rec['descriptions'].values() if v['value']]
+    open_parts = sum(v['review_status'] == 'AI-drafted, not reviewed' for v in drafted)
+    label = ('AI-drafted description, not yet reviewed by Tuzi.' if open_parts == len(drafted) else
+             'AI-drafted description, partly reviewed by Tuzi (details below).' if open_parts else
+             'AI-drafted description, reviewed by Tuzi (details below).')
     out = ['  <section id="description">', '    <h2>Description</h2>',
-           '    <p><strong>AI-drafted description, not yet reviewed by Tuzi.</strong> '
-           'It says what is visible and audible; it does not interpret the work.</p>',
+           '    <p><strong>%s</strong> '
+           'It says what is visible and audible; it does not interpret the work.</p>' % label,
            '    ' + p('descriptions.review_status')]
     if 'descriptions.image.value' in f:
         out += ['    <h3>Image</h3>', '    ' + p('descriptions.image.value'), '    ' + p('descriptions.image.detailed'),
