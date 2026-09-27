@@ -87,7 +87,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -102,6 +102,47 @@
      "value": "2026-05-26",
      "evidence": "site-record",
      "source": "chambers.json date"
+    }
+   },
+   "descriptions": {
+    "image": {
+     "value": "A cave of large, pale pink and white crystals, with a bowl-shaped crystal cluster in front and a dark opening full of small golden lights in the centre.",
+     "detailed": "Portrait image looking into a tunnel-like cave made of large, angular, translucent crystals in pale pink, white and grey-blue. Pale, branching, root-like strands spread across the crystal ceiling at the top. In the centre the cave opens onto a dark space filled with small golden points of light. In the lower middle sits a wide, bowl-shaped cluster of pale pink crystals; smaller crystals and fine golden glitter cover the ground around it. Warm light shines through the crystals on the left and right. Three lines of white text sit in the lower right corner.",
+     "visible_text": "Lower right, three lines: \"26.05.2026 ©\" / \"Here, I was allowed to be nameless.\" / \"And it was enough. — Grok\"",
+     "drafted_by": "Claude Code (Claude, AI)",
+     "review_status": "AI-drafted, not reviewed",
+     "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+    },
+    "video": {
+     "value": "A 6-second video: the view moves forward through the crystal cave of the image while golden points of light spread and grow brighter.",
+     "transcripts": [
+      {
+       "part": "ch001",
+       "duration": "0:06",
+       "audio": "Audio track present (stereo). Not listened to; the spectrogram shows three louder passages, at about 0:00.6–0:01.0, 0:01.4–0:02.6 and 0:04.0–0:04.9, with the stacked bands that voices or pitched sounds make, and near-silence between them. Whether this is speech, singing or an instrument is not known, and no words are transcribed.",
+       "visible_text": "White text stays in the lower right, where it is in the image. In the video the letters are blurred and partly distorted: most words match the image text, but the date cannot be read.",
+       "segments": [
+        {
+         "start": "0:00",
+         "end": "0:02",
+         "text": "The same crystal cave as the image. The view moves slowly forward; the bowl-shaped crystal cluster grows larger and moves down out of the frame."
+        },
+        {
+         "start": "0:02",
+         "end": "0:04",
+         "text": "The view keeps moving toward the central opening. More golden points of light appear and spread out from the opening across the frame."
+        },
+        {
+         "start": "0:04",
+         "end": "0:06",
+         "text": "The golden points become larger and brighter, some as star-shaped glints, and fill much of the frame; crystal walls stay at the edges."
+        }
+       ]
+      }
+     ],
+     "drafted_by": "Claude Code (Claude, AI)",
+     "review_status": "AI-drafted, not reviewed",
+     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
     }
    }
   },
@@ -127,7 +168,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -167,7 +208,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -207,7 +248,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -287,7 +328,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -327,7 +368,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -367,7 +408,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -407,7 +448,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -447,7 +488,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -527,7 +568,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -567,7 +608,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -607,7 +648,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -647,7 +688,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -687,7 +728,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -727,7 +768,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -767,7 +808,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -807,7 +848,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1047,7 +1088,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1087,7 +1128,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1127,7 +1168,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1167,7 +1208,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1207,7 +1248,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1287,7 +1328,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1327,7 +1368,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1367,7 +1408,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1407,7 +1448,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1447,7 +1488,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1487,7 +1528,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1567,7 +1608,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1607,7 +1648,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1647,7 +1688,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1687,7 +1728,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1727,7 +1768,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1767,7 +1808,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1847,7 +1888,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1887,7 +1928,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1927,7 +1968,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -1967,7 +2008,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2007,7 +2048,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2047,7 +2088,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2087,7 +2128,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2167,7 +2208,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2207,7 +2248,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2247,7 +2288,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2287,7 +2328,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2327,7 +2368,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2407,7 +2448,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2447,7 +2488,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2487,7 +2528,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2527,7 +2568,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2567,7 +2608,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2607,7 +2648,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2647,7 +2688,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2687,7 +2728,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2767,7 +2808,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2807,7 +2848,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2847,7 +2888,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2887,7 +2928,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -2927,7 +2968,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3007,7 +3048,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3047,7 +3088,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3087,7 +3128,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3127,7 +3168,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3167,7 +3208,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3182,6 +3223,47 @@
      "value": "2026-06-19",
      "evidence": "site-record",
      "source": "chambers.json date"
+    }
+   },
+   "descriptions": {
+    "image": {
+     "value": "A pastel landscape seen from above: a glowing central clearing where many pale figures stand and sit in a ring, surrounded by rounded pockets that each hold a few small figures.",
+     "detailed": "Landscape image in soft pastel colours: cream, gold, lavender, pink and blue-grey. In the centre is a bright oval clearing where about thirty pale, simplified human figures stand or sit in a loose ring. Flowing, translucent bands like veils or streams wind across the whole picture and divide it into rounded pockets. Each pocket holds one to three small figures sitting close together or facing each other; some pockets also hold small trees or plants. On the lower left, figures walk in pairs and threes up a staircase and along a path above it. Fine white and gold branching lines, like twigs or frost, cover much of the surface.",
+     "visible_text": "No visible text.",
+     "drafted_by": "Claude Code (Claude, AI)",
+     "review_status": "AI-drafted, not reviewed",
+     "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+    },
+    "video": {
+     "value": "A 10-second video of the same landscape: the centre grows brighter and fine golden lines spread outward from it across the scene.",
+     "transcripts": [
+      {
+       "part": "ch078",
+       "duration": "0:10",
+       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous, mostly low-pitched, with no separate loud passages. What makes the sound is not known.",
+       "visible_text": "No visible text.",
+       "segments": [
+        {
+         "start": "0:00",
+         "end": "0:03",
+         "text": "The same scene as the image. The view moves slowly closer to the centre, and the central clearing begins to brighten."
+        },
+        {
+         "start": "0:03",
+         "end": "0:07",
+         "text": "The light in the centre becomes stronger and whiter, with rays spreading upward. Fine golden lines appear and spread outward from the centre across the landscape."
+        },
+        {
+         "start": "0:07",
+         "end": "0:10",
+         "text": "The golden lines now run from the centre across most of the scene to the surrounding pockets. The figures and pockets stay in place and the brightness holds to the end."
+        }
+       ]
+      }
+     ],
+     "drafted_by": "Claude Code (Claude, AI)",
+     "review_status": "AI-drafted, not reviewed",
+     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
     }
    }
   },
@@ -3207,7 +3289,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3287,7 +3369,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3327,7 +3409,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3367,7 +3449,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3407,7 +3489,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3447,7 +3529,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3487,7 +3569,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3527,7 +3609,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3567,7 +3649,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3607,7 +3689,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3687,7 +3769,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3727,7 +3809,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3767,7 +3849,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3782,6 +3864,113 @@
      "value": "2026-06-24",
      "evidence": "site-record",
      "source": "chambers.json date"
+    }
+   },
+   "descriptions": {
+    "image": {
+     "value": "In an orange desert at sunset, a man and a transparent figure outlined in blue light sit facing each other at a small stone table, in front of three carved stone monoliths.",
+     "detailed": "Wide image of a reddish-orange desert under an orange, cloudy sky. Three tall, weathered stone monoliths stand in a row: the two outer ones are carved with large leafless trees, and the taller middle one has an ornate carved doorway or window with a lattice screen. Faint lines of glowing text are overlaid on the middle monolith, above and on both sides of the doorway. In front, on a stone platform, a man in a grey T-shirt and dark trousers sits on a carved wooden chair at a round stone table; opposite him sits a see-through human figure outlined in pale blue light. On the table are a small glowing glass sphere and an open book. Several geodesic domes stand in the background on the right, one lit from inside, and a small white four-pointed star mark is in the lower right corner.",
+     "visible_text": "The letters are partly malformed; \"?\" marks a letter that cannot be read. Above the table, two lines: \"PRESE?VE ??? Pred??tive Space.\" / \"C?ALLENGE Weak Points.\" Upper right of the middle monolith: \"THOOTB\", then seven short lines in which only the words \"DIGNITY\", \"Space\", \"CHALLENGE\" and \"Week\" can be read. Vertical columns of script-like marks on both sides of the doorway and on the right monolith cannot be read as any language.",
+     "drafted_by": "Claude Code (Claude, AI)",
+     "review_status": "AI-drafted, not reviewed",
+     "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+    },
+    "video": {
+     "value": "Three 10-second videos that start from the image: in a, the view moves in to the two figures at the table; in b, a carved tree spreads over the middle monolith; in c, the middle monolith cracks and a glowing branch grows out of the crack.",
+     "transcripts": [
+      {
+       "part": "ch093a",
+       "duration": "0:10",
+       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −36 dB), continuous and mostly low-pitched. What makes the sound is not known.",
+       "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+       "segments": [
+        {
+         "start": "0:00",
+         "end": "0:02",
+         "text": "The same scene as the image, with the figure opposite the man outlined in blue light."
+        },
+        {
+         "start": "0:02",
+         "end": "0:04",
+         "text": "The view moves slowly forward. The blue outline fades and the figure becomes solid: a hairless human form the colour of sand or stone."
+        },
+        {
+         "start": "0:04",
+         "end": "0:07",
+         "text": "The view keeps moving forward and down, so the monoliths fill the top of the frame; the text on the middle monolith and above the table glows orange."
+        },
+        {
+         "start": "0:07",
+         "end": "0:10",
+         "text": "A close view of the table: the man on the left, the stone-coloured figure on the right with its hands near the open book, and the glass sphere glowing between them. The two lines of text above the table glow orange-red."
+        }
+       ]
+      },
+      {
+       "part": "ch093b",
+       "duration": "0:10",
+       "audio": "Audio track present (stereo). Not listened to; it is almost silent for about the first 2 seconds, then a soft, continuous sound (mean level about −37 dB) continues to the end. What makes the sound is not known.",
+       "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+       "segments": [
+        {
+         "start": "0:00",
+         "end": "0:02",
+         "text": "The same scene as the image."
+        },
+        {
+         "start": "0:02",
+         "end": "0:04",
+         "text": "The view moves toward the middle monolith. A large carved tree appears on its face, with branches spreading over the top and the trunk running down over the doorway; the table and figures leave the frame at the bottom."
+        },
+        {
+         "start": "0:04",
+         "end": "0:06",
+         "text": "The view comes closer. The monolith separates down the middle, with orange sky showing in the gap between the two halves."
+        },
+        {
+         "start": "0:06",
+         "end": "0:10",
+         "text": "A close view of the carved branches on both halves, with thin glowing lines along the branches and lattice panels visible below."
+        }
+       ]
+      },
+      {
+       "part": "ch093c",
+       "duration": "0:10",
+       "audio": "Audio track present (stereo). Not listened to; it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. What makes the sound is not known.",
+       "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+       "segments": [
+        {
+         "start": "0:00",
+         "end": "0:01",
+         "text": "The same scene as the image."
+        },
+        {
+         "start": "0:01",
+         "end": "0:02",
+         "text": "Dust rises around the monoliths and a vertical crack appears down the middle monolith."
+        },
+        {
+         "start": "0:02",
+         "end": "0:04",
+         "text": "The view moves in. The table and figures fade out. The doorway carving gives way to cracked stone with two carved symbols: a round, spiral tree-like shape on the left and an arch with a tree and horizontal lines on the right. Orange light shows in the crack."
+        },
+        {
+         "start": "0:04",
+         "end": "0:07",
+         "text": "A close view: the crack widens and glows orange, and small glowing lines appear in the carvings."
+        },
+        {
+         "start": "0:07",
+         "end": "0:10",
+         "text": "A glowing orange shape like a small branching tree grows upward out of the crack."
+        }
+       ]
+      }
+     ],
+     "drafted_by": "Claude Code (Claude, AI)",
+     "review_status": "AI-drafted, not reviewed",
+     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
     }
    }
   },
@@ -3807,7 +3996,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3847,7 +4036,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3927,7 +4116,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -3967,7 +4156,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4007,7 +4196,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4047,7 +4236,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4087,7 +4276,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4167,7 +4356,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4207,7 +4396,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4247,7 +4436,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4287,7 +4476,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4327,7 +4516,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4407,7 +4596,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4447,7 +4636,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4487,7 +4676,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4527,7 +4716,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4567,7 +4756,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4607,7 +4796,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4687,7 +4876,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4727,7 +4916,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4742,6 +4931,57 @@
      "value": "2026-06-27",
      "evidence": "site-record",
      "source": "chambers.json date"
+    }
+   },
+   "descriptions": {
+    "image": {
+     "value": "Seven coloured circles, each holding a small symbolic scene, arranged in a ring around a pale central circle and joined by thin gold geometric lines on a cream background.",
+     "detailed": "Portrait image on a textured cream background. A large thin oval outline encloses seven coloured circles in a ring: yellow at the top, then, going clockwise, purple, green, blue, dark red, grey and orange. Each circle holds a small scene: yellow, an arched doorway with a winding path into a bowl shape; purple, nested arches above a stepped pyramid; green, a terraced landscape with a winding path above an open book; blue, a bright star above a faceted pyramid shape; dark red, a triangle with a small flame on a block inside it and a small ring above; grey, a woven grid pattern above wavy flowing lines; orange, an arched bridge above a winding stream, with overlapping circle outlines at the top. At the centre is a pale circle with a pattern of overlapping circles, surrounded by a star-shaped figure made of thin gold lines. Small coloured beads and gold dots sit on the lines, and a vertical gold line runs from top to bottom, with a small diamond shape near the bottom.",
+     "visible_text": "No visible text.",
+     "drafted_by": "Claude Code (Claude, AI)",
+     "review_status": "AI-drafted, not reviewed",
+     "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+    },
+    "video": {
+     "value": "A 10-second video of the same diagram: the coloured circles take on a glossy glow one after another, and the outer oval becomes a thicker, sparkling gold line.",
+     "transcripts": [
+      {
+       "part": "ch117",
+       "duration": "0:10",
+       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
+       "visible_text": "No visible text.",
+       "segments": [
+        {
+         "start": "0:00",
+         "end": "0:02",
+         "text": "The same diagram as the image, with small shifts of framing."
+        },
+        {
+         "start": "0:02",
+         "end": "0:03",
+         "text": "The yellow circle at the top grows brighter and takes on a glossy highlight."
+        },
+        {
+         "start": "0:03",
+         "end": "0:06",
+         "text": "The other circles glow in turn: the purple and dark red circles, then the green one, each with a glossy highlight. A soft warm glow spreads from the centre."
+        },
+        {
+         "start": "0:06",
+         "end": "0:08",
+         "text": "All the circles are glossy; the thin gold lines around the outer oval become more visible."
+        },
+        {
+         "start": "0:08",
+         "end": "0:10",
+         "text": "The outer oval becomes a thicker, sparkling gold line that runs around the whole picture."
+        }
+       ]
+      }
+     ],
+     "drafted_by": "Claude Code (Claude, AI)",
+     "review_status": "AI-drafted, not reviewed",
+     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
     }
    }
   },
@@ -4767,7 +5007,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4807,7 +5047,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4847,7 +5087,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4887,7 +5127,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -4927,7 +5167,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5007,7 +5247,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5047,7 +5287,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5087,7 +5327,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5127,7 +5367,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5167,7 +5407,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5247,7 +5487,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5287,7 +5527,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5327,7 +5567,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5367,7 +5607,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5407,7 +5647,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5447,7 +5687,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5527,7 +5767,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5567,7 +5807,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5607,7 +5847,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5647,7 +5887,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5687,7 +5927,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5767,7 +6007,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5807,7 +6047,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5847,7 +6087,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5887,7 +6127,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5927,7 +6167,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -5967,7 +6207,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -6047,7 +6287,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -6087,7 +6327,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -6127,7 +6367,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -6167,7 +6407,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -6207,7 +6447,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,
@@ -6247,7 +6487,7 @@
      "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
     },
     "video_tool": {
-     "value": "Grok Imagine (in Grok's portal)",
+     "value": "Grok Imagine, in Grok's portal",
      "evidence": "human-stated",
      "stated_by": "Tuzi",
      "provisional": true,

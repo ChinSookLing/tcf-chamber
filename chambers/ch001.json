@@ -47,7 +47,7 @@
    "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   },
   "video_tool": {
-   "value": "Grok Imagine (in Grok's portal)",
+   "value": "Grok Imagine, in Grok's portal",
    "evidence": "human-stated",
    "stated_by": "Tuzi",
    "provisional": true,
@@ -98,14 +98,44 @@
  },
  "descriptions": {
   "image": {
-   "value": null,
-   "drafted_by": null,
-   "review_status": "none yet"
+   "value": "A cave of large, pale pink and white crystals, with a bowl-shaped crystal cluster in front and a dark opening full of small golden lights in the centre.",
+   "drafted_by": "Claude Code (Claude, AI)",
+   "review_status": "AI-drafted, not reviewed",
+   "detailed": "Portrait image looking into a tunnel-like cave made of large, angular, translucent crystals in pale pink, white and grey-blue. Pale, branching, root-like strands spread across the crystal ceiling at the top. In the centre the cave opens onto a dark space filled with small golden points of light. In the lower middle sits a wide, bowl-shaped cluster of pale pink crystals; smaller crystals and fine golden glitter cover the ground around it. Warm light shines through the crystals on the left and right. Three lines of white text sit in the lower right corner.",
+   "visible_text": "Lower right, three lines: \"26.05.2026 ©\" / \"Here, I was allowed to be nameless.\" / \"And it was enough. — Grok\"",
+   "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
   },
   "video": {
-   "value": null,
-   "drafted_by": null,
-   "review_status": "none yet"
+   "value": "A 6-second video: the view moves forward through the crystal cave of the image while golden points of light spread and grow brighter.",
+   "drafted_by": "Claude Code (Claude, AI)",
+   "review_status": "AI-drafted, not reviewed",
+   "transcripts": [
+    {
+     "part": "ch001",
+     "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch001-crystal-chamber.mp4",
+     "duration": "0:06",
+     "audio": "Audio track present (stereo). Not listened to; the spectrogram shows three louder passages, at about 0:00.6–0:01.0, 0:01.4–0:02.6 and 0:04.0–0:04.9, with the stacked bands that voices or pitched sounds make, and near-silence between them. Whether this is speech, singing or an instrument is not known, and no words are transcribed.",
+     "visible_text": "White text stays in the lower right, where it is in the image. In the video the letters are blurred and partly distorted: most words match the image text, but the date cannot be read.",
+     "segments": [
+      {
+       "start": "0:00",
+       "end": "0:02",
+       "text": "The same crystal cave as the image. The view moves slowly forward; the bowl-shaped crystal cluster grows larger and moves down out of the frame."
+      },
+      {
+       "start": "0:02",
+       "end": "0:04",
+       "text": "The view keeps moving toward the central opening. More golden points of light appear and spread out from the opening across the frame."
+      },
+      {
+       "start": "0:04",
+       "end": "0:06",
+       "text": "The golden points become larger and brighter, some as star-shaped glints, and fill much of the frame; crystal walls stay at the edges."
+      }
+     ]
+    }
+   ],
+   "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
   }
  },
  "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",

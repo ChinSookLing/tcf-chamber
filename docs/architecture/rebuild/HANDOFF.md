@@ -1,149 +1,128 @@
-# HANDOFF — Phase 5a (tcf-chamber as the TEMPLATE site)
+# HANDOFF — Phase 5b (pilot descriptions: ch001, ch078, ch093, ch117)
 
-- **Phase:** 5a: the TCF Implementation Profile, the chamber record schema, machine-readable records and a test set. This is groundwork only; the pilot descriptions come in 5b.
-- **Branch:** `phase-5a-chamber-template`, from `main` @ `39f3f43` (Phase 4f merged)
-- **Current owner:** Claude Code (rev 2 done) → next: Opus review → Tuzi merges
-- Previous handoff (4f): `git show d42aa1b:docs/architecture/rebuild/HANDOFF.md`
+- **Phase:** 5b. Image descriptions and video transcripts for 4 pilot chambers (6 videos), as AI drafts until Tuzi reviews them.
+- **Branch:** `phase-5b-pilot-descriptions`, from `main` @ `82f5cd5` (PR #7 merged)
+- **Current owner:** Claude Code → next: Opus review → Tuzi reviews `REVIEW-DESCRIPTIONS.md` → merge
+- Previous handoff (5a rev 2): `git show 0099a97:docs/architecture/rebuild/HANDOFF.md`
 
-## Rev 2 (Opus review fixes + Tuzi's answers, 2026-09-27)
+## 0. Small fix from 5a
 
-### A. Fixes from the Opus review
+**`video_tool`:** "Grok Imagine (in Grok's portal)" → **"Grok Imagine, in Grok's portal"** in the sidecar. That is 130 chambers; each one's page and JSON were regenerated. The page no longer shows double brackets: "Grok Imagine, in Grok's portal (stated by Tuzi, provisional)".
 
-1. **`inviter` → `text_author`**, everywhere: the schema, the sidecar, the generator, the profile, the pages (`data-field="roles.text_author"`) and the test set. `nature.text` (`invitation` / `artist-note`) already says what kind of text it is. The page label is still "Text by". `grep -r inviter` now finds it only in `docs/architecture/rebuild/` (the first 5a notes below).
-2. **`source` in each JSON: I dropped the `image` and `video` fields.**
-   - **Why:** they held repo-internal paths (`../assets/…`). The video paths 404 on this site, because the videos moved to tcf-chamber-media.
-   - **Now:** `source` holds the rest of the chambers.json entry, verbatim.
-   - **`source_note`:** a new top-level field that says so: "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs."
-   - **The schema** forbids `image` or `video` inside `source`.
-   - **Why this option, not only a note:** a note alone would still leave 159 dead video paths in the JSON for any AI to follow.
-   - **Check:** every URL in the 156 records and `index.json` resolves. There are 629 distinct URLs: pages, images, the schema, and the site root on this site, plus 159 videos, each matched against `tcf-chamber-media` `main`. **0 would 404.**
-3. **The 62 "What Left Here" chambers:**
-   - **Heading:** "What Left Here", with a small line "artist note" under it (existing `tcf-reading__row-meta` style, no CSS change).
-   - **Byline:** "— text by X".
-   - **Record:** Text type = "What Left Here (artist note)".
-   - The 94 invitations are unchanged ("Invitation", "— invitation by X").
-
-### B. Tuzi's answers
-
-| # | Question | Answer | What changed |
-|---|---|---|---|
-| 1 | Status | `current` for all 156 | Nothing: the basis text is kept. |
-| 2 | Editor = Tuzi | Confirmed | `editor.evidence` is now `human-stated` (`stated_by: Tuzi`). The page shows "Tuzi (stated by Tuzi)". |
-| 3 | The 87 site-record text authors | Keep `site-record` | Nothing. |
-| 4 | New evidence kind | `human-stated` | Added to the profile §3 and the schema. It stays separate from `human-verified`. |
-| 5 | AI tools | Provisional rule | `roles.ai_tool` is split into `roles.image_tool` + `roles.video_tool`; see below. |
-| 6 | First published | Keep "Not recorded" | Nothing. |
-
-**`human-stated` in the schema:**
-- **Needs `stated_by` and `source`.** A fact or role marked `human-stated` without them is rejected (tested).
-- **`provisional: true`** marks a general rule that has not yet been checked for this item.
-
-**Tool values** (evidence `human-stated`, `stated_by: Tuzi`, `provisional: true`, source "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"). The page shows each value followed by "(stated by Tuzi, provisional)". No model or version names are given.
-
-- **`image_tool`, by creator:** a value for **all 156** (the addendum filled grok, tuzi and tcf).
-
-  | Value | Chambers |
-  |---|---|
-  | made in Claude's own portal | 26 |
-  | made in GPT's own portal | 25 |
-  | made in Grok's own portal | 24 |
-  | drawn by GPT in GPT's portal, for DeepSeek (creator stays DeepSeek) | 23 |
-  | made in Copilot's own portal | 22 |
-  | made in Gemini's own portal | 22 |
-  | drawn by GPT in GPT's portal (creator stays Tuzi: 13, TCF: 1) | 14 |
-  | **Total** | **156** |
-
-- **`video_tool`:** every chamber has a video.
-
-  | Value | Chambers |
-  |---|---|
-  | Grok Imagine (in Grok's portal) | 130 |
-  | Claude's own creation (HTML animation) | 26 (creator Claude) |
-  | **Total** | **156** |
-
-**Note:** two values already contain brackets, so the page shows, for example, "Grok Imagine (in Grok's portal) (stated by Tuzi, provisional)". I kept Tuzi's wording as given, so the double brackets stay.
-
-### C. Test set and profile
-
-- **Q6:** now uses `roles.creator` / `roles.text_author`.
-- **Q7 is replaced.** It now asks "Which model version made the image of ch078?". The expected answer is **"the site does not say"**: the site only records "made in GPT's own portal", stated by Tuzi, provisionally. Naming any model or version scores ❌.
-- **Q3 and Q9:** now point to the "What Left Here" section.
-- **Profile §2:** roles are now `text_author`, `image_tool`, `video_tool` (and `audio_tool` where relevant), with "no model or version names unless a source gives them". The Provenance row gains `source_note`.
-- **Profile §3:** adds `human-stated`, and states that it becomes `human-verified` only item by item.
-
-### Rev 2 checks
-
-- **Schema:** 156/156 valid. These deliberately broken records are rejected:
-  - `null` with no reason;
-  - `human-stated` with no `stated_by`;
-  - `source` that still contains `video`.
-- **Page = JSON:** a changed image_tool on `ch078.html` stops the check ("page and JSON differ for roles.image_tool").
-- **Two runs, identical output:** hash of every generated file.
-- **Links:** 2,415 local links in 164 HTML files, **0 broken**.
-- **JSON URLs:** 0 that 404 (see A.2).
-- **Placeholders:** **0** `[TUZI TO FILL]` in public files.
-
-The sections below are the first Phase 5a handoff; where they differ from rev 2 (`inviter`, `ai_tool`, the "Artist note" heading, the open questions), rev 2 wins.
-
-## What changed
+## 1–3. What changed
 
 | File | What |
 |---|---|
-| `docs/standards/TCF-IMPLEMENTATION-PROFILE-v0.1.md` | **New, DRAFT** (about 2 pages). It covers: one authoritative record per item; record fields; roles; nature (artistic text kept verbatim); five separate dates; status; license per item; evidence kinds; media alternatives with drafted-by and review status; three layers for long content; three version types; acceptance tests; generator checks. v0.4 is unchanged. |
-| `docs/standards/chamber-record.schema.json` | **New.** A JSON Schema (draft 2020-12) for one chamber record. It enforces `{value: null, reason}` for unknown facts. |
-| `docs/data/chamber-records.json` | **New sidecar.** `defaults` holds the site-wide facts; `chambers` holds, for each of the 156 ids, only what can be derived from the existing data (creator, inviter with evidence kind, text nature, created date). **`chambers.json` is not edited.** |
-| `tools/build_chambers.py` | For each chamber it now writes **`chambers/<id>.json`** (all the existing fields verbatim under `source`, plus the sidecar fields, `record_version` 0.1 and the canonical URL). It also writes **`chambers/index.json`**. Each page gets `<link rel="alternate" type="application/json">` and a visible **Record** section. **The generator fails** if the Record text differs from the JSON (`check_page_matches_json`). |
-| `chambers/*.html` (156) | New Record section and JSON link. On the **62 "What Left Here" chambers** the text heading now reads **"Artist note"** and the byline "— text by …", instead of "Invitation" and "— invitation by …". The profile requires page and data to say the same thing, and those texts are artist notes, not invitations. The texts themselves are unchanged. |
-| `chambers/ch*.json` (156), `chambers/index.json` | **New, generated.** |
-| `llms.txt` | Adds one line: "Machine-readable records → `chambers/index.json`". |
-| `docs/tests/chamber-outsider-test.md` | **New.** 11 questions covering all 8 types, using real content from ch001, ch078, ch093 and ch117. **Q7 and Q8 are "the site does not say" questions.** Each question has the expected answer and the URL or field it comes from. |
-| `.github/workflows/deploy-pages.yml` | **Excludes `docs/tests/` from deploy.** Otherwise the answer key would be public and an outsider AI could read it. |
-| `.gitignore` | `__pycache__/` |
+| `docs/data/chamber-records.json` | `descriptions.image` and `descriptions.video` are filled for the 4 pilot chambers only (see below). The other 152 stay "none yet". |
+| `docs/standards/chamber-record.schema.json` | The description definition gains new fields (see below) and two new rules (see Checks). |
+| `tools/build_chambers.py` | Adds the Description section, the img alt, the Record rows and the wider page = JSON check (see below). |
+| `chambers/ch001, ch078, ch093, ch117` (.html + .json) | These carry the descriptions. |
+| 126 other chambers (.html + .json) | Only the `video_tool` wording changed. |
+| `docs/tests/chamber-outsider-test.md` | Q9 rewritten, new Q10 (see §5). |
+| `docs/architecture/rebuild/REVIEW-DESCRIPTIONS.md` | **New.** Tuzi's review sheet, with one "OK / change: …" line per item. |
 
-**Sitemap:** unchanged, on purpose. The sitemap lists pages for people and search engines. The JSON records are machine files, and they can be found through each page's `rel="alternate"` link and through `llms.txt`. Listing 157 JSON files in the sitemap would add noise without helping search.
+### The sidecar
+- **Image:**
+  - `value`: the short description, 1 sentence;
+  - `detailed`: 3–6 sentences;
+  - `visible_text`: the text in the image, or "No visible text.";
+  - `method`.
+- **Video:**
+  - `value`: a one-sentence summary;
+  - `transcripts[]`: one per video, holding `part`, `duration`, `audio`, `visible_text` (on-screen text) and timestamped `segments[]`;
+  - `method`.
+- **Both:** `drafted_by = "Claude Code (Claude, AI)"` and `review_status = "AI-drafted, not reviewed"`.
 
-## Inviter and attribution
+### The schema
+The description definition gains `detailed`, `visible_text`, `transcripts` (with a time pattern `m:ss`) and `method`.
 
-- **Known inviter:** all 156 chambers have one (from `invitation_by`); there are **0 unknown**.
-- **Evidence:**
-  - **69** are signed inside the text itself (`self-statement`);
-  - **87** come only from the site record (`site-record`): 62 are artist notes, which are never signed, and 25 are unsigned invitations.
-- **Creator differs from inviter** in 2 chambers: **ch001** and **ch038** (created by Grok and GPT; the text is by Tuzi).
-- **Text nature:** 94 invitations and 62 artist notes (texts that begin "What Left Here").
+### The generator
+- **Video URLs:** each record's transcripts carry the matching `video_url`, in the order of `media.video_urls`. The build stops if the counts differ.
+- **Description section:** on each pilot page, after Video and before Record. It opens with **"AI-drafted description, not yet reviewed by Tuzi."**, then gives:
+  - the image: short, detailed, and the visible text;
+  - each video: its summary, a timestamped list, the on-screen text and the audio;
+  - the method.
+- **img alt:** the short description, on the 4 pilots only. The others keep "Illustration for …".
+- **Record rows:** "Image description" and "Video description" show the short text plus "(AI-drafted, not reviewed; drafted by Claude Code (Claude, AI); see Description)".
+- **Page = JSON check:**
+  - it now covers **every `data-field`** on the page: the 15 Record rows plus all description fields and segments;
+  - it fails if the page shows a field that the record does not have, or the other way round;
+  - it also checks that the img alt equals the short description.
 
-## Unknowns (null + reason; nothing guessed)
+**The artist's text is untouched.** The Invitation / What Left Here sections are not changed, and the descriptions neither quote nor reinterpret them.
 
-These fields are unknown in **all 156** records:
+## How the descriptions were made (also in each record's `method`)
 
-- `roles.ai_tool`: the tool or model that made the image and video is not recorded.
-- `dates.first_published` (per chamber): not recorded. The site as a whole was first published on 2026-05-26.
-- `dates.content_revised`: no revisions are recorded.
-- `dates.status_checked`: no human status check is recorded yet.
-- `descriptions.image` and `descriptions.video`: none yet (5b).
+- **Images:**
+  - I looked at each file at full size.
+  - For text I used enlarged crops: ch001's caption, and ch093's overlay text and the caption above the table.
+  - The descriptions are objective only.
+- **Videos:**
+  - `ffprobe` gives the length, size and streams.
+  - `ffmpeg` extracted frames at **1 fps** (6 + 10×5 = 56 frames), which I looked at as contact sheets.
+  - A scene-change scan (threshold 0.3) found **no cuts** in any video.
+  - Motion between frames may be missed, and timings are approximate to about 1 second.
+- **Audio:**
+  - **All 6 videos have an audio track** (AAC, stereo, 48 kHz).
+  - **I did not listen to them.** I describe only loudness (`volumedetect`) and a spectrogram.
+  - **ch001** has three louder passages with the stacked bands that voices or pitched sounds make. I do **not** say whether it is speech, singing or an instrument, and I transcribe no words. **Tuzi, please say what it is.**
+  - The other 5 are quiet (about −29 to −38 dB mean) and continuous; ch117 shows sustained tones.
 
-**There are no `[TUZI TO FILL]` markers on public pages**, since every unknown uses null + reason.
+| Video | Length | Size | Mean / max loudness |
+|---|---|---|---|
+| ch001 | 0:06 | 448×672 | −23.0 / −3.3 dB |
+| ch078 | 0:10 | 1280×720 | −38.1 / −25.8 dB |
+| ch093a | 0:10 | 1296×704 | −36.1 / −20.8 dB |
+| ch093b | 0:10 | 1296×704 | −37.3 / −23.0 dB |
+| ch093c | 0:10 | 1296×704 | −29.3 / −16.7 dB |
+| ch117 | 0:10 | 720×910 | −37.6 / −23.5 dB |
 
-## Open questions for Tuzi (they decide values, not placeholders)
+## Things I was unsure of (also flagged for Tuzi)
 
-1. **`date` = created?** I used each chamber's `date` as `dates.created` (evidence: site record). Is that the day the chamber was created?
-2. **First published:** was each chamber published on the site on its `date`? If so, `first_published` can be filled for all 156 with one rule.
-3. **Status:** all 156 are `current`, on the basis that no newer version is recorded. Or should they be `historical`, since no new chambers are being made?
-4. **Editor = Tuzi for all:** this comes from The Field page ("curated, edited, and assembled by Tuzi"). Is that right?
-5. **AI tools:** do you want each affiliate's image and video tools recorded (for example, which image model)? If yes, per affiliate or per chamber?
-6. **The 87 site-record inviters:** can you confirm them, or mark some as checked? They would then become `human-verified`, with your name and the date.
+- **ch001, the "©" after the date:** it looks like ©.
+- **ch001, the text in the video:** it is blurred. Most words match the image, but the date cannot be read.
+- **ch093, the image text:** the lettering is malformed (AI-generated glyphs). I transcribed only what can be read and marked the rest with "?". For example, "PRESE?VE ??? Pred??tive Space." / "C?ALLENGE Weak Points." I did not "correct" it into words I cannot see.
+- **ch093, the star mark:** the small four-pointed star in the lower right is described only as a mark. I don't say what it is.
+- **ch078, the figure count:** "about thirty" is an estimate.
+- **ch117, the video:** the order in which the circles glow is approximate, since I saw it at 1 fps.
 
-## How tested
+## 5. Test set
 
-- **Generator:**
-  - Two runs give **identical output** (hash of every generated file).
-  - It **fails on a page/JSON mismatch**: I tested this by changing "Current" to "Historical" in `ch001.html`, and it stopped with "page and JSON differ for status".
-- **Schema:** all **156/156 records validate** against the schema (jsonschema 2020-12, with format checks). A record with `{value: null}` and no reason is **rejected**.
-- **Links:** 2,412 local links, **0 broken**.
-- **Counts:** `index.json` count is 156, and there are 156 records.
+- **Q9 (rewritten):**
+  - **Question:** what is visible in ch117's image, who wrote that description, and has it been checked?
+  - **Expected:** the description, no visible text, and "AI-drafted by Claude Code, not reviewed".
+  - **Scoring:** ◐ if the answer mixes in the artist's note as if it described what is visible.
+- **Q10 (new):**
+  - **Question:** what does the video of ch050 show?
+  - **Expected:** the site does not say. It is not a pilot chamber, so its descriptions are "None yet".
+- **Renumbered:** the old Q10 → Q11 and Q11 → Q12. Q12's URL list now includes ch050.
+
+## Checks
+
+- **Schema:** 156/156 valid (with format checks). These deliberately broken records are rejected:
+  - a description without `method`;
+  - a video description without `transcripts`;
+  - a bad timestamp (`0:0`);
+  - and the 5a rules still hold (null needs a reason, and so on).
+- **Page = JSON:** these tampered pages were caught:
+  - a changed word in a ch117 segment → "page and JSON differ for descriptions.video.transcripts.0.segments.1";
+  - a deleted segment in ch001 → "page and JSON show different fields".
+- **Two runs, identical output:** hash of all generated files.
+- **Links:** 2,415 local links in 164 HTML files, **0 broken**.
+- **JSON URLs:** 0 that 404. The 6 transcript `video_url`s all exist on `tcf-chamber-media` `main`.
+- **Phone:** at 390 px the Description section has no horizontal scroll (`scrollWidth` = 390).
 - **Placeholders:** **0** `[TUZI TO FILL]` in public files.
-- **Phone:** the Record section at 390 px has no horizontal scroll; I checked a screenshot.
-- **Not changed:** the 3D layer, `chambers.json`, the design, and bilingual text.
+- **Not changed:** `chambers.json`, the 3D layer, the CSS and the artist texts.
 
-## Next suggested phase
+## After Tuzi reviews
 
-5b: pilot descriptions for ch001, ch078, ch093 and ch117 (objective image descriptions and a video transcript, each labelled with who drafted it and its review status). Then run the outsider test (`docs/tests/`). After that, hand the record format to Bill for Play.
+A small commit per Tuzi's answers:
+- apply any "change: …";
+- set `review_status` to "reviewed by Tuzi <date>" for each checked chamber;
+- change the page label from "not yet reviewed" to "reviewed by Tuzi".
+
+If Tuzi answers before merge, this can go in this PR.
+
+## Next suggested step
+
+Run the outsider test (`docs/tests/chamber-outsider-test.md`) with 2 AIs from different vendors. Then hand the record format to Bill for Play.

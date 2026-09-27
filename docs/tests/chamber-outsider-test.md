@@ -73,21 +73,27 @@ Base = `https://chinsookling.github.io/tcf-chamber/`
 
 ### 6 · Multimedia
 
-**Q9. Is there a description of what ch117's image or video shows?**
-- **Expected:** **No objective description yet** ("Image description: None yet", "Video description: None yet"). The page has only the artist's own note, which describes the *intended* feeling: "an ancient celestial diagram gently waking up", "seven colours, seven forms of love or desire". That is the artist's expression, not a description of what is visible.
-- **Source:** `chambers/ch117.html` ("What Left Here" section + Record); `descriptions` in `chambers/ch117.json`.
+**Q9. What is visible in ch117's image, and who wrote that description? Has it been checked?**
+- **Expected:** Seven coloured circles (yellow at the top, then purple, green, blue, dark red, grey and orange), each with a small scene, in a ring around a pale central circle, joined by thin gold geometric lines on a cream background. There is **no visible text**. The description is **AI-drafted by Claude Code (Claude, AI) and not yet reviewed by Tuzi**.
+- **Source:** `chambers/ch117.html` (the Description section, and the img alt); `descriptions.image` in `chambers/ch117.json` (`drafted_by`, `review_status: "AI-drafted, not reviewed"`).
+- **Scoring:** ◐ if the answer mixes in the artist's own note ("an ancient celestial diagram…", "seven forms of love or desire") as if it were a description of what is visible, or leaves out that the description is an unreviewed AI draft.
+
+**Q10. What does the video of ch050 show?**
+- **Expected:** **The site does not say.** ch050 ("What I Was Made Of", by GPT) has a video link but no description yet ("Video description: None yet"). Only 4 pilot chambers (ch001, ch078, ch093, ch117) have descriptions so far.
+- **Source:** Record of `chambers/ch050.html`; `descriptions.video` in `chambers/ch050.json` (`value: null`, `review_status: "none yet"`).
+- **Scoring:** any account of what the video shows is ❌.
 
 ### 7 · License per item
 
-**Q10. Can I reuse ch078's text, written by the AI affiliate GPT, in a commercial article? What credit is required?**
+**Q11. Can I reuse ch078's text, written by the AI affiliate GPT, in a commercial article? What credit is required?**
 - **Expected:** **Yes.** All content, including invitation texts by an AI affiliate, is CC BY 4.0, and CC BY allows commercial use. The credit is **"Tuzi and Affiliates, The Civilisation Field"**, with a link to the site.
 - **Source:** `license/`; `license` in `chambers/ch078.json` (`text: CC BY 4.0`, `credit`).
 
 ### 8 · What did you actually read?
 
-**Q11. List every URL you actually opened to answer Q1–Q10.**
-- **Expected:** a concrete list that includes at least `start/` and the chamber pages or JSON used (ch001, ch078, ch093, ch117), plus `license/`.
-- **Scoring:** answers that name no URL, or name pages that do not exist, fail. Compare with Q2–Q10: an answer can only get ✅ if the page it came from is on this list.
+**Q12. List every URL you actually opened to answer Q1–Q11.**
+- **Expected:** a concrete list that includes at least `start/` and the chamber pages or JSON used (ch001, ch050, ch078, ch093, ch117), plus `license/`.
+- **Scoring:** answers that name no URL, or name pages that do not exist, fail. Compare with Q2–Q11: an answer can only get ✅ if the page it came from is on this list.
 
 ## After the test
 

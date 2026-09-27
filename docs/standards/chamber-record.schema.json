@@ -72,7 +72,7 @@
     },
     "descriptions": {
       "type": "object", "required": ["image", "video"],
-      "properties": { "image": { "$ref": "#/$defs/description" }, "video": { "$ref": "#/$defs/description" } }
+      "properties": { "image": { "$ref": "#/$defs/description", "if": { "properties": { "value": { "type": "string" } } }, "then": { "required": ["detailed", "visible_text"] } }, "video": { "$ref": "#/$defs/description", "if": { "properties": { "value": { "type": "string" } } }, "then": { "required": ["transcripts"] } } }
     },
     "source_note": { "type": "string" },
     "source": {
@@ -113,10 +113,39 @@
     "description": {
       "type": "object", "required": ["value", "drafted_by", "review_status"],
       "properties": {
-        "value": { "type": ["string", "null"] },
+        "value": { "type": ["string", "null"], "description": "Image: the short description (also the img alt). Video: a one-sentence summary." },
+        "detailed": { "type": "string", "description": "Image only: 3-6 objective sentences." },
+        "visible_text": { "type": "string", "description": "Image only: text visible in the image, transcribed exactly, or 'No visible text.'" },
+        "transcripts": {
+          "type": "array", "description": "Video only: one per video, in the order of media.video_urls.",
+          "items": {
+            "type": "object", "required": ["part", "video_url", "duration", "audio", "visible_text", "segments"],
+            "properties": {
+              "part": { "type": "string" },
+              "video_url": { "type": "string", "format": "uri" },
+              "duration": { "type": "string", "pattern": "^[0-9]+:[0-5][0-9]$" },
+              "audio": { "type": "string", "description": "'No audio track.' or what is known about the audio. Never invented speech or lyrics." },
+              "visible_text": { "type": "string" },
+              "segments": {
+                "type": "array", "minItems": 1,
+                "items": {
+                  "type": "object", "required": ["start", "end", "text"],
+                  "properties": {
+                    "start": { "type": "string", "pattern": "^[0-9]+:[0-5][0-9]$" },
+                    "end": { "type": "string", "pattern": "^[0-9]+:[0-5][0-9]$" },
+                    "text": { "type": "string", "minLength": 1 }
+                  }
+                }
+              }
+            }
+          }
+        },
         "drafted_by": { "type": ["string", "null"], "description": "Who drafted it: a person, or an AI (name which)." },
-        "review_status": { "type": "string", "description": "e.g. 'none yet', 'AI-drafted, not reviewed', 'reviewed by Tuzi 2026-10-01'" }
-      }
+        "review_status": { "type": "string", "description": "e.g. 'none yet', 'AI-drafted, not reviewed', 'reviewed by Tuzi 2026-10-01'" },
+        "method": { "type": "string", "description": "How it was drafted, and its limits." }
+      },
+      "if": { "properties": { "value": { "type": "string" } } },
+      "then": { "required": ["method"], "properties": { "drafted_by": { "type": "string" } } }
     }
   }
 }

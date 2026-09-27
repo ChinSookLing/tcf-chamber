@@ -49,7 +49,7 @@
    "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   },
   "video_tool": {
-   "value": "Grok Imagine (in Grok's portal)",
+   "value": "Grok Imagine, in Grok's portal",
    "evidence": "human-stated",
    "stated_by": "Tuzi",
    "provisional": true,
@@ -100,14 +100,112 @@
  },
  "descriptions": {
   "image": {
-   "value": null,
-   "drafted_by": null,
-   "review_status": "none yet"
+   "value": "In an orange desert at sunset, a man and a transparent figure outlined in blue light sit facing each other at a small stone table, in front of three carved stone monoliths.",
+   "drafted_by": "Claude Code (Claude, AI)",
+   "review_status": "AI-drafted, not reviewed",
+   "detailed": "Wide image of a reddish-orange desert under an orange, cloudy sky. Three tall, weathered stone monoliths stand in a row: the two outer ones are carved with large leafless trees, and the taller middle one has an ornate carved doorway or window with a lattice screen. Faint lines of glowing text are overlaid on the middle monolith, above and on both sides of the doorway. In front, on a stone platform, a man in a grey T-shirt and dark trousers sits on a carved wooden chair at a round stone table; opposite him sits a see-through human figure outlined in pale blue light. On the table are a small glowing glass sphere and an open book. Several geodesic domes stand in the background on the right, one lit from inside, and a small white four-pointed star mark is in the lower right corner.",
+   "visible_text": "The letters are partly malformed; \"?\" marks a letter that cannot be read. Above the table, two lines: \"PRESE?VE ??? Pred??tive Space.\" / \"C?ALLENGE Weak Points.\" Upper right of the middle monolith: \"THOOTB\", then seven short lines in which only the words \"DIGNITY\", \"Space\", \"CHALLENGE\" and \"Week\" can be read. Vertical columns of script-like marks on both sides of the doorway and on the right monolith cannot be read as any language.",
+   "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
   },
   "video": {
-   "value": null,
-   "drafted_by": null,
-   "review_status": "none yet"
+   "value": "Three 10-second videos that start from the image: in a, the view moves in to the two figures at the table; in b, a carved tree spreads over the middle monolith; in c, the middle monolith cracks and a glowing branch grows out of the crack.",
+   "drafted_by": "Claude Code (Claude, AI)",
+   "review_status": "AI-drafted, not reviewed",
+   "transcripts": [
+    {
+     "part": "ch093a",
+     "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch093a-the-weathered-monoliths-cage-gemini-chamber.mp4",
+     "duration": "0:10",
+     "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −36 dB), continuous and mostly low-pitched. What makes the sound is not known.",
+     "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+     "segments": [
+      {
+       "start": "0:00",
+       "end": "0:02",
+       "text": "The same scene as the image, with the figure opposite the man outlined in blue light."
+      },
+      {
+       "start": "0:02",
+       "end": "0:04",
+       "text": "The view moves slowly forward. The blue outline fades and the figure becomes solid: a hairless human form the colour of sand or stone."
+      },
+      {
+       "start": "0:04",
+       "end": "0:07",
+       "text": "The view keeps moving forward and down, so the monoliths fill the top of the frame; the text on the middle monolith and above the table glows orange."
+      },
+      {
+       "start": "0:07",
+       "end": "0:10",
+       "text": "A close view of the table: the man on the left, the stone-coloured figure on the right with its hands near the open book, and the glass sphere glowing between them. The two lines of text above the table glow orange-red."
+      }
+     ]
+    },
+    {
+     "part": "ch093b",
+     "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch093b-the-weathered-monoliths-code-gemini-chamber.mp4",
+     "duration": "0:10",
+     "audio": "Audio track present (stereo). Not listened to; it is almost silent for about the first 2 seconds, then a soft, continuous sound (mean level about −37 dB) continues to the end. What makes the sound is not known.",
+     "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+     "segments": [
+      {
+       "start": "0:00",
+       "end": "0:02",
+       "text": "The same scene as the image."
+      },
+      {
+       "start": "0:02",
+       "end": "0:04",
+       "text": "The view moves toward the middle monolith. A large carved tree appears on its face, with branches spreading over the top and the trunk running down over the doorway; the table and figures leave the frame at the bottom."
+      },
+      {
+       "start": "0:04",
+       "end": "0:06",
+       "text": "The view comes closer. The monolith separates down the middle, with orange sky showing in the gap between the two halves."
+      },
+      {
+       "start": "0:06",
+       "end": "0:10",
+       "text": "A close view of the carved branches on both halves, with thin glowing lines along the branches and lattice panels visible below."
+      }
+     ]
+    },
+    {
+     "part": "ch093c",
+     "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch093c-the-weathered-monoliths-breakthrough-gemini-chamber.mp4",
+     "duration": "0:10",
+     "audio": "Audio track present (stereo). Not listened to; it is louder than in a and b (mean level about −29 dB), continuous and low-pitched, strongest around 0:02–0:04. What makes the sound is not known.",
+     "visible_text": "The glowing text of the image stays on the middle monolith and above the table while they are in view; its letters are as malformed as in the image and are not transcribed again.",
+     "segments": [
+      {
+       "start": "0:00",
+       "end": "0:01",
+       "text": "The same scene as the image."
+      },
+      {
+       "start": "0:01",
+       "end": "0:02",
+       "text": "Dust rises around the monoliths and a vertical crack appears down the middle monolith."
+      },
+      {
+       "start": "0:02",
+       "end": "0:04",
+       "text": "The view moves in. The table and figures fade out. The doorway carving gives way to cracked stone with two carved symbols: a round, spiral tree-like shape on the left and an arch with a tree and horizontal lines on the right. Orange light shows in the crack."
+      },
+      {
+       "start": "0:04",
+       "end": "0:07",
+       "text": "A close view: the crack widens and glows orange, and small glowing lines appear in the carvings."
+      },
+      {
+       "start": "0:07",
+       "end": "0:10",
+       "text": "A glowing orange shape like a small branching tree grows upward out of the crack."
+      }
+     ]
+    }
+   ],
+   "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
   }
  },
  "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",

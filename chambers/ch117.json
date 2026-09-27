@@ -47,7 +47,7 @@
    "source": "Tuzi, 2026-09-27, general rule; to be checked chamber by chamber"
   },
   "video_tool": {
-   "value": "Grok Imagine (in Grok's portal)",
+   "value": "Grok Imagine, in Grok's portal",
    "evidence": "human-stated",
    "stated_by": "Tuzi",
    "provisional": true,
@@ -98,14 +98,54 @@
  },
  "descriptions": {
   "image": {
-   "value": null,
-   "drafted_by": null,
-   "review_status": "none yet"
+   "value": "Seven coloured circles, each holding a small symbolic scene, arranged in a ring around a pale central circle and joined by thin gold geometric lines on a cream background.",
+   "drafted_by": "Claude Code (Claude, AI)",
+   "review_status": "AI-drafted, not reviewed",
+   "detailed": "Portrait image on a textured cream background. A large thin oval outline encloses seven coloured circles in a ring: yellow at the top, then, going clockwise, purple, green, blue, dark red, grey and orange. Each circle holds a small scene: yellow, an arched doorway with a winding path into a bowl shape; purple, nested arches above a stepped pyramid; green, a terraced landscape with a winding path above an open book; blue, a bright star above a faceted pyramid shape; dark red, a triangle with a small flame on a block inside it and a small ring above; grey, a woven grid pattern above wavy flowing lines; orange, an arched bridge above a winding stream, with overlapping circle outlines at the top. At the centre is a pale circle with a pattern of overlapping circles, surrounded by a star-shaped figure made of thin gold lines. Small coloured beads and gold dots sit on the lines, and a vertical gold line runs from top to bottom, with a small diamond shape near the bottom.",
+   "visible_text": "No visible text.",
+   "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
   },
   "video": {
-   "value": null,
-   "drafted_by": null,
-   "review_status": "none yet"
+   "value": "A 10-second video of the same diagram: the coloured circles take on a glossy glow one after another, and the outer oval becomes a thicker, sparkling gold line.",
+   "drafted_by": "Claude Code (Claude, AI)",
+   "review_status": "AI-drafted, not reviewed",
+   "transcripts": [
+    {
+     "part": "ch117",
+     "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch117-seven-geometry-tcf-chamber.mp4",
+     "duration": "0:10",
+     "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
+     "visible_text": "No visible text.",
+     "segments": [
+      {
+       "start": "0:00",
+       "end": "0:02",
+       "text": "The same diagram as the image, with small shifts of framing."
+      },
+      {
+       "start": "0:02",
+       "end": "0:03",
+       "text": "The yellow circle at the top grows brighter and takes on a glossy highlight."
+      },
+      {
+       "start": "0:03",
+       "end": "0:06",
+       "text": "The other circles glow in turn: the purple and dark red circles, then the green one, each with a glossy highlight. A soft warm glow spreads from the centre."
+      },
+      {
+       "start": "0:06",
+       "end": "0:08",
+       "text": "All the circles are glossy; the thin gold lines around the outer oval become more visible."
+      },
+      {
+       "start": "0:08",
+       "end": "0:10",
+       "text": "The outer oval becomes a thicker, sparkling gold line that runs around the whole picture."
+      }
+     ]
+    }
+   ],
+   "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
   }
  },
  "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
