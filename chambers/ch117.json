@@ -106,15 +106,15 @@
    "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
   },
   "video": {
-   "value": "A 10-second video of the same diagram: the coloured circles take on a glossy glow one after another, and the outer oval becomes a thicker, sparkling gold line.",
+   "value": "A 10-second video of the same diagram: the coloured circles take on a glossy glow at different moments, not in a set order, and the outer oval becomes a thicker, sparkling gold line.",
    "drafted_by": "Claude Code (Claude, AI)",
-   "review_status": "AI-drafted, not reviewed",
+   "review_status": "reviewed by Tuzi 2026-09-27",
    "transcripts": [
     {
      "part": "ch117",
      "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch117-seven-geometry-tcf-chamber.mp4",
      "duration": "0:10",
-     "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
+     "audio": "Audio track present (stereo). Not listened to by the drafting AI; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
      "visible_text": "No visible text.",
      "segments": [
       {
@@ -124,13 +124,8 @@
       },
       {
        "start": "0:02",
-       "end": "0:03",
-       "text": "The yellow circle at the top grows brighter and takes on a glossy highlight."
-      },
-      {
-       "start": "0:03",
        "end": "0:06",
-       "text": "The other circles glow in turn: the purple and dark red circles, then the green one, each with a glossy highlight. A soft warm glow spreads from the centre."
+       "text": "The coloured circles grow brighter and take on a glossy highlight at different moments, not in a set order. A soft warm glow spreads from the centre."
       },
       {
        "start": "0:06",
@@ -145,7 +140,13 @@
      ]
     }
    ],
-   "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
+   "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed.",
+   "intent_note": {
+    "value": "The non-sequential glow is intentional",
+    "evidence": "human-stated",
+    "stated_by": "Tuzi",
+    "source": "Tuzi, 2026-09-27, Phase 5b review (watched the video)"
+   }
   }
  },
  "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",

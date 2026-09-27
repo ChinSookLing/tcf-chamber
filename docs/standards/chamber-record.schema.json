@@ -142,7 +142,8 @@
         },
         "drafted_by": { "type": ["string", "null"], "description": "Who drafted it: a person, or an AI (name which)." },
         "review_status": { "type": "string", "description": "e.g. 'none yet', 'AI-drafted, not reviewed', 'reviewed by Tuzi 2026-10-01'" },
-        "method": { "type": "string", "description": "How it was drafted, and its limits." }
+        "method": { "type": "string", "description": "How it was drafted, and its limits." },
+        "intent_note": { "$ref": "#/$defs/fact", "description": "The creator's stated intent, kept apart from the objective description." }
       },
       "if": { "properties": { "value": { "type": "string" } } },
       "then": { "required": ["method"], "properties": { "drafted_by": { "type": "string" } } }

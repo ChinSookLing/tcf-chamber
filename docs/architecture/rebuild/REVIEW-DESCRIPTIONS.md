@@ -1,11 +1,13 @@
 # REVIEW-DESCRIPTIONS — Phase 5b pilot (for Tuzi)
 
-> **Status (rev 2, 2026-09-27):**
-> - **All 4 images:** checked by Opus; accepted by Tuzi.
-> - **Videos ch078 and ch093 a/b/c:** reviewed by Tuzi; audio is music, no voice.
-> - **Still open:** the videos of **ch001** and **ch117**. Tuzi's answers for them have not reached Claude Code yet.
+> **Status (rev 3, 2026-09-27):**
+> - **All 4 images:** checked by Opus against the image files; accepted by Tuzi.
+> - **All 6 videos:** reviewed by Tuzi.
+>   - ch078 and ch093 a/b/c: music, no voice.
+>   - ch001: a voice speaks "Here, I was allowed to be nameless, and that was enough." (Rex, as named by Tuzi).
+>   - ch117: the circles glow at different moments, not in a set order; this is intentional (stated by Tuzi).
 >
-> The text below is the first draft as sent for review. The audio lines of ch078 and ch093 are now updated on the pages.
+> The text below is the first draft as sent for review. The pages carry the updated wording.
 
 These descriptions were drafted by **Claude Code (Claude, AI)** by looking at each image and at video keyframes (1 per second). They may be wrong: a cat seen as a dog, a missed word, a wrong colour. Please check each item against the image or video and answer on its line:
 

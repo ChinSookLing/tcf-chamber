@@ -119,7 +119,7 @@
       {
        "part": "ch001",
        "duration": "0:06",
-       "audio": "Audio track present (stereo). Not listened to; the spectrogram shows three louder passages, at about 0:00.6–0:01.0, 0:01.4–0:02.6 and 0:04.0–0:04.9, with the stacked bands that voices or pitched sounds make, and near-silence between them. Whether this is speech, singing or an instrument is not known, and no words are transcribed.",
+       "audio": "Audio track present (stereo). Measured: the spectrogram shows three louder passages, at about 0:00.6–0:01.0, 0:01.4–0:02.6 and 0:04.0–0:04.9, with the stacked bands that voices or pitched sounds make, and near-silence between them. A voice speaks: \"Here, I was allowed to be nameless, and that was enough.\" The voice is Rex (as named by Tuzi). Transcribed by Tuzi (listened).",
        "visible_text": "White text stays in the lower right, where it is in the image. In the video the letters are blurred and partly distorted: most words match the image text, but the date cannot be read.",
        "segments": [
         {
@@ -141,8 +141,8 @@
       }
      ],
      "drafted_by": "Claude Code (Claude, AI)",
-     "review_status": "AI-drafted, not reviewed",
-     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
+     "review_status": "reviewed by Tuzi 2026-09-27",
+     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed. The spoken line in the audio was transcribed by Tuzi, who listened."
     }
    }
   },
@@ -4943,12 +4943,12 @@
      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
     },
     "video": {
-     "value": "A 10-second video of the same diagram: the coloured circles take on a glossy glow one after another, and the outer oval becomes a thicker, sparkling gold line.",
+     "value": "A 10-second video of the same diagram: the coloured circles take on a glossy glow at different moments, not in a set order, and the outer oval becomes a thicker, sparkling gold line.",
      "transcripts": [
       {
        "part": "ch117",
        "duration": "0:10",
-       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
+       "audio": "Audio track present (stereo). Not listened to by the drafting AI; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
        "visible_text": "No visible text.",
        "segments": [
         {
@@ -4958,13 +4958,8 @@
         },
         {
          "start": "0:02",
-         "end": "0:03",
-         "text": "The yellow circle at the top grows brighter and takes on a glossy highlight."
-        },
-        {
-         "start": "0:03",
          "end": "0:06",
-         "text": "The other circles glow in turn: the purple and dark red circles, then the green one, each with a glossy highlight. A soft warm glow spreads from the centre."
+         "text": "The coloured circles grow brighter and take on a glossy highlight at different moments, not in a set order. A soft warm glow spreads from the centre."
         },
         {
          "start": "0:06",
@@ -4980,8 +4975,14 @@
       }
      ],
      "drafted_by": "Claude Code (Claude, AI)",
-     "review_status": "AI-drafted, not reviewed",
-     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
+     "review_status": "reviewed by Tuzi 2026-09-27",
+     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed.",
+     "intent_note": {
+      "value": "The non-sequential glow is intentional",
+      "evidence": "human-stated",
+      "stated_by": "Tuzi",
+      "source": "Tuzi, 2026-09-27, Phase 5b review (watched the video)"
+     }
     }
    }
   },

@@ -2,8 +2,76 @@
 
 - **Phase:** 5b. Image descriptions and video transcripts for 4 pilot chambers (6 videos), as AI drafts until Tuzi reviews them.
 - **Branch:** `phase-5b-pilot-descriptions`, from `main` @ `82f5cd5` (PR #7 merged)
-- **Current owner:** Claude Code (rev 2 done) → next: the missing ch001/ch117 video review → Opus review → Tuzi merges
+- **Current owner:** Claude Code (rev 3 done) → next: Opus review → Tuzi merges
 - Previous handoff (5a rev 2): `git show 0099a97:docs/architecture/rebuild/HANDOFF.md`
+
+## Rev 3: Tuzi's review, items 1–6 (2026-09-27)
+
+This is the Opus message that rev 2 was missing. Its item 4 ("ch078 and ch093: keep AI-drafted, not reviewed") had **already been replaced** by the addendum applied in rev 2, where Tuzi watched and listened to them. So ch078 and ch093 stay "reviewed by Tuzi 2026-09-27". Everything else is applied as written.
+
+### 1. ch001 video: audio
+- **Replaced:** "Whether this is speech, singing or an instrument is not known, and no words are transcribed."
+- **With:** 'A voice speaks: "Here, I was allowed to be nameless, and that was enough." The voice is Rex (as named by Tuzi). Transcribed by Tuzi (listened).'
+- **Loudness and spectrogram note:** kept. "Not listened to;" → "Measured:", as in rev 2.
+- **The two wordings stay different, on purpose:**
+  - the image text reads "And it was enough.";
+  - the spoken line says "and that was enough."
+- **Rex:** nothing is added beyond "as named by Tuzi".
+- **Method:** the ch001 video method gains "The spoken line in the audio was transcribed by Tuzi, who listened."
+- **`review_status`:** "reviewed by Tuzi 2026-09-27".
+
+### 2. ch117 video
+- **No order implied any more:**
+  - summary: "take on a glossy glow **at different moments, not in a set order**";
+  - the old segments 0:02–0:03 ("the yellow circle…") and 0:03–0:06 ("in turn… then the green one") are merged into one: "0:02–0:06 The coloured circles grow brighter and take on a glossy highlight at different moments, not in a set order. A soft warm glow spreads from the centre."
+  - `grep` finds no "one after another", "in turn" or "then the" left.
+- **Intent, kept apart from the objective description:**
+  - stored as `descriptions.video.intent_note` (evidence `human-stated`, `stated_by: Tuzi`);
+  - shown on the page as "**Intent (not part of the description):** The non-sequential glow is intentional (stated by Tuzi)."
+  - The schema adds `intent_note` (a fact, so `stated_by` and `source` are required when it is human-stated).
+- **`review_status`:** "reviewed by Tuzi 2026-09-27".
+- **Wording, for Opus to check:** Tuzi watched ch117 but said nothing about its audio. Its audio line said "Not listened to", which now sits next to "reviewed by Tuzi", so I changed it to "**Not listened to by the drafting AI**". The audio stays "not known".
+
+### 3. Images
+All 4 stay "checked by a second AI (Opus) against the image file; accepted by Tuzi 2026-09-27". None says "reviewed by Tuzi".
+
+### 5. Page label
+- **Top line:** the old "not yet reviewed by Tuzi" is replaced by one of three:
+  - if all parts are unreviewed: "not yet reviewed by Tuzi";
+  - if all parts have the same status: "review status: X";
+  - otherwise: "**AI-drafted description. Review status varies by item; see each part.**" All 4 pilots now show this one.
+- **Each part:** Image and Video each have their own line: "Drafted by Claude Code (Claude, AI) · review status: …".
+- **Page = JSON:** it covers these new fields too (`descriptions.image.drafted_by`, `.review_status`, `descriptions.video.*`, `intent_note`). The combined status line from rev 2 is removed.
+
+### 6. Test set
+- **Q9:** now asks about ch117's image **and video**. The expected answer includes:
+  - "at different moments, not in a set order";
+  - the intent note;
+  - the two review statuses.
+- **Scoring:**
+  - ❌ if the answer claims the circles glow in an order;
+  - ◐ if it says the image description was reviewed by Tuzi.
+- Nothing else was added.
+
+### Final status (after rev 3)
+
+| Chamber | Image | Video |
+|---|---|---|
+| ch001 | checked by Opus; accepted by Tuzi 2026-09-27 | reviewed by Tuzi 2026-09-27 · spoken line transcribed by Tuzi (voice: Rex, as named by Tuzi) |
+| ch078 | checked by Opus; accepted by Tuzi 2026-09-27 | reviewed by Tuzi 2026-09-27 · music, no voice |
+| ch093 | checked by Opus; accepted by Tuzi 2026-09-27 | a, b, c: reviewed by Tuzi 2026-09-27 · music, no voice |
+| ch117 | checked by Opus; accepted by Tuzi 2026-09-27 | reviewed by Tuzi 2026-09-27 · non-sequential glow intentional (stated by Tuzi) · audio not known |
+
+### Rev 3 checks
+
+- **Schema:** 156/156 valid, with format checks. An `intent_note` without `stated_by` is rejected.
+- **Page = JSON:** three tampered pages were caught:
+  - the ch117 intent note ("stated by Opus");
+  - the ch001 spoken line ("and it was enough");
+  - the ch093 video status ("checked by Tuzi").
+- **Two runs, identical output.**
+- **Links:** 2,415 local links, **0 broken**.
+- **JSON URLs:** 0 that 404.
 
 ## Rev 2: Tuzi's review (2026-09-27)
 
@@ -31,7 +99,7 @@
 | ch093 | checked by Opus; accepted by Tuzi 2026-09-27 | a, b, c: reviewed by Tuzi 2026-09-27 · audio: music, no voice |
 | ch117 | checked by Opus; accepted by Tuzi 2026-09-27 | **AI-drafted, not reviewed** (see below) |
 
-**Not applied: ch001 and ch117 videos.**
+**Not applied in rev 2 (done in rev 3): ch001 and ch117 videos.**
 - **Why:** the addendum says it "replaces item 4 of the previous message", and that it leaves "every video in the 4 pilot chambers … reviewed by Tuzi". But that earlier message (items 1–3, presumably ch001 and ch117) did not reach me.
 - **What is missing:** I do not have Tuzi's answers for those two videos, including what ch001's audio is (its three louder passages).
 - **So:** I left them as "AI-drafted, not reviewed" rather than guess. Their pages say "partly reviewed by Tuzi".

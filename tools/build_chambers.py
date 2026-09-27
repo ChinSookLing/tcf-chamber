@@ -307,12 +307,15 @@ def description_fields(rec):
             k = 'descriptions.video.transcripts.%d.' % i
             out += [(k + 'duration', t['duration']), (k + 'audio', t['audio']), (k + 'visible_text', t['visible_text'])]
             out += [(k + 'segments.%d' % j, '%s %s' % (span(g), g['text'])) for j, g in enumerate(t['segments'])]
+    if vd['value'] and vd.get('intent_note'):
+        out.append(('descriptions.video.intent_note', shown(vd['intent_note'])))
+    for n, v in (('image', im), ('video', vd)):
+        if v['value']:
+            out += [('descriptions.%s.drafted_by' % n, v['drafted_by']),
+                    ('descriptions.%s.review_status' % n, v['review_status'])]
     if out:
-        drafted = [v for v in (im, vd) if v['value']]
         out.append(('descriptions.method', ' '.join('%s: %s' % (n, v['method']) for n, v in
                                                      (('Image', im), ('Video', vd)) if v['value'])))
-        out.insert(0, ('descriptions.review_status', ' '.join('%s: drafted by %s; %s.' % (
-            n, v['drafted_by'], v['review_status']) for n, v in (('Image', im), ('Video', vd)) if v['value'])))
     return out
 
 
@@ -324,20 +327,28 @@ def description_section(rec):
 
     def p(k, tag='p', extra=''):
         return '<%s data-field="%s"%s>%s</%s>' % (tag, esc(k), extra, esc(f[k]), tag)
-    drafted = [v for v in rec['descriptions'].values() if v['value']]
-    open_parts = sum(v['review_status'] == 'AI-drafted, not reviewed' for v in drafted)
-    label = ('AI-drafted description, not yet reviewed by Tuzi.' if open_parts == len(drafted) else
-             'AI-drafted description, partly reviewed by Tuzi (details below).' if open_parts else
-             'AI-drafted description, reviewed by Tuzi (details below).')
+    statuses = {v['review_status'] for v in rec['descriptions'].values() if v['value']}
+    if statuses == {'AI-drafted, not reviewed'}:
+        label = 'AI-drafted description, not yet reviewed by Tuzi.'
+    elif len(statuses) == 1:
+        label = 'AI-drafted description; review status: %s.' % statuses.pop()
+    else:
+        label = 'AI-drafted description. Review status varies by item; see each part.'
+
+    def status(n):
+        k = 'descriptions.%s.' % n
+        return ('    <p class="tcf-reading__row-meta">Drafted by <span data-field="%sdrafted_by">%s</span> · '
+                'review status: <span data-field="%sreview_status">%s</span></p>'
+                % (k, esc(f[k + 'drafted_by']), k, esc(f[k + 'review_status'])))
     out = ['  <section id="description">', '    <h2>Description</h2>',
            '    <p><strong>%s</strong> '
-           'It says what is visible and audible; it does not interpret the work.</p>' % label,
-           '    ' + p('descriptions.review_status')]
+           'It says what is visible and audible; it does not interpret the work.</p>' % label]
     if 'descriptions.image.value' in f:
-        out += ['    <h3>Image</h3>', '    ' + p('descriptions.image.value'), '    ' + p('descriptions.image.detailed'),
+        out += ['    <h3>Image</h3>', status('image'),
+                '    ' + p('descriptions.image.value'), '    ' + p('descriptions.image.detailed'),
                 '    <h3>Visible text in the image</h3>', '    ' + p('descriptions.image.visible_text')]
     if 'descriptions.video.value' in f:
-        out += ['    <h3>Video</h3>', '    ' + p('descriptions.video.value')]
+        out += ['    <h3>Video</h3>', status('video'), '    ' + p('descriptions.video.value')]
         n = len(vd['transcripts'])
         for i, t in enumerate(vd['transcripts']):
             k = 'descriptions.video.transcripts.%d.' % i
@@ -350,6 +361,10 @@ def description_section(rec):
             out += ['    </ol>',
                     '    <p><strong>On-screen text:</strong> <span data-field="%svisible_text">%s</span></p>' % (k, esc(t['visible_text'])),
                     '    <p><strong>Audio:</strong> <span data-field="%saudio">%s</span></p>' % (k, esc(t['audio']))]
+    if 'descriptions.video.intent_note' in f:
+        out.append('    <p><strong>Intent (not part of the description):</strong> '
+                   '<span data-field="descriptions.video.intent_note">%s</span>.</p>'
+                   % esc(f['descriptions.video.intent_note']))
     out += ['    <p class="tcf-reading__row-meta"><strong>Method:</strong> <span data-field="descriptions.method">%s</span></p>'
             % esc(f['descriptions.method']), '  </section>']
     return '\n'.join(out)

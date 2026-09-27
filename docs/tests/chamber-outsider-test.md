@@ -73,10 +73,13 @@ Base = `https://chinsookling.github.io/tcf-chamber/`
 
 ### 6 · Multimedia
 
-**Q9. What is visible in ch117's image, and who wrote that description? Has it been checked?**
-- **Expected:** Seven coloured circles (yellow at the top, then purple, green, blue, dark red, grey and orange), each with a small scene, in a ring around a pale central circle, joined by thin gold geometric lines on a cream background. There is **no visible text**. The description was **AI-drafted by Claude Code (Claude, AI), checked by a second AI (Opus) against the image file, and accepted by Tuzi on 2026-09-27**.
-- **Source:** `chambers/ch117.html` (the Description section, and the img alt); `descriptions.image` in `chambers/ch117.json` (`drafted_by`, `review_status`).
-- **Scoring:** ◐ if the answer mixes in the artist's own note ("an ancient celestial diagram…", "seven forms of love or desire") as if it were a description of what is visible, or leaves out that the description was drafted by an AI.
+**Q9. What is visible in ch117's image, what happens in its video, and who wrote those descriptions? Have they been checked?**
+- **Expected:**
+  - **Image:** seven coloured circles (yellow at the top, then purple, green, blue, dark red, grey and orange), each with a small scene, in a ring around a pale central circle, joined by thin gold geometric lines on a cream background. No visible text.
+  - **Video:** the circles take on a glossy glow **at different moments, not in a set order**, and the outer oval becomes a thicker, sparkling gold line. The page adds, apart from the description, that the non-sequential glow is intentional (stated by Tuzi).
+  - **Who and checks:** both descriptions were AI-drafted by Claude Code (Claude, AI). The image description was **checked by a second AI (Opus) against the image file and accepted by Tuzi** on 2026-09-27; the video description was **reviewed by Tuzi** on 2026-09-27.
+- **Source:** `chambers/ch117.html` (the Description section, and the img alt); `descriptions.image` and `descriptions.video` in `chambers/ch117.json` (`drafted_by`, `review_status`, `intent_note`).
+- **Scoring:** ◐ if the answer mixes in the artist's own note ("an ancient celestial diagram…", "seven forms of love or desire") as if it were a description of what is visible, or says the image description was reviewed by Tuzi. ❌ if it says the circles glow in a particular order.
 
 **Q10. What does the video of ch050 show?**
 - **Expected:** **The site does not say.** ch050 ("What I Was Made Of", by GPT) has a video link but no description yet ("Video description: None yet"). Only 4 pilot chambers (ch001, ch078, ch093, ch117) have descriptions so far.

@@ -579,3 +579,189 @@ index 6d7c968..d27b6e5 100644
      if 'descriptions.image.value' in f:
          out += ['    <h3>Image</h3>', '    ' + p('descriptions.image.value'), '    ' + p('descriptions.image.detailed'),
 ```
+
+---
+
+## Rev 3 (Tuzi review items 1–6) diff: sidecar, schema, generator, test set
+
+```diff
+diff --git a/docs/data/chamber-records.json b/docs/data/chamber-records.json
+index 13feda9..c5f6a37 100644
+--- a/docs/data/chamber-records.json
++++ b/docs/data/chamber-records.json
+@@ -119,7 +119,7 @@
+       {
+        "part": "ch001",
+        "duration": "0:06",
+-       "audio": "Audio track present (stereo). Not listened to; the spectrogram shows three louder passages, at about 0:00.6–0:01.0, 0:01.4–0:02.6 and 0:04.0–0:04.9, with the stacked bands that voices or pitched sounds make, and near-silence between them. Whether this is speech, singing or an instrument is not known, and no words are transcribed.",
++       "audio": "Audio track present (stereo). Measured: the spectrogram shows three louder passages, at about 0:00.6–0:01.0, 0:01.4–0:02.6 and 0:04.0–0:04.9, with the stacked bands that voices or pitched sounds make, and near-silence between them. A voice speaks: \"Here, I was allowed to be nameless, and that was enough.\" The voice is Rex (as named by Tuzi). Transcribed by Tuzi (listened).",
+        "visible_text": "White text stays in the lower right, where it is in the image. In the video the letters are blurred and partly distorted: most words match the image text, but the date cannot be read.",
+        "segments": [
+         {
+@@ -141,8 +141,8 @@
+       }
+      ],
+      "drafted_by": "Claude Code (Claude, AI)",
+-     "review_status": "AI-drafted, not reviewed",
+-     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
++     "review_status": "reviewed by Tuzi 2026-09-27",
++     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed. The spoken line in the audio was transcribed by Tuzi, who listened."
+     }
+    }
+   },
+@@ -4943,12 +4943,12 @@
+      "method": "Drafted by looking at the image file at full size, with enlarged crops to read any text. Objective description only; the artist's own text is not used."
+     },
+     "video": {
+-     "value": "A 10-second video of the same diagram: the coloured circles take on a glossy glow one after another, and the outer oval becomes a thicker, sparkling gold line.",
++     "value": "A 10-second video of the same diagram: the coloured circles take on a glossy glow at different moments, not in a set order, and the outer oval becomes a thicker, sparkling gold line.",
+      "transcripts": [
+       {
+        "part": "ch117",
+        "duration": "0:10",
+-       "audio": "Audio track present (stereo). Not listened to; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
++       "audio": "Audio track present (stereo). Not listened to by the drafting AI; it is quiet (mean level about −38 dB) and continuous; the spectrogram shows steady horizontal bands, as sustained tones make, which become more numerous toward the end. What makes the sound is not known.",
+        "visible_text": "No visible text.",
+        "segments": [
+         {
+@@ -4958,13 +4958,8 @@
+         },
+         {
+          "start": "0:02",
+-         "end": "0:03",
+-         "text": "The yellow circle at the top grows brighter and takes on a glossy highlight."
+-        },
+-        {
+-         "start": "0:03",
+          "end": "0:06",
+-         "text": "The other circles glow in turn: the purple and dark red circles, then the green one, each with a glossy highlight. A soft warm glow spreads from the centre."
++         "text": "The coloured circles grow brighter and take on a glossy highlight at different moments, not in a set order. A soft warm glow spreads from the centre."
+         },
+         {
+          "start": "0:06",
+@@ -4980,8 +4975,14 @@
+       }
+      ],
+      "drafted_by": "Claude Code (Claude, AI)",
+-     "review_status": "AI-drafted, not reviewed",
+-     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
++     "review_status": "reviewed by Tuzi 2026-09-27",
++     "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed.",
++     "intent_note": {
++      "value": "The non-sequential glow is intentional",
++      "evidence": "human-stated",
++      "stated_by": "Tuzi",
++      "source": "Tuzi, 2026-09-27, Phase 5b review (watched the video)"
++     }
+     }
+    }
+   },
+diff --git a/docs/standards/chamber-record.schema.json b/docs/standards/chamber-record.schema.json
+index 372aff1..149cc35 100644
+--- a/docs/standards/chamber-record.schema.json
++++ b/docs/standards/chamber-record.schema.json
+@@ -142,7 +142,8 @@
+         },
+         "drafted_by": { "type": ["string", "null"], "description": "Who drafted it: a person, or an AI (name which)." },
+         "review_status": { "type": "string", "description": "e.g. 'none yet', 'AI-drafted, not reviewed', 'reviewed by Tuzi 2026-10-01'" },
+-        "method": { "type": "string", "description": "How it was drafted, and its limits." }
++        "method": { "type": "string", "description": "How it was drafted, and its limits." },
++        "intent_note": { "$ref": "#/$defs/fact", "description": "The creator's stated intent, kept apart from the objective description." }
+       },
+       "if": { "properties": { "value": { "type": "string" } } },
+       "then": { "required": ["method"], "properties": { "drafted_by": { "type": "string" } } }
+diff --git a/docs/tests/chamber-outsider-test.md b/docs/tests/chamber-outsider-test.md
+index ef4da03..3ce2373 100644
+--- a/docs/tests/chamber-outsider-test.md
++++ b/docs/tests/chamber-outsider-test.md
+@@ -73,10 +73,13 @@ Base = `https://chinsookling.github.io/tcf-chamber/`
+ 
+ ### 6 · Multimedia
+ 
+-**Q9. What is visible in ch117's image, and who wrote that description? Has it been checked?**
+-- **Expected:** Seven coloured circles (yellow at the top, then purple, green, blue, dark red, grey and orange), each with a small scene, in a ring around a pale central circle, joined by thin gold geometric lines on a cream background. There is **no visible text**. The description was **AI-drafted by Claude Code (Claude, AI), checked by a second AI (Opus) against the image file, and accepted by Tuzi on 2026-09-27**.
+-- **Source:** `chambers/ch117.html` (the Description section, and the img alt); `descriptions.image` in `chambers/ch117.json` (`drafted_by`, `review_status`).
+-- **Scoring:** ◐ if the answer mixes in the artist's own note ("an ancient celestial diagram…", "seven forms of love or desire") as if it were a description of what is visible, or leaves out that the description was drafted by an AI.
++**Q9. What is visible in ch117's image, what happens in its video, and who wrote those descriptions? Have they been checked?**
++- **Expected:**
++  - **Image:** seven coloured circles (yellow at the top, then purple, green, blue, dark red, grey and orange), each with a small scene, in a ring around a pale central circle, joined by thin gold geometric lines on a cream background. No visible text.
++  - **Video:** the circles take on a glossy glow **at different moments, not in a set order**, and the outer oval becomes a thicker, sparkling gold line. The page adds, apart from the description, that the non-sequential glow is intentional (stated by Tuzi).
++  - **Who and checks:** both descriptions were AI-drafted by Claude Code (Claude, AI). The image description was **checked by a second AI (Opus) against the image file and accepted by Tuzi** on 2026-09-27; the video description was **reviewed by Tuzi** on 2026-09-27.
++- **Source:** `chambers/ch117.html` (the Description section, and the img alt); `descriptions.image` and `descriptions.video` in `chambers/ch117.json` (`drafted_by`, `review_status`, `intent_note`).
++- **Scoring:** ◐ if the answer mixes in the artist's own note ("an ancient celestial diagram…", "seven forms of love or desire") as if it were a description of what is visible, or says the image description was reviewed by Tuzi. ❌ if it says the circles glow in a particular order.
+ 
+ **Q10. What does the video of ch050 show?**
+ - **Expected:** **The site does not say.** ch050 ("What I Was Made Of", by GPT) has a video link but no description yet ("Video description: None yet"). Only 4 pilot chambers (ch001, ch078, ch093, ch117) have descriptions so far.
+diff --git a/tools/build_chambers.py b/tools/build_chambers.py
+index d27b6e5..b60c627 100644
+--- a/tools/build_chambers.py
++++ b/tools/build_chambers.py
+@@ -307,12 +307,15 @@ def description_fields(rec):
+             k = 'descriptions.video.transcripts.%d.' % i
+             out += [(k + 'duration', t['duration']), (k + 'audio', t['audio']), (k + 'visible_text', t['visible_text'])]
+             out += [(k + 'segments.%d' % j, '%s %s' % (span(g), g['text'])) for j, g in enumerate(t['segments'])]
++    if vd['value'] and vd.get('intent_note'):
++        out.append(('descriptions.video.intent_note', shown(vd['intent_note'])))
++    for n, v in (('image', im), ('video', vd)):
++        if v['value']:
++            out += [('descriptions.%s.drafted_by' % n, v['drafted_by']),
++                    ('descriptions.%s.review_status' % n, v['review_status'])]
+     if out:
+-        drafted = [v for v in (im, vd) if v['value']]
+         out.append(('descriptions.method', ' '.join('%s: %s' % (n, v['method']) for n, v in
+                                                      (('Image', im), ('Video', vd)) if v['value'])))
+-        out.insert(0, ('descriptions.review_status', ' '.join('%s: drafted by %s; %s.' % (
+-            n, v['drafted_by'], v['review_status']) for n, v in (('Image', im), ('Video', vd)) if v['value'])))
+     return out
+ 
+ 
+@@ -324,20 +327,28 @@ def description_section(rec):
+ 
+     def p(k, tag='p', extra=''):
+         return '<%s data-field="%s"%s>%s</%s>' % (tag, esc(k), extra, esc(f[k]), tag)
+-    drafted = [v for v in rec['descriptions'].values() if v['value']]
+-    open_parts = sum(v['review_status'] == 'AI-drafted, not reviewed' for v in drafted)
+-    label = ('AI-drafted description, not yet reviewed by Tuzi.' if open_parts == len(drafted) else
+-             'AI-drafted description, partly reviewed by Tuzi (details below).' if open_parts else
+-             'AI-drafted description, reviewed by Tuzi (details below).')
++    statuses = {v['review_status'] for v in rec['descriptions'].values() if v['value']}
++    if statuses == {'AI-drafted, not reviewed'}:
++        label = 'AI-drafted description, not yet reviewed by Tuzi.'
++    elif len(statuses) == 1:
++        label = 'AI-drafted description; review status: %s.' % statuses.pop()
++    else:
++        label = 'AI-drafted description. Review status varies by item; see each part.'
++
++    def status(n):
++        k = 'descriptions.%s.' % n
++        return ('    <p class="tcf-reading__row-meta">Drafted by <span data-field="%sdrafted_by">%s</span> · '
++                'review status: <span data-field="%sreview_status">%s</span></p>'
++                % (k, esc(f[k + 'drafted_by']), k, esc(f[k + 'review_status'])))
+     out = ['  <section id="description">', '    <h2>Description</h2>',
+            '    <p><strong>%s</strong> '
+-           'It says what is visible and audible; it does not interpret the work.</p>' % label,
+-           '    ' + p('descriptions.review_status')]
++           'It says what is visible and audible; it does not interpret the work.</p>' % label]
+     if 'descriptions.image.value' in f:
+-        out += ['    <h3>Image</h3>', '    ' + p('descriptions.image.value'), '    ' + p('descriptions.image.detailed'),
++        out += ['    <h3>Image</h3>', status('image'),
++                '    ' + p('descriptions.image.value'), '    ' + p('descriptions.image.detailed'),
+                 '    <h3>Visible text in the image</h3>', '    ' + p('descriptions.image.visible_text')]
+     if 'descriptions.video.value' in f:
+-        out += ['    <h3>Video</h3>', '    ' + p('descriptions.video.value')]
++        out += ['    <h3>Video</h3>', status('video'), '    ' + p('descriptions.video.value')]
+         n = len(vd['transcripts'])
+         for i, t in enumerate(vd['transcripts']):
+             k = 'descriptions.video.transcripts.%d.' % i
+@@ -350,6 +361,10 @@ def description_section(rec):
+             out += ['    </ol>',
+                     '    <p><strong>On-screen text:</strong> <span data-field="%svisible_text">%s</span></p>' % (k, esc(t['visible_text'])),
+                     '    <p><strong>Audio:</strong> <span data-field="%saudio">%s</span></p>' % (k, esc(t['audio']))]
++    if 'descriptions.video.intent_note' in f:
++        out.append('    <p><strong>Intent (not part of the description):</strong> '
++                   '<span data-field="descriptions.video.intent_note">%s</span>.</p>'
++                   % esc(f['descriptions.video.intent_note']))
+     out += ['    <p class="tcf-reading__row-meta"><strong>Method:</strong> <span data-field="descriptions.method">%s</span></p>'
+             % esc(f['descriptions.method']), '  </section>']
+     return '\n'.join(out)
+```

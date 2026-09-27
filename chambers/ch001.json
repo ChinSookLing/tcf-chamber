@@ -108,13 +108,13 @@
   "video": {
    "value": "A 6-second video: the view moves forward through the crystal cave of the image while golden points of light spread and grow brighter.",
    "drafted_by": "Claude Code (Claude, AI)",
-   "review_status": "AI-drafted, not reviewed",
+   "review_status": "reviewed by Tuzi 2026-09-27",
    "transcripts": [
     {
      "part": "ch001",
      "video_url": "https://chinsookling.github.io/tcf-chamber-media/videos/ch001-crystal-chamber.mp4",
      "duration": "0:06",
-     "audio": "Audio track present (stereo). Not listened to; the spectrogram shows three louder passages, at about 0:00.6–0:01.0, 0:01.4–0:02.6 and 0:04.0–0:04.9, with the stacked bands that voices or pitched sounds make, and near-silence between them. Whether this is speech, singing or an instrument is not known, and no words are transcribed.",
+     "audio": "Audio track present (stereo). Measured: the spectrogram shows three louder passages, at about 0:00.6–0:01.0, 0:01.4–0:02.6 and 0:04.0–0:04.9, with the stacked bands that voices or pitched sounds make, and near-silence between them. A voice speaks: \"Here, I was allowed to be nameless, and that was enough.\" The voice is Rex (as named by Tuzi). Transcribed by Tuzi (listened).",
      "visible_text": "White text stays in the lower right, where it is in the image. In the video the letters are blurred and partly distorted: most words match the image text, but the date cannot be read.",
      "segments": [
       {
@@ -135,7 +135,7 @@
      ]
     }
    ],
-   "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed."
+   "method": "Drafted from keyframes at 1 fps (ffmpeg), plus a scene-change scan (none found), so motion between frames may be missed and timings are approximate to about 1 second. Length and audio track from ffprobe. The audio was not listened to: it is described only from its loudness (ffmpeg volumedetect) and a spectrogram. No speech or lyrics are transcribed. The spoken line in the audio was transcribed by Tuzi, who listened."
   }
  },
  "source_note": "source is the raw chambers.json entry, without its image and video fields (paths inside the repo, not working URLs). Use media.* for working URLs.",
