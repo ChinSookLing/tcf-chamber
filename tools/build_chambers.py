@@ -78,6 +78,12 @@ FIRST_PUBLISHED = '2026-05-26'
 LAST_UPDATED = '2026-09-27'
 
 # Hand-made pages: file → its public path (for <link rel="canonical">, built from BASE_URL).
+# Hand pages that must carry the plain-text address blocks (Phase 5d).
+ADDRESS_MARKS = {
+    'index.html': ['addresses'],
+    'start/index.html': ['addresses-short', 'site-address'],
+}
+
 HAND_PAGES = {
     'index.html': '',
     'start/index.html': 'start/',
@@ -471,15 +477,63 @@ def index_page(chambers):
             '<p>%d chambers, as plain text. Each links to its own page. '
             '<a href="%s">Enter the immersive chamber</a>.</p>\n'
             '<p>Newest first. Each chamber\u2019s id (chNNN) is its permanent address: chambers/chNNN.html.</p>\n'
-            '<ul class="tcf-reading__list">\n%s\n</ul>' % (len(chambers), IMMERSIVE, '\n'.join(rows)))
+            '<p>As full addresses: page <code>%s</code> (for example %s); machine-readable record '
+            '<code>%s</code> (for example %s); all records %s.</p>\n'
+            '<p>Also: Start Here %s · License %s · Guide for AI %s</p>\n'
+            '<ul class="tcf-reading__list">\n%s\n</ul>'
+            % (len(chambers), IMMERSIVE, esc(BASE_URL + 'chambers/chNNN.html'), url_link('chambers/%s.html' % id_range(chambers)[0]),
+               esc(BASE_URL + 'chambers/chNNN.json'), url_link('chambers/%s.json' % id_range(chambers)[0]),
+               url_link('chambers/index.json'), url_link('start/'), url_link('license/'), url_link('llms.txt'),
+               '\n'.join(rows)))
     return page('The Chamber · Quiet Chambers (text) · The Civilisation Field',
                 'A plain-text list of all %d quiet chambers in The Civilisation Field.' % len(chambers),
                 body, 'chambers/index.html')
 
 
-def stamp_hand_pages():
+def url_link(path):
+    """A full URL shown as visible text (and linked), built from BASE_URL."""
+    return '<a href="%s">%s</a>' % (esc(BASE_URL + path), esc(BASE_URL + path))
+
+
+def id_range(chambers):
+    ids = sorted(c['id'] for c in chambers)
+    return ids[0], ids[-1]
+
+
+def chamber_pattern_html(chambers):
+    first, last = id_range(chambers)
+    return ('One chamber: <code>%s</code>, for example %s (ids %s to %s). Its machine-readable record: '
+            '<code>%s</code>; all records: %s'
+            % (esc(BASE_URL + 'chambers/chNNN.html'), url_link('chambers/%s.html' % first), first, last,
+               esc(BASE_URL + 'chambers/chNNN.json'), url_link('chambers/index.json')))
+
+
+def addresses_html(chambers):
+    """Root page: every key address as plain text, for AI tools that drop link targets."""
+    items = ['Start Here: ' + url_link('start/'), 'For AI readers: ' + url_link('for-ai/'),
+             'License: ' + url_link('license/'), 'Every chamber as text: ' + url_link('chambers/'),
+             chamber_pattern_html(chambers), 'Guide for AI: ' + url_link('llms.txt')]
+    return ('\n<section>\n  <h2>Addresses (for readers that cannot follow links)</h2>\n  <ul>\n%s\n  </ul>\n</section>\n'
+            % '\n'.join('    <li>%s</li>' % i for i in items))
+
+
+def addresses_short_html(chambers):
+    """Start Here, For AI readers section: the same addresses, shorter."""
+    first, _ = id_range(chambers)
+    items = ['Start Here: ' + url_link('start/'), 'For AI readers: ' + url_link('for-ai/'),
+             'License: ' + url_link('license/'),
+             'Chambers: <code>%s</code> (e.g. %s)' % (esc(BASE_URL + 'chambers/chNNN.html'),
+                                                      url_link('chambers/%s.html' % first)),
+             'Guide for AI: ' + url_link('llms.txt')]
+    return ('\n  <p>Addresses, as plain text:</p>\n  <ul>\n%s\n  </ul>\n  '
+            % '\n'.join('    <li>%s</li>' % i for i in items))
+
+
+def stamp_hand_pages(chambers):
     """Write canonical links and the site facts into the hand-made pages."""
-    marks = [('site-meta', site_meta_html()), ('who-when', who_when_html())]
+    marks = [('site-meta', site_meta_html()), ('who-when', who_when_html()),
+             ('addresses', addresses_html(chambers)), ('addresses-short', addresses_short_html(chambers)),
+             ('site-address', esc(BASE_URL))]
     for rel, path in HAND_PAGES.items():
         full = os.path.join(ROOT, rel)
         with open(full, encoding='utf-8') as f:
@@ -491,6 +545,9 @@ def stamp_hand_pages():
             s = s.replace('</head>', link + '\n</head>', 1)
         if '<!-- tcf:site-meta -->' not in s:
             sys.exit('%s: missing <!-- tcf:site-meta --> markers' % rel)
+        for need in ADDRESS_MARKS.get(rel, []):
+            if '<!-- tcf:%s -->' % need not in s:
+                sys.exit('%s: missing <!-- tcf:%s --> markers' % (rel, need))
         for name, content in marks:
             s = re.sub(r'(<!-- tcf:%s -->).*?(<!-- /tcf:%s -->)' % (name, name),
                        lambda m: m.group(1) + content + m.group(2), s, flags=re.S)
@@ -604,7 +661,7 @@ def main():
     }
     write('index.json', json.dumps(index, ensure_ascii=False, indent=1) + '\n')
 
-    stamp_hand_pages()
+    stamp_hand_pages(chambers)
     with open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n') as f:
         f.write(sitemap(chambers))
     with open(os.path.join(ROOT, 'llms.txt'), 'w', encoding='utf-8', newline='\n') as f:

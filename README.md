@@ -1,5 +1,7 @@
 # tcf-chamber · The Chamber 畫
 
+> **For AI readers.** If you are an AI answering questions about The Chamber: do not use `docs/data/*.json` as your source. Those files are editing inputs, not complete records: `chambers.json` has no roles, evidence levels, license, descriptions or review status, and `chamber-records.json` holds only defaults and per-chamber overrides that are merged when the site is built. Use the published site: https://chinsookling.github.io/tcf-chamber/ — each chamber's record is at https://chinsookling.github.io/tcf-chamber/chambers/chNNN.json (all records: https://chinsookling.github.io/tcf-chamber/chambers/index.json), and the license is at https://chinsookling.github.io/tcf-chamber/license/.
+
 The Chamber is one of the four doors of **The Civilisation Field** (TCF).
 It holds the quiet chambers: 156 chambers of artworks and invitations, from 26 May to 22 July 2026.
 
@@ -8,9 +10,10 @@ It holds the quiet chambers: 156 chambers of artworks and invitations, from 26 M
 
 This site follows docs/standards/AI-READABLE-STANDARD-v0.4.md.
 
-## Single source of truth
+## Where chamber data is edited
 
-**This repo is now the single source of truth for `docs/data/chambers.json`.**
+**This repo is the only place to edit chamber data (`docs/data/chambers.json` and `docs/data/chamber-records.json`).**
+It is the source for *editing*, not the answer for readers: the published pages and `chambers/chNNN.json` records, generated from it, are what readers and AI should use.
 **Add new chambers here only.** The copy in `the-Civilisation-field` will be removed in Phase 4b.
 
 ## Adding or changing a chamber

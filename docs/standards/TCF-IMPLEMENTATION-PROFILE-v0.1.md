@@ -73,6 +73,8 @@ Each site keeps a fixed test set, `docs/tests/<site>-outsider-test.md`, that cov
 
 - **A site passes** when an outside AI answers correctly, with sources, across at least 2 runs.
 - **"Reading the site" and "reading the works" are tested separately.** Passing the home-page questions is not enough.
+- **Wait at least 10 minutes after a deploy before an outsider test** (GitHub Pages cache `max-age=600`). Otherwise the AI may read the old version.
+- **Key addresses must appear as visible plain-text URLs, not only as link targets.** Some AI fetch tools drop `href`s and see only the link text.
 
 ## 8. Checks the generator must run
 

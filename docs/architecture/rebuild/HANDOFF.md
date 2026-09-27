@@ -1,52 +1,66 @@
-# HANDOFF — Phase 5c (two reading fixes from the second outsider test)
+# HANDOFF — Phase 5d (plain-text addresses; a GitHub signpost for AI readers)
 
-- **Phase:** 5c. Fixes for the site problems found by the Kimi run and confirmed by Opus.
-- **Branch:** `phase-5c-reading-fixes`, from `main` @ `201dc4e` (PR #8 merged)
-- **Current owner:** Claude Code → next: Opus review → Tuzi merges
-- Previous handoff (5b): `git show f475a11:docs/architecture/rebuild/HANDOFF.md`
+- **Phase:** 5d. Fixes from the Qwen runs:
+  - its fetch tool dropped link targets, so it guessed paths and got 404s;
+  - on another run it read the raw editing data on GitHub.
+- **Branch:** `phase-5d-plain-addresses`, from `main` @ `7b87aed` (PR #10 merged)
+- **Current owner:** Claude Code → next: Opus review → Tuzi merges → wait ≥10 min → Qwen run 3
+- Previous handoff (5c): `git show edb96d7:docs/architecture/rebuild/HANDOFF.md`
 
 ## What changed
 
-| # | File | Before | After |
-|---|---|---|---|
-| 1 | `chambers/index.html` (generated) | `<ol>`, newest first: the automatic numbers 1–156 ran opposite to ch156–ch001, and no id was shown | a **`<ul>`** (no automatic numbers), still newest first |
-| 2 | Record and header `<dl>` on all 156 chamber pages (generated) | `<dt>Image made with</dt><dd>drawn by…` read as "Image made withdrawn by…" in plain text | every `<dt>` ends with a **colon**, and there is a **newline** between `</dt>` and `<dd>` |
-| 3 | `start/index.html`, When section | the chamber dates, with no note | adds: "Dates on each chamber are creation dates; the date each chamber was first published online is not recorded." |
-| 4 | `docs/tests/results/2026-09-27-astra.md`, `…-kimi.md` | — | **new**, saved exactly as provided |
+| # | File | Change |
+|---|---|---|
+| 1 | `index.html` (root) | New section **"Addresses (for readers that cannot follow links)"**, stamped between `<!-- tcf:addresses -->` markers. See the list below. |
+| 2 | `chambers/index.html` (generated) | Under "Newest first…", the page and record patterns as full URLs, each with an example (ch001). Also full URLs for Start Here, License and llms.txt. |
+| 3 | `start/index.html` | The **For AI readers** section gains "Addresses, as plain text:" (Start Here, For AI readers, License, the chamber pattern, llms.txt), between `<!-- tcf:addresses-short -->` markers. See also the "Also changed" notes below. |
+| 4 | — | All link texts stay as they were. The URLs are **extra visible text**, not replacements. |
+| 5 | `docs/tests/results/2026-09-27-qwen.md` | **New**, saved exactly as provided (Qwen run 1). Opus will add run 2 to the scorecard. |
+| 6 | `docs/standards/TCF-IMPLEMENTATION-PROFILE-v0.1.md` §7 | Two new rules: **wait ≥10 minutes after a deploy** before an outsider test (Pages `max-age=600`); **key addresses must appear as visible plain-text URLs**, since some fetch tools drop `href`s. |
+| 7 | `README.md`, **new** `docs/data/README.md` | A **"For AI readers"** note at the very top of both. The old "single source of truth" line is reworded. See below. |
 
-**1. Index rows.** Each row starts with the chamber id, and the id and title are one link:
-- Row: `ch156 · 雨中之印 The Rain Seal · 2026-07-22 · Claude`.
-- New line above the list: "Newest first. Each chamber's id (chNNN) is its permanent address: chambers/chNNN.html."
-- The old "…as plain text, newest first." is shortened to "…as plain text." so "newest first" is not said twice.
+**The root page's address list:**
+- Start Here, For AI readers, License, and "Every chamber as text", each as a full URL.
+- **One chamber:** `…/chambers/chNNN.html`, for example `…/chambers/ch001.html` (ids ch001 to ch156). Its record: `…/chambers/chNNN.json`. All records: `…/chambers/index.json`.
+- **Guide for AI:** `…/llms.txt`.
 
-**2. Labels.**
-- **Where:** both the Record rows (15, plus the description rows on the 4 pilot pages) and the Chamber / Date / Created by header, 18 `<dt>` per page.
-- **What:** "Image made with:" then a newline then "drawn by GPT…".
-- **Check:** page = JSON reads only the `<dd>` values, so it still passes.
+**Also changed on Start Here:**
+- **"This site: …":** the hand-written address is now stamped from `BASE_URL`, between `tcf:site-address` markers.
+- **Update checklist:** the "When this page changes, also update" list now names `README.md` and `docs/data/README.md`, which are hand-written.
 
-**Other notes:**
-- **CSS:** unchanged. The `<ul>` shows bullets. On a phone the English title wraps to its own line (existing style), so " · date · creator" starts a new line with a "·". It reads fine, but it can be tidied later.
-- **JSON records and `chambers.json`:** unchanged. The 156 `.json` files are byte-identical.
-- **`PR #9`** (Astra's result alone) adds the same file with the same content. Merging either first causes no conflict, and #9 can be closed.
+**How it is built:**
+- Every URL comes from **`BASE_URL`**, via the new `url_link()`, `addresses_html()` and `addresses_short_html()`. The chamber id range is read from the data.
+- The generator **fails** if `index.html` or `start/index.html` lose their address markers.
+- Pattern URLs (`chNNN`) are shown as `<code>` text, not as links, so they cannot become broken links.
+
+**The README reword:**
+- **Old:** "This repo is now the single source of truth for `docs/data/chambers.json`."
+- **New:** "This repo is the **only place to edit** chamber data … It is the source for *editing*, not the answer for readers."
+
+### One wording change from the Opus text (item 7)
+
+- **Opus's draft:** "`docs/data/*.json` … lack roles, evidence levels, license, descriptions and review status".
+- **The problem:** that is true of `chambers.json`, but **not** of `chamber-records.json`, which holds exactly those fields (as defaults and per-chamber overrides).
+- **What I wrote instead:** "Those files are editing inputs, not complete records: `chambers.json` has no roles, evidence levels, license, descriptions or review status, and `chamber-records.json` holds only defaults and per-chamber overrides that are merged when the site is built."
+- The rest of the note is as given.
+
+**Published or not:** `README.md` and `docs/data/README.md` are deployed with the site, as before; only `docs/architecture/` and `docs/tests/` are excluded. So the note is visible both on GitHub and on the site.
 
 ## Checks
 
-- **Plain-text extraction:** two methods, tag-stripping regex and Python `html.parser`, give the same results:
-  - `chambers/index.html` → "**ch078 · 先被遇見的世界 GPT's Rebuilt World · 2026-06-19 · GPT**" (the id sits next to its title).
-  - `chambers/ch117.html` → "Image made with:" / "drawn by GPT in GPT's portal (stated by Tuzi, provisional)" on separate lines. **"withdrawn" appears 0 times**, on any of the 156 pages.
-  - **All `<dt>`/`<dd>` pairs:** 2,808 (156 × 18). **0** lack the colon or the newline, and **0** labels run into their value.
-  - **Browser:** `innerText` of the ch117 Record (Chromium): "Creator: | TCF | Text by: | TCF (site record) | … | Image made with: | drawn by GPT…".
+- **Plain text (tags stripped, no hrefs):** each of `index.html`, `start/index.html` and `chambers/index.html` contains all four required full URLs: `…/start/`, `…/license/`, `…/chambers/chNNN.html` and `…/llms.txt`.
+- **Domain written only in `BASE_URL`:**
+  - `tools/build_chambers.py` has the domain once, in `BASE_URL`.
+  - In the hand pages, outside the stamped markers and canonical links, it appears **0** times.
+  - **Two exceptions, not changed:**
+    - `README.md` and `docs/data/README.md` are hand-written and are on the checklist.
+    - `pages/skyhall.html` line 95 has `var BASE = 'https://chinsookling.github.io/tcf-chamber'` inside the 3D script. The standing rule is not to touch the 3D scripts, so I left it. **This is a Phase 6 item:** that line must change along with `BASE_URL`.
 - **Schema:** 156/156 valid.
-- **Page = JSON:** still enforced. A tampered status ("Historical") stops the check.
+- **Page = JSON:** passes. The chamber pages and records are unchanged.
 - **Two runs, identical output.**
-- **Links:** 2,415 local links, **0 broken**.
-- **Phone (390 px):** no horizontal scroll on `chambers/index.html` or `ch117.html`.
+- **Links:** 2,415 local links, 0 broken. The 168 new absolute links to this site all resolve to files in the repo.
+- **Phone (390 px):** no horizontal scroll on the root page, Start Here or the chamber index. The long URLs wrap.
 
-## For Opus / Tuzi
+## For Qwen run 3
 
-**"Last updated":** `LAST_UPDATED` (the site footer and `index.json`) is still **2026-09-26**. Phases 5a–5c changed content on 2026-09-27 and did not bump it. I left it alone to keep this PR small. Should it become 2026-09-27?
-
-## Next
-
-- Qwen (optional run 3) on the fixed site.
-- Hand the record format to Bill for Play.
+Merge, wait for green Actions, then **wait at least 10 minutes** (cache) before starting. Use a fresh conversation.
