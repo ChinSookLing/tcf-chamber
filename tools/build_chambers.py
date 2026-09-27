@@ -216,6 +216,18 @@ def build_record(c, side):
         rec[key] = extra[key]
     # The chambers.json entry, verbatim, minus its media paths: they point inside
     # the repo (the videos are no longer here), so they are not working URLs.
+    vd = rec['descriptions']['video']
+    if vd['value']:
+        # Transcripts are in the order of media.video_urls; the record carries each URL.
+        if len(vd['transcripts']) != len(rec['media']['video_urls']):
+            sys.exit('%s: %d video transcripts for %d videos' % (c['id'], len(vd['transcripts']),
+                                                                 len(rec['media']['video_urls'])))
+        vd = dict(vd, transcripts=[dict(t, video_url=u) for t, u in
+                                   zip(vd['transcripts'], rec['media']['video_urls'])])
+        # Key order: part, video_url, then the rest as written in the sidecar.
+        vd['transcripts'] = [{k: t[k] for k in ['part', 'video_url'] + [k for k in t if k not in ('part', 'video_url')]}
+                             for t in vd['transcripts']]
+        rec['descriptions'] = dict(rec['descriptions'], video=vd)
     rec['source_note'] = SOURCE_NOTE
     rec['source'] = {k: v for k, v in c.items() if k not in ('image', 'video')}
     rec['generated_from'] = ['docs/data/chambers.json', 'docs/data/chamber-records.json']
@@ -266,9 +278,96 @@ def visible_fields(rec):
         ('status', 'Status', rec['status']['value'].capitalize()),
         ('license', 'License', 'Image %s · text %s · video %s · credit: %s' % (
             lic['image'], lic['text'], lic['video'], lic['credit'])),
-        ('descriptions.image', 'Image description', shown(desc['image']) if desc['image']['value'] else 'None yet'),
-        ('descriptions.video', 'Video description', shown(desc['video']) if desc['video']['value'] else 'None yet'),
+        ('descriptions.image', 'Image description', described(desc['image'])),
+        ('descriptions.video', 'Video description', described(desc['video'])),
     ]
+
+
+def described(v):
+    if not v['value']:
+        return 'None yet'
+    return '%s (%s; drafted by %s; see Description)' % (v['value'], v['review_status'], v['drafted_by'])
+
+
+def span(t):
+    return '%s\u2013%s' % (t['start'], t['end'])
+
+
+def description_fields(rec):
+    """(data-field, text) of the Description section. Empty if nothing is drafted."""
+    im, vd = rec['descriptions']['image'], rec['descriptions']['video']
+    out = []
+    if im['value']:
+        out += [('descriptions.image.value', im['value']),
+                ('descriptions.image.detailed', im['detailed']),
+                ('descriptions.image.visible_text', im['visible_text'])]
+    if vd['value']:
+        out.append(('descriptions.video.value', vd['value']))
+        for i, t in enumerate(vd['transcripts']):
+            k = 'descriptions.video.transcripts.%d.' % i
+            out += [(k + 'duration', t['duration']), (k + 'audio', t['audio']), (k + 'visible_text', t['visible_text'])]
+            out += [(k + 'segments.%d' % j, '%s %s' % (span(g), g['text'])) for j, g in enumerate(t['segments'])]
+    if vd['value'] and vd.get('intent_note'):
+        out.append(('descriptions.video.intent_note', shown(vd['intent_note'])))
+    for n, v in (('image', im), ('video', vd)):
+        if v['value']:
+            out += [('descriptions.%s.drafted_by' % n, v['drafted_by']),
+                    ('descriptions.%s.review_status' % n, v['review_status'])]
+    if out:
+        out.append(('descriptions.method', ' '.join('%s: %s' % (n, v['method']) for n, v in
+                                                     (('Image', im), ('Video', vd)) if v['value'])))
+    return out
+
+
+def description_section(rec):
+    f = dict(description_fields(rec))
+    if not f:
+        return None
+    vd = rec['descriptions']['video']
+
+    def p(k, tag='p', extra=''):
+        return '<%s data-field="%s"%s>%s</%s>' % (tag, esc(k), extra, esc(f[k]), tag)
+    statuses = {v['review_status'] for v in rec['descriptions'].values() if v['value']}
+    if statuses == {'AI-drafted, not reviewed'}:
+        label = 'AI-drafted description, not yet reviewed by Tuzi.'
+    elif len(statuses) == 1:
+        label = 'AI-drafted description; review status: %s.' % statuses.pop()
+    else:
+        label = 'AI-drafted description. Review status varies by item; see each part.'
+
+    def status(n):
+        k = 'descriptions.%s.' % n
+        return ('    <p class="tcf-reading__row-meta">Drafted by <span data-field="%sdrafted_by">%s</span> · '
+                'review status: <span data-field="%sreview_status">%s</span></p>'
+                % (k, esc(f[k + 'drafted_by']), k, esc(f[k + 'review_status'])))
+    out = ['  <section id="description">', '    <h2>Description</h2>',
+           '    <p><strong>%s</strong> '
+           'It says what is visible and audible; it does not interpret the work.</p>' % label]
+    if 'descriptions.image.value' in f:
+        out += ['    <h3>Image</h3>', status('image'),
+                '    ' + p('descriptions.image.value'), '    ' + p('descriptions.image.detailed'),
+                '    <h3>Visible text in the image</h3>', '    ' + p('descriptions.image.visible_text')]
+    if 'descriptions.video.value' in f:
+        out += ['    <h3>Video</h3>', status('video'), '    ' + p('descriptions.video.value')]
+        n = len(vd['transcripts'])
+        for i, t in enumerate(vd['transcripts']):
+            k = 'descriptions.video.transcripts.%d.' % i
+            name = 'Video transcript' if n == 1 else 'Video %d of %d (%s)' % (i + 1, n, t['part'])
+            out += ['    <h4>%s · <a href="%s">MP4</a> · length <span data-field="%sduration">%s</span></h4>'
+                    % (esc(name), esc(t['video_url']), k, esc(t['duration'])),
+                    '    <ol>']
+            for j, g in enumerate(t['segments']):
+                out.append('      <li data-field="%ssegments.%d"><time>%s</time> %s</li>' % (k, j, esc(span(g)), esc(g['text'])))
+            out += ['    </ol>',
+                    '    <p><strong>On-screen text:</strong> <span data-field="%svisible_text">%s</span></p>' % (k, esc(t['visible_text'])),
+                    '    <p><strong>Audio:</strong> <span data-field="%saudio">%s</span></p>' % (k, esc(t['audio']))]
+    if 'descriptions.video.intent_note' in f:
+        out.append('    <p><strong>Intent (not part of the description):</strong> '
+                   '<span data-field="descriptions.video.intent_note">%s</span>.</p>'
+                   % esc(f['descriptions.video.intent_note']))
+    out += ['    <p class="tcf-reading__row-meta"><strong>Method:</strong> <span data-field="descriptions.method">%s</span></p>'
+            % esc(f['descriptions.method']), '  </section>']
+    return '\n'.join(out)
 
 
 def record_section(rec):
@@ -285,10 +384,18 @@ def check_page_matches_json(cid):
         rec = json.load(f)
     with open(os.path.join(OUT, cid + '.html'), encoding='utf-8') as f:
         page_html = f.read()
-    shown_on_page = {k: html.unescape(v) for k, v in re.findall(r'<dd data-field="([^"]+)">(.*?)</dd>', page_html)}
-    for k, _, t in visible_fields(rec):
+    shown_on_page = {k: html.unescape(re.sub(r'<[^>]+>', '', v)) for k, v in
+                     re.findall(r'<(?:dd|p|li|span) data-field="([^"]+)"[^>]*>(.*?)</(?:dd|p|li|span)>', page_html, re.S)}
+    expected = [(k, t) for k, _, t in visible_fields(rec)] + description_fields(rec)
+    if set(shown_on_page) != {k for k, _ in expected}:
+        sys.exit('%s: page and JSON show different fields: %s' % (
+            cid, sorted(set(shown_on_page) ^ {k for k, _ in expected})))
+    for k, t in expected:
         if shown_on_page.get(k) != t:
             sys.exit('%s: page and JSON differ for %s: %r vs %r' % (cid, k, shown_on_page.get(k), t))
+    alt = rec['descriptions']['image']['value']
+    if alt and 'alt="%s"' % esc(alt) not in page_html:
+        sys.exit('%s: img alt is not the short image description' % cid)
 
 
 def chamber_page(c, prev_c, next_c, rec):
@@ -304,10 +411,11 @@ def chamber_page(c, prev_c, next_c, rec):
                  '    <dt>Date</dt><dd><time datetime="%s">%s</time></dd>\n'
                  '    <dt>Created by</dt><dd>%s</dd>\n'
                  '  </dl>' % (esc(cid), esc(c['date']), esc(c['date']), who(c['created_by'])))
+    alt = rec['descriptions']['image']['value'] or 'Illustration for %s' % en
     for img in as_list(c.get('image')):
         parts.append('  <figure class="tcf-reading__figure">\n'
-                     '    <img src="%s" alt="Illustration for %s" decoding="async">\n'
-                     '  </figure>' % (esc(img), esc(en)))
+                     '    <img src="%s" alt="%s" decoding="async">\n'
+                     '  </figure>' % (esc(img), esc(alt)))
     is_note = rec['nature']['text'] == 'artist-note'
     # "What Left Here" is Tuzi's own name for the artist notes.
     heading = ('What Left Here</h2>\n    <p class="tcf-reading__row-meta">artist note</p>' if is_note
@@ -327,6 +435,9 @@ def chamber_page(c, prev_c, next_c, rec):
             label = 'Watch the video' if len(videos) == 1 else 'Watch video %d of %d' % (i, len(videos))
             items.append('      <li><a href="%s">%s</a> (MP4)</li>' % (esc(v), label))
         parts.append('  <section>\n    <h2>Video</h2>\n    <ul>\n%s\n    </ul>\n  </section>' % '\n'.join(items))
+    desc_html = description_section(rec)
+    if desc_html:
+        parts.append(desc_html)
     parts.append(record_section(rec))
     parts.append('</article>')
     pn = []
